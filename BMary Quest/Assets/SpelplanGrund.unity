@@ -193,24 +193,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324767607}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd941880ac614994fadb914e8e3dd28b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marysTempPoints: 0
-  enemyTempPoints: 0
-  Spelplan: {fileID: 0}
-  marysHealth: 0
-  enemyHealth: 0
-  playerTurn: 0
---- !u!114 &1324767609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324767607}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd941880ac614994fadb914e8e3dd28b, type: 3}
@@ -219,9 +201,18 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 0}
-  marysHealth: 20
-  enemyHealth: 20
-  playerTurn: 0
+--- !u!114 &1324767609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408f679fd6eff614f8cac099ad4f890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
