@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+*/Library/
+*/[Tt]emp/
+*/[Oo]bj/
+*/[Bb]uild/
+*/[Bb]uilds/
+*/[Ll]ogs/
+*/[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+BMary Quest/Library/CurrentLayout-default.dwlt
+BMary Quest/Library/PackageManager/ProjectCache
+BMary Quest/Library/SceneVisibilityState.asset
+BMary Quest/Library/SourceAssetDB
+BMary Quest/Library/StateCache/MainStageHierarchy/8f/8fd65426490f636435c901d65ce7ed24.json
