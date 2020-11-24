@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637414604897860889
-    m_Hash: 2245594901
+      ticks: 637418053531272495
+    m_Hash: 1887353318
   m_LockFileStatus:
     m_FilePath: C:/Users/emili/Documents/GitHub/Bloody-Mary-02/BMary Quest/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637414605014961524
-    m_Hash: 3477169618
+      ticks: 637418053531412124
+    m_Hash: 1670978601
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -843,12 +843,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
         revision: 1604b62e543216408311bcd1355a7a9ca1e65765
         path: 
-    - packageId: com.unity.timeline@1.3.6
+    - packageId: com.unity.timeline@1.2.17
       testable: 0
       isDirectDependency: 1
-      version: 1.3.6
+      version: 1.2.17
       source: 1
-      resolvedPath: C:\Users\emili\Documents\GitHub\Bloody-Mary-02\BMary Quest\Library\PackageCache\com.unity.timeline@1.3.6
+      resolvedPath: C:\Users\emili\Documents\GitHub\Bloody-Mary-02\BMary Quest\Library\PackageCache\com.unity.timeline@1.2.17
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -970,13 +970,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637359675340000000
+      datePublishedTicks: 637359677410000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-        revision: d9d35444c8403989a7e2099b1dafeb73d2033e37
+        revision: 61fddfa7b542abc7f76e04771589393fbd5a55b8
         path: 
     - packageId: com.unity.ugui@1.0.0
       testable: 0

@@ -10,8 +10,8 @@ public class GameControl : MonoBehaviour
     public int enemyTempPoints;
     public GameObject Spelplan;
 
-    public int marysHealth; //kanske ska ha standardvärde + eventuell staff-modifier? Eller kommer hälsan med staven så att säga?
-    public int enemyHealth;
+    public int marysHealth=20; //kanske ska ha standardvärde + eventuell staff-modifier? Eller kommer hälsan med staven så att säga?
+    public int enemyHealth=20;
 
     public int playerTurn;
    
@@ -26,7 +26,7 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         //Debug.Log("spelplanens storlek i x-led " + Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0)
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //end-turn utan effekt.
         {
          Debug.Log("Mary äger " + marysTempPoints + " Brickor");
          Debug.Log("Fienden äger " + enemyTempPoints + " Brickor");
@@ -41,45 +41,50 @@ public class GameControl : MonoBehaviour
         } 
 
         if (Input.GetKeyDown(KeyCode.G)) //Testar med arrayen...update, onödig kod när väl arrayen nu fungerar, sparar den än så länge, whats the harm?
-        for (int i = 0; i <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
         {
-            for (int j = 0; j <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++) 
-            {
-            
-              if(Spelplan.GetComponent<Spelplan>().gridArray[i,j].GetComponent<Owner>().OwnedByMary==true)
-              {
-                Debug.Log("Hurra");
-              } 
-              else
-              {
-              Debug.Log("inget än");        
-              }
-            }
+            UseScore(playerTurn);
         }
-        //if (Input.GetKeyDown(KeyCode.T)) //t för test
-       // {
-       //     Spelplan.GetComponent<Spelplan>().gridArray[2,3].GetComponent<Owner>().OwnedByMary=true; //funkar, nu får vi se om vi kan fixa det lokalt.
-       // }
     }
 
 
 
 
 
-    void ResetScore(int playerTurn)  //To(rea)Do(r).....no call for it yet, possibly the start of doing damage etc...
+    void UseScore(int playerTurn)  //To(rea)Do(r).....no call for it yet, possibly the start of doing damage etc...
     {
         if(playerTurn==0)
         {
+        enemyHealth-=marysTempPoints;
         marysTempPoints=0;
-        }
-            else if (playerTurn==1)
-            {
-            enemyTempPoints=0;
+        for (int i = 0; i <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+        {
+            for (int j = 0; j <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++) 
+            {               if(Spelplan.GetComponent<Spelplan>().gridArray[i,j].GetComponent<Owner>().OwnedByMary==true)
+              {
+                Spelplan.GetComponent<Spelplan>().gridArray[i,j].GetComponent<Owner>().resetMary();
+              } 
             }
-                else
-                {
-                Debug.Log("This should not happen!");
-                }
+        }
+        }
+
+        else if (playerTurn==1)
+        {
+        marysHealth-=enemyTempPoints;
+        enemyTempPoints=0;
+        for (int i = 0; i <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+        {
+            for (int j = 0; j <Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++) 
+            {               if(Spelplan.GetComponent<Spelplan>().gridArray[i,j].GetComponent<Owner>().OwnedByEnemy==true)
+              {
+                Spelplan.GetComponent<Spelplan>().gridArray[i,j].GetComponent<Owner>().resetEnemy();
+              } 
+            }
+        }
+        }
+        else
+        {
+            Debug.Log("This should not happen!");
+        }
 
     }
 
