@@ -7,7 +7,7 @@ public class Gridcreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spelplan spelplan = new Spelplan(5, 5);
+       // Spelplan spelplan = new Spelplan(5, 5);
     }
 
     // Update is called once per frame
