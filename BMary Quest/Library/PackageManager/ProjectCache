@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637417318730000000
-    m_Hash: 1887353318
+      ticks: 637418101423906761
+    m_Hash: 3460552542
   m_LockFileStatus:
     m_FilePath: C:/Users/tovah/OneDrive/Dokument/GitHub/Bloody-Mary-02/BMary Quest/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637417318730000000
-    m_Hash: 1670978601
+      ticks: 637418101423966979
+    m_Hash: 4166827422
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -497,56 +497,6 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
         revision: 4e323a9f3edf4c6dc06ab4d1582e12f07cb54189
-        path: 
-    - packageId: com.unity.2d.tilemap@1.0.0
-      testable: 0
-      isDirectDependency: 1
-      version: 1.0.0
-      source: 2
-      resolvedPath: C:\Program Files\Unity\Hub\Editor\2020.1.13f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.2d.tilemap
-      assetPath: Packages/com.unity.2d.tilemap
-      name: com.unity.2d.tilemap
-      displayName: 2D Tilemap Editor
-      author:
-        name: 
-        email: 
-        url: 
-      category: 2D
-      type: 
-      description: 2D Tilemap Editor is a package that contains editor functionalities
-        for editing Tilemaps.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        compatible:
-        - 1.0.0
-        verified: 1.0.0
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - 2d
-      - Tilemap
-      registry:
-        id: 
-        name: 
-        url: 
-        scopes: []
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 0
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 0
-      documentationUrl: 
-      hasRepository: 0
-      repository:
-        type: 
-        url: 
-        revision: 
         path: 
     - packageId: com.unity.collab-proxy@1.3.9
       testable: 0
