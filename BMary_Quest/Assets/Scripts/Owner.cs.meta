@@ -3,11 +3,7 @@ guid: ba484d72fe05e02419b5400ae5695a7d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - marys: {instanceID: 0}
-  - enemys: {instanceID: 0}
-  - gc: {instanceID: 0}
-  - gameScript: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
