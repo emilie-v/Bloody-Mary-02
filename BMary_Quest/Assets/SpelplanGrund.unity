@@ -524,8 +524,8 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 773677183}
-  marysHealth: 0
-  enemyHealth: 0
+  marysHealth: 20
+  enemyHealth: 20
   playerTurn: 0
 --- !u!4 &1324767610
 Transform:
