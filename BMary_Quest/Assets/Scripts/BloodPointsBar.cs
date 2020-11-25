@@ -6,15 +6,10 @@ using UnityEngine.UI;
 public class BloodPointsBar : MonoBehaviour
 {
     public Slider bloodSlider;
+    public Player player;
 
-    public void maxBlood(int blood)
+    public void Update()
     {
-        bloodSlider.maxValue = blood;
-        bloodSlider.value = blood;
-    }
-
-    public void SetBlood(int blood)
-    {
-        bloodSlider.value = blood;
+        bloodSlider.value = (float)player.currentBlood / (float)player.maxBlood;
     }
 }
