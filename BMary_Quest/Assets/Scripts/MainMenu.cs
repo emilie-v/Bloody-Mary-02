@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SpelplanGrund");
+        SceneManager.LoadScene("GameBoard");
     }
 
     public void QuitGame()
