@@ -14,7 +14,7 @@ public class Owner : MonoBehaviour
     potentiella states: 1: startbricka för Mary, kan alltid vara hennes, aldrig fiendens, 2: tvärtom mot 1, 3: ett state som t.ex. en stav kan lägga på, gör så att poäng dubblas 4: mer stavspecial. Kanske ska ha separata variabler för stavgrejer. 
     */
 
-    SpriteRenderer tile; 
+    SpriteRenderer tile;
     public Sprite pc;
     public Sprite enemys;
     public Sprite neutral;
@@ -24,127 +24,124 @@ public class Owner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    tile = GetComponent<SpriteRenderer>();
-    gc = GameObject.FindGameObjectWithTag ("Player");
-    gameScript= gc.GetComponent<GameControl>();  
+        tile = GetComponent<SpriteRenderer>();
+        gc = GameObject.FindGameObjectWithTag("Player");
+        gameScript = gc.GetComponent<GameControl>();
 
-    pc = Resources.Load<Sprite>("Sprites/Marys");
-    enemys = Resources.Load<Sprite>("Sprites/enemy");
-    neutral = Resources.Load<Sprite>("Sprites/neutral");
-    Spelplan= GameObject.FindGameObjectWithTag ("Spelplan");
+        pc = Resources.Load<Sprite>("Sprites/Marys");
+        enemys = Resources.Load<Sprite>("Sprites/enemy");
+        neutral = Resources.Load<Sprite>("Sprites/neutral");
+        Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-        resetBoard();
+            resetBoard();
         }
-
     }
 
     private void OnMouseDown()
     {
         if (Input.GetKey(KeyCode.LeftShift)) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
-        {   
-            if (specialState ==2)
+        {
+            if (specialState == 2)
             {
-            OwnedByEnemy = true;
-            gameScript.enemyTempPoints++;
-            tile.sprite = enemys;
-            canChange=false;  
+                OwnedByEnemy = true;
+                gameScript.enemyTempPoints++;
+                tile.sprite = enemys;
+                canChange = false;
             }
+
             //else check enemyNeighbours();
             //pseudokod inc...If it aint The enemys starting tile, check if any neighbours has a tile with Enemy Ownership. I.E if specialstate !2, then run CheckEnemyNeighbours()  som nedan. Special state is set in "spelplan" on init for mary.
-            if(OwnedByMary !=true && OwnedByEnemy !=true /*och can change för fiende, nu funkar den för allt!*/)
+            if (OwnedByMary != true && OwnedByEnemy != true /*och can change för fiende, nu funkar den för allt!*/)
             {
-            OwnedByEnemy = true;
-            gameScript.enemyTempPoints++;
-            tile.sprite = enemys;
-            } 
-        
+                OwnedByEnemy = true;
+                gameScript.enemyTempPoints++;
+                tile.sprite = enemys;
+            }
         }
         else
         {
-            if(specialState ==1)
+            if (specialState == 1)
             {
-            OwnedByMary = true;
-            gameScript.marysTempPoints++;
-            tile.sprite = pc;
-            canChange=false;
+                OwnedByMary = true;
+                gameScript.marysTempPoints++;
+                tile.sprite = pc;
+                canChange = false;
             }
-            
             else
             {
-            checkNeighbours();  
-                if(OwnedByMary !=true && OwnedByEnemy !=true && canChange==true)
+                checkNeighbours();
+                if (OwnedByMary != true && OwnedByEnemy != true && canChange == true)
                 {
-                 OwnedByMary = true;
-                 gameScript.marysTempPoints++;
-                 tile.sprite = pc;
-                 canChange=false;
+                    OwnedByMary = true;
+                    gameScript.marysTempPoints++;
+                    tile.sprite = pc;
+                    canChange = false;
                 }
             }
-
         }
-
     }
+
     void checkNeighbours() //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
     {
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
-        if(xPos>=0 && xPos<Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0)-1)
+        if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
         {
-        
-             if(Spelplan.GetComponent<Spelplan>().gridArray[xPos+1,yPos].GetComponent<Owner>().OwnedByMary==true) //Temp variabel Vi skulle kunna göra det som är OwnedbyMary till en variabel som går efter state!
-             {
-                canChange=true;
+            //Temp variabel Vi skulle kunna göra det som är OwnedbyMary till en variabel som går efter state!
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().OwnedByMary == true) 
+            {
+                canChange = true;
                 return;
-             }
-        } 
-        if(xPos>0 && xPos<Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0)) 
-        {    
-            if(Spelplan.GetComponent<Spelplan>().gridArray[xPos-1,yPos].GetComponent<Owner>().OwnedByMary==true)
-            {
-            canChange=true;
-            return;
-            } 
+            }
         }
 
-
-        if(yPos>=0 && yPos<Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1)-1)
+        if (xPos > 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0))
         {
-            if(Spelplan.GetComponent<Spelplan>().gridArray[xPos,yPos+1].GetComponent<Owner>().OwnedByMary==true)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos - 1, yPos].GetComponent<Owner>().OwnedByMary == true)
             {
-            canChange=true;
-            return;
-            }  
+                canChange = true;
+                return;
+            }
         }
 
-        if(yPos>0 && yPos<Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1))
+        if (yPos >= 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1) - 1)
         {
-            if(Spelplan.GetComponent<Spelplan>().gridArray[xPos,yPos-1].GetComponent<Owner>().OwnedByMary==true)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos + 1].GetComponent<Owner>().OwnedByMary == true)
             {
-            canChange=true;
-            return;
-            }  
+                canChange = true;
+                return;
+            }
         }
 
-        
-      else 
-      {
-      Debug.Log("You can't make that move");
-      }
+        if (yPos > 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1))
+        {
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos - 1].GetComponent<Owner>().OwnedByMary == true)
+            {
+                canChange = true;
+                return;
+            }
+        }
+        else
+        {
+            Debug.Log("You can't make that move");
+        }
     }
-     void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
+
+    void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
     {
         OwnedByEnemy = false;
         OwnedByMary = false;
         tile.sprite = neutral;
-        gameScript.marysTempPoints =0;
-        gameScript.enemyTempPoints =0;
-        Spelplan.GetComponent<Spelplan>().gridArray[0,2].GetComponent<Owner>().canChange=true;
+        gameScript.marysTempPoints = 0;
+        gameScript.enemyTempPoints = 0;
+        Spelplan.GetComponent<Spelplan>().gridArray[0, 2].GetComponent<Owner>().canChange = true;
     }
+
     public void resetMary() //Todo, when you use your tiles, reset your tiles, subtract the number and eventual modifiers from the enemy, et cetera...
     {
         OwnedByMary = false;
@@ -153,6 +150,6 @@ public class Owner : MonoBehaviour
     public void resetEnemy() //Todo...
     {
         OwnedByEnemy = false;
-       tile.sprite = neutral;
+        tile.sprite = neutral;
     }
 }
