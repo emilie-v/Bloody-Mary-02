@@ -28,9 +28,9 @@ public class Owner : MonoBehaviour
         gc = GameObject.FindGameObjectWithTag("Player");
         gameScript = gc.GetComponent<GameControl>();
 
-        pc = Resources.Load<Sprite>("Sprites/Marys");
-        enemys = Resources.Load<Sprite>("Sprites/enemy");
-        neutral = Resources.Load<Sprite>("Sprites/neutral");
+        pc = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
+        enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+        neutral = Resources.Load<Sprite>("Sprites/Board_Tile");
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 

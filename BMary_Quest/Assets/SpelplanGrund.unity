@@ -524,6 +524,8 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 773677183}
+  marysMaxHealth: 20
+  enemyMaxHealth: 20
   marysHealth: 20
   enemyHealth: 20
   playerTurn: 0
@@ -551,6 +553,14 @@ PrefabInstance:
     - target: {fileID: 290837677, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 491
+      objectReference: {fileID: 0}
+    - target: {fileID: 290837678, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: maxBlood
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 290837678, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: currentBlood
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 869130309, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_AnchoredPosition.x

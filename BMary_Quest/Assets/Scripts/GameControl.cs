@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour
     public int enemyTempPoints;
     public GameObject Spelplan;
 
+    public int marysMaxHealth = 20;
+    public int enemyMaxHealth = 20;
     public int marysHealth = 20; //kanske ska ha standardvärde + eventuell staff-modifier? Eller kommer hälsan med staven så att säga?
     public int enemyHealth = 20;
 
