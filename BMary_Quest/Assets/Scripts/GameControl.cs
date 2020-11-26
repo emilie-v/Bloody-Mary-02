@@ -21,29 +21,21 @@ public class GameControl : MonoBehaviour
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 
-    void Update()
-    {
-        //Avsluta din runda. Gör dock inget nu. 0 = Mary 1 = enemy
-        if (Input.GetKeyDown(KeyCode.E)) //end-turn utan effekt.
+    //End your turn
+    public void EndTurn()
+    {   //Avsluta din runda. Gör dock inget nu. 0 = Mary 1 = enemy
+        if (playerTurn == 0) 
         {
-            if (playerTurn == 0)
-            {
-                playerTurn = 1;
-            }
-            else
-            {
-                playerTurn = 0;
-            }
+            playerTurn = 1;
         }
-        //Cash-Out
-        if (Input.GetKeyDown(KeyCode.G)) 
+        else
         {
-            CashOut(playerTurn);
+            playerTurn = 0;
         }
     }
 
     //Cash-Out funktion
-    void CashOut(int playerTurn) 
+    public void CashOut(int playerTurn) 
     {
         //Marys runda om man trycker cash out  = då tar enemy damage 
         if (playerTurn == 0)

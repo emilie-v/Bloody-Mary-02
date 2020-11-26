@@ -134,7 +134,7 @@ public class Owner : MonoBehaviour
     }
 
     //reset methods
-    void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
+    public void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
     {
         OwnedByEnemy = false;
         OwnedByMary = false;

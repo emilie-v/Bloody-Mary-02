@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
-
+    /*
     public void StartDialogue(Dialogue dialogue)
     {
         if (!started)
@@ -39,12 +39,12 @@ public class DialogueManager : MonoBehaviour
             characterLine.text = "";
         }
 
-       /* Debug.Log("Starting conversation with " + dialogue.name);*/
+       Debug.Log("Starting conversation with " + dialogue.name);
 
 
 
         dialogueLine++;
-    }
+    }*/
 
 
 }
