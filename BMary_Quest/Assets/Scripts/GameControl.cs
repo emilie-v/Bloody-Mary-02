@@ -40,7 +40,7 @@ public class GameControl : MonoBehaviour
             }
         } 
 
-        if (Input.GetKeyDown(KeyCode.G)) //Testar med arrayen...update, onödig kod när väl arrayen nu fungerar, sparar den än så länge, whats the harm?
+        if (Input.GetKeyDown(KeyCode.G)) //Cash-Out
         {
             UseScore(playerTurn);
         }
@@ -50,7 +50,7 @@ public class GameControl : MonoBehaviour
 
 
 
-    void UseScore(int playerTurn)  //To(rea)Do(r).....no call for it yet, possibly the start of doing damage etc...
+    void UseScore(int playerTurn)  //Cash-Out funktion
     {
         if(playerTurn==0)
         {
