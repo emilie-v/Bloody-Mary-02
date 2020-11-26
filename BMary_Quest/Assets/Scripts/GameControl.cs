@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
-{
+{//TODO döp om denna class till end turn/cashout
     public int marysTempPoints;
     private int Char;
     public int enemyTempPoints;
@@ -14,20 +14,16 @@ public class GameControl : MonoBehaviour
 
     public int playerTurn;
 
-    // Start is called before the first frame update
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Debug.Log("spelplanens storlek i x-led " + Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0)
+        //Avsluta din runda. Gör dock inget nu. 0 = Mary 1 = enemy
         if (Input.GetKeyDown(KeyCode.E)) //end-turn utan effekt.
         {
-            Debug.Log("Mary äger " + marysTempPoints + " Brickor");
-            Debug.Log("Fienden äger " + enemyTempPoints + " Brickor");
             if (playerTurn == 0)
             {
                 playerTurn = 1;
@@ -40,18 +36,20 @@ public class GameControl : MonoBehaviour
         //Cash-Out
         if (Input.GetKeyDown(KeyCode.G)) 
         {
-            UseScore(playerTurn);
+            CashOut(playerTurn);
         }
     }
 
     //Cash-Out funktion
-    void UseScore(int playerTurn) 
+    void CashOut(int playerTurn) 
     {
+        //Marys runda om man trycker cash out  = då tar enemy damage 
         if (playerTurn == 0)
         {
             enemyHealth -= marysTempPoints;
             marysTempPoints = 0;
 
+            //resettar de brickor som man cashat ut
             for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
             {
                 for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
@@ -64,6 +62,7 @@ public class GameControl : MonoBehaviour
             }
         }
 
+        //Enemys rund om man trycker cash out = då tar enemy damage.
         else if (playerTurn == 1)
         {
             marysHealth -= enemyTempPoints;

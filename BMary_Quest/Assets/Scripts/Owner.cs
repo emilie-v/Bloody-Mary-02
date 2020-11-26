@@ -21,7 +21,7 @@ public class Owner : MonoBehaviour
     public GameObject gc;
     public GameControl gameScript;
     public GameObject Spelplan;
-    // Start is called before the first frame update
+
     void Start()
     {
         tile = GetComponent<SpriteRenderer>();
@@ -34,7 +34,6 @@ public class Owner : MonoBehaviour
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -45,6 +44,7 @@ public class Owner : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //spelare 2(enemy) controller
         if (Input.GetKey(KeyCode.LeftShift)) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
         {
             if (specialState == 2)
@@ -87,7 +87,8 @@ public class Owner : MonoBehaviour
         }
     }
 
-    void checkNeighbours() //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
+    //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
+    void checkNeighbours() 
     {
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
@@ -132,6 +133,7 @@ public class Owner : MonoBehaviour
         }
     }
 
+    //reset methods
     void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
     {
         OwnedByEnemy = false;

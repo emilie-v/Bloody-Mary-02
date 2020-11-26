@@ -17,11 +17,12 @@ public class Spelplan : MonoBehaviour
     private int enemyStartY = 2;
 
     void Start()
-    {
+    {//behöver ev inte ha?
         GameObject woodsquare = (GameObject)Instantiate(Resources.Load("Standardboard"));
         GameObject temp = GameObject.Find("Spelplan");
         gridArray = new GameObject[width, height];
 
+        //skapar gameobjects (squares)
         for (int x = 0; x < gridArray.GetLength(0); x++)
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
