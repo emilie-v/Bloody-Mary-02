@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameBoard.unity
     guid: 2015462470a6406498a1e0feee008704
+  - enabled: 1
+    path: Assets/Scenes/ChooseEnemy.unity
+    guid: cc874ab18ca8256459b8182fc2b63d06
   m_configObjects: {}

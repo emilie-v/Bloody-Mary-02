@@ -9,8 +9,6 @@ public class GUIManager : MonoBehaviour
     public GameObject restartTab;
     public GameObject exitGame;
 
-    public Owner owner;
-
     public GameControl gameControl;
     public int cashOutStatus;
 
@@ -42,9 +40,15 @@ public class GUIManager : MonoBehaviour
 
     public void RestartButton()
     {
-      //  owner.resetBoard();
-       // owner.resetMary();
-       // owner.resetEnemy();
+
+        Owner[] owners = FindObjectsOfType<Owner>();
+
+        foreach (Owner tile in owners)
+        {
+            tile.resetBoard();
+            tile.resetMary();
+            tile.resetEnemy();
+        }
     }
 
     public void ExitGameButton()
