@@ -23,6 +23,7 @@ public class Owner : MonoBehaviour
     public GameObject gc;
     public GameControl gameControl;
     public GameObject Spelplan;
+    private Boardpiece boardpiece;
 
     void Start()
     {
@@ -42,57 +43,63 @@ public class Owner : MonoBehaviour
         {
             resetBoard();
         }
+
+        ShowCanChange();
     }
 
     private void OnMouseDown()
     {
-        //spelare 2(enemy) controller
-        if (gameControl.playerTurn == 1) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
+        if (gameControl.playerMoves > 0)
         {
-            if (specialState == 2)
+            //spelare 2(enemy) controller
+            if (gameControl.playerTurn == 1) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
             {
-                owned = (int)Tile_State.player2;
-                gameControl.enemyTempPoints++;
-                canChange = false;
-            }
-            else
-            {
-                checkNeighbours();
-                if (owned == 0 && canChange)
+                if (specialState == 2)
                 {
                     owned = (int)Tile_State.player2;
                     gameControl.enemyTempPoints++;
                     canChange = false;
                 }
+                else
+                {
+                    CheckNeighbours();
+                    if (owned == 0 && canChange)
+                    {
+                        owned = (int)Tile_State.player2;
+                        gameControl.enemyTempPoints++;
+                        canChange = false;
+                    }
+                }
             }
-        }
-        else if (gameControl.playerTurn == 0)
-        {
-            if (specialState == 1)
+            else if (gameControl.playerTurn == 0)
             {
-                owned = (int)Tile_State.player1;
-                gameControl.marysTempPoints++;
-                canChange = false;
-            }
-            else
-            {
-                checkNeighbours();
-                if (owned == 0 && canChange)
+                if (specialState == 1)
                 {
                     owned = (int)Tile_State.player1;
                     gameControl.marysTempPoints++;
                     canChange = false;
                 }
+                else
+                {
+                    CheckNeighbours();
+                    if (owned == 0 && canChange)
+                    {
+                        owned = (int)Tile_State.player1;
+                        gameControl.marysTempPoints++;
+                        canChange = false;
+                    }
+                }
             }
-        }
-        else
-        {
-            Debug.Log("Turn Order Error");
+            else
+            {
+                Debug.Log("Turn Order Error");
+            }
+            gameControl.playerMoves--;
         }
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
-    void checkNeighbours()
+    void CheckNeighbours()
     {
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
@@ -131,10 +138,6 @@ public class Owner : MonoBehaviour
                 return;
             }
         }
-        else
-        {
-            Debug.Log("You can't make that move");
-        }
     }
 
     //reset methods
@@ -158,6 +161,24 @@ public class Owner : MonoBehaviour
         if (owned == (int)Tile_State.player2)
         {
             owned = 0;
+        }
+    }
+
+    private void ShowCanChange()
+    {
+        canChange = false;
+        CheckNeighbours();
+        if (owned == 0 && canChange)
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else if (canChange)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else  if (canChange == false)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }

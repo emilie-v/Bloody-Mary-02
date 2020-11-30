@@ -11,6 +11,7 @@ public class GameControl : MonoBehaviour
     public int enemyTempPoints;
     public GameObject Spelplan;
     private Owner owner;
+    private Boardpiece boardpiece;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
@@ -18,13 +19,14 @@ public class GameControl : MonoBehaviour
     public int enemyHealth = 20;
 
     public int playerTurn;
-    private int playerMoves;
+    public int playerMoves;
 
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
-        playerTurn = 0/*(int)Random.Range(0, 2)*/;
+        playerTurn = 0; //(int)Random.Range(0, 2)
+        playerMoves = 1;
     }
 
     //End your turn
@@ -33,12 +35,12 @@ public class GameControl : MonoBehaviour
         if (playerTurn == 0) 
         {
             playerTurn = 1;
-            playerMoves = 1;
+            TurnChange();
         }
         else
         {
             playerTurn = 0;
-            playerMoves = 1;
+            TurnChange();
         }
     }
 
@@ -83,6 +85,18 @@ public class GameControl : MonoBehaviour
         else
         {
             Debug.Log("This should not happen!");
+        }
+    }
+
+    private void TurnChange()
+    {
+        playerMoves = 1;
+        for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+        {
+            for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+            {
+                Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().canChange = false;
+            }
         }
     }
 }

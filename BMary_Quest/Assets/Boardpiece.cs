@@ -8,16 +8,20 @@ public class Boardpiece : MonoBehaviour
     public Sprite mary;
     public Sprite enemys;
     public Sprite nothing;
+
+    private SpriteRenderer tile;
+
+    private GameControl gameControl;
     // Start is called before the first frame update
     void Start()
     {
-    piece= GetComponent<SpriteRenderer>();
+    piece = GetComponent<SpriteRenderer>();
     mary = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
     enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");  
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(GetComponentInParent<Owner>().owned == (int)Tile_State.Empty) 
        piece.sprite=nothing;
