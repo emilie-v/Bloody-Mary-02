@@ -14,8 +14,13 @@ public class GUIManager : MonoBehaviour
     public GameControl gameControl;
     public int cashOutStatus;
 
+    //UI Text
     private Text playerBloodPointsText;
     private Text enemyBloodPointsText;
+    
+    //UI Fill Bars
+    private Image playerBloodPointsFilling;
+    private Image enemyBloodPointsFilling;
 
     private void Awake()
     {
@@ -31,6 +36,9 @@ public class GUIManager : MonoBehaviour
     {
         playerBloodPointsText = GameObject.Find("Player_BloodPoint_Text").GetComponent<Text>();
         enemyBloodPointsText = GameObject.Find("Enemy_BloodPoint_Text").GetComponent<Text>();
+
+        playerBloodPointsFilling = GameObject.Find("Player_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
+        enemyBloodPointsFilling = GameObject.Find("Enemy_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
     }
 
     public void CashOutButton()
@@ -77,5 +85,8 @@ public class GUIManager : MonoBehaviour
     {
         playerBloodPointsText.text = gameControl.marysHealth.ToString();
         enemyBloodPointsText.text = gameControl.enemyHealth.ToString();
+
+        playerBloodPointsFilling.fillAmount = (float) gameControl.marysHealth / (float) gameControl.marysMaxHealth;
+        enemyBloodPointsFilling.fillAmount = (float) gameControl.enemyHealth / (float) gameControl.enemyMaxHealth;
     }
 }
