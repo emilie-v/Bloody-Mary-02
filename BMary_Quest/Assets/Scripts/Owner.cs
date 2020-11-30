@@ -51,7 +51,7 @@ public class Owner : MonoBehaviour
             {
                 OwnedByEnemy = true;
                 gameScript.enemyTempPoints++;
-                tile.sprite = enemys;
+                //tile.sprite = enemys;
                 canChange = false;
             }
 
@@ -61,7 +61,7 @@ public class Owner : MonoBehaviour
             {
                 OwnedByEnemy = true;
                 gameScript.enemyTempPoints++;
-                tile.sprite = enemys;
+                //tile.sprite = enemys;
             }
         }
         else
@@ -70,7 +70,7 @@ public class Owner : MonoBehaviour
             {
                 OwnedByMary = true;
                 gameScript.marysTempPoints++;
-                tile.sprite = pc;
+                //tile.sprite = pc;
                 canChange = false;
             }
             else
@@ -80,7 +80,7 @@ public class Owner : MonoBehaviour
                 {
                     OwnedByMary = true;
                     gameScript.marysTempPoints++;
-                    tile.sprite = pc;
+                   // tile.sprite = pc;
                     canChange = false;
                 }
             }
