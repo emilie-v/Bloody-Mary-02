@@ -12,6 +12,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Boardpiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
       </list>
     </option>
   </component>

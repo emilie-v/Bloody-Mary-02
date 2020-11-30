@@ -6,8 +6,10 @@ public class Owner : MonoBehaviour
 {
     public int xPos;
     public int yPos;
-    public bool OwnedByMary = false;
-    public bool OwnedByEnemy = false;
+
+    public int owned;
+    //public bool OwnedByMary = false;
+    //public bool OwnedByEnemy = false;
     public bool canChange = false;
     public int specialState;
     /* 
@@ -19,14 +21,14 @@ public class Owner : MonoBehaviour
     public Sprite enemys;
     public Sprite neutral;
     public GameObject gc;
-    public GameControl gameScript;
+    public GameControl gameControl;
     public GameObject Spelplan;
 
     void Start()
     {
         tile = GetComponent<SpriteRenderer>();
         gc = GameObject.FindGameObjectWithTag("Player");
-        gameScript = gc.GetComponent<GameControl>();
+        gameControl = gc.GetComponent<GameControl>();
 
         pc = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
         enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
@@ -45,56 +47,58 @@ public class Owner : MonoBehaviour
     private void OnMouseDown()
     {
         //spelare 2(enemy) controller
-        if (Input.GetKey(KeyCode.LeftShift)) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
+        if (gameControl.playerTurn == 1) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
         {
             if (specialState == 2)
             {
-                OwnedByEnemy = true;
-                gameScript.enemyTempPoints++;
-                //tile.sprite = enemys;
-                canChange = false;
-            }
-
-            //else check enemyNeighbours();
-            //pseudokod inc...If it aint The enemys starting tile, check if any neighbours has a tile with Enemy Ownership. I.E if specialstate !2, then run CheckEnemyNeighbours()  som nedan. Special state is set in "spelplan" on init for mary.
-            if (OwnedByMary != true && OwnedByEnemy != true /*och can change för fiende, nu funkar den för allt!*/)
-            {
-                OwnedByEnemy = true;
-                gameScript.enemyTempPoints++;
-                //tile.sprite = enemys;
-            }
-        }
-        else
-        {
-            if (specialState == 1)
-            {
-                OwnedByMary = true;
-                gameScript.marysTempPoints++;
-                //tile.sprite = pc;
+                owned = (int)Tile_State.player2;
+                gameControl.enemyTempPoints++;
                 canChange = false;
             }
             else
             {
                 checkNeighbours();
-                if (OwnedByMary != true && OwnedByEnemy != true && canChange == true)
+                if (owned == 0 && canChange)
                 {
-                    OwnedByMary = true;
-                    gameScript.marysTempPoints++;
-                   // tile.sprite = pc;
+                    owned = (int)Tile_State.player2;
+                    gameControl.enemyTempPoints++;
                     canChange = false;
                 }
             }
         }
+        else if (gameControl.playerTurn == 0)
+        {
+            if (specialState == 1)
+            {
+                owned = (int)Tile_State.player1;
+                gameControl.marysTempPoints++;
+                canChange = false;
+            }
+            else
+            {
+                checkNeighbours();
+                if (owned == 0 && canChange)
+                {
+                    owned = (int)Tile_State.player1;
+                    gameControl.marysTempPoints++;
+                    canChange = false;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Turn Order Error");
+        }
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
-    void checkNeighbours() 
+    void checkNeighbours()
     {
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
         {
             //Temp variabel Vi skulle kunna göra det som är OwnedbyMary till en variabel som går efter state!
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().OwnedByMary == true) 
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
             {
                 canChange = true;
                 return;
@@ -103,7 +107,7 @@ public class Owner : MonoBehaviour
 
         if (xPos > 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0))
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos - 1, yPos].GetComponent<Owner>().OwnedByMary == true)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos - 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
             {
                 canChange = true;
                 return;
@@ -112,7 +116,7 @@ public class Owner : MonoBehaviour
 
         if (yPos >= 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1) - 1)
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos + 1].GetComponent<Owner>().OwnedByMary == true)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos + 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
             {
                 canChange = true;
                 return;
@@ -121,7 +125,7 @@ public class Owner : MonoBehaviour
 
         if (yPos > 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1))
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos - 1].GetComponent<Owner>().OwnedByMary == true)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos - 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
             {
                 canChange = true;
                 return;
@@ -136,21 +140,31 @@ public class Owner : MonoBehaviour
     //reset methods
     public void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
     {
-        OwnedByEnemy = false;
-        OwnedByMary = false;
+        owned = 0;
         tile.sprite = neutral;
-        gameScript.marysTempPoints = 0;
-        gameScript.enemyTempPoints = 0;
+        gameControl.marysTempPoints = 0;
+        gameControl.enemyTempPoints = 0;
     }
 
     public void resetMary() //Todo, when you use your tiles, reset your tiles, subtract the number and eventual modifiers from the enemy, et cetera...
     {
-        OwnedByMary = false;
-        tile.sprite = neutral;
+        if (owned == (int)Tile_State.player1)
+        {
+            owned = 0;
+        }
     }
     public void resetEnemy() //Todo...
     {
-        OwnedByEnemy = false;
-        tile.sprite = neutral;
+        if (owned == (int)Tile_State.player2)
+        {
+            owned = 0;
+        }
     }
+}
+
+public enum Tile_State : int
+{
+    Empty, // = 0
+    player1, // = 1
+    player2 // = 2
 }

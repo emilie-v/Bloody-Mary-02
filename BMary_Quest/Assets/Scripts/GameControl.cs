@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour
 {//TODO döp om denna class till end turn/cashout
@@ -8,6 +10,7 @@ public class GameControl : MonoBehaviour
     private int Char;
     public int enemyTempPoints;
     public GameObject Spelplan;
+    private Owner owner;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
@@ -15,10 +18,13 @@ public class GameControl : MonoBehaviour
     public int enemyHealth = 20;
 
     public int playerTurn;
+    private int playerMoves;
 
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
+
+        playerTurn = 0/*(int)Random.Range(0, 2)*/;
     }
 
     //End your turn
@@ -27,10 +33,12 @@ public class GameControl : MonoBehaviour
         if (playerTurn == 0) 
         {
             playerTurn = 1;
+            playerMoves = 1;
         }
         else
         {
             playerTurn = 0;
+            playerMoves = 1;
         }
     }
 
@@ -48,7 +56,7 @@ public class GameControl : MonoBehaviour
             {
                 for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                 {
-                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().OwnedByMary == true)
+                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                     {
                         Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                     }
@@ -65,7 +73,7 @@ public class GameControl : MonoBehaviour
             {
                 for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                 {
-                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().OwnedByEnemy == true)
+                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                     {
                         Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                     }

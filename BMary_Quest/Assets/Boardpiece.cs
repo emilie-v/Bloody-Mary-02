@@ -19,13 +19,13 @@ public class Boardpiece : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GetComponentInParent<Owner>().OwnedByMary!=true && GetComponentInParent<Owner>().OwnedByEnemy!=true) 
+        if(GetComponentInParent<Owner>().owned == (int)Tile_State.Empty) 
        piece.sprite=nothing;
 
-       if(GetComponentInParent<Owner>().OwnedByMary==true) 
+       if(GetComponentInParent<Owner>().owned == (int)Tile_State.player1) 
        piece.sprite=mary;
 
-       if(GetComponentInParent<Owner>().OwnedByEnemy==true)
+       if(GetComponentInParent<Owner>().owned == (int)Tile_State.player2)
        piece.sprite=enemys;
     }
 }

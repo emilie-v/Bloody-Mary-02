@@ -33,11 +33,13 @@ public class Spelplan : MonoBehaviour
                 if (x == maryStartX && y == maryStartY)
                 {
                     gridArray[x, y].GetComponent<Owner>().specialState = 1;
+                    gridArray[x, y].GetComponent<Owner>().owned = 1;
                 }
 
                 if (x == enemyStartX && y == enemyStartY)
                 {
                     gridArray[x, y].GetComponent<Owner>().specialState = 2;
+                    gridArray[x, y].GetComponent<Owner>().owned = 2;
                 }
 
                 gridArray[x, y].GetComponent<Owner>().xPos = x;
