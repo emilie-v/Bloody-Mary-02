@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Testing : MonoBehaviour
+public class MirrorStaff : MonoBehaviour
 {
-    // Start is called before the first frame update
+    int bloodPoints = 5;
+    private GameControl gameControl;
+
+
     void Start()
     {
-        
+       gameControl.marysMaxHealth += bloodPoints; 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
