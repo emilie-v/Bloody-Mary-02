@@ -81,7 +81,7 @@ public class GUIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void UpdateBloodPoints()
+    private void UpdateBloodPoints()
     {
         playerBloodPointsText.text = gameControl.marysHealth.ToString();
         enemyBloodPointsText.text = gameControl.enemyHealth.ToString();
