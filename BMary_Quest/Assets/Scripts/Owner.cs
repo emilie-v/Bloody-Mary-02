@@ -141,7 +141,6 @@ public class Owner : MonoBehaviour
         tile.sprite = neutral;
         gameScript.marysTempPoints = 0;
         gameScript.enemyTempPoints = 0;
-        Spelplan.GetComponent<Spelplan>().gridArray[0, 2].GetComponent<Owner>().canChange = true;
     }
 
     public void resetMary() //Todo, when you use your tiles, reset your tiles, subtract the number and eventual modifiers from the enemy, et cetera...

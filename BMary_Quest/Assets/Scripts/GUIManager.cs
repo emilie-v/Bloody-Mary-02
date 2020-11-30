@@ -19,7 +19,7 @@ public class GUIManager : MonoBehaviour
 
     public void CashOutButton()
     {
-        gameControl.CashOut(cashOutStatus);
+        gameControl.CashOut(gameControl.playerTurn);
     }
 
     public void endTurnButton()
