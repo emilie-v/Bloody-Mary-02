@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
@@ -12,14 +14,29 @@ public class GUIManager : MonoBehaviour
     public GameControl gameControl;
     public int cashOutStatus;
 
+    private Text playerBloodPointsText;
+    private Text enemyBloodPointsText;
+
+    private void Awake()
+    {
+        GetUIComponents();
+    }
+
     private void Start()
     {
         cashOutStatus = gameControl.playerTurn;
     }
 
+    private void GetUIComponents()
+    {
+        playerBloodPointsText = GameObject.Find("Player_BloodPoint_Text").GetComponent<Text>();
+        enemyBloodPointsText = GameObject.Find("Enemy_BloodPoint_Text").GetComponent<Text>();
+    }
+
     public void CashOutButton()
     {
         gameControl.CashOut(gameControl.playerTurn);
+        UpdateBloodPoints();
     }
 
     public void endTurnButton()
@@ -54,5 +71,11 @@ public class GUIManager : MonoBehaviour
     public void ExitGameButton()
     {
         Application.Quit();
+    }
+
+    public void UpdateBloodPoints()
+    {
+        playerBloodPointsText.text = gameControl.marysHealth.ToString();
+        enemyBloodPointsText.text = gameControl.enemyHealth.ToString();
     }
 }

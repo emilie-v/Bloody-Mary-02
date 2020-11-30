@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        bloodCount.text = currentBlood.ToString();
+        //bloodCount.text = currentBlood.ToString();
 
         //testknapp för att ta ner hp
         if(Input.GetKeyDown(KeyCode.X))
