@@ -23,7 +23,7 @@ public class Boardpiece : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if(GetComponentInParent<Owner>().owned == (int)Tile_State.Empty) 
+        if(GetComponentInParent<Owner>().owned == (int)Tile_State.empty) 
        piece.sprite=nothing;
 
        if(GetComponentInParent<Owner>().owned == (int)Tile_State.player1) 
