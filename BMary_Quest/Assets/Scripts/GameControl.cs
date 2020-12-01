@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour
@@ -18,6 +20,7 @@ public class GameControl : MonoBehaviour
     public int marysHealth;
     public int enemyHealth;
 
+    public bool placeMode;
     public int playerTurn;
     public int playerMoves;
 
@@ -26,7 +29,7 @@ public class GameControl : MonoBehaviour
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
         playerTurn = 0; //(int)Random.Range(0, 2)
-        playerMoves = 1;
+        TurnStart();
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
@@ -37,12 +40,12 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerTurn = (int)Player_Turn.enemy;
-            TurnChange();
+            TurnStart();
         }
         else
         {
             playerTurn = (int)Player_Turn.mary;
-            TurnChange();
+            TurnStart();
         }
     }
 
@@ -86,7 +89,7 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void TurnChange()
+    private void TurnStart()
     {
         playerMoves = 1;
         for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
@@ -95,6 +98,23 @@ public class GameControl : MonoBehaviour
             {
                 Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().canChange = false;
             }
+        }
+
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            //Set enemy to smaller size
+            GameObject.Find("IngameGUI_Canvas/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            
+            //Set mary back to right size
+            GameObject.Find("IngameGUI_Canvas/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        } 
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            //Set enemy to smaller size
+            GameObject.Find("IngameGUI_Canvas/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            
+            //Set enemy back to right size
+            GameObject.Find("IngameGUI_Canvas/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
     }
 }

@@ -24,6 +24,7 @@ public class Owner : MonoBehaviour
     public GameControl gameControl;
     public GameObject Spelplan;
     private Boardpiece boardpiece;
+    private GUIManager guiManager;
 
     void Start()
     {
@@ -49,44 +50,42 @@ public class Owner : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameControl.playerMoves > 0)
+        if (gameControl.playerMoves > 0 && gameControl.placeMode)
         {
             //spelare 2(enemy) controller
-            if (gameControl.playerTurn == 1) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
+            if (gameControl.playerTurn == (int)Player_Turn.enemy) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
             {
                 if (specialState == 2)
                 {
                     owned = (int)Tile_State.player2;
-                    gameControl.enemyTempPoints++;
                     canChange = false;
                 }
                 else
                 {
                     CheckNeighbours();
-                    if (owned == 0 && canChange)
+                    if (owned == (int)Tile_State.empty && canChange)
                     {
                         owned = (int)Tile_State.player2;
                         gameControl.enemyTempPoints++;
-                        canChange = false;
+                        PiecePlaced();
                     }
                 }
             }
-            else if (gameControl.playerTurn == 0)
+            else if (gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 if (specialState == 1)
                 {
                     owned = (int)Tile_State.player1;
-                    gameControl.marysTempPoints++;
                     canChange = false;
                 }
                 else
                 {
                     CheckNeighbours();
-                    if (owned == 0 && canChange)
+                    if (owned == (int)Tile_State.empty && canChange)
                     {
                         owned = (int)Tile_State.player1;
                         gameControl.marysTempPoints++;
-                        canChange = false;
+                        PiecePlaced();
                     }
                 }
             }
@@ -94,7 +93,16 @@ public class Owner : MonoBehaviour
             {
                 Debug.Log("Turn Order Error");
             }
-            gameControl.playerMoves--;
+        }
+    }
+
+    private void PiecePlaced()
+    {
+        canChange = false;
+        gameControl.playerMoves--;
+        if (gameControl.playerMoves <= 0)
+        {
+            gameControl.placeMode = false;
         }
     }
 
@@ -182,20 +190,23 @@ public class Owner : MonoBehaviour
     {
         canChange = false;
         CheckNeighbours();
-        if (owned == 0 && canChange)
+        if (gameControl.placeMode)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            if (owned == 0 && canChange && gameControl.playerMoves > 0)
+            {
+                GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
         }
     }
 }
 
 public enum Tile_State : int
 {
-    Empty, // = 0
+    empty, // = 0
     player1, // = 1
     player2 // = 2
 }

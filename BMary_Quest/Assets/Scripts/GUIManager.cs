@@ -33,6 +33,11 @@ public class GUIManager : MonoBehaviour
         cashOutStatus = gameControl.playerTurn;
     }
 
+    private void Update()
+    {
+        NoMoreMoves();
+    }
+
     private void GetUIComponents()
     {
         playerBloodPointsText = GameObject.Find("Player_BloodPoint_Text").GetComponent<Text>();
@@ -82,6 +87,11 @@ public class GUIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void PlaceMarkButton()
+    {
+        gameControl.placeMode = true;
+    }
+
     private void UpdateBloodPoints()
     {
         playerBloodPointsText.text = gameControl.marysHealth.ToString();
@@ -91,5 +101,15 @@ public class GUIManager : MonoBehaviour
         enemyBloodPointsFilling.fillAmount = (float) gameControl.enemyHealth / (float) gameControl.enemyMaxHealth;
     }
 
-    
+    public void NoMoreMoves()
+    {
+        if (gameControl.playerMoves <= 0)
+        {
+            transform.GetChild(12).GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+        }
+        else if (gameControl.playerMoves > 0)
+        {
+            transform.GetChild(12).GetComponent<Image>().color = Color.white;
+        }
+    }
 }
