@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour
-{//TODO döp om denna class till end turn/cashout
+{
     public int marysTempPoints;
     private int Char;
     public int enemyTempPoints;
@@ -15,8 +15,8 @@ public class GameControl : MonoBehaviour
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
-    public int marysHealth = 20; //kanske ska ha standardvärde + eventuell staff-modifier? Eller kommer hälsan med staven så att säga?
-    public int enemyHealth = 20;
+    public int marysHealth;
+    public int enemyHealth;
 
     public int playerTurn;
     public int playerMoves;
@@ -27,34 +27,34 @@ public class GameControl : MonoBehaviour
 
         playerTurn = 0; //(int)Random.Range(0, 2)
         playerMoves = 1;
+        
+        marysHealth = marysMaxHealth;
+        enemyHealth = enemyMaxHealth;
     }
 
-    //End your turn
     public void EndTurn()
-    {   //Avsluta din runda. Gör dock inget nu. 0 = Mary 1 = enemy
-        if (playerTurn == 0) 
+    {
+        if (playerTurn == (int)Player_Turn.mary) 
         {
-            playerTurn = 1;
+            playerTurn = (int)Player_Turn.enemy;
             TurnChange();
         }
         else
         {
-            playerTurn = 0;
+            playerTurn = (int)Player_Turn.mary;
             TurnChange();
         }
     }
 
-    //Cash-Out funktion
-    public void CashOut(int playerTurn) 
+    public void CashOut() 
     {
-        //Marys runda om man trycker cash out  = då tar enemy damage 
-        if (playerTurn == 0)
+        if (playerTurn == (int)Player_Turn.mary)
         {
-            enemyHealth -= marysTempPoints;
+            enemyHealth -= marysTempPoints + 1;
             marysTempPoints = 0;
 
-            //resettar de brickor som man cashat ut
-            for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+            //Reset placed pieces
+            for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
             {
                 for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                 {
@@ -65,11 +65,9 @@ public class GameControl : MonoBehaviour
                 }
             }
         }
-
-        //Enemys rund om man trycker cash out = då tar enemy damage.
-        else if (playerTurn == 1)
+        else if (playerTurn == (int)Player_Turn.enemy)
         {
-            marysHealth -= enemyTempPoints;
+            marysHealth -= enemyTempPoints + 1;
             enemyTempPoints = 0;
             for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
             {
@@ -84,14 +82,14 @@ public class GameControl : MonoBehaviour
         }
         else
         {
-            Debug.Log("This should not happen!");
+            Debug.Log("Cashout error! This should not happen!");
         }
     }
 
     private void TurnChange()
     {
         playerMoves = 1;
-        for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+        for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
         {
             for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
             {
@@ -99,4 +97,10 @@ public class GameControl : MonoBehaviour
             }
         }
     }
+}
+
+public enum Player_Turn : int
+{
+    mary,
+    enemy
 }

@@ -12,6 +12,7 @@ public class GUIManager : MonoBehaviour
     public GameObject exitGame;
 
     public GameControl gameControl;
+    private Spelplan spelplan;
     public int cashOutStatus;
 
     //UI Text
@@ -43,7 +44,7 @@ public class GUIManager : MonoBehaviour
 
     public void CashOutButton()
     {
-        gameControl.CashOut(gameControl.playerTurn);
+        gameControl.CashOut();
         UpdateBloodPoints();
     }
 
@@ -89,4 +90,6 @@ public class GUIManager : MonoBehaviour
         playerBloodPointsFilling.fillAmount = (float) gameControl.marysHealth / (float) gameControl.marysMaxHealth;
         enemyBloodPointsFilling.fillAmount = (float) gameControl.enemyHealth / (float) gameControl.enemyMaxHealth;
     }
+
+    
 }

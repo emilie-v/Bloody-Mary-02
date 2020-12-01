@@ -37,14 +37,14 @@ public class Owner : MonoBehaviour
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             resetBoard();
         }
 
-        ShowCanChange();
+        ResetCanChange();
     }
 
     private void OnMouseDown()
@@ -164,7 +164,21 @@ public class Owner : MonoBehaviour
         }
     }
 
-    private void ShowCanChange()
+    private void ResetCanChange()
+    {
+        canChange = false;
+        CheckNeighbours();
+        if (canChange)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else  if (canChange == false)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+    
+    private void OnMouseOver()
     {
         canChange = false;
         CheckNeighbours();
@@ -172,13 +186,9 @@ public class Owner : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.green;
         }
-        else if (canChange)
+        else
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else  if (canChange == false)
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }
