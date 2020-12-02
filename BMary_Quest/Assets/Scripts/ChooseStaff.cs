@@ -10,6 +10,9 @@ public class ChooseStaff : MonoBehaviour
     Sprite mirror;
     Sprite hell;
 
+    public GameObject chooseEnemy;
+    public GameObject chooseStaff;
+
     int index = 0;
     Image currentStaff;
 
@@ -56,6 +59,12 @@ public class ChooseStaff : MonoBehaviour
             SceneManager.LoadScene("GameBoard");
         }
 
+    }
+
+    public void BackToEnemyButton()
+    {
+        chooseStaff.SetActive(false);
+        chooseEnemy.SetActive(true);
     }
 
 }
