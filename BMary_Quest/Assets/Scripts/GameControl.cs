@@ -16,6 +16,9 @@ public class GameControl : MonoBehaviour
     public GameObject Spelplan;
     private Owner owner;
     private Boardpiece boardpiece;
+    
+    [SerializeField]
+    private GameObject gameOver;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
@@ -50,6 +53,14 @@ public class GameControl : MonoBehaviour
             TurnStart();
         }
     }
+    
+    private void TurnStart()
+    {
+        playerMoves = 1;
+        ResetCanChange();
+        CharacterScaling();
+        ButtonFade();
+    }
 
     public void CashOut() 
     {
@@ -69,6 +80,8 @@ public class GameControl : MonoBehaviour
                     }
                 }
             }
+
+            GameOver();
         }
         else if (playerTurn == (int)Player_Turn.enemy)
         {
@@ -84,19 +97,31 @@ public class GameControl : MonoBehaviour
                     }
                 }
             }
+            
+            GameOver();
         }
         else
         {
             Debug.Log("Cashout error! This should not happen!");
         }
     }
-
-    private void TurnStart()
+    
+    public void GameOver()
     {
-        playerMoves = 1;
-        ResetCanChange();
-        CharacterScaling();
-        ButtonFade();
+        //TODO Make it change dynamically depending on who is vs who
+        if (marysHealth <= 0 || enemyHealth <= 0)
+        {
+            gameOver.SetActive(true);
+            
+            if (marysHealth <= 0)
+            {
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Lucifer Wins";
+            } 
+            else if (enemyHealth <= 0)
+            {
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
+            }
+        }
     }
 
     private void ResetCanChange()

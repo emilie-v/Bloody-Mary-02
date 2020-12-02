@@ -365,18 +365,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &343002639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d23817c0388e61b418750d41920f722e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &773677183
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &853304023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681661257211696158, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324767607
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +604,7 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 773677183}
+  gameOver: {fileID: 853304023}
   marysMaxHealth: 20
   enemyMaxHealth: 20
   marysHealth: 20
@@ -848,22 +843,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 736026941, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndPlayerTurnButton
-      objectReference: {fileID: 0}
+    - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 853304023}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: gameControl
       value: 
       objectReference: {fileID: 1324767608}
-    - target: {fileID: 967191429, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaceMarkPlayerButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1038446339, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CashOutPlayerButton
-      objectReference: {fileID: 0}
     - target: {fileID: 419697109348309992, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -984,87 +971,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngameGUI_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1365498202654730297, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365498202654730297, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 343002639}
-    - target: {fileID: 1365498202654730297, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CashOutEnemyButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365498202654730297, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365498202654730297, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 343002639}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaceMarkEnemyButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564978543830502608, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411930358922344385, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411930358922344385, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 343002639}
-    - target: {fileID: 4411930358922344385, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndEnemyTurnButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411930358922344385, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411930358922344385, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969255730029987469, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    - target: {fileID: 1681661257211696158, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_IsActive
       value: 0
