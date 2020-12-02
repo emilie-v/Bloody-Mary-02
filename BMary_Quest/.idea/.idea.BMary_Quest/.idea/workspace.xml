@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Board_Tile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Board_Tile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Board_Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Board_Tile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Board_Tile.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Board_Tile.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +38,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
       </list>
     </option>
   </component>

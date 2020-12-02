@@ -152,7 +152,7 @@ public class GUIManager : MonoBehaviour
         else if (gameControl.playerMoves > 0)
         {
             GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = Color.white;
-            GameObject.Find("Buttons/EnemyButtons/MarkButton").GetComponent<Image>().color = Color.white;
+            GameObject.Find("Buttons/EnemyButtons/MarkButton").GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
     }
 }
