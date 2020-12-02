@@ -13,6 +13,10 @@ public class ChooseStaff : MonoBehaviour
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
 
+    public GameObject selectWarning;
+    public GameObject cancelWarning;
+
+
     int index = 0;
     Image currentStaff;
 
@@ -49,7 +53,13 @@ public class ChooseStaff : MonoBehaviour
         {
             index = staffList.Length - 1;
         }
+
         currentStaff.sprite = staffList[index];
+    }
+
+    public void CancelStaffWarningButton()
+    {
+        selectWarning.SetActive(false);
     }
 
     public void SelectStaffButton()
@@ -57,6 +67,10 @@ public class ChooseStaff : MonoBehaviour
         if (index == 0)
         {
             SceneManager.LoadScene("GameBoard");
+        }
+        else
+        {
+            selectWarning.SetActive(true);
         }
 
     }
