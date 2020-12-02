@@ -21,8 +21,8 @@ public class ChooseEnemy : MonoBehaviour
     {
         currentEnemy = GetComponent<Image>();
 
-        lucifer = Resources.Load<Sprite>("Sprites/Enemy_Lucifer");
-        ghastella = Resources.Load<Sprite>("Sprites/Enemy_Ghastella");
+        lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
+        ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
 
         enemyList = new Sprite[2];
         enemyList[0] = lucifer;
