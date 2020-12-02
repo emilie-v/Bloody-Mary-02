@@ -14,6 +14,8 @@ public class ChooseEnemy : MonoBehaviour
     Image currentEnemy;
     public GameObject selectWarning;
     public GameObject cancelWarning;
+    public GameObject chooseEnemy;
+    public GameObject chooseStaff;
 
     void Start()
     {
@@ -58,7 +60,8 @@ public class ChooseEnemy : MonoBehaviour
     {
         if (index == 0)
         {
-            SceneManager.LoadScene("GameBoard");
+            chooseEnemy.SetActive(false);
+            chooseStaff.SetActive(true);
         }
 
         else
@@ -67,8 +70,14 @@ public class ChooseEnemy : MonoBehaviour
         }
     }
 
+
     public void CancelWarningButton()
     {
         selectWarning.SetActive(false);
+    }
+
+    public void BackToMainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
