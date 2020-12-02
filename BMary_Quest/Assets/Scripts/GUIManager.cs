@@ -43,20 +43,60 @@ public class GUIManager : MonoBehaviour
         playerBloodPointsText = GameObject.Find("Player_BloodPoint_Text").GetComponent<Text>();
         enemyBloodPointsText = GameObject.Find("Enemy_BloodPoint_Text").GetComponent<Text>();
 
-        playerBloodPointsFilling = GameObject.Find("Player_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
-        enemyBloodPointsFilling = GameObject.Find("Enemy_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
+        playerBloodPointsFilling = GameObject.Find("Player/Player_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
+        enemyBloodPointsFilling = GameObject.Find("Enemy/Enemy_BloodPointsBar").transform.GetChild(0).GetComponent<Image>();
     }
 
-    public void CashOutButton()
+    public void CashOutPlayerButton()
     {
-        gameControl.CashOut();
-        UpdateBloodPoints();
+        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        {
+            gameControl.CashOut();
+            UpdateBloodPoints();
+        }
     }
 
-    public void endTurnButton()
+    public void EndPlayerTurnButton()
     {
-        gameControl.EndTurn();
-        Debug.Log(gameControl.playerTurn);
+        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        {
+            gameControl.EndTurn();
+            Debug.Log(gameControl.playerTurn);
+        }
+    }
+    
+    public void PlaceMarkPlayerButton()
+    {
+        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        {
+            gameControl.placeMode = true;
+        }
+    }
+    
+    public void CashOutEnemyButton()
+    {
+        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            gameControl.CashOut();
+            UpdateBloodPoints();
+        }
+    }
+
+    public void EndEnemyTurnButton()
+    {
+        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            gameControl.EndTurn();
+            Debug.Log(gameControl.playerTurn);
+        }
+    }
+    
+    public void PlaceMarkEnemyButton()
+    {
+        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            gameControl.placeMode = true;
+        }
     }
 
     public void OpenMenuTab()
@@ -87,11 +127,6 @@ public class GUIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void PlaceMarkButton()
-    {
-        gameControl.placeMode = true;
-    }
-
     private void UpdateBloodPoints()
     {
         playerBloodPointsText.text = gameControl.marysHealth.ToString();
@@ -105,11 +140,11 @@ public class GUIManager : MonoBehaviour
     {
         if (gameControl.playerMoves <= 0)
         {
-            transform.GetChild(12).GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+            GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (gameControl.playerMoves > 0)
         {
-            transform.GetChild(12).GetComponent<Image>().color = Color.white;
+            GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = Color.white;
         }
     }
 }
