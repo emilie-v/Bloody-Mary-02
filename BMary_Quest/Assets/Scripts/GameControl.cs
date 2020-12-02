@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -92,6 +94,13 @@ public class GameControl : MonoBehaviour
     private void TurnStart()
     {
         playerMoves = 1;
+        ResetCanChange();
+        CharacterScaling();
+        ButtonFade();
+    }
+
+    private void ResetCanChange()
+    {
         for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
         {
             for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
@@ -99,23 +108,64 @@ public class GameControl : MonoBehaviour
                 Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().canChange = false;
             }
         }
+    }
 
+    private void CharacterScaling()
+    {
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
             
             //Set mary back to right size
-            GameObject.Find("IngameGUI_Canvas/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
             
             //Set enemy back to right size
-            GameObject.Find("IngameGUI_Canvas/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
+    }
+
+    private void ButtonFade()
+    {
+        //Player Color Block
+        ColorBlock colorBlockPlayerButtons = GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors;
+        
+        //Enemy Color Block
+        ColorBlock colorBlockEnemyButtons = GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors;
+        
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
+            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
+            
+            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
+            colorBlockEnemyButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
+        }
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
+            colorBlockPlayerButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
+            
+            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
+            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
+        }
+        
+        //Sets the colors of the Player buttons
+        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/OutCashButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/StaffButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/MarkButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
+        
+        //Sets the colors of the Enemy buttons
+        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/OutCashButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/StaffButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
+        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/MarkButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
     }
 }
 
