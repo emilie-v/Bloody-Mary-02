@@ -140,11 +140,19 @@ public class GUIManager : MonoBehaviour
     {
         if (gameControl.playerMoves <= 0)
         {
-            GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+            if (gameControl.playerTurn == (int)Player_Turn.mary)
+            {
+                GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+            }
+            else if (gameControl.playerTurn == (int)Player_Turn.enemy)
+            {
+                GameObject.Find("Buttons/EnemyButtons/MarkButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+            }
         }
         else if (gameControl.playerMoves > 0)
         {
             GameObject.Find("Buttons/PlayerButtons/MarkButton").GetComponent<Image>().color = Color.white;
+            GameObject.Find("Buttons/EnemyButtons/MarkButton").GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
     }
 }
