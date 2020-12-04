@@ -28,13 +28,17 @@ public class GameControl : MonoBehaviour
     public bool placeMode;
     public int playerTurn;
     public int playerMoves;
+    private int playerMovesPerTurn;
+    private int enemyMovesPerTurn;
 
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
         playerTurn = 0; //(int)Random.Range(0, 2)
-        TurnStart();
+        playerMovesPerTurn = 2;
+        enemyMovesPerTurn = 2;
+        TurnStart(2);
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
@@ -45,18 +49,18 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerTurn = (int)Player_Turn.enemy;
-            TurnStart();
+            TurnStart(enemyMovesPerTurn);
         }
         else
         {
             playerTurn = (int)Player_Turn.mary;
-            TurnStart();
+            TurnStart(playerMovesPerTurn);
         }
     }
     
-    private void TurnStart()
+    private void TurnStart(int MovesPerTurn)
     {
-        playerMoves = 1;
+        playerMoves = MovesPerTurn;
         ResetCanChange();
         CharacterScaling();
         ButtonFade();
