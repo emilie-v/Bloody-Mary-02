@@ -60,9 +60,8 @@ public class GameControl : MonoBehaviour
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
-        playerTurn = 0; //(int)Random.Range(0, 2)
-   
-        TurnStart(2);
+        playerTurn = 1; //(int)Random.Range(0, 2)
+        //EndTurn();
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
@@ -96,6 +95,7 @@ public class GameControl : MonoBehaviour
         ButtonFade();
         NoMoreMoves();
         checkCanCashOut();
+        UpdateBloodPoints();
     }
 
     public void CashOut() 

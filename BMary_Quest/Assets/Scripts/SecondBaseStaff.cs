@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BaseStaff : MonoBehaviour
+public class SecondBaseStaff : MonoBehaviour
 {
+    // Start is called before the first frame update
+    int passiveBloodPoints;
+
     Button abilityButton;
-    public GameControl gameControl;
+
+    GameControl gameControl;
 
     public void UseStaffAbility()
     {
         Debug.Log("Use Staff");
     }
- 
+
     void Start()
     {
         //Find player button. 
@@ -22,13 +26,9 @@ public class BaseStaff : MonoBehaviour
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
-        gameControl.playerMovesPerTurn = 3;
+        gameControl.marysMaxHealth = 25;
+        gameControl.marysHealth = 25;
 
         gameControl.EndTurn();
-    }
-
-    void Update()
-    {
-        
     }
 }
