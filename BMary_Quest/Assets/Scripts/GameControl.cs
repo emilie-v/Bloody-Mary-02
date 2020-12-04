@@ -16,6 +16,7 @@ public class GameControl : MonoBehaviour
     public GameObject Spelplan;
     private Owner owner;
     private Boardpiece boardpiece;
+    private GUIManager guiManager;
     
     [SerializeField]
     private GameObject gameOver;
@@ -30,6 +31,24 @@ public class GameControl : MonoBehaviour
     public int playerMoves;
     private int playerMovesPerTurn;
     private int enemyMovesPerTurn;
+    private bool canCashOut;
+    
+    //UI Text
+    [SerializeField] private Text playerBloodPointsText;
+    [SerializeField] private Text enemyBloodPointsText;
+    
+    //UI Fill Bars
+    [SerializeField] private Image playerBloodPointsFilling;
+    [SerializeField] private Image enemyBloodPointsFilling;
+    
+    //Mark Buttons
+    [SerializeField] private Image playerMarkButton;
+    [SerializeField] private Image enemyMarkButton;
+    
+    //CashOut Buttons
+    [SerializeField] private Image playerCashOutButton;
+    [SerializeField] private Image enemyCashOutButton;
+
 
     void Start()
     {
@@ -66,52 +85,61 @@ public class GameControl : MonoBehaviour
     private void TurnStart(int MovesPerTurn)
     {
         playerMoves = MovesPerTurn;
+        canCashOut = true;
         ResetCanChange();
         CharacterScaling();
         ButtonFade();
+        NoMoreMoves();
+        checkCanCashOut();
     }
 
     public void CashOut() 
     {
-        if (playerTurn == (int)Player_Turn.mary)
+        if (canCashOut)
         {
-            enemyHealth -= marysTempPoints + 1;
-            marysTempPoints = 0;
-
-            //Reset placed pieces
-            for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
+            if (playerTurn == (int)Player_Turn.mary)
             {
-                for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+                enemyHealth -= marysTempPoints + 1;
+                marysTempPoints = 0;
+
+                //Reset placed pieces
+                for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
                 {
-                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                    for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
-                        Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
+                        if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                        {
+                            Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
+                        }
                     }
                 }
-            }
 
-            GameOver();
-        }
-        else if (playerTurn == (int)Player_Turn.enemy)
-        {
-            marysHealth -= enemyTempPoints + 1;
-            enemyTempPoints = 0;
-            for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+                GameOver();
+            }
+            else if (playerTurn == (int)Player_Turn.enemy)
             {
-                for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+                marysHealth -= enemyTempPoints + 1;
+                enemyTempPoints = 0;
+                for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
                 {
-                    if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                    for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
-                        Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
+                        if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                        {
+                            Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
+                        }
                     }
                 }
-            }
             
-            GameOver();
-        }
-        else
-        {
-            Debug.Log("Cashout error! This should not happen!");
+                GameOver();
+            }
+            else
+            {
+                Debug.Log("Cashout error! This should not happen!");
+            }
+            UpdateBloodPoints();
+            canCashOut = false;
+            checkCanCashOut();
         }
     }
     
@@ -131,6 +159,15 @@ public class GameControl : MonoBehaviour
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
             }
         }
+    }
+    
+    public void UpdateBloodPoints()
+    {
+        playerBloodPointsText.text = marysHealth.ToString();
+        enemyBloodPointsText.text = enemyHealth.ToString();
+
+        playerBloodPointsFilling.fillAmount = (float) marysHealth / (float) marysMaxHealth;
+        enemyBloodPointsFilling.fillAmount = (float) enemyHealth / (float) enemyMaxHealth;
     }
 
     private void ResetCanChange()
@@ -200,6 +237,46 @@ public class GameControl : MonoBehaviour
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/OutCashButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/StaffButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/MarkButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
+    }
+    
+    public void NoMoreMoves()
+    {
+        if (playerMoves <= 0)
+        {
+            if (playerTurn == (int)Player_Turn.mary)
+            {
+                playerMarkButton.color = new Color(0.2f, 0.2f, 0.2f);
+            }
+            else if (playerTurn == (int)Player_Turn.enemy)
+            {
+                enemyMarkButton.color = new Color(0.2f, 0.2f, 0.2f);
+            }
+        }
+        else if (playerMoves > 0)
+        {
+            playerMarkButton.color = Color.white;
+            enemyMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
+        }
+    }
+    
+    public void checkCanCashOut()
+    {
+        if (canCashOut)
+        {
+            playerCashOutButton.color = playerMarkButton.color = Color.white;
+            enemyCashOutButton.color = playerMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
+        }
+        else if (canCashOut == false)
+        {
+            if (playerTurn == (int)Player_Turn.mary)
+            {
+                playerCashOutButton.color = new Color(0.2f, 0.2f, 0.2f);
+            }
+            else if (playerTurn == (int)Player_Turn.enemy)
+            {
+                enemyCashOutButton.color = new Color(0.2f, 0.2f, 0.2f);
+            }
+        }
     }
 
     private void HotKeys()

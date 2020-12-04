@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Owner : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class Owner : MonoBehaviour
     public GameControl gameControl;
     public GameObject Spelplan;
     private Boardpiece boardpiece;
-    private GUIManager guiManager;
-
+    
+    
     void Start()
     {
         tile = GetComponent<SpriteRenderer>();
@@ -104,6 +105,7 @@ public class Owner : MonoBehaviour
         {
             gameControl.placeMode = false;
         }
+        gameControl.NoMoreMoves();
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
