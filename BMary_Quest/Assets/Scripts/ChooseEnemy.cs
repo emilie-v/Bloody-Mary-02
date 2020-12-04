@@ -9,6 +9,7 @@ public class ChooseEnemy : MonoBehaviour
     Sprite[] enemyList;
     Sprite lucifer;
     Sprite ghastella;
+    Sprite padlock;
 
     int index = 0;
     Image currentEnemy;
@@ -16,6 +17,7 @@ public class ChooseEnemy : MonoBehaviour
     public GameObject cancelWarning;
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
+    public GameObject padlockImage;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class ChooseEnemy : MonoBehaviour
 
         lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
+        padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
 
         enemyList = new Sprite[2];
         enemyList[0] = lucifer;
@@ -79,5 +82,17 @@ public class ChooseEnemy : MonoBehaviour
     public void BackToMainMenuButton()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void Update()
+    {
+        if(index == 0)
+        {
+            padlockImage.SetActive(false);
+        }
+        else if(index == 1)
+        {
+            padlockImage.SetActive(true);
+        }
     }
 }
