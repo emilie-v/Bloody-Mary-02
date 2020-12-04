@@ -44,6 +44,11 @@ public class GameControl : MonoBehaviour
         enemyHealth = enemyMaxHealth;
     }
 
+    private void Update()
+    {
+        HotKeys();
+    }
+
     public void EndTurn()
     {
         if (playerTurn == (int)Player_Turn.mary) 
@@ -195,6 +200,68 @@ public class GameControl : MonoBehaviour
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/OutCashButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/StaffButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
         GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/MarkButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
+    }
+
+    private void HotKeys()
+    {
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (placeMode == false)
+                {
+                    placeMode = true;
+                }
+                else if (placeMode)
+                {
+                    placeMode = false;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                //Staffs
+            }
+        
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CashOut();
+            }
+        
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                EndTurn();
+            }
+        }
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                EndTurn();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                CashOut();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                //Staffs
+            }
+        
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (placeMode == false)
+                {
+                    placeMode = true;
+                }
+                else if (placeMode)
+                {
+                    placeMode = false;
+                }
+            }
+        }
     }
 }
 
