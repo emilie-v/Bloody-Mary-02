@@ -15,7 +15,7 @@ public class StaffManager : MonoBehaviour
 
         if (playerSelectedStaff == 0)
         {
-            gameObject.AddComponent(typeof(BaseStaff));
+            gameObject.AddComponent(typeof(SecondBaseStaff));
         }
     }
 
