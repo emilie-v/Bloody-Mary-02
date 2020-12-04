@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BaseStaff : MonoBehaviour
 {
     Button abilityButton;
+    private GameControl gameControl;
 
     public void UseStaffAbility()
     {
@@ -18,6 +19,12 @@ public class BaseStaff : MonoBehaviour
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
         //Connect button with function.
         abilityButton.onClick.AddListener(UseStaffAbility);
+
+        gameControl.playerMovesPerTurn = 3;
     }
 
+    void Update()
+    {
+        
+    }
 }

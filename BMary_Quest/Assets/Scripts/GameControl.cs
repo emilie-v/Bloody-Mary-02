@@ -29,8 +29,8 @@ public class GameControl : MonoBehaviour
     public bool placeMode;
     public int playerTurn;
     public int playerMoves;
-    private int playerMovesPerTurn;
-    private int enemyMovesPerTurn;
+    public int playerMovesPerTurn;
+    public int enemyMovesPerTurn;
     private bool canCashOut;
     
     //UI Text
@@ -49,14 +49,19 @@ public class GameControl : MonoBehaviour
     [SerializeField] private Image playerCashOutButton;
     [SerializeField] private Image enemyCashOutButton;
 
+    private void Awake()
+    {
+        playerMovesPerTurn = 2;
+        enemyMovesPerTurn = 2; 
+    }
+
 
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
         playerTurn = 0; //(int)Random.Range(0, 2)
-        playerMovesPerTurn = 2;
-        enemyMovesPerTurn = 2;
+   
         TurnStart(2);
         
         marysHealth = marysMaxHealth;
