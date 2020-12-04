@@ -26,8 +26,8 @@ public class SecondBaseStaff : MonoBehaviour
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
-        gameControl.marysMaxHealth = 25;
-        gameControl.marysHealth = 25;
+        gameControl.marysMaxHealth = 20;
+        gameControl.marysHealth = 20;
 
         gameControl.EndTurn();
     }
