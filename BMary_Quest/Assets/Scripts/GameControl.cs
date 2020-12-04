@@ -264,7 +264,7 @@ public class GameControl : MonoBehaviour
         if (canCashOut)
         {
             playerCashOutButton.color = playerMarkButton.color = Color.white;
-            enemyCashOutButton.color = playerMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
+            enemyCashOutButton.color = enemyMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
         }
         else if (canCashOut == false)
         {
