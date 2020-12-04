@@ -15,21 +15,10 @@ public class GUIManager : MonoBehaviour
     
     public GameControl gameControl;
     private Spelplan spelplan;
-    public int cashOutStatus;
 
-    private void Awake()
+    private void Update()
     {
-        GetUIComponents();
-    }
-
-    private void Start()
-    {
-        cashOutStatus = gameControl.playerTurn;
-    }
-
-    private void GetUIComponents()
-    {
-        
+        HotKeys();
     }
 
     public void CashOutPlayerButton()
@@ -107,5 +96,20 @@ public class GUIManager : MonoBehaviour
     public void ExitGameButton()
     {
         Application.Quit();
+    }
+
+    private void HotKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menuTab.activeSelf)
+            {
+                ContinueButton();
+            }
+            else if (!menuTab.activeSelf)
+            {
+                OpenMenuTab();
+            }
+        }
     }
 }
