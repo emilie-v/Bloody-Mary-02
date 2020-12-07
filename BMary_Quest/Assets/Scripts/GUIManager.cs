@@ -12,7 +12,7 @@ public class GUIManager : MonoBehaviour
     public GameObject restartTab;
     public GameObject exitGame;
     
-    
+    [SerializeField] private AIBehaviour aiBehaviour;
     
     public GameControl gameControl;
     private Spelplan spelplan;
@@ -49,7 +49,7 @@ public class GUIManager : MonoBehaviour
     
     public void CashOutEnemyButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
         {
             gameControl.CashOut();
         }
@@ -57,7 +57,7 @@ public class GUIManager : MonoBehaviour
 
     public void EndEnemyTurnButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
         {
             gameControl.EndTurn();
             Debug.Log(gameControl.playerTurn);
@@ -66,7 +66,7 @@ public class GUIManager : MonoBehaviour
     
     public void PlaceMarkEnemyButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0 && !aiBehaviour.AIMode)
         {
             gameControl.placeMode = true;
         }

@@ -494,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324767610}
   - component: {fileID: 1324767608}
+  - component: {fileID: 1324767609}
   m_Layer: 0
   m_Name: PController
   m_TagString: Player
@@ -516,6 +517,7 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 773677183}
+  aiBehaviour: {fileID: 1324767609}
   gameOver: {fileID: 853304023}
   marysMaxHealth: 20
   enemyMaxHealth: 20
@@ -534,6 +536,20 @@ MonoBehaviour:
   enemyMarkButton: {fileID: 320736648}
   playerCashOutButton: {fileID: 3568027160121143520}
   enemyCashOutButton: {fileID: 3568027160121143519}
+--- !u!114 &1324767609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e01aa4f5d481343a4a91c6afadd2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIMode: 0
+  spelplan: {fileID: 773677183}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
@@ -771,6 +787,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: aiBehaviour
+      value: 
+      objectReference: {fileID: 1324767609}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: gameControl
       value: 
