@@ -17,6 +17,8 @@ public class ChooseStaff : MonoBehaviour
     public GameObject selectWarning;
     public GameObject cancelWarning;
 
+    bool isUnlocked = false;
+
     public GameObject padlockImage;
 
     int index = 0;
@@ -34,8 +36,41 @@ public class ChooseStaff : MonoBehaviour
         staffList[0] = mirror;
         staffList[1] = hell;
 
-        currentStaff.sprite = staffList[index];
+        //Unlock the first staff
+        PlayerPrefs.SetInt("Staff" + index, 1);
+
+
+        // //Example, look staff 1 (hellstaff)
+        // PlayerPrefs.SetInt("Staff" + 1, 0);
+
+        // //Example, unlook staff 1 (hellstaff)
+        // PlayerPrefs.SetInt("Staff" + 1, 1);
+
+        UpdateCurrentStaff();
     }
+
+#if UNITY_EDITOR
+    void Update()
+    {
+        //Debug code for testing staff unlock
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Reset all save data! Please restart!");
+            PlayerPrefs.DeleteAll();
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("Debug Unlocked staff 1");
+            PlayerPrefs.SetInt("Staff" + 1, 1);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("Debug Unlocked staff 2");
+            PlayerPrefs.SetInt("Staff" + 2, 1);
+        }
+    }
+#endif
 
     public void RightStaffButton()
     {
@@ -45,7 +80,7 @@ public class ChooseStaff : MonoBehaviour
         {
             index = 0;
         }
-        currentStaff.sprite = staffList[index];
+        UpdateCurrentStaff();
     }
 
     public void LeftStaffButton()
@@ -57,6 +92,24 @@ public class ChooseStaff : MonoBehaviour
             index = staffList.Length - 1;
         }
 
+        UpdateCurrentStaff();
+    }
+
+    void UpdateCurrentStaff()
+    {
+        int unlocked = PlayerPrefs.GetInt("Staff" + index);
+
+        if(unlocked == 1)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+    
         currentStaff.sprite = staffList[index];
     }
 
@@ -67,15 +120,15 @@ public class ChooseStaff : MonoBehaviour
 
     public void SelectStaffButton()
     {
-        if (index == 0)
+        if (isUnlocked == true)
         {
+            StaffManager.playerSelectedStaff = index;
             SceneManager.LoadScene("GameBoard");
         }
         else
         {
             selectWarning.SetActive(true);
         }
-
     }
 
     public void BackToEnemyButton()
@@ -83,17 +136,4 @@ public class ChooseStaff : MonoBehaviour
         chooseStaff.SetActive(false);
         chooseEnemy.SetActive(true);
     }
-
-    private void Update()
-    {
-        if (index == 0)
-        {
-            padlockImage.SetActive(false);
-        }
-        else if(index == 1)
-        {
-            padlockImage.SetActive(true);
-        }
-    }
-
 }
