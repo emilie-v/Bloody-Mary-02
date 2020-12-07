@@ -120,7 +120,7 @@ public class Owner : MonoBehaviour
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
         {
             //Temp variabel Vi skulle kunna göra det som är OwnedbyMary till en variabel som går efter state!
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1 && owned == (int)Tile_State.empty)
             {
                 canChange = true;
                 return;
@@ -129,7 +129,7 @@ public class Owner : MonoBehaviour
 
         if (xPos > 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0))
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos - 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos - 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1 && owned == (int)Tile_State.empty)
             {
                 canChange = true;
                 return;
@@ -138,7 +138,7 @@ public class Owner : MonoBehaviour
 
         if (yPos >= 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1) - 1)
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos + 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos + 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1 && owned == (int)Tile_State.empty)
             {
                 canChange = true;
                 return;
@@ -147,12 +147,14 @@ public class Owner : MonoBehaviour
 
         if (yPos > 0 && yPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1))
         {
-            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos - 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1)
+            if (Spelplan.GetComponent<Spelplan>().gridArray[xPos, yPos - 1].GetComponent<Owner>().owned == gameControl.playerTurn + 1 && owned == (int)Tile_State.empty)
             {
                 canChange = true;
                 return;
             }
         }
+
+        canChange = false;
     }
 
     //reset methods

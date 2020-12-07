@@ -577,7 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e01aa4f5d481343a4a91c6afadd2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AIMode: 0
+  AIMode: 1
+  cashOutThreshhold: 0
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
 --- !u!4 &1324767610

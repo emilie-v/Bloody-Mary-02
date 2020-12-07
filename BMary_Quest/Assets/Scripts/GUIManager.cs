@@ -44,7 +44,15 @@ public class GUIManager : MonoBehaviour
     {
         if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerMoves > 0)
         {
-            gameControl.placeMode = true;
+            if (!gameControl.placeMode)
+            {
+                gameControl.placeMode = true;
+            }
+            else if (gameControl.placeMode)
+            {
+                gameControl.placeMode = false;
+            }
+            
         }
     }
 
@@ -74,7 +82,14 @@ public class GUIManager : MonoBehaviour
     {
         if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0 && !aiBehaviour.AIMode)
         {
-            gameControl.placeMode = true;
+            if (!gameControl.placeMode)
+            {
+                gameControl.placeMode = true;
+            }
+            else if (gameControl.placeMode)
+            {
+                gameControl.placeMode = false;
+            }
         }
     }
 

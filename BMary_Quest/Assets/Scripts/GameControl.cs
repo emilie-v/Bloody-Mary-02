@@ -65,8 +65,7 @@ public class GameControl : MonoBehaviour
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
 
-        playerTurn = 1; //(int)Random.Range(0, 2)
-        //EndTurn();
+        playerTurn = (int)Random.Range(0, 2);
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
@@ -97,11 +96,15 @@ public class GameControl : MonoBehaviour
         {
             playerMoves = playerMovesPerTurn;
         }
-        else
+        else if (playerTurn == (int)Player_Turn.enemy)
         {
             playerMoves = enemyMovesPerTurn;
-            StartCoroutine(aiBehaviour.ActionOrder());
+            if (aiBehaviour.AIMode)
+            {
+                aiBehaviour.Behaviour();
+            }
         }
+        
         canCashOut = true;
         ResetCanChange();
         CharacterScaling();
@@ -226,7 +229,7 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             
             //Set mary back to right size
             GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(1f, 1f, 1f);
@@ -234,7 +237,7 @@ public class GameControl : MonoBehaviour
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             
             //Set enemy back to right size
             GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(1, 1, 1);
