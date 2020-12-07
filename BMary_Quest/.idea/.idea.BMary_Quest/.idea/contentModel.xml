@@ -18,6 +18,7 @@
           <e p="GameControl.cs" t="Include" />
           <e p="GridManager.cs" t="Include" />
           <e p="GUIManager.cs" t="Include" />
+          <e p="HellStaff.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="MaryDialogue.cs" t="Include" />
           <e p="MirrorStaff.cs" t="Include" />
