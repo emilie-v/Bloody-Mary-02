@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +41,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -87,6 +88,7 @@
       <workItem from="1606811648320" duration="7242000" />
       <workItem from="1606897135207" duration="4906000" />
       <workItem from="1607069961451" duration="6175000" />
+      <workItem from="1607092845523" duration="653000" />
     </task>
     <servers />
   </component>
