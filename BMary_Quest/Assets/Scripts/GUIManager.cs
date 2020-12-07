@@ -20,12 +20,15 @@ public class GUIManager : MonoBehaviour
 
     private void Update()
     {
-        HotKeys();
+        if (!gameControl.pauseMode)
+        {
+            HotKeys();
+        }
     }
 
     public void CashOutPlayerButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        if (gameControl.playerTurn == (int)Player_Turn.mary && !gameControl.pauseMode)
         {
             gameControl.CashOut();
         }
@@ -33,16 +36,16 @@ public class GUIManager : MonoBehaviour
 
     public void EndPlayerTurnButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        if (gameControl.playerTurn == (int)Player_Turn.mary && !gameControl.pauseMode)
         {
             gameControl.EndTurn();
             Debug.Log(gameControl.playerTurn);
         }
     }
-    
+
     public void PlaceMarkPlayerButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerMoves > 0)
+        if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerMoves > 0 && !gameControl.pauseMode)
         {
             if (!gameControl.placeMode)
             {
@@ -63,7 +66,7 @@ public class GUIManager : MonoBehaviour
     
     public void CashOutEnemyButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode && !gameControl.pauseMode)
         {
             gameControl.CashOut();
         }
@@ -71,7 +74,7 @@ public class GUIManager : MonoBehaviour
 
     public void EndEnemyTurnButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode && !gameControl.pauseMode)
         {
             gameControl.EndTurn();
             Debug.Log(gameControl.playerTurn);
@@ -80,7 +83,7 @@ public class GUIManager : MonoBehaviour
     
     public void PlaceMarkEnemyButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0 && !aiBehaviour.AIMode)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0 && !aiBehaviour.AIMode && !gameControl.pauseMode)
         {
             if (!gameControl.placeMode)
             {
@@ -96,16 +99,19 @@ public class GUIManager : MonoBehaviour
     public void OpenMenuTab()
     {
         menuTab.SetActive(true);
+        gameControl.pauseMode = true;
+        gameControl.ButtonFade();
     }
 
     public void ContinueButton()
     {
         menuTab.SetActive(false);
+        gameControl.pauseMode = false;
+        gameControl.ButtonFade();
     }
 
     public void RestartButton()
     {
-
         Owner[] owners = FindObjectsOfType<Owner>();
 
         foreach (Owner tile in owners)

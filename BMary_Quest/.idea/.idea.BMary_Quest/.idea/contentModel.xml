@@ -22,6 +22,7 @@
           <e p="MainMenu.cs" t="Include" />
           <e p="MaryDialogue.cs" t="Include" />
           <e p="MirrorStaff.cs" t="Include" />
+          <e p="MouseBehaviour.cs" t="Include" />
           <e p="Owner.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="SecondBaseStaff.cs" t="Include" />

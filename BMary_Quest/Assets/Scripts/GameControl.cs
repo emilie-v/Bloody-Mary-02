@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
+using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -19,8 +20,7 @@ public class GameControl : MonoBehaviour
     private GUIManager guiManager;
     [SerializeField] private AIBehaviour aiBehaviour;
     
-    [SerializeField]
-    private GameObject gameOver;
+    [SerializeField] private GameObject gameOver;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
@@ -30,6 +30,8 @@ public class GameControl : MonoBehaviour
     private int maxMarksToPlace;
 
     public bool placeMode;
+    public bool staffMode;
+    public bool pauseMode;
     public int playerTurn;
     public int playerMoves;
     public int playerMovesPerTurn;
@@ -69,11 +71,17 @@ public class GameControl : MonoBehaviour
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
+        
+        TurnStart();
+        
     }
 
     private void Update()
     {
-        HotKeys();
+        if (!pauseMode)
+        {
+            HotKeys();
+        }
     }
 
     public void EndTurn()
@@ -181,6 +189,7 @@ public class GameControl : MonoBehaviour
             {
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
             }
+            pauseMode = true;
         }
     }
     
@@ -244,15 +253,22 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void ButtonFade()
+    public void ButtonFade()
     {
         //Player Color Block
         ColorBlock colorBlockPlayerButtons = GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors;
         
         //Enemy Color Block
         ColorBlock colorBlockEnemyButtons = GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors;
-        
-        if (playerTurn == (int)Player_Turn.mary)
+
+        if (pauseMode)
+        {
+            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
+            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
+            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
+            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
+        }
+        else if (playerTurn == (int)Player_Turn.mary)
         {
             colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
             colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);

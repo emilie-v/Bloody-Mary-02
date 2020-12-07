@@ -199,7 +199,7 @@ public class Owner : MonoBehaviour
     {
         canChange = false;
         CheckNeighbours();
-        if (gameControl.placeMode)
+        if (gameControl.placeMode && !gameControl.pauseMode)
         {
             if (owned == 0 && canChange && gameControl.playerMoves > 0)
             {
