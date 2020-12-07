@@ -7,6 +7,9 @@ public class AIBehaviour : MonoBehaviour
 {
     public bool AIMode;
     private int canChangeAmount;
+    private bool placeBricksDone;
+    private bool useStaffDone;
+    private bool cashOutDone;
     private bool readyToEndTurn;
     
     [SerializeField] private GameObject spelplan;
@@ -20,6 +23,7 @@ public class AIBehaviour : MonoBehaviour
         UseStaff();
         yield return new WaitForSeconds(0);
         CashOut();
+        
         yield return new WaitUntil(() => readyToEndTurn);
         yield return new WaitForSeconds(0.2f);
         EndTurn();
@@ -73,7 +77,7 @@ public class AIBehaviour : MonoBehaviour
         }
 
         gameControl.placeMode = false;
-        readyToEndTurn = true;
+        placeBricksDone = true;
     }
 
     private void UseStaff()
@@ -86,9 +90,17 @@ public class AIBehaviour : MonoBehaviour
         
     }
 
+    private void CanEndTurn()
+    {
+        if (placeBricksDone && useStaffDone && cashOutDone)
+        {
+            readyToEndTurn = true;
+        }
+    }
+
     private void EndTurn()
     {
-        readyToEndTurn = false;
+        placeBricksDone = false;
         gameControl.EndTurn();
     }
     //TODO First, place Bricks at random

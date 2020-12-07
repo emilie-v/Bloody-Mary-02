@@ -550,6 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIMode: 0
   spelplan: {fileID: 773677183}
+  gameControl: {fileID: 1324767608}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
