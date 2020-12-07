@@ -29,6 +29,6 @@ public class SecondBaseStaff : MonoBehaviour
         gameControl.marysMaxHealth = 25;
         gameControl.marysHealth = 25;
 
-        gameControl.EndTurn();
+        gameControl.TurnStart();
     }
 }
