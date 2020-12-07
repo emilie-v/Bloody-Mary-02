@@ -130,20 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5925508721123445600, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_Text
-      value: Mary's
-      objectReference: {fileID: 0}
     - target: {fileID: 5925508722064238848, guid: b37b1f122ce888e43bd3ac0ef8df7009,
         type: 3}
       propertyPath: m_Name
       value: CanvasMary
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722064238848, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
         type: 3}
@@ -250,55 +240,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5925508722170199156, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722170199158, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 123955055}
-    - target: {fileID: 5925508722170199158, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722495842590, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 218.61026
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722495842590, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 53.962738
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722495842590, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -187
-      objectReference: {fileID: 0}
-    - target: {fileID: 5925508722495842590, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 247.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37b1f122ce888e43bd3ac0ef8df7009, type: 3}
---- !u!114 &123955055 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5925508722170199155, guid: b37b1f122ce888e43bd3ac0ef8df7009,
-    type: 3}
-  m_PrefabInstance: {fileID: 123955054}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &225948637
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,31 +360,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 567892505287440416, guid: 112fcc19ecf338640a19cad89afa2171,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 802147964}
-    - target: {fileID: 567892505287440416, guid: 112fcc19ecf338640a19cad89afa2171,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 567892505287440423, guid: 112fcc19ecf338640a19cad89afa2171,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 567892505595277427, guid: 112fcc19ecf338640a19cad89afa2171,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 221
-      objectReference: {fileID: 0}
-    - target: {fileID: 567892505595277427, guid: 112fcc19ecf338640a19cad89afa2171,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 296
-      objectReference: {fileID: 0}
     - target: {fileID: 567892506040832397, guid: 112fcc19ecf338640a19cad89afa2171,
         type: 3}
       propertyPath: m_Pivot.x
@@ -554,18 +472,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112fcc19ecf338640a19cad89afa2171, type: 3}
---- !u!114 &802147964 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 567892505287440417, guid: 112fcc19ecf338640a19cad89afa2171,
-    type: 3}
-  m_PrefabInstance: {fileID: 802147963}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &853304023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681661257211696158, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
@@ -612,6 +518,8 @@ MonoBehaviour:
   placeMode: 0
   playerTurn: 0
   playerMoves: 0
+  playerMovesPerTurn: 0
+  enemyMovesPerTurn: 0
   playerBloodPointsText: {fileID: 3568027160121143526}
   enemyBloodPointsText: {fileID: 3568027160121143525}
   playerBloodPointsFilling: {fileID: 3568027160121143524}
