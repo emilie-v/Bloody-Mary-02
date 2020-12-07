@@ -6,7 +6,7 @@ public class Spelplan : MonoBehaviour
 {
     public int width = 5;
     public int height = 5;
-    private float size = 1;
+    private float size = 1.22f;
 
     public GameObject[,] gridArray;
 
