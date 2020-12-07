@@ -16,9 +16,6 @@ public class HellStaff : MonoBehaviour
         abilityButton.onClick.AddListener(hellStaffAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-
-
-        gameControl.TurnStart();
     }
 
     void hellStaffAbility()

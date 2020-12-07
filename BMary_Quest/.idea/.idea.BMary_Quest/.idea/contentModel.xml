@@ -8,6 +8,8 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="AIBehaviour.cs" t="Include" />
+          <e p="AudioManager.cs" t="Include" />
+          <e p="BackgroundMusic.cs" t="Include" />
           <e p="BaseStaff.cs" t="Include" />
           <e p="BloodPointsBar.cs" t="Include" />
           <e p="Boardpiece.cs" t="Include" />
@@ -26,6 +28,7 @@
           <e p="Owner.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="SecondBaseStaff.cs" t="Include" />
+          <e p="Sound.cs" t="Include" />
           <e p="Spelplan.cs" t="Include" />
           <e p="StaffManager.cs" t="Include" />
         </e>

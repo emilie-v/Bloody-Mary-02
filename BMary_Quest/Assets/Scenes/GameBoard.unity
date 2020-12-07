@@ -308,150 +308,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &240533687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532912875699886358, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &240533692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240533687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
-  markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
---- !u!61 &240533693
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240533687}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 51.06534, y: 51.06534}
-  m_EdgeRadius: 0
 --- !u!1 &320736648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8744570027570182111, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &320736653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320736648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
-  markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
---- !u!61 &320736654
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320736648}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 51.06534, y: 51.06534}
-  m_EdgeRadius: 0
---- !u!1 &391800799 stripped
+--- !u!1 &442702861 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3065254235868626201, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+  m_CorrespondingSourceObject: {fileID: 1542875674, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &391800803
+--- !u!114 &442702866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391800799}
+  m_GameObject: {fileID: 442702861}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
-  markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
---- !u!61 &391800804
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391800799}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 51.06534, y: 51.06534}
-  m_EdgeRadius: 0
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &773677183
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +507,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &930870077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 740267481, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &930870082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930870077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
+--- !u!1 &1005325081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1338291931, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1005325086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005325081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &1017989005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038446337, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
@@ -644,6 +575,7 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
   staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
+  gameControl: {fileID: 0}
 --- !u!61 &1017989010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -692,6 +624,7 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
   staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
+  gameControl: {fileID: 0}
 --- !u!61 &1029516198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -699,54 +632,6 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029516192}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 51.06534, y: 51.06534}
-  m_EdgeRadius: 0
---- !u!1 &1220447131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3620185084790052862, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1220447136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220447131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
-  markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
---- !u!61 &1220447137
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220447131}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -807,6 +692,7 @@ MonoBehaviour:
   marysHealth: 20
   enemyHealth: 20
   placeMode: 0
+  staffMode: 0
   pauseMode: 0
   playerTurn: 0
   playerMoves: 0
@@ -971,6 +857,7 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
   staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
+  gameControl: {fileID: 0}
 --- !u!61 &1693145241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -997,6 +884,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 51.06534, y: 51.06534}
   m_EdgeRadius: 0
+--- !u!1 &1736642156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1424095244, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736642161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736642156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &1877827183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 967191427, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
@@ -1019,6 +929,7 @@ MonoBehaviour:
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
   staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
+  gameControl: {fileID: 0}
 --- !u!61 &1877827189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1128,6 +1039,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1961690040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 291555735434011004, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961690045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961690040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &2024709685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1381,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391800799}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
