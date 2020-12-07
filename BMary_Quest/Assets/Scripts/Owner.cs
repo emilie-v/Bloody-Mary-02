@@ -39,6 +39,7 @@ public class Owner : MonoBehaviour
         enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
         neutral = Resources.Load<Sprite>("Sprites/Board_Tile");
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
+        mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
     }
 
     void FixedUpdate()
@@ -107,8 +108,8 @@ public class Owner : MonoBehaviour
         gameControl.UpdateMarkIndicators();
        
 
-         //mirrorStaff.lastMoveX = xPos;
-         //mirrorStaff.lastMoveY = yPos;
+         mirrorStaff.lastMoveX = xPos;
+         mirrorStaff.lastMoveY = yPos;
 
     }
 
