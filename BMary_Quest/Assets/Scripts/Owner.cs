@@ -47,6 +47,7 @@ public class Owner : MonoBehaviour
         }
 
         ResetCanChange();
+        BoardHighlight();
     }
 
     private void OnMouseDown()
@@ -198,9 +199,32 @@ public class Owner : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
             }
-            else
+            else if (owned == 0 && !canChange && gameControl.playerMoves > 0)
             {
                 GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+    }
+
+    private void BoardHighlight()
+    {
+        if (gameControl.placeMode)
+        {
+            if (owned == 0 && canChange && gameControl.playerMoves > 0)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(0.8f, 1f, 0.8f, 1f);
+            }
+            else if (owned == 0 && !canChange && gameControl.playerMoves > 0)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1f, 0.8f, 0.8f, 1f);
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
     }
