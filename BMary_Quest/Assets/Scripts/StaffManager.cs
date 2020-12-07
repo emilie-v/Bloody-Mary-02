@@ -13,7 +13,7 @@ public class StaffManager : MonoBehaviour
         //TODO: Add if statement for every staff.
         if (playerSelectedStaff == 0)
         {
-            gameObject.AddComponent(typeof(BaseStaff));
+            gameObject.AddComponent(typeof(MirrorStaff));
         }
         else if(playerSelectedStaff == 1)
         {

@@ -25,6 +25,8 @@ public class Owner : MonoBehaviour
     public GameControl gameControl;
     public GameObject Spelplan;
     private Boardpiece boardpiece;
+
+    public MirrorStaff mirrorStaff;
     
     
     void Start()
@@ -103,6 +105,11 @@ public class Owner : MonoBehaviour
         }
         gameControl.NoMoreMoves();
         gameControl.UpdateMarkIndicators();
+       
+
+         //mirrorStaff.lastMoveX = xPos;
+         //mirrorStaff.lastMoveY = yPos;
+
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 

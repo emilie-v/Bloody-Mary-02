@@ -16,6 +16,7 @@ public class GUIManager : MonoBehaviour
     
     public GameControl gameControl;
     private Spelplan spelplan;
+    private StaffManager staffmanager;
 
     private void Update()
     {
@@ -45,6 +46,11 @@ public class GUIManager : MonoBehaviour
         {
             gameControl.placeMode = true;
         }
+    }
+
+    public void ActivateStaffAbilityButton()
+    {
+        
     }
     
     public void CashOutEnemyButton()
