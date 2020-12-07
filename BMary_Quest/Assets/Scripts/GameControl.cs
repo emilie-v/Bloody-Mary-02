@@ -26,6 +26,8 @@ public class GameControl : MonoBehaviour
     public int marysHealth;
     public int enemyHealth;
 
+    private int maxMarksToPlace;
+
     public bool placeMode;
     public int playerTurn;
     public int playerMoves;
@@ -42,17 +44,19 @@ public class GameControl : MonoBehaviour
     [SerializeField] private Image enemyBloodPointsFilling;
     
     //Mark Buttons
-    [SerializeField] private Image playerMarkButton;
-    [SerializeField] private Image enemyMarkButton;
+    [SerializeField] private GameObject playerMarkButton;
+    [SerializeField] private GameObject enemyMarkButton;
     
     //CashOut Buttons
     [SerializeField] private Image playerCashOutButton;
     [SerializeField] private Image enemyCashOutButton;
+    
 
     private void Awake()
     {
         playerMovesPerTurn = 2;
-        enemyMovesPerTurn = 2; 
+        enemyMovesPerTurn = 2;
+        maxMarksToPlace = 4;
     }
 
 
@@ -96,6 +100,7 @@ public class GameControl : MonoBehaviour
         NoMoreMoves();
         checkCanCashOut();
         UpdateBloodPoints();
+        UpdateMarkIndicators();
     }
 
     public void CashOut() 
@@ -250,17 +255,17 @@ public class GameControl : MonoBehaviour
         {
             if (playerTurn == (int)Player_Turn.mary)
             {
-                playerMarkButton.color = new Color(0.2f, 0.2f, 0.2f);
+                playerMarkButton.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
-                enemyMarkButton.color = new Color(0.2f, 0.2f, 0.2f);
+                enemyMarkButton.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
             }
         }
         else if (playerMoves > 0)
         {
-            playerMarkButton.color = Color.white;
-            enemyMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
+            playerMarkButton.GetComponent<Image>().color = Color.white;
+            enemyMarkButton.GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
     }
     
@@ -268,8 +273,8 @@ public class GameControl : MonoBehaviour
     {
         if (canCashOut)
         {
-            playerCashOutButton.color = playerMarkButton.color = Color.white;
-            enemyCashOutButton.color = enemyMarkButton.color = new Color(1f, 0.1921569f, 0.1921569f);
+            playerCashOutButton.color = playerMarkButton.GetComponent<Image>().color = Color.white;
+            enemyCashOutButton.color = enemyMarkButton.GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
         else if (canCashOut == false)
         {
@@ -343,6 +348,33 @@ public class GameControl : MonoBehaviour
                     placeMode = false;
                 }
             }
+        }
+    }
+    
+    public void UpdateMarkIndicators()
+    {
+        GameObject yourMarks = playerMarkButton;
+        GameObject enemyMarks = enemyMarkButton;
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            yourMarks = playerMarkButton;
+            enemyMarks = enemyMarkButton;
+        }
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            yourMarks = enemyMarkButton;
+            enemyMarks = playerMarkButton;
+        }
+
+        for (int i = 0; i < maxMarksToPlace; i++)
+        {
+            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
+            enemyMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
+        }
+
+        for (int i = 0; i < playerMoves; i++)
+        {
+            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.white;
         }
     }
 }

@@ -107,6 +107,7 @@ public class Owner : MonoBehaviour
             gameControl.placeMode = false;
         }
         gameControl.NoMoreMoves();
+        gameControl.UpdateMarkIndicators();
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 

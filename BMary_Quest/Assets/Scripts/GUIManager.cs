@@ -13,6 +13,7 @@ public class GUIManager : MonoBehaviour
     public GameObject exitGame;
     
     
+    
     public GameControl gameControl;
     private Spelplan spelplan;
 
@@ -23,7 +24,10 @@ public class GUIManager : MonoBehaviour
 
     public void CashOutPlayerButton()
     {
-        gameControl.CashOut();
+        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        {
+            gameControl.CashOut();
+        }
     }
 
     public void EndPlayerTurnButton()
@@ -37,7 +41,7 @@ public class GUIManager : MonoBehaviour
     
     public void PlaceMarkPlayerButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.mary)
+        if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerMoves > 0)
         {
             gameControl.placeMode = true;
         }
@@ -45,7 +49,10 @@ public class GUIManager : MonoBehaviour
     
     public void CashOutEnemyButton()
     {
-        gameControl.CashOut();
+        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            gameControl.CashOut();
+        }
     }
 
     public void EndEnemyTurnButton()
@@ -59,7 +66,7 @@ public class GUIManager : MonoBehaviour
     
     public void PlaceMarkEnemyButton()
     {
-        if (gameControl.playerTurn == (int)Player_Turn.enemy)
+        if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerMoves > 0)
         {
             gameControl.placeMode = true;
         }
@@ -97,6 +104,8 @@ public class GUIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    
 
     private void HotKeys()
     {
