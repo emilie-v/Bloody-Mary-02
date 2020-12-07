@@ -10,6 +10,9 @@ public class MirrorStaff : MonoBehaviour
 
     public int lastMoveX;
     public int lastMoveY;
+    private int mirroredX;
+    private int mirroredY;
+    
 
 
 
@@ -30,6 +33,14 @@ public class MirrorStaff : MonoBehaviour
 
     void staffPower()
     {
-        Debug.Log("Y: " + lastMoveY + "X: " + lastMoveX);
+        Debug.Log( "X: " + lastMoveX + "Y: " + lastMoveY);
+        int diffX, diffY;
+        diffX=lastMoveX-4;
+        diffY=lastMoveY-2;
+
+        mirroredX= -diffX;
+        mirroredY= -diffY+2;
+        Debug.Log("MirroredX: " + mirroredX +"MirroredY: " + mirroredY);
+
     }
 }
