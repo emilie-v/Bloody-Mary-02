@@ -17,6 +17,7 @@ public class GameControl : MonoBehaviour
     private Owner owner;
     private Boardpiece boardpiece;
     private GUIManager guiManager;
+    [SerializeField] private AIBehaviour aiBehaviour;
     
     [SerializeField]
     private GameObject gameOver;
@@ -81,21 +82,30 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerTurn = (int)Player_Turn.enemy;
-            TurnStart(enemyMovesPerTurn);
+            TurnStart();
         }
         else
         {
             playerTurn = (int)Player_Turn.mary;
-            TurnStart(playerMovesPerTurn);
+            TurnStart();
         }
     }
     
-    private void TurnStart(int MovesPerTurn)
+    public void TurnStart()
     {
-        playerMoves = MovesPerTurn;
+        if (playerTurn == (int)Player_Turn.mary) 
+        {
+            playerMoves = playerMovesPerTurn;
+        }
+        else
+        {
+            playerMoves = enemyMovesPerTurn;
+            StartCoroutine(aiBehaviour.ActionOrder());
+        }
         canCashOut = true;
         ResetCanChange();
         CharacterScaling();
+        CharacterDarkening();
         ButtonFade();
         NoMoreMoves();
         checkCanCashOut();
@@ -211,6 +221,26 @@ public class GameControl : MonoBehaviour
         }
     }
 
+    private void CharacterDarkening()
+    {
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            //Set enemy to smaller size
+            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            
+            //Set mary back to right size
+            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(1f, 1f, 1f);
+        } 
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            //Set enemy to smaller size
+            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f);
+            
+            //Set enemy back to right size
+            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(1, 1, 1);
+        }
+    }
+
     private void ButtonFade()
     {
         //Player Color Block
@@ -288,6 +318,33 @@ public class GameControl : MonoBehaviour
             }
         }
     }
+    
+    public void UpdateMarkIndicators()
+    {
+        GameObject yourMarks = playerMarkButton;
+        GameObject enemyMarks = enemyMarkButton;
+        if (playerTurn == (int)Player_Turn.mary)
+        {
+            yourMarks = playerMarkButton;
+            enemyMarks = enemyMarkButton;
+        }
+        else if (playerTurn == (int)Player_Turn.enemy)
+        {
+            yourMarks = enemyMarkButton;
+            enemyMarks = playerMarkButton;
+        }
+
+        for (int i = 0; i < maxMarksToPlace; i++)
+        {
+            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
+            enemyMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
+        }
+
+        for (int i = 0; i < playerMoves; i++)
+        {
+            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.white;
+        }
+    }
 
     private void HotKeys()
     {
@@ -320,7 +377,7 @@ public class GameControl : MonoBehaviour
                 EndTurn();
             }
         }
-        else if (playerTurn == (int)Player_Turn.enemy)
+        else if (playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
         {
             if (Input.GetKeyDown(KeyCode.U))
             {
@@ -349,32 +406,17 @@ public class GameControl : MonoBehaviour
                 }
             }
         }
-    }
-    
-    public void UpdateMarkIndicators()
-    {
-        GameObject yourMarks = playerMarkButton;
-        GameObject enemyMarks = enemyMarkButton;
-        if (playerTurn == (int)Player_Turn.mary)
-        {
-            yourMarks = playerMarkButton;
-            enemyMarks = enemyMarkButton;
-        }
-        else if (playerTurn == (int)Player_Turn.enemy)
-        {
-            yourMarks = enemyMarkButton;
-            enemyMarks = playerMarkButton;
-        }
 
-        for (int i = 0; i < maxMarksToPlace; i++)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
-            enemyMarks.transform.GetChild(i).GetComponent<Image>().color = Color.black;
-        }
-
-        for (int i = 0; i < playerMoves; i++)
-        {
-            yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.white;
+            if (!aiBehaviour.AIMode)
+            {
+                aiBehaviour.AIMode = true;
+            }
+            else if (aiBehaviour.AIMode)
+            {
+                aiBehaviour.AIMode = false;
+            }
         }
     }
 }

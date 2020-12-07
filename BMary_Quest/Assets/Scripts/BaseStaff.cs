@@ -24,7 +24,7 @@ public class BaseStaff : MonoBehaviour
 
         gameControl.playerMovesPerTurn = 3;
 
-        gameControl.EndTurn();
+        gameControl.TurnStart();
     }
 
     void Update()

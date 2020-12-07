@@ -41,11 +41,6 @@ public class Owner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            resetBoard();
-        }
-
         ResetCanChange();
         BoardHighlight();
     }
@@ -98,7 +93,7 @@ public class Owner : MonoBehaviour
         }
     }
 
-    private void PiecePlaced()
+    public void PiecePlaced()
     {
         canChange = false;
         gameControl.playerMoves--;
@@ -111,7 +106,7 @@ public class Owner : MonoBehaviour
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
-    void CheckNeighbours()
+    public void CheckNeighbours()
     {
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
