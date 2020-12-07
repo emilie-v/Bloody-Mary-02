@@ -578,6 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIMode: 1
+  canChangeAmount: 0
   cashOutThreshhold: 0
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}

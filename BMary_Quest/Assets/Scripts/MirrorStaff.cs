@@ -27,7 +27,7 @@ public class MirrorStaff : MonoBehaviour
 
         gameControl.marysMaxHealth = 25;
         gameControl.marysHealth = 25;
-
+        
         gameControl.TurnStart();
     }
 

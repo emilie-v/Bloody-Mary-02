@@ -16,7 +16,7 @@ public class Spelplan : MonoBehaviour
     private int enemyStartX = 4;
     private int enemyStartY = 2;
 
-    void Start()
+    void Awake()
     {//behöver ev inte ha?
 
         GameObject woodsquare = (GameObject)Instantiate(Resources.Load("Prefabs/Board_Tile"));
