@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MouseBehaviour : MonoBehaviour
     , IPointerEnterHandler
@@ -21,7 +22,10 @@ public class MouseBehaviour : MonoBehaviour
         hoverCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Hover");
         markerCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Marker");
         staffCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Staff");
-        gameControl = GameObject.Find("PController").GetComponent<GameControl>();
+        if (SceneManager.GetActiveScene().name == "GameBoard")
+        {
+            gameControl = GameObject.Find("PController").GetComponent<GameControl>();
+        }
         
         Cursor.SetCursor(baseCursor, Vector2.zero, CursorMode.Auto);
     }
@@ -38,21 +42,25 @@ public class MouseBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if (gameControl.placeMode && gameControl.playerTurn != (int)Player_Turn.enemy)
+        if (SceneManager.GetActiveScene().name == "GameBoard")
         {
-            Cursor.SetCursor(markerCursor, Vector2.zero, CursorMode.Auto);
-            cursorNotBase = true;
+            if (gameControl.placeMode && gameControl.playerTurn != (int)Player_Turn.enemy)
+            {
+                Cursor.SetCursor(markerCursor, Vector2.zero, CursorMode.Auto);
+                cursorNotBase = true;
             
+            }
+            else if (gameControl.staffMode && gameControl.playerTurn != (int)Player_Turn.enemy)
+            {
+                Cursor.SetCursor(staffCursor, Vector2.zero, CursorMode.Auto);
+                cursorNotBase = true;
+            }
+            else if (cursorNotBase)
+            {
+                Cursor.SetCursor(baseCursor, Vector2.zero, CursorMode.Auto);
+                cursorNotBase = false;
+            }
         }
-        else if (gameControl.staffMode && gameControl.playerTurn != (int)Player_Turn.enemy)
-        {
-            Cursor.SetCursor(staffCursor, Vector2.zero, CursorMode.Auto);
-            cursorNotBase = true;
-        }
-        else if (cursorNotBase)
-        {
-            Cursor.SetCursor(baseCursor, Vector2.zero, CursorMode.Auto);
-            cursorNotBase = false;
-        }
+        
     }
 }
