@@ -18,18 +18,19 @@ public class MirrorStaff : MonoBehaviour
         //Find player button. 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
         //Connect button with function.
-        abilityButton.onClick.AddListener(staffPower);
+        abilityButton.onClick.AddListener(StaffPower);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
         gameControl.marysMaxHealth = 25;
         gameControl.marysHealth = 25;
-        
-        gameControl.TurnStart();
     }
 
-    void staffPower()
+    public void StaffPower()
     {
-        Debug.Log("Y: " + lastMoveY + "X: " + lastMoveX);
+        if (!gameControl.pauseMode)
+        {
+            Debug.Log("Y: " + lastMoveY + "X: " + lastMoveX);
+        }
     }
 }

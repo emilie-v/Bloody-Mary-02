@@ -19,8 +19,6 @@ public class HellStaff : MonoBehaviour
 
         gameControl.marysMaxHealth = 25;
         gameControl.marysHealth = 25;
-
-        gameControl.TurnStart();
     }
 
     void hellStaffAbility()

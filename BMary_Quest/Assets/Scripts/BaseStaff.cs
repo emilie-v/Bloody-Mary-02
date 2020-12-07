@@ -23,8 +23,6 @@ public class BaseStaff : MonoBehaviour
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
         gameControl.playerMovesPerTurn = 3;
-
-        gameControl.TurnStart();
     }
 
     void Update()
