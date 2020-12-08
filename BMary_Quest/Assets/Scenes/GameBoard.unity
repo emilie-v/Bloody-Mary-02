@@ -361,6 +361,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &590074179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 290837676, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &773677183
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1006340443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 869130308, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1017989005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038446337, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
@@ -770,8 +782,8 @@ MonoBehaviour:
   playerMoves: 0
   playerMovesPerTurn: 0
   enemyMovesPerTurn: 0
-  playerBloodPointsText: {fileID: 3568027160121143526}
-  enemyBloodPointsText: {fileID: 3568027160121143525}
+  playerBloodPointsText: {fileID: 1006340443}
+  enemyBloodPointsText: {fileID: 590074179}
   playerBloodPointsFilling: {fileID: 3568027160121143524}
   enemyBloodPointsFilling: {fileID: 3568027160121143523}
   playerMarkButton: {fileID: 1877827183}
@@ -1579,30 +1591,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3568027160121143525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 290837679, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3568027160121143526 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 869130311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4522758225502767400
