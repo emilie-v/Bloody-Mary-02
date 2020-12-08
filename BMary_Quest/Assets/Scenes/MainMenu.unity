@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 461655298}
   - component: {fileID: 461655297}
   - component: {fileID: 461655300}
+  - component: {fileID: 461655301}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -623,6 +624,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &461655301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461655295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548549206
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +649,7 @@ GameObject:
   - component: {fileID: 548549209}
   - component: {fileID: 548549208}
   - component: {fileID: 548549211}
+  - component: {fileID: 548549212}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -773,6 +787,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &548549212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548549206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &650493979
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +972,7 @@ GameObject:
   - component: {fileID: 830250993}
   - component: {fileID: 830250992}
   - component: {fileID: 830250995}
+  - component: {fileID: 830250996}
   m_Layer: 5
   m_Name: CreditButton
   m_TagString: Untagged
@@ -1083,6 +1110,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &830250996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830250990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857850687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1279,7 @@ GameObject:
   - component: {fileID: 941685620}
   - component: {fileID: 941685619}
   - component: {fileID: 941685622}
+  - component: {fileID: 941685623}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -1377,6 +1417,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &941685623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941685617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1246009460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1442,7 @@ GameObject:
   - component: {fileID: 1246009463}
   - component: {fileID: 1246009462}
   - component: {fileID: 1246009465}
+  - component: {fileID: 1246009466}
   m_Layer: 5
   m_Name: TutorialButton
   m_TagString: Untagged
@@ -1527,6 +1580,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1246009466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246009460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1273475121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1837,7 @@ GameObject:
   - component: {fileID: 2069570820}
   - component: {fileID: 2069570822}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ab1380a3816948b902c5db410ea48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMusicPlaying: 0
 --- !u!1 &2129782765
 GameObject:
   m_ObjectHideFlags: 0

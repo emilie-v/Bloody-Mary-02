@@ -38,9 +38,8 @@ public class AIBehaviour : MonoBehaviour
     
     private IEnumerator DefaultActionOrder()
     {
-        Debug.Log("default");
         CheckCanPlace();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.2f);
         if (!placeBricksDone)
         { 
             StartCoroutine(PlaceBricks());
@@ -67,8 +66,7 @@ public class AIBehaviour : MonoBehaviour
 
     private IEnumerator BlockedActionOrder()
     {
-        Debug.Log("blocked");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         if (!cashOutDone)
         {
             ForceCashOut();
@@ -164,7 +162,7 @@ public class AIBehaviour : MonoBehaviour
         else if (cashOutThreshhold <= 0)
         {
             gameControl.CashOut();
-            cashOutThreshhold = Random.Range(1, 5);
+            cashOutThreshhold = Random.Range(2, 5);
         }
         cashOutDone = true;
     }

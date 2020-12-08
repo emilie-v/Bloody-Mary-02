@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    public bool menuMusicPlaying;
+
     private static BackgroundMusic instance = null;
     public static BackgroundMusic Instance
     {
@@ -15,7 +17,9 @@ public class BackgroundMusic : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        menuMusicPlaying = true;
+
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
             return;
@@ -24,7 +28,17 @@ public class BackgroundMusic : MonoBehaviour
         {
             instance = this;
         }
+    }
 
-        DontDestroyOnLoad(this.gameObject);
+    public void Update()
+    {
+        if(menuMusicPlaying == false)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 }

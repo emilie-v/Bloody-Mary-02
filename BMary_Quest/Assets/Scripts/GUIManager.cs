@@ -20,10 +20,7 @@ public class GUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameControl.pauseMode)
-        {
-            HotKeys();
-        }
+        HotKeys();
     }
 
     public void CashOutPlayerButton()
@@ -39,7 +36,6 @@ public class GUIManager : MonoBehaviour
         if (gameControl.playerTurn == (int)Player_Turn.mary && !gameControl.pauseMode)
         {
             gameControl.EndTurn();
-            Debug.Log(gameControl.playerTurn);
         }
     }
 
@@ -77,7 +73,6 @@ public class GUIManager : MonoBehaviour
         if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode && !gameControl.pauseMode)
         {
             gameControl.EndTurn();
-            Debug.Log(gameControl.playerTurn);
         }
     }
     
@@ -98,16 +93,21 @@ public class GUIManager : MonoBehaviour
 
     public void OpenMenuTab()
     {
-        menuTab.SetActive(true);
-        gameControl.pauseMode = true;
-        gameControl.ButtonFade();
+        if (menuTab.activeSelf)
+        {
+            ContinueButton();
+        }
+        else if (!menuTab.activeSelf)
+        {
+            menuTab.SetActive(true);
+            gameControl.pauseMode = true;          
+        }
     }
 
     public void ContinueButton()
     {
         menuTab.SetActive(false);
         gameControl.pauseMode = false;
-        gameControl.ButtonFade();
     }
 
     public void RestartButton()
@@ -131,21 +131,12 @@ public class GUIManager : MonoBehaviour
     {
         Application.Quit();
     }
-
     
-
     private void HotKeys()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (menuTab.activeSelf)
-            {
-                ContinueButton();
-            }
-            else if (!menuTab.activeSelf)
-            {
-                OpenMenuTab();
-            }
+            OpenMenuTab();
         }
     }
 }

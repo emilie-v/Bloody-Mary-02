@@ -365,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &187582375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 252210350}
   - component: {fileID: 252210349}
   - component: {fileID: 252210352}
+  - component: {fileID: 252210353}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -606,6 +607,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &252210353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252210347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380846612
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +632,7 @@ GameObject:
   - component: {fileID: 380846615}
   - component: {fileID: 380846614}
   - component: {fileID: 380846617}
+  - component: {fileID: 380846618}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -755,6 +769,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &380846618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380846612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411342526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1027,7 @@ GameObject:
   - component: {fileID: 872561845}
   - component: {fileID: 872561844}
   - component: {fileID: 872561847}
+  - component: {fileID: 872561848}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -1137,6 +1164,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &872561848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872561842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883557418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1149771667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,6 +1916,7 @@ GameObject:
   - component: {fileID: 1196542436}
   - component: {fileID: 1196542435}
   - component: {fileID: 1196542438}
+  - component: {fileID: 1196542439}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -2013,6 +2053,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1196542439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196542433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200694673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2157,7 @@ GameObject:
   - component: {fileID: 1207994027}
   - component: {fileID: 1207994026}
   - component: {fileID: 1207994029}
+  - component: {fileID: 1207994030}
   m_Layer: 5
   m_Name: Select
   m_TagString: Untagged
@@ -2242,6 +2295,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1207994030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207994024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304004096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2320,7 @@ GameObject:
   - component: {fileID: 1304004099}
   - component: {fileID: 1304004098}
   - component: {fileID: 1304004101}
+  - component: {fileID: 1304004102}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -2392,6 +2458,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1304004102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304004096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308411515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,6 +2931,7 @@ GameObject:
   - component: {fileID: 1544257182}
   - component: {fileID: 1544257181}
   - component: {fileID: 1544257184}
+  - component: {fileID: 1544257185}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -2989,6 +3068,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1544257185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544257179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1636487534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3093,7 @@ GameObject:
   - component: {fileID: 1636487537}
   - component: {fileID: 1636487536}
   - component: {fileID: 1636487539}
+  - component: {fileID: 1636487540}
   m_Layer: 5
   m_Name: Select
   m_TagString: Untagged
@@ -3139,6 +3231,18 @@ MonoBehaviour:
   markerCursor: {fileID: 0}
   staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
+--- !u!114 &1636487540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636487534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1678590416
 GameObject:
   m_ObjectHideFlags: 0

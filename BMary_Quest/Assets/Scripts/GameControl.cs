@@ -8,6 +8,7 @@ using Button = UnityEngine.UI.Button;
 using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class GameControl : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameControl : MonoBehaviour
     private Owner owner;
     private Boardpiece boardpiece;
     private GUIManager guiManager;
+    private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
     
     [SerializeField] private GameObject gameOver;
@@ -39,8 +41,8 @@ public class GameControl : MonoBehaviour
     private bool canCashOut;
     
     //UI Text
-    [SerializeField] private Text playerBloodPointsText;
-    [SerializeField] private Text enemyBloodPointsText;
+    [SerializeField] private GameObject playerBloodPointsText;
+    [SerializeField] private GameObject enemyBloodPointsText;
     
     //UI Fill Bars
     [SerializeField] private Image playerBloodPointsFilling;
@@ -54,6 +56,10 @@ public class GameControl : MonoBehaviour
     [SerializeField] private Image playerCashOutButton;
     [SerializeField] private Image enemyCashOutButton;
     
+    //Characters
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject enemy;
+    
 
     private void Awake()
     {
@@ -66,6 +72,7 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
+        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
 
         playerTurn = (int)Random.Range(0, 2);
         
@@ -73,7 +80,8 @@ public class GameControl : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         
         TurnStart();
-        
+
+        lastMove.staffUsed = true;         
     }
 
     private void Update()
@@ -94,6 +102,7 @@ public class GameControl : MonoBehaviour
         else
         {
             playerTurn = (int)Player_Turn.mary;
+            lastMove.staffUsed = false;
             TurnStart();
         }
     }
@@ -117,7 +126,6 @@ public class GameControl : MonoBehaviour
         ResetCanChange();
         CharacterScaling();
         CharacterDarkening();
-        ButtonFade();
         NoMoreMoves();
         checkCanCashOut();
         UpdateBloodPoints();
@@ -131,6 +139,7 @@ public class GameControl : MonoBehaviour
             if (playerTurn == (int)Player_Turn.mary)
             {
                 enemyHealth -= marysTempPoints + 1;
+                enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
                 marysTempPoints = 0;
 
                 //Reset placed pieces
@@ -144,13 +153,18 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
+                
+                
 
                 GameOver();
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
                 marysHealth -= enemyTempPoints + 1;
+                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 enemyTempPoints = 0;
+                
+                //Reset placed pieces
                 for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
                 {
                     for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
@@ -161,7 +175,7 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
-            
+
                 GameOver();
             }
             else
@@ -195,8 +209,8 @@ public class GameControl : MonoBehaviour
     
     public void UpdateBloodPoints()
     {
-        playerBloodPointsText.text = marysHealth.ToString();
-        enemyBloodPointsText.text = enemyHealth.ToString();
+        playerBloodPointsText.GetComponent<Text>().text = marysHealth.ToString();
+        enemyBloodPointsText.GetComponent<Text>().text = enemyHealth.ToString();
 
         playerBloodPointsFilling.fillAmount = (float) marysHealth / (float) marysMaxHealth;
         enemyBloodPointsFilling.fillAmount = (float) enemyHealth / (float) enemyMaxHealth;
@@ -218,18 +232,18 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            enemy.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set mary back to right size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            player.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
-            //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            //Set mary to smaller size
+            player.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set enemy back to right size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            enemy.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         }
     }
 
@@ -238,64 +252,19 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+            enemy.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
             //Set mary back to right size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(1f, 1f, 1f);
+            player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+            player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
             //Set enemy back to right size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(1, 1, 1);
+            enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         }
-    }
-
-    public void ButtonFade()
-    {
-        //Player Color Block
-        ColorBlock colorBlockPlayerButtons = GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors;
-        
-        //Enemy Color Block
-        ColorBlock colorBlockEnemyButtons = GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors;
-
-        if (pauseMode)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-        }
-        else if (playerTurn == (int)Player_Turn.mary)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-            
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
-            colorBlockEnemyButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
-        }
-        else if (playerTurn == (int)Player_Turn.enemy)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
-            colorBlockPlayerButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
-            
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-        }
-        
-        //Sets the colors of the Player buttons
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/OutCashButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/StaffButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/MarkButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        
-        //Sets the colors of the Enemy buttons
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/OutCashButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/StaffButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/MarkButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
     }
     
     public void NoMoreMoves()
