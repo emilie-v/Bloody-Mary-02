@@ -1837,7 +1837,7 @@ GameObject:
   - component: {fileID: 2069570820}
   - component: {fileID: 2069570822}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1965,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444ab1380a3816948b902c5db410ea48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMusicPlaying: 0
 --- !u!1 &2129782765
 GameObject:
   m_ObjectHideFlags: 0

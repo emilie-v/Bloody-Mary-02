@@ -29,6 +29,7 @@ public class ChooseStaff : MonoBehaviour
     {
         currentStaff = GetComponent<Image>();
 
+        backgroundMusic = GameObject.Find("AudioSource").GetComponent<BackgroundMusic>();
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
