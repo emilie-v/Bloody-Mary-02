@@ -80,7 +80,8 @@ public class GameControl : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         
         TurnStart();
-        
+
+        lastMove.staffUsed = true;         
     }
 
     private void Update()

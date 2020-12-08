@@ -18,7 +18,6 @@ public class Spelplan : MonoBehaviour
 
     void Awake()
     {//behöver ev inte ha?
-
         GameObject woodsquare = (GameObject)Instantiate(Resources.Load("Prefabs/Board_Tile"));
         GameObject temp = GameObject.Find("Spelplan");
         gridArray = new GameObject[width, height];
