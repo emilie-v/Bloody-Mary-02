@@ -120,8 +120,20 @@ public class Owner : MonoBehaviour
 
         if(gameControl.playerTurn == (int)Player_Turn.enemy)
         {
-            lastMove.lastMoveX = xPos;
-            lastMove.lastMoveY = yPos;
+            for(int i=0; i<lastMove.lastMovesX.Length; i++)
+            {
+                if(lastMove.lastMovesX[i] == 6)
+                {
+                lastMove.lastMovesX[i] = xPos;
+                lastMove.lastMovesY[i] = yPos;
+                break;
+                }
+                else
+                {
+                continue;
+                }
+            }    
+
         }
     }
 

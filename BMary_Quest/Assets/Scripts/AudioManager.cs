@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
+    public static AudioManager instance = null;
 
-    public void Start()
-    {
+    AudioClip[] audioClips;
+    AudioSource soundEffect;
 
-    }
-    public enum SoundAndMusic : int
-    {
-        MainMenu
-    }
+
 }

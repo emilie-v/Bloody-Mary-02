@@ -115,6 +115,7 @@ public class GameControl : MonoBehaviour
         }
         else if (playerTurn == (int)Player_Turn.enemy)
         {
+            lastMove.resetArray();
             playerMoves = enemyMovesPerTurn;
             if (aiBehaviour.AIMode)
             {
