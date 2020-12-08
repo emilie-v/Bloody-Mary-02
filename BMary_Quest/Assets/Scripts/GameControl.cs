@@ -19,6 +19,7 @@ public class GameControl : MonoBehaviour
     private Owner owner;
     private Boardpiece boardpiece;
     private GUIManager guiManager;
+    private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
     
     [SerializeField] private GameObject gameOver;
@@ -71,6 +72,7 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
+        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
 
         playerTurn = (int)Random.Range(0, 2);
         
@@ -99,6 +101,7 @@ public class GameControl : MonoBehaviour
         else
         {
             playerTurn = (int)Player_Turn.mary;
+            lastMove.staffUsed = false;
             TurnStart();
         }
     }

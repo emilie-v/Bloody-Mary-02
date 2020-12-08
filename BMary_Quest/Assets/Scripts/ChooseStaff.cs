@@ -18,6 +18,7 @@ public class ChooseStaff : MonoBehaviour
     public GameObject cancelWarning;
 
     bool isUnlocked = false;
+    BackgroundMusic backgroundMusic;
 
     public GameObject padlockImage;
 
@@ -31,7 +32,7 @@ public class ChooseStaff : MonoBehaviour
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
-
+        
         staffList = new Sprite[2];
         staffList[0] = mirror;
         staffList[1] = hell;
@@ -122,6 +123,7 @@ public class ChooseStaff : MonoBehaviour
     {
         if (isUnlocked == true)
         {
+            backgroundMusic.menuMusicPlaying = false;
             StaffManager.playerSelectedStaff = index;
             SceneManager.LoadScene("GameBoard");
         }

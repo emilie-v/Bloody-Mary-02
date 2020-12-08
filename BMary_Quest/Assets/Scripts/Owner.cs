@@ -28,7 +28,7 @@ public class Owner : MonoBehaviour
     public GameObject Spelplan;
     private Boardpiece boardpiece;
 
-    public MirrorStaff mirrorStaff;
+    public LastMove lastMove;
     
     
     void Start()
@@ -41,7 +41,7 @@ public class Owner : MonoBehaviour
         enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
         neutral = Resources.Load<Sprite>("Sprites/Board_Tile");
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
-        mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
+        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
     }
 
     void FixedUpdate()
@@ -117,11 +117,12 @@ public class Owner : MonoBehaviour
         }
         gameControl.NoMoreMoves();
         gameControl.UpdateMarkIndicators();
-       
 
-         mirrorStaff.lastMoveX = xPos;
-         mirrorStaff.lastMoveY = yPos;
-
+        if(gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            lastMove.lastMoveX = xPos;
+            lastMove.lastMoveY = yPos;
+        }
     }
 
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
