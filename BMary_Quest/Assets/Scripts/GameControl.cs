@@ -135,6 +135,7 @@ public class GameControl : MonoBehaviour
             if (playerTurn == (int)Player_Turn.mary)
             {
                 enemyHealth -= marysTempPoints + 1;
+                enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
                 marysTempPoints = 0;
 
                 //Reset placed pieces
@@ -149,14 +150,17 @@ public class GameControl : MonoBehaviour
                     }
                 }
                 
-                enemyBloodPointsText.transform.DOShakePosition(0.4f, 7, 25, 10);
+                
 
                 GameOver();
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
                 marysHealth -= enemyTempPoints + 1;
+                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 enemyTempPoints = 0;
+                
+                //Reset placed pieces
                 for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
                 {
                     for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
@@ -168,8 +172,6 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
-                playerBloodPointsText.transform.DOShakePosition(0.4f, 7, 25, 10);
-            
                 GameOver();
             }
             else

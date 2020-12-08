@@ -21,12 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChooseEnemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChooseEnemy.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ButtonBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <workItem from="1607069961451" duration="6175000" />
       <workItem from="1607092845523" duration="653000" />
       <workItem from="1607415447748" duration="232000" />
-      <workItem from="1607415712149" duration="5667000" />
+      <workItem from="1607415712149" duration="6028000" />
     </task>
     <servers />
   </component>
