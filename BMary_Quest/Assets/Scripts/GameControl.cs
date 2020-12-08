@@ -8,6 +8,7 @@ using Button = UnityEngine.UI.Button;
 using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class GameControl : MonoBehaviour
 {
@@ -53,6 +54,10 @@ public class GameControl : MonoBehaviour
     //CashOut Buttons
     [SerializeField] private Image playerCashOutButton;
     [SerializeField] private Image enemyCashOutButton;
+    
+    //Characters
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject enemy;
     
 
     private void Awake()
@@ -115,9 +120,9 @@ public class GameControl : MonoBehaviour
         
         canCashOut = true;
         ResetCanChange();
-        CharacterScaling();
+        StartCoroutine(CharacterScaling());
         CharacterDarkening();
-        ButtonFade();
+        //ButtonFade();
         NoMoreMoves();
         checkCanCashOut();
         UpdateBloodPoints();
@@ -213,24 +218,26 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void CharacterScaling()
+    private IEnumerator CharacterScaling()
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            enemy.transform.DOScale(new Vector3(0.7f, 0.7f, 1), 0.5f);
             
             //Set mary back to right size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            player.transform.DOScale(new Vector3(1, 1, 1), 0.5f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
-            //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<RectTransform>().localScale = new Vector3(0.7f, 0.7f, 1);
+            //Set mary to smaller size
+            player.transform.DOScale(new Vector3(0.7f, 0.7f, 1), 0.5f);
             
             //Set enemy back to right size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            enemy.transform.DOScale(new Vector3(1, 1, 1), 0.5f);
         }
+
+        yield return null;
     }
 
     private void CharacterDarkening()
@@ -238,18 +245,18 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+            enemy.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.5f);
             
             //Set mary back to right size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(1f, 1f, 1f);
+            player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.5f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
-            GameObject.Find("IngameGUI_Canvas/Player/MaskPlayer/Player").GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+            player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.5f);
             
             //Set enemy back to right size
-            GameObject.Find("IngameGUI_Canvas/Enemy/MaskEnemy/Enemy").GetComponent<Image>().color = new Color(1, 1, 1);
+            enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.5f);
         }
     }
 
