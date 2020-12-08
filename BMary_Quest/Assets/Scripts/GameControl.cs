@@ -120,7 +120,7 @@ public class GameControl : MonoBehaviour
         
         canCashOut = true;
         ResetCanChange();
-        StartCoroutine(CharacterScaling());
+        //CharacterScaling();
         CharacterDarkening();
         NoMoreMoves();
         checkCanCashOut();
@@ -223,7 +223,7 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private IEnumerator CharacterScaling()
+    private void CharacterScaling()
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
@@ -241,8 +241,6 @@ public class GameControl : MonoBehaviour
             //Set enemy back to right size
             enemy.transform.DOScale(new Vector3(1, 1, 1), 0.5f);
         }
-
-        yield return null;
     }
 
     private void CharacterDarkening()
@@ -250,18 +248,18 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            enemy.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.5f);
+            enemy.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
             //Set mary back to right size
-            player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.5f);
+            player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
-            player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.5f);
+            player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
             //Set enemy back to right size
-            enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.5f);
+            enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         }
     }
     
