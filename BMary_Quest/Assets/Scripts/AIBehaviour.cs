@@ -162,7 +162,7 @@ public class AIBehaviour : MonoBehaviour
         else if (cashOutThreshhold <= 0)
         {
             gameControl.CashOut();
-            cashOutThreshhold = Random.Range(1, 5);
+            cashOutThreshhold = Random.Range(2, 5);
         }
         cashOutDone = true;
     }

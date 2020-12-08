@@ -124,7 +124,7 @@ public class GameControl : MonoBehaviour
         
         canCashOut = true;
         ResetCanChange();
-        //CharacterScaling();
+        CharacterScaling();
         CharacterDarkening();
         NoMoreMoves();
         checkCanCashOut();
@@ -232,18 +232,18 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary)
         {
             //Set enemy to smaller size
-            enemy.transform.DOScale(new Vector3(0.7f, 0.7f, 1), 0.5f);
+            enemy.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set mary back to right size
-            player.transform.DOScale(new Vector3(1, 1, 1), 0.5f);
+            player.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set mary to smaller size
-            player.transform.DOScale(new Vector3(0.7f, 0.7f, 1), 0.5f);
+            player.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set enemy back to right size
-            enemy.transform.DOScale(new Vector3(1, 1, 1), 0.5f);
+            enemy.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         }
     }
 
