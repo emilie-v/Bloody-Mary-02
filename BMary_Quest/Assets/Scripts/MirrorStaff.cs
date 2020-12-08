@@ -58,6 +58,7 @@ public class MirrorStaff : MonoBehaviour
                 {
                 Debug.Log("Using staff mirror");
                 spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
+                gameControl.marysTempPoints++;
                 }
         
             }
