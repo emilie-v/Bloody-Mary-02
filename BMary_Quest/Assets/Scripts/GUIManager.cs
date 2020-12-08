@@ -100,8 +100,7 @@ public class GUIManager : MonoBehaviour
         else if (!menuTab.activeSelf)
         {
             menuTab.SetActive(true);
-            gameControl.pauseMode = true;
-            gameControl.ButtonFade();            
+            gameControl.pauseMode = true;          
         }
     }
 
@@ -109,7 +108,6 @@ public class GUIManager : MonoBehaviour
     {
         menuTab.SetActive(false);
         gameControl.pauseMode = false;
-        gameControl.ButtonFade();
     }
 
     public void RestartButton()

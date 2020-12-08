@@ -40,8 +40,8 @@ public class GameControl : MonoBehaviour
     private bool canCashOut;
     
     //UI Text
-    [SerializeField] private Text playerBloodPointsText;
-    [SerializeField] private Text enemyBloodPointsText;
+    [SerializeField] private GameObject playerBloodPointsText;
+    [SerializeField] private GameObject enemyBloodPointsText;
     
     //UI Fill Bars
     [SerializeField] private Image playerBloodPointsFilling;
@@ -122,7 +122,6 @@ public class GameControl : MonoBehaviour
         ResetCanChange();
         StartCoroutine(CharacterScaling());
         CharacterDarkening();
-        //ButtonFade();
         NoMoreMoves();
         checkCanCashOut();
         UpdateBloodPoints();
@@ -149,6 +148,8 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
+                
+                enemyBloodPointsText.transform.DOShakePosition(0.4f, 7, 25, 10);
 
                 GameOver();
             }
@@ -166,6 +167,8 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
+
+                playerBloodPointsText.transform.DOShakePosition(0.4f, 7, 25, 10);
             
                 GameOver();
             }
@@ -200,8 +203,8 @@ public class GameControl : MonoBehaviour
     
     public void UpdateBloodPoints()
     {
-        playerBloodPointsText.text = marysHealth.ToString();
-        enemyBloodPointsText.text = enemyHealth.ToString();
+        playerBloodPointsText.GetComponent<Text>().text = marysHealth.ToString();
+        enemyBloodPointsText.GetComponent<Text>().text = enemyHealth.ToString();
 
         playerBloodPointsFilling.fillAmount = (float) marysHealth / (float) marysMaxHealth;
         enemyBloodPointsFilling.fillAmount = (float) enemyHealth / (float) enemyMaxHealth;
@@ -258,51 +261,6 @@ public class GameControl : MonoBehaviour
             //Set enemy back to right size
             enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.5f);
         }
-    }
-
-    public void ButtonFade()
-    {
-        //Player Color Block
-        ColorBlock colorBlockPlayerButtons = GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors;
-        
-        //Enemy Color Block
-        ColorBlock colorBlockEnemyButtons = GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors;
-
-        if (pauseMode)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-        }
-        else if (playerTurn == (int)Player_Turn.mary)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockPlayerButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-            
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
-            colorBlockEnemyButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
-        }
-        else if (playerTurn == (int)Player_Turn.enemy)
-        {
-            colorBlockPlayerButtons.highlightedColor = new Color(1f, 1f, 1f, 0.2f);
-            colorBlockPlayerButtons.pressedColor = new Color(0.6603774f, 0.4074404f, 0.4074404f, 1f);
-            
-            colorBlockEnemyButtons.highlightedColor = new Color(1f, 1f, 1f, 1f);
-            colorBlockEnemyButtons.pressedColor = new Color(1f, 1f, 1f, 1f);
-        }
-        
-        //Sets the colors of the Player buttons
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/OutCashButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/StaffButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/PlayerButtons/MarkButton").GetComponent<Button>().colors = colorBlockEnemyButtons;
-        
-        //Sets the colors of the Enemy buttons
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/EndTurnButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/OutCashButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/StaffButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
-        GameObject.Find("IngameGUI_Canvas/Buttons/EnemyButtons/MarkButton").GetComponent<Button>().colors = colorBlockPlayerButtons;
     }
     
     public void NoMoreMoves()

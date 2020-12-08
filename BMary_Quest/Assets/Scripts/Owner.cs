@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +52,15 @@ public class Owner : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.placeMode && owned == (int)Tile_State.empty)
+        {
+            transform.DOScale(new Vector3(1.1f, 1.1f, 1f), 0.2f);
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        transform.DOScale(new Vector3(1.22f, 1.22f, 1f), 0.2f);
         if (gameControl.playerMoves > 0 && gameControl.placeMode)
         {
             //spelare 2(enemy) controller
