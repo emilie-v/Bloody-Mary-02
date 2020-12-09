@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marysTempPoints: 0
   enemyTempPoints: 0
-  Spelplan: {fileID: 773677183}
+  spelplan: {fileID: 773677183}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
   gameOver: {fileID: 853304023}
@@ -842,6 +842,7 @@ MonoBehaviour:
   canChangeAmount: 0
   cashOutVariable: 0
   cashOutThreshhold: 0
+  ownedPieces: 0
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
 --- !u!4 &1324767610

@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour
     public int marysTempPoints;
     private int Char;
     public int enemyTempPoints;
-    public GameObject Spelplan;
+    public GameObject spelplan;
     private Owner owner;
     private HellStaff hellstaff;
     private Boardpiece boardpiece;
@@ -84,7 +84,7 @@ public class GameControl : MonoBehaviour
 
     public void Start()
     {
-        Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
+        spelplan = GameObject.Find("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellstaff = GameObject.Find("PController").GetComponent<HellStaff>();
         playerTurn = (int)Random.Range(0, 2);
@@ -189,14 +189,14 @@ public class GameControl : MonoBehaviour
                 enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
                 SoundManager.Instance.CashOutButtonSound();
                 //Reset placed pieces and set temp blood points
-                for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
+                for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
                 {
-                    for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+                    for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
-                        if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                        if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             marysTempPoints ++;
-                            Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
+                            spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
                     }
                 }
@@ -211,20 +211,21 @@ public class GameControl : MonoBehaviour
             else if (playerTurn == (int)Player_Turn.enemy)
             {
                 SoundManager.Instance.CashOutButtonSound();
-                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 
                 //Reset placed pieces and set temp blood points
-                for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+                for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
                 {
-                    for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+                    for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
-                        if (Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                        if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             enemyTempPoints ++;
-                            Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
+                            spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }
                     }
                 }
+                
+                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 marysHealth -= enemyTempPoints + 1;
                 enemyTempPoints = 0;
                 lastMove.enemyCashedOutThisTurn=true;
@@ -273,11 +274,11 @@ public class GameControl : MonoBehaviour
 
     private void ResetCanChange()
     {
-        for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
+        for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
         {
-            for (int j = 0; j < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+            for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
             {
-                Spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().canChange = false;
+                spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().canChange = false;
             }
         }
     }

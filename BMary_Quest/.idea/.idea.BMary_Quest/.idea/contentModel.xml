@@ -32,6 +32,7 @@
           <e p="ChooseEnemy.cs" t="Include" />
           <e p="ChooseStaff.cs" t="Include" />
           <e p="Credits.cs" t="Include" />
+          <e p="DataAcrossScenes.cs" t="Include" />
           <e p="DialogueManager.cs" t="Include" />
           <e p="DialogueTrigger.cs" t="Include" />
           <e p="GameControl.cs" t="Include" />

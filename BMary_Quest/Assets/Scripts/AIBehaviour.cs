@@ -11,6 +11,7 @@ public class AIBehaviour : MonoBehaviour
     [SerializeField] private int canChangeAmount;
     [SerializeField] private int cashOutVariable;
     [SerializeField] private int cashOutThreshhold;
+    [SerializeField] private int ownedPieces;
     private bool placeBricksDone;
     private bool useStaffDone;
     private bool cashOutDone;
@@ -18,6 +19,7 @@ public class AIBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject spelplan;
     [SerializeField] private GameControl gameControl;
+    
 
     private void Start()
     {
@@ -60,6 +62,11 @@ public class AIBehaviour : MonoBehaviour
         {
             CashOut();
         }
+
+        if (gameControl.gameOver.activeSelf)
+        {
+            StopCoroutine(DefaultActionOrder());
+        }
         
         yield return new WaitUntil(() => cashOutDone);
         yield return new WaitForSeconds(0.2f);
@@ -72,6 +79,11 @@ public class AIBehaviour : MonoBehaviour
         if (!cashOutDone)
         {
             ForceCashOut();
+        }
+        
+        if (gameControl.gameOver.activeSelf)
+        {
+            StopCoroutine(DefaultActionOrder());
         }
         
         CheckCanPlace();
@@ -156,12 +168,14 @@ public class AIBehaviour : MonoBehaviour
 
     private void CashOut()
     {
+        CheckCanPlace();
         if (canChangeAmount > 0)
         {
-            CheckCanPlace();
             cashOutVariable--;
         }
-        if (gameControl.marysHealth <= gameControl.enemyTempPoints)
+        
+        CheckAmountOwnedPieces();
+        if (gameControl.marysHealth <= ownedPieces + 1)
         {
             gameControl.CashOut();
         }
@@ -171,6 +185,21 @@ public class AIBehaviour : MonoBehaviour
             cashOutVariable = cashOutThreshhold;
         }
         cashOutDone = true;
+        ownedPieces = 0;
+    }
+
+    private void CheckAmountOwnedPieces()
+    {
+        for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+        {
+            for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
+            {
+                if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                {
+                    ownedPieces++;
+                }
+            }
+        }
     }
 
     private void ForceCashOut()

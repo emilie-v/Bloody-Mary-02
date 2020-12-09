@@ -6,7 +6,10 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource effectSource;
+    public AudioSource mainMenuMusic;
     public AudioClip[] audioClips;
+    
+    private float mainMenuMusicVolume = 1f;
 
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
@@ -27,7 +30,17 @@ public class SoundManager : MonoBehaviour
 
         GetAllComponents();
     }
-
+    
+    private void Update()
+    {
+        mainMenuMusic.volume = mainMenuMusicVolume;
+    }
+    
+    public void updateMainMenuMusicVolume(float volume)
+    {
+        mainMenuMusicVolume = volume;
+    }
+    
     void GetAllComponents()
     {
         audioClips = new AudioClip[12];
