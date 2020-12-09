@@ -36,9 +36,10 @@ public class ChooseEnemy : MonoBehaviour
 
     public void RightArrowButton()
     {
+        SoundManager.Instance.ArrowButtonSound();
+
         index++;
         //index = (index + enemyList.Length) % enemyList.Length;
-
         if (index >= enemyList.Length)
         {
             index = 0;
@@ -49,8 +50,9 @@ public class ChooseEnemy : MonoBehaviour
 
     public void LeftArrowButton()
     {
-        index--;
+        SoundManager.Instance.ArrowButtonSound();
 
+        index--;
         if (index < 0)
         {
             index = enemyList.Length - 1;
@@ -61,6 +63,8 @@ public class ChooseEnemy : MonoBehaviour
 
     public void SelectEnemyButton()
     {
+        SoundManager.Instance.MenuButtonSound();
+
         if (index == 0)
         {
             chooseEnemy.SetActive(false);
@@ -70,6 +74,7 @@ public class ChooseEnemy : MonoBehaviour
 
         else
         {
+            SoundManager.Instance.LockedWarningPopUpSound();
             selectWarning.SetActive(true);
         }
     }
@@ -82,6 +87,7 @@ public class ChooseEnemy : MonoBehaviour
 
     public void BackToMainMenuButton()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         SceneManager.LoadScene("MainMenu");
     }
 
