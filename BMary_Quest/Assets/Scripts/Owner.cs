@@ -77,7 +77,7 @@ public class Owner : MonoBehaviour
                     if (owned == (int)Tile_State.empty && canChange)
                     {
                         owned = (int)Tile_State.player2;
-                        gameControl.enemyTempPoints++;
+                        //gameControl.enemyTempPoints++;
                         PiecePlaced();
                     }
                 }
@@ -95,7 +95,7 @@ public class Owner : MonoBehaviour
                     if (owned == (int)Tile_State.empty && canChange)
                     {
                         owned = (int)Tile_State.player1;
-                        gameControl.marysTempPoints++;
+                        //gameControl.marysTempPoints++;
                         PiecePlaced();
                     }
                 }
