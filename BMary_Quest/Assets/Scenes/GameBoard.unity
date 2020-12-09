@@ -194,6 +194,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -693,7 +708,7 @@ MonoBehaviour:
   playerCashOutHotkey: 101
   playerEndTurnHotkey: 114
   placeMode: 0
-  staffMode: 0
+  staffUsed: 0
   pauseMode: 0
   playerTurn: 0
   playerMoves: 0
@@ -1047,6 +1062,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 818135137, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1324767608}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: aiBehaviour
       value: 
@@ -1320,7 +1339,7 @@ PrefabInstance:
     - target: {fileID: 7666901491640008504, guid: e0cd58ae2f1092e40a82e70dbf9902cb,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7666901491640008504, guid: e0cd58ae2f1092e40a82e70dbf9902cb,
         type: 3}
