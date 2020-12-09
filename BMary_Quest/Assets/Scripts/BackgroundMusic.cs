@@ -27,17 +27,6 @@ public class BackgroundMusic : MonoBehaviour
         else
         {
             instance = this;
-        }
-    }
-
-    public void Update()
-    {
-        if(menuMusicPlaying == false)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
             DontDestroyOnLoad(this.gameObject);
         }
     }
