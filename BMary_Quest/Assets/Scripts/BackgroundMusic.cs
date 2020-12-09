@@ -38,7 +38,7 @@ public class BackgroundMusic : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu")
+        if (scene.name == "MainMenu" && audioSource.clip != menuMusic)
         { 
             audioSource.Stop();
             audioSource.clip = menuMusic;
