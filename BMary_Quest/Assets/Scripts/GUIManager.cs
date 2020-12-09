@@ -109,6 +109,8 @@ public class GUIManager : MonoBehaviour
 
     public void OpenMenuTab()
     {
+        SoundManager.Instance.MenuButtonSound();
+
         if (menuTab.activeSelf)
         {
             ContinueButton();
@@ -122,12 +124,16 @@ public class GUIManager : MonoBehaviour
 
     public void ContinueButton()
     {
+        SoundManager.Instance.MenuButtonSound();
+
         menuTab.SetActive(false);
         gameControl.pauseMode = false;
     }
 
     public void RestartButton()
     {
+        SoundManager.Instance.MenuButtonSound();
+
         Owner[] owners = FindObjectsOfType<Owner>();
 
         foreach (Owner tile in owners)
@@ -140,11 +146,13 @@ public class GUIManager : MonoBehaviour
 
     public void BackToMainMenuButton()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGameButton()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         Application.Quit();
     }
     

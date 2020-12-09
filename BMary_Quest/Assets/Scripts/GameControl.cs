@@ -101,11 +101,13 @@ public class GameControl : MonoBehaviour
     {
         if (playerTurn == (int)Player_Turn.mary) 
         {
+            SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.enemy;
             TurnStart();
         }
         else
         {
+            SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.mary;
             lastMove.staffUsed = false;
             TurnStart();
@@ -147,7 +149,7 @@ public class GameControl : MonoBehaviour
             if (playerTurn == (int)Player_Turn.mary)
             {
                 enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
-
+                SoundManager.Instance.CashOutButtonSound();
                 //Reset placed pieces and set temp blood points
                 for (int i = 0; i < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
                 {
@@ -169,6 +171,7 @@ public class GameControl : MonoBehaviour
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
+                SoundManager.Instance.CashOutButtonSound();
                 playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 
                 //Reset placed pieces and set temp blood points
@@ -207,10 +210,12 @@ public class GameControl : MonoBehaviour
             
             if (marysHealth <= 0)
             {
+                SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Lucifer Wins";
             } 
             else if (enemyHealth <= 0)
             {
+                SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
             }
             pauseMode = true;

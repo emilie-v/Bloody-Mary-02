@@ -13,8 +13,8 @@ public class MirrorStaff : MonoBehaviour
 
     public int[] lastMovesX;
     public int[] lastMovesY;
-    private int[] mirroredX=new int[5] {6,6,6,6,6};
-    private int[] mirroredY=new int[5]{6,6,6,6,6};
+    private int[] mirroredX = new int[5] { 6, 6, 6, 6, 6 };
+    private int[] mirroredY = new int[5] { 6, 6, 6, 6, 6 };
 
     void Start()
     {
@@ -33,47 +33,47 @@ public class MirrorStaff : MonoBehaviour
 
     void staffPower()
     {
-        
         //lastMovesX = lastMove.lastMoveX;
         //lastMovesY = lastMove.lastMoveY;
-        for(int i=0; i<lastMove.lastMovesX.Length; i++)
+        for (int i = 0; i < lastMove.lastMovesX.Length; i++)
         {
-            if(lastMove.lastMovesX[i] !=6)
+            if (lastMove.lastMovesX[i] != 6)
             {
-         //Debug.Log("X: " + lastMoveX + "Y: " + lastMoveY);
-            int diffX, diffY;
-            diffX = lastMove.lastMovesX[i] - 4;
-            diffY = lastMove.lastMovesY[i] - 2;
+                //Debug.Log("X: " + lastMoveX + "Y: " + lastMoveY);
+                int diffX, diffY;
+                diffX = lastMove.lastMovesX[i] - 4;
+                diffY = lastMove.lastMovesY[i] - 2;
 
-            mirroredX[i] = -diffX;
-            mirroredY[i] = -diffY + 2;
+                mirroredX[i] = -diffX;
+                mirroredY[i] = -diffY + 2;
             }
-            
-        //Debug.Log("MirroredX: " + mirroredX + "MirroredY: " + mirroredY);
-        if (mirroredX[i] <5)
-        {
-            if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
+
+            //Debug.Log("MirroredX: " + mirroredX + "MirroredY: " + mirroredY);
+            if (mirroredX[i] < 5)
             {
-                if(mirroredX[i] < 5 && mirroredY[i] < 5)
+                if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
                 {
-                Debug.Log("Using staff mirror");
-                spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
-                //gameControl.marysTempPoints++;
+                    if (mirroredX[i] < 5 && mirroredY[i] < 5)
+                    {
+                        SoundManager.Instance.ActivateStaffButtonSound();
+                        Debug.Log("Using staff mirror");
+                        spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
+                        //gameControl.marysTempPoints++;
+                    }
+
                 }
-        
             }
         }
-        }    
-     lastMove.staffUsed = true;
-     gameControl.staffUsed = true;
-     gameControl.Staff();
-     resetMirrorArray();   
+        lastMove.staffUsed = true;
+        gameControl.staffUsed = true;
+        gameControl.Staff();
+        resetMirrorArray();
     }
     void resetMirrorArray()
     {
         Debug.Log("ResetMirrorArray körs");
-    mirroredX = new int[5] {6,6,6,6,6}; 
-    mirroredY = new int[5] {6,6,6,6,6};  
+        mirroredX = new int[5] { 6, 6, 6, 6, 6 };
+        mirroredY = new int[5] { 6, 6, 6, 6, 6 };
     }
 }
 

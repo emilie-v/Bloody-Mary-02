@@ -109,12 +109,24 @@ public class Owner : MonoBehaviour
 
     public void PiecePlaced()
     {
+        if(gameControl.playerTurn == 0)
+        {
+            SoundManager.Instance.MaryMarkPlacedSound();
+        }
+
+        else if (gameControl.playerTurn == 1)
+        {
+            SoundManager.Instance.EnemyMarkPlacedSound();
+        }
+
         canChange = false;
         gameControl.playerMoves--;
+
         if (gameControl.playerMoves <= 0)
         {
             gameControl.placeMode = false;
         }
+
         gameControl.NoMoreMoves();
         gameControl.UpdateMarkIndicators();
 
@@ -122,15 +134,15 @@ public class Owner : MonoBehaviour
         {
             for(int i=0; i<lastMove.lastMovesX.Length; i++)
             {
-                if(lastMove.lastMovesX[i] == 6)
+                if (lastMove.lastMovesX[i] == 6)
                 {
-                lastMove.lastMovesX[i] = xPos;
-                lastMove.lastMovesY[i] = yPos;
-                break;
+                    lastMove.lastMovesX[i] = xPos;
+                    lastMove.lastMovesY[i] = yPos;
+                    break;
                 }
                 else
                 {
-                continue;
+                    continue;
                 }
             }    
 
