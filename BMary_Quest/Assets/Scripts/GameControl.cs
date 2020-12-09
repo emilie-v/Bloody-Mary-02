@@ -109,12 +109,14 @@ public class GameControl : MonoBehaviour
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerTurn = (int)Player_Turn.enemy;
+            lastMove.enemyCashedOutThisTurn =false;
             TurnStart();
         }
         else
         {
             playerTurn = (int)Player_Turn.mary;
             lastMove.staffUsed = false;
+            lastMove.maryCashedOutThisTurn =false;
             TurnStart();
         }
     }
@@ -176,6 +178,7 @@ public class GameControl : MonoBehaviour
                 }
                 enemyHealth -= marysTempPoints + 1;
                 marysTempPoints = 0;
+                lastMove.maryCashedOutThisTurn=true;
                 
                 
 
@@ -199,6 +202,7 @@ public class GameControl : MonoBehaviour
                 }
                 marysHealth -= enemyTempPoints + 1;
                 enemyTempPoints = 0;
+                lastMove.enemyCashedOutThisTurn=true;
 
                 GameOver();
             }
