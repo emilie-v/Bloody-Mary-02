@@ -21,12 +21,12 @@ public class HellStaff : MonoBehaviour
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
     }
 
-    void hellStaffPassiveAbility()
+    public void hellStaffPassiveAbility()
     {
         if(lastMove.enemyCashedOutThisTurn==true)
         gameControl.enemyHealth++;
     }
-    void hellStaffActiveAbility()
+    public void hellStaffActiveAbility()
     {
         
     }

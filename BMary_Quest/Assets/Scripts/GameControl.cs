@@ -17,6 +17,7 @@ public class GameControl : MonoBehaviour
     public int enemyTempPoints;
     public GameObject Spelplan;
     private Owner owner;
+    private HellStaff hellstaff;
     private Boardpiece boardpiece;
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
@@ -85,7 +86,7 @@ public class GameControl : MonoBehaviour
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
-
+        hellstaff = GameObject.Find("PController").GetComponent<HellStaff>();
         playerTurn = (int)Random.Range(0, 2);
         
         marysHealth = marysMaxHealth;
@@ -134,6 +135,10 @@ public class GameControl : MonoBehaviour
             playerTurn = (int)Player_Turn.mary;
             lastMove.staffUsed = false;
             lastMove.maryCashedOutThisTurn =false;
+            if (DataAcrossScenes.ChosenStaff==1)
+            {
+                hellstaff.hellStaffPassiveAbility();
+            }
             TurnStart();
         }
     }

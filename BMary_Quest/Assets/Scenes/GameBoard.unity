@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 1324767608}
   - component: {fileID: 1324767609}
   - component: {fileID: 1324767611}
+  - component: {fileID: 1324767612}
   m_Layer: 0
   m_Name: PController
   m_TagString: Player
@@ -874,6 +875,21 @@ MonoBehaviour:
   maryCashedOutThisTurn: 0
   lastMovesX: 0600000006000000060000000600000006000000
   lastMovesY: 0600000006000000060000000600000006000000
+--- !u!114 &1324767612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6447e6697ba01d945bad16892f687557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameControl: {fileID: 0}
+  abilityButton: {fileID: 0}
+  lastMove: {fileID: 0}
 --- !u!1 &1422405482
 GameObject:
   m_ObjectHideFlags: 0
