@@ -182,6 +182,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925508722064238860, guid: b37b1f122ce888e43bd3ac0ef8df7009,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -353,6 +368,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &452916885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23817c0388e61b418750d41920f722e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &526051854 stripped
@@ -769,14 +796,19 @@ MonoBehaviour:
   marysTempPoints: 0
   enemyTempPoints: 0
   Spelplan: {fileID: 773677183}
+  guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
   gameOver: {fileID: 853304023}
   marysMaxHealth: 20
   enemyMaxHealth: 20
   marysHealth: 20
   enemyHealth: 20
+  playerPlaceModeHotkey: 113
+  playerStaffHotkey: 119
+  playerCashOutHotkey: 101
+  playerEndTurnHotkey: 114
   placeMode: 0
-  staffMode: 0
+  staffUsed: 0
   pauseMode: 0
   playerTurn: 0
   playerMoves: 0
