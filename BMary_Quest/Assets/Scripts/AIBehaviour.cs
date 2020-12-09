@@ -115,7 +115,7 @@ public class AIBehaviour : MonoBehaviour
                     {
                         yield return new WaitForSeconds(Random.Range(0.3f, 1));
                         childScript.owned = (int)Tile_State.player2;
-                        gameControl.enemyTempPoints++;
+                        //gameControl.enemyTempPoints++;
                         childScript.PiecePlaced();
                     }
                 }
