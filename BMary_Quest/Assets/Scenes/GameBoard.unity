@@ -810,6 +810,7 @@ MonoBehaviour:
   placeMode: 0
   staffUsed: 0
   pauseMode: 0
+  firstTurn: 0
   playerTurn: 0
   playerMoves: 0
   playerMovesPerTurn: 0
@@ -838,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIMode: 1
   canChangeAmount: 0
+  cashOutVariable: 0
   cashOutThreshhold: 0
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
@@ -868,6 +870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staffUsed: 0
+  enemyCashedOutThisTurn: 0
+  maryCashedOutThisTurn: 0
   lastMovesX: 0600000006000000060000000600000006000000
   lastMovesY: 0600000006000000060000000600000006000000
 --- !u!1 &1422405482
@@ -1358,8 +1362,7 @@ PrefabInstance:
     - target: {fileID: 1179378682, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbcbcffdf46c66144939c29788fa19b1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1231100490, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Name
       value: MarkIncidator (4)
@@ -1367,8 +1370,7 @@ PrefabInstance:
     - target: {fileID: 1231100492, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbcbcffdf46c66144939c29788fa19b1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1338291931, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_TagString
       value: Buttons
@@ -1388,8 +1390,7 @@ PrefabInstance:
     - target: {fileID: 1572255943, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbcbcffdf46c66144939c29788fa19b1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1956279398, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Name
       value: MarkIncidator
@@ -1397,8 +1398,7 @@ PrefabInstance:
     - target: {fileID: 1956279400, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbcbcffdf46c66144939c29788fa19b1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 291555735434011004, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_TagString
@@ -1559,6 +1559,16 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5797850949370552216, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180899758979035710, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6373953937134693074, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1568,6 +1578,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7853273098936871120, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425475238020803413, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8744570027570182111, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}

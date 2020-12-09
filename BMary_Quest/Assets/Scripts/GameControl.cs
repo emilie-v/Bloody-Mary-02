@@ -58,6 +58,10 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GameObject playerMarkButton;
     [SerializeField] private GameObject enemyMarkButton;
     
+    //Marks
+    private Sprite playerMarks;
+    private Sprite enemyMarks;
+    
     //CashOut Buttons
     [SerializeField] private Image playerCashOutButton;
     [SerializeField] private Image enemyCashOutButton;
@@ -72,6 +76,8 @@ public class GameControl : MonoBehaviour
         playerMovesPerTurn = 2;
         enemyMovesPerTurn = 2;
         maxMarksToPlace = 4;
+        playerMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary");
+        enemyMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
     }
 
 
@@ -87,6 +93,8 @@ public class GameControl : MonoBehaviour
         
         firstTurn = true;
         
+        Marks(playerMarks, enemyMarks);
+        
         TurnStart();
 
         lastMove.staffUsed = true;         
@@ -97,6 +105,15 @@ public class GameControl : MonoBehaviour
         if (!pauseMode)
         {
             HotKeys();
+        }
+    }
+
+    private void Marks(Sprite playerMarker, Sprite enemyMarker)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            playerMarkButton.transform.GetChild(i).GetComponent<Image>().sprite = playerMarker;
+            enemyMarkButton.transform.GetChild(i).GetComponent<Image>().sprite = enemyMarker;
         }
     }
 
