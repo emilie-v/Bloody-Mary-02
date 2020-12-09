@@ -1,11 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
     public AudioSource effectSource;
+    public AudioSource mainMenuMusic;
     public AudioClip[] audioClips;
+
+    private float mainMenuMusicVolume = 1f;
 
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
@@ -27,6 +31,11 @@ public class SoundManager : MonoBehaviour
         GetAllComponents();
     }
 
+    private void Update()
+    {
+        mainMenuMusic.volume = mainMenuMusicVolume;
+    }
+
     void GetAllComponents()
     {
         audioClips = new AudioClip[1];
@@ -43,6 +52,11 @@ public class SoundManager : MonoBehaviour
     {
         effectSource.clip = audioClips[(int)SoundEnum.SelectButton];
         effectSource.Play();
+    }
+
+    public void updateMainMenuMusicVolume(float volume)
+    {
+        mainMenuMusicVolume = volume;
     }
 
     public enum SoundEnum : int
