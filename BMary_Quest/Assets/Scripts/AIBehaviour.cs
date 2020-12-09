@@ -9,6 +9,7 @@ public class AIBehaviour : MonoBehaviour
 {
     public bool AIMode = true;
     [SerializeField] private int canChangeAmount;
+    [SerializeField] private int cashOutVariable;
     [SerializeField] private int cashOutThreshhold;
     private bool placeBricksDone;
     private bool useStaffDone;
@@ -21,12 +22,13 @@ public class AIBehaviour : MonoBehaviour
     private void Start()
     {
         cashOutThreshhold = (int) Random.Range(1, 7);
+        cashOutVariable = cashOutThreshhold;
     }
 
     public void Behaviour()
     {
         CheckCanPlace();
-        if (canChangeAmount > 0)
+        if (canChangeAmount > 1)
         {
             StartCoroutine(DefaultActionOrder());
         }
@@ -154,15 +156,19 @@ public class AIBehaviour : MonoBehaviour
 
     private void CashOut()
     {
-        cashOutThreshhold--;
+        if (canChangeAmount > 0)
+        {
+            CheckCanPlace();
+            cashOutVariable--;
+        }
         if (gameControl.marysHealth <= gameControl.enemyTempPoints)
         {
             gameControl.CashOut();
         }
-        else if (cashOutThreshhold <= 0)
+        else if (cashOutVariable <= 0)
         {
             gameControl.CashOut();
-            cashOutThreshhold = Random.Range(2, 5);
+            cashOutVariable = cashOutThreshhold;
         }
         cashOutDone = true;
     }

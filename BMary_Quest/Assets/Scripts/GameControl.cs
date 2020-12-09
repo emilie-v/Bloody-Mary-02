@@ -22,7 +22,7 @@ public class GameControl : MonoBehaviour
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
     
-    [SerializeField] private GameObject gameOver;
+    public GameObject gameOver;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
@@ -75,7 +75,7 @@ public class GameControl : MonoBehaviour
     }
 
 
-    void Start()
+    public void Start()
     {
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
@@ -228,12 +228,6 @@ public class GameControl : MonoBehaviour
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
             }
             pauseMode = true;
-        }
-        else if (gameOver.activeSelf)
-        {
-            Start();
-            gameOver.SetActive(false);
-            pauseMode = false;
         }
     }
     

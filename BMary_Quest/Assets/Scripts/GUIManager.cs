@@ -141,6 +141,10 @@ public class GUIManager : MonoBehaviour
         gameControl.enemyHealth = gameControl.enemyMaxHealth;
         gameControl.UpdateBloodPoints();
         gameControl.GameOver();
+        
+        gameControl.Start();
+        gameControl.gameOver.SetActive(false);
+        gameControl.pauseMode = false;
     }
 
     public void BackToMainMenuButton()
