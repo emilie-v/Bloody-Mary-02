@@ -30,7 +30,7 @@ public class SoundManager : MonoBehaviour
     void GetAllComponents()
     {
         audioClips = new AudioClip[1];
-        audioClips[0] = Resources.Load<AudioClip>("Audio/BackButton_Sound");
+        audioClips[0] = Resources.Load<AudioClip>("Audios/Audios_Select_Sound");
     }
 
     public void PlaySounds(AudioClip clip)
@@ -41,12 +41,12 @@ public class SoundManager : MonoBehaviour
 
     public void SelectButtonSound()
     {
-        effectSource.clip = audioClips[(int)SoundEnum.BackButton];
+        effectSource.clip = audioClips[(int)SoundEnum.SelectButton];
         effectSource.Play();
     }
 
     public enum SoundEnum : int
     {
-        BackButton
+        SelectButton
     }
 }
