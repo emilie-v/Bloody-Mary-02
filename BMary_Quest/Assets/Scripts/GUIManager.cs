@@ -18,6 +18,14 @@ public class GUIManager : MonoBehaviour
     private Spelplan spelplan;
     private StaffManager staffmanager;
 
+    private void Start()
+    {
+        GameObject.Find("Button_Info").transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerPlaceModeHotkey;
+        GameObject.Find("Button_Info").transform.GetChild(1).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerStaffHotkey;
+        GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey;
+        GameObject.Find("Button_Info").transform.GetChild(3).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerEndTurnHotkey;
+    }
+
     private void Update()
     {
         HotKeys();
@@ -46,20 +54,28 @@ public class GUIManager : MonoBehaviour
             if (!gameControl.placeMode)
             {
                 gameControl.placeMode = true;
+                ButtonGlow();
             }
             else if (gameControl.placeMode)
             {
                 gameControl.placeMode = false;
+                ButtonGlow();
             }
-            
         }
     }
 
-    public void ActivateStaffAbilityButton()
+    public void ButtonGlow()
     {
-        
+        if (gameControl.placeMode)
+        {
+            GameObject.Find("MarkButton_Glow").GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+        else if (!gameControl.placeMode)
+        {
+            GameObject.Find("MarkButton_Glow").GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        }
     }
-    
+
     public void CashOutEnemyButton()
     {
         if (gameControl.playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode && !gameControl.pauseMode)

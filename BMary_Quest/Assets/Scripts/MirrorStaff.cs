@@ -65,6 +65,8 @@ public class MirrorStaff : MonoBehaviour
         }
         }    
      lastMove.staffUsed = true;
+     gameControl.staffUsed = true;
+     gameControl.Staff();
      resetMirrorArray();   
     }
     void resetMirrorArray()

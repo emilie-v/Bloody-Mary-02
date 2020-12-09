@@ -50,11 +50,6 @@ public class MouseBehaviour : MonoBehaviour
                 cursorNotBase = true;
             
             }
-            else if (gameControl.staffMode && gameControl.playerTurn != (int)Player_Turn.enemy)
-            {
-                Cursor.SetCursor(staffCursor, Vector2.zero, CursorMode.Auto);
-                cursorNotBase = true;
-            }
             else if (cursorNotBase)
             {
                 Cursor.SetCursor(baseCursor, Vector2.zero, CursorMode.Auto);

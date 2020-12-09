@@ -18,7 +18,7 @@ public class GameControl : MonoBehaviour
     public GameObject Spelplan;
     private Owner owner;
     private Boardpiece boardpiece;
-    private GUIManager guiManager;
+    [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
     
@@ -30,9 +30,14 @@ public class GameControl : MonoBehaviour
     public int enemyHealth;
 
     private int maxMarksToPlace;
+    
+    public KeyCode playerPlaceModeHotkey = KeyCode.Q;
+    public KeyCode playerStaffHotkey = KeyCode.W;
+    public KeyCode playerCashOutHotkey = KeyCode.E;
+    public KeyCode playerEndTurnHotkey = KeyCode.R;
 
     public bool placeMode;
-    public bool staffMode;
+    public bool staffUsed;
     public bool pauseMode;
     public int playerTurn;
     public int playerMoves;
@@ -124,11 +129,13 @@ public class GameControl : MonoBehaviour
         }
         
         canCashOut = true;
+        staffUsed = false;
         ResetCanChange();
         CharacterScaling();
         CharacterDarkening();
         NoMoreMoves();
-        checkCanCashOut();
+        Staff();
+        CheckCanCashOut();
         UpdateBloodPoints();
         UpdateMarkIndicators();
     }
@@ -185,7 +192,7 @@ public class GameControl : MonoBehaviour
             }
             UpdateBloodPoints();
             canCashOut = false;
-            checkCanCashOut();
+            CheckCanCashOut();
         }
     }
     
@@ -275,6 +282,7 @@ public class GameControl : MonoBehaviour
             if (playerTurn == (int)Player_Turn.mary)
             {
                 playerMarkButton.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+                guiManager.ButtonGlow();
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
@@ -287,8 +295,20 @@ public class GameControl : MonoBehaviour
             enemyMarkButton.GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
     }
+
+    public void Staff()
+    {
+        if (staffUsed)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+        }
+        else if (!staffUsed)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = Color.white;
+        }
+    }
     
-    public void checkCanCashOut()
+    public void CheckCanCashOut()
     {
         if (canCashOut)
         {
@@ -339,7 +359,7 @@ public class GameControl : MonoBehaviour
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(playerPlaceModeHotkey))
             {
                 if (placeMode == false)
                 {
@@ -351,17 +371,17 @@ public class GameControl : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(playerStaffHotkey))
             {
                 //Staffs
             }
         
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(playerCashOutHotkey))
             {
                 CashOut();
             }
         
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(playerEndTurnHotkey))
             {
                 EndTurn();
             }
