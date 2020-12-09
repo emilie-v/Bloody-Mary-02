@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -28,5 +29,16 @@ public class ButtonBehaviour : MonoBehaviour
     public void OnPointerUp(PointerEventData eventData)
     {
         transform.DOScale(new Vector3(1.05f, 1.05f, 1), 0.1f);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(transform);
+        DOTween.Kill(gameObject);
+        foreach (Transform child in transform)
+        {
+            DOTween.Kill(child);
+        }
+        
     }
 }
