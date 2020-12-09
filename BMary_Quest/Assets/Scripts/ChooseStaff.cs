@@ -77,8 +77,9 @@ public class ChooseStaff : MonoBehaviour
 
     public void RightStaffButton()
     {
-        index++;
+        SoundManager.Instance.ArrowButtonSound();
 
+        index++;
         if (index >= staffList.Length)
         {
             index = 0;
@@ -88,8 +89,9 @@ public class ChooseStaff : MonoBehaviour
 
     public void LeftStaffButton()
     {
-        index--;
+        SoundManager.Instance.ArrowButtonSound();
 
+        index--;
         if (index < 0)
         {
             index = staffList.Length - 1;
@@ -118,6 +120,7 @@ public class ChooseStaff : MonoBehaviour
 
     public void CancelStaffWarningButton()
     {
+        SoundManager.Instance.MenuButtonSound();
         selectWarning.SetActive(false);
     }
 
@@ -131,12 +134,14 @@ public class ChooseStaff : MonoBehaviour
         }
         else
         {
+            SoundManager.Instance.LockedWarningPopUpSound();
             selectWarning.SetActive(true);
         }
     }
 
     public void BackToEnemyButton()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         chooseStaff.SetActive(false);
         chooseEnemy.SetActive(true);
     }
