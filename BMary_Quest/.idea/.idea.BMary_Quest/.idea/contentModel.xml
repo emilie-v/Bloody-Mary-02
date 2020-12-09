@@ -47,9 +47,11 @@
           <e p="Player.cs" t="Include" />
           <e p="SecondBaseStaff.cs" t="Include" />
           <e p="Sound.cs" t="Include" />
+          <e p="SoundAssets.cs" t="Include" />
           <e p="SoundManager.cs" t="Include" />
           <e p="Spelplan.cs" t="Include" />
           <e p="StaffManager.cs" t="Include" />
+          <e p="TutorialManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
