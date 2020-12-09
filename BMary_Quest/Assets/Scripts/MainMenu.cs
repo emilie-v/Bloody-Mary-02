@@ -8,15 +8,18 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        SoundManager.Instance.MenuButtonSound();
         SceneManager.LoadScene("ChooseEnemy");
     }
       public void Credits()
     {
+        SoundManager.Instance.MenuButtonSound();
         SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         Application.Quit();
     }
 }
