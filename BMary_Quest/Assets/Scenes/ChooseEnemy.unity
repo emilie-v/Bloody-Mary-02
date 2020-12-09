@@ -1558,6 +1558,7 @@ MonoBehaviour:
   chooseStaff: {fileID: 187582374}
   selectWarning: {fileID: 1456561489}
   cancelWarning: {fileID: 907958419}
+  soundManager: {fileID: 0}
   padlockImage: {fileID: 567017195}
 --- !u!1 &969523498
 GameObject:

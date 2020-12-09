@@ -19,6 +19,7 @@ public class ChooseStaff : MonoBehaviour
 
     bool isUnlocked = false;
     BackgroundMusic backgroundMusic;
+    public SoundManager soundManager;
 
     public GameObject padlockImage;
 
@@ -124,6 +125,7 @@ public class ChooseStaff : MonoBehaviour
     {
         if (isUnlocked == true)
         {
+            SoundManager.Instance.SelectButtonSound();
             StaffManager.playerSelectedStaff = index;
             SceneManager.LoadScene("GameBoard");
         }
