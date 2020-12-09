@@ -136,6 +136,11 @@ public class GUIManager : MonoBehaviour
             tile.resetMary();
             tile.resetEnemy();
         }
+
+        gameControl.marysHealth = gameControl.marysMaxHealth;
+        gameControl.enemyHealth = gameControl.enemyMaxHealth;
+        gameControl.UpdateBloodPoints();
+        gameControl.GameOver();
     }
 
     public void BackToMainMenuButton()

@@ -39,6 +39,7 @@ public class GameControl : MonoBehaviour
     public bool placeMode;
     public bool staffUsed;
     public bool pauseMode;
+    public bool firstTurn;
     public int playerTurn;
     public int playerMoves;
     public int playerMovesPerTurn;
@@ -84,6 +85,8 @@ public class GameControl : MonoBehaviour
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
         
+        firstTurn = true;
+        
         TurnStart();
 
         lastMove.staffUsed = true;         
@@ -99,6 +102,10 @@ public class GameControl : MonoBehaviour
 
     public void EndTurn()
     {
+        if (firstTurn)
+        {
+            firstTurn = false;
+        }
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerTurn = (int)Player_Turn.enemy;
@@ -129,7 +136,14 @@ public class GameControl : MonoBehaviour
         }
         
         canCashOut = true;
-        staffUsed = false;
+        if (firstTurn)
+        {
+            staffUsed = true;
+        }
+        else if (!firstTurn)
+        {
+            staffUsed = false;
+        }
         ResetCanChange();
         CharacterScaling();
         CharacterDarkening();
@@ -214,6 +228,12 @@ public class GameControl : MonoBehaviour
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
             }
             pauseMode = true;
+        }
+        else if (gameOver.activeSelf)
+        {
+            Start();
+            gameOver.SetActive(false);
+            pauseMode = false;
         }
     }
     

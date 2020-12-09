@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +49,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SecondBaseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +108,7 @@
       <workItem from="1607415447748" duration="232000" />
       <workItem from="1607415712149" duration="6645000" />
       <workItem from="1607501749883" duration="6299000" />
-      <workItem from="1607515950868" duration="164000" />
+      <workItem from="1607515950868" duration="1765000" />
     </task>
     <servers />
   </component>

@@ -196,12 +196,22 @@ public class Owner : MonoBehaviour
         {
             owned = 0;
         }
+        if (specialState == 1)
+        {
+            owned = (int)Tile_State.player1;
+            canChange = false;
+        }
     }
     public void resetEnemy() //Todo...
     {
         if (owned == (int)Tile_State.player2)
         {
             owned = 0;
+        }
+        if (specialState == 2)
+        {
+            owned = (int)Tile_State.player2;
+            canChange = false;
         }
     }
 

@@ -33,41 +33,43 @@ public class MirrorStaff : MonoBehaviour
 
     void staffPower()
     {
-        
-        //lastMovesX = lastMove.lastMoveX;
-        //lastMovesY = lastMove.lastMoveY;
-        for(int i=0; i<lastMove.lastMovesX.Length; i++)
+        if (!gameControl.staffUsed)
         {
-            if(lastMove.lastMovesX[i] !=6)
+            //lastMovesX = lastMove.lastMoveX;
+            //lastMovesY = lastMove.lastMoveY;
+            for(int i=0; i<lastMove.lastMovesX.Length; i++)
             {
-         //Debug.Log("X: " + lastMoveX + "Y: " + lastMoveY);
-            int diffX, diffY;
-            diffX = lastMove.lastMovesX[i] - 4;
-            diffY = lastMove.lastMovesY[i] - 2;
-
-            mirroredX[i] = -diffX;
-            mirroredY[i] = -diffY + 2;
-            }
-            
-        //Debug.Log("MirroredX: " + mirroredX + "MirroredY: " + mirroredY);
-        if (mirroredX[i] <5)
-        {
-            if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
-            {
-                if(mirroredX[i] < 5 && mirroredY[i] < 5)
+                if(lastMove.lastMovesX[i] !=6)
                 {
-                Debug.Log("Using staff mirror");
-                spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
-                //gameControl.marysTempPoints++;
+                    //Debug.Log("X: " + lastMoveX + "Y: " + lastMoveY);
+                    int diffX, diffY;
+                    diffX = lastMove.lastMovesX[i] - 4;
+                    diffY = lastMove.lastMovesY[i] - 2;
+
+                    mirroredX[i] = -diffX;
+                    mirroredY[i] = -diffY + 2;
                 }
+            
+                //Debug.Log("MirroredX: " + mirroredX + "MirroredY: " + mirroredY);
+                if (mirroredX[i] <5)
+                {
+                    if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
+                    {
+                        if(mirroredX[i] < 5 && mirroredY[i] < 5)
+                        {
+                            Debug.Log("Using staff mirror");
+                            spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
+                            //gameControl.marysTempPoints++;
+                        }
         
-            }
+                    }
+                }
+            }    
+            lastMove.staffUsed = true;
+            gameControl.staffUsed = true;
+            gameControl.Staff();
+            resetMirrorArray();   
         }
-        }    
-     lastMove.staffUsed = true;
-     gameControl.staffUsed = true;
-     gameControl.Staff();
-     resetMirrorArray();   
     }
     void resetMirrorArray()
     {
