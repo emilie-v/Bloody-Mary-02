@@ -6,6 +6,7 @@
     <e p="D:\Unity\Bloody-Mary-02\BMary_Quest" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AudioManager2.cs" t="Include" />
         <e p="DOTween" t="Include">
           <e p="Modules" t="Include">
             <e p="DOTweenModuleAudio.cs" t="Include" />
@@ -20,20 +21,24 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AIBehaviour.cs" t="Include" />
-          <e p="AudioManager.cs" t="Include" />
           <e p="BackgroundMusic.cs" t="Include" />
           <e p="BaseStaff.cs" t="Include" />
           <e p="BloodPointsBar.cs" t="Include" />
           <e p="Boardpiece.cs" t="Include" />
-          <e p="ButtonBehaviour.cs" t="Include" />
+          <e p="Button_Scripts" t="Include">
+            <e p="ButtonBehaviour.cs" t="Include" />
+            <e p="PlayerGameButtons.cs" t="Include" />
+          </e>
           <e p="ChooseEnemy.cs" t="Include" />
           <e p="ChooseStaff.cs" t="Include" />
+          <e p="Credits.cs" t="Include" />
           <e p="DialogueManager.cs" t="Include" />
           <e p="DialogueTrigger.cs" t="Include" />
           <e p="GameControl.cs" t="Include" />
           <e p="GridManager.cs" t="Include" />
           <e p="GUIManager.cs" t="Include" />
           <e p="HellStaff.cs" t="Include" />
+          <e p="LastMove.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="MaryDialogue.cs" t="Include" />
           <e p="MirrorStaff.cs" t="Include" />
@@ -42,6 +47,7 @@
           <e p="Player.cs" t="Include" />
           <e p="SecondBaseStaff.cs" t="Include" />
           <e p="Sound.cs" t="Include" />
+          <e p="SoundManager.cs" t="Include" />
           <e p="Spelplan.cs" t="Include" />
           <e p="StaffManager.cs" t="Include" />
         </e>
