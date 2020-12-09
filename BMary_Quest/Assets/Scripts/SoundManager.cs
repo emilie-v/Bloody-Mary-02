@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundAssets : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
+    public AudioClip[] audioClips;
+
 
 }

@@ -124,7 +124,6 @@ public class ChooseStaff : MonoBehaviour
     {
         if (isUnlocked == true)
         {
-            backgroundMusic.menuMusicPlaying = false;
             StaffManager.playerSelectedStaff = index;
             SceneManager.LoadScene("GameBoard");
         }
