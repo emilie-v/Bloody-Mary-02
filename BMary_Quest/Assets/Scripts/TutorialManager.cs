@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour
     {
         SoundManager.Instance.LockedWarningPopUpSound();
         SceneManager.LoadScene("MainMenu");
+
     }
 
 
