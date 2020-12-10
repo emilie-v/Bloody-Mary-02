@@ -275,16 +275,20 @@ public class GameControl : MonoBehaviour
         if (marysHealth <= 0 || enemyHealth <= 0)
         {
             gameOver.SetActive(true);
-            
-            if (marysHealth <= 0)
+            if (marysHealth <= 0 && enemyHealth <= 0)
             {
                 SoundManager.Instance.LoseStateSound();
-                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Lucifer Wins";
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Everyone Lose!";
+            }
+            else if (marysHealth <= 0)
+            {
+                SoundManager.Instance.LoseStateSound();
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Lucifer Wins!";
             } 
             else if (enemyHealth <= 0)
             {
                 SoundManager.Instance.WinStateSound();
-                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins";
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
             }
             pauseMode = true;
         }
