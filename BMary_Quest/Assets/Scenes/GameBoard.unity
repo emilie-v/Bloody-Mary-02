@@ -616,6 +616,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader_Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 6990335170171203614, guid: e1a654030a7f701449f9f46613858b50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a654030a7f701449f9f46613858b50, type: 3}
 --- !u!1 &1006340443 stripped
@@ -983,6 +988,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736026940, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -57
+      objectReference: {fileID: 0}
+    - target: {fileID: 736026940, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -309.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 736026942, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d67bedbb5dda0d418a1ebd0557a5233,
+        type: 3}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: aiBehaviour
       value: 
