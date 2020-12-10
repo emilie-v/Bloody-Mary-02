@@ -15,7 +15,7 @@ public class LevelLoaderTransition : MonoBehaviour
 
     IEnumerator TransitionAnimation()
     {
-        transition.SetTrigger("Start");
+        transition.SetTrigger("SliderStart");
 
         yield return new WaitForSeconds(transitionTime);
 
