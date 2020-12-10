@@ -250,7 +250,7 @@ public class GameControl : MonoBehaviour
                     }
                 }
                 if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
-                    marysHealth -= marysTempPoints + 1;
+                    enemyHealth -= enemyTempPoints + 1;
                 
                 playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 marysHealth -= enemyTempPoints + 1;
@@ -377,7 +377,7 @@ public class GameControl : MonoBehaviour
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
-        else if (!staffUsed)
+        else if (!staffUsed && playerTurn == (int)Player_Turn.mary)
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = Color.white;
         }
@@ -386,10 +386,15 @@ public class GameControl : MonoBehaviour
         {
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
-        else if (!staffUsed)
+        else if (!staffUsed && playerTurn == (int)Player_Turn.enemy)
         {
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = Color.white;
         }
+        
+        GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+            DOFillAmount((float) playerStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
+        GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+            DOFillAmount((float) enemyStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
 
         UpdateMarkedPiece();
     }
