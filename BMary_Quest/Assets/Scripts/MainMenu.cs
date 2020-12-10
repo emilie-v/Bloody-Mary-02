@@ -11,7 +11,12 @@ public class MainMenu : MonoBehaviour
         SoundManager.Instance.MenuButtonSound();
         SceneManager.LoadScene("ChooseEnemy");
     }
-      public void Credits()
+    public void Tutorial()
+    {
+        SoundManager.Instance.MenuButtonSound();
+        SceneManager.LoadScene("Tutorial");
+    }
+    public void Credits()
     {
         SoundManager.Instance.MenuButtonSound();
         SceneManager.LoadScene("Credits");
