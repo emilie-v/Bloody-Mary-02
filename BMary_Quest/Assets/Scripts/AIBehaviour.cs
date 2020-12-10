@@ -19,6 +19,7 @@ public class AIBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject spelplan;
     [SerializeField] private GameControl gameControl;
+    [SerializeField] private HellStaff hellstaff;
     
 
     private void Start()
@@ -163,6 +164,15 @@ public class AIBehaviour : MonoBehaviour
 
     private void UseStaff()
     {
+        if (!gameControl.staffUsed)
+        {
+            Debug.Log("Enemy uses staff");
+            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0)
+            {
+                Debug.Log("Enemy uses hellstaff");
+                hellstaff.hellStaffActiveAbility();
+            }
+        }
         useStaffDone = true;
     }
 

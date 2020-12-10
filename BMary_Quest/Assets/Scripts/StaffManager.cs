@@ -14,10 +14,12 @@ public class StaffManager : MonoBehaviour
         if (playerSelectedStaff == 0)
         {
             gameObject.AddComponent(typeof(MirrorStaff));
+            DataAcrossScenes.PlayerChosenStaff = 0;
         }
         else if(playerSelectedStaff == 1)
         {
-            gameObject.AddComponent(typeof(SecondBaseStaff));
+            gameObject.AddComponent(typeof(HellStaff));
+            DataAcrossScenes.PlayerChosenStaff = 1;
         }
         else
         {

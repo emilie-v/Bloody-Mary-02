@@ -8,6 +8,8 @@ public class HellStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
+
+    public int staffCooldown = 2;
     
 
     void Start()
@@ -23,12 +25,33 @@ public class HellStaff : MonoBehaviour
 
     public void hellStaffPassiveAbility()
     {
-        if(lastMove.enemyCashedOutThisTurn==true)
-        gameControl.enemyHealth++;
+        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        {
+            if(lastMove.enemyCashedOutThisTurn)
+            gameControl.enemyHealth++;
+        }
+
+        if (DataAcrossScenes.PlayerChosenStaff == 1)
+        {
+            if(lastMove.maryCashedOutThisTurn)
+                gameControl.marysHealth++;
+        }
     }
     public void hellStaffActiveAbility()
     {
-        lastMove.hellStaffActivePower = true;
+        if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
+        {
+            gameControl.enemyStaffCooldown = staffCooldown;
+            lastMove.enemyHellStaffActivePower = true;
+        }
+        if (DataAcrossScenes.PlayerChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
+        {
+            gameControl.playerStaffCooldown = staffCooldown;
+            lastMove.playerHellStaffActivePower = true;
+        }
+
+        gameControl.staffUsed = true;
+        gameControl.Staff();
         //set cooldown to 2 turns
     }
 }

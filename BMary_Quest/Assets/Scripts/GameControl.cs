@@ -31,6 +31,9 @@ public class GameControl : MonoBehaviour
     public int enemyHealth;
 
     private int maxMarksToPlace;
+
+    public int playerStaffCooldown;
+    public int enemyStaffCooldown;
     
     public KeyCode playerPlaceModeHotkey = KeyCode.Q;
     public KeyCode playerStaffHotkey = KeyCode.W;
@@ -70,6 +73,8 @@ public class GameControl : MonoBehaviour
     //Characters
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject enemy;
+
+    public Sprite hellStaffMark;
     
 
     private void Awake()
@@ -128,7 +133,16 @@ public class GameControl : MonoBehaviour
         {
             SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.enemy;
-            lastMove.enemyCashedOutThisTurn =false;
+            lastMove.enemyCashedOutThisTurn = false;
+            lastMove.enemyHellStaffActivePower = false;
+            if (DataAcrossScenes.PlayerChosenStaff == 1)
+            {
+                hellstaff.hellStaffPassiveAbility();
+            }
+            if (enemyStaffCooldown > 0)
+            {
+                enemyStaffCooldown--;
+            }
             TurnStart();
         }
         else
@@ -136,10 +150,15 @@ public class GameControl : MonoBehaviour
             SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.mary;
             lastMove.staffUsed = false;
-            lastMove.maryCashedOutThisTurn =false;
-            if (DataAcrossScenes.ChosenStaff==1)
+            lastMove.maryCashedOutThisTurn = false;
+            lastMove.playerHellStaffActivePower = false;
+            if (DataAcrossScenes.EnemyChosenStaff==1)
             {
                 hellstaff.hellStaffPassiveAbility();
+            }
+            if (playerStaffCooldown > 0)
+            {
+                playerStaffCooldown--;
             }
             TurnStart();
         }
@@ -178,6 +197,7 @@ public class GameControl : MonoBehaviour
         CheckCanCashOut();
         UpdateBloodPoints();
         UpdateMarkIndicators();
+        UpdateMarkedPiece();
     }
 
     public void CashOut() 
@@ -200,7 +220,7 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
-                if (lastMove.hellStaffActivePower == true)
+                if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
                     marysHealth -= marysTempPoints + 1;
 
                 enemyHealth -= marysTempPoints + 1;
@@ -227,6 +247,8 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
+                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
+                    marysHealth -= marysTempPoints + 1;
                 
                 playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 marysHealth -= enemyTempPoints + 1;
@@ -349,7 +371,7 @@ public class GameControl : MonoBehaviour
 
     public void Staff()
     {
-        if (staffUsed)
+        if (staffUsed && playerTurn == (int)Player_Turn.mary || playerStaffCooldown > 0)
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
@@ -357,6 +379,17 @@ public class GameControl : MonoBehaviour
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = Color.white;
         }
+
+        if (staffUsed && playerTurn == (int)Player_Turn.enemy || enemyStaffCooldown > 0)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+        }
+        else if (!staffUsed)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = Color.white;
+        }
+
+        UpdateMarkedPiece();
     }
     
     public void CheckCanCashOut()
@@ -403,6 +436,27 @@ public class GameControl : MonoBehaviour
         for (int i = 0; i < playerMoves; i++)
         {
             yourMarks.transform.GetChild(i).GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    private void UpdateMarkedPiece()
+    {
+        if (lastMove.enemyHellStaffActivePower)
+        {
+            spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;
+        }
+        else if (!lastMove.enemyHellStaffActivePower)
+        {
+            spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        }
+
+        if (lastMove.playerHellStaffActivePower)
+        {
+            spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;
+        }
+        else if (!lastMove.playerHellStaffActivePower)
+        {
+            spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 

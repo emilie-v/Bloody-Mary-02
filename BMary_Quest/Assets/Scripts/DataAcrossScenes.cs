@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class DataAcrossScenes
 {
-    private static int chosenStaff;
+    private static int enemyChosenStaff;
+
+    private static int playerChosenStaff;
     //kanske ska göras till enum sen, test för att se om det blir smidigt detta! Hellstaff tänker jag mig är 1 för testsyfte.
 
-    public static int ChosenStaff 
+    public static int EnemyChosenStaff 
     {
         get 
         {
-            return chosenStaff;
+            return enemyChosenStaff;
         }
         set 
         {
-            chosenStaff = value;
+            enemyChosenStaff = value;
+        }
+    }
+    public static int PlayerChosenStaff 
+    {
+        get 
+        {
+            return playerChosenStaff;
+        }
+        set 
+        {
+            playerChosenStaff = value;
         }
     }
 }
