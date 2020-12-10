@@ -200,6 +200,9 @@ public class GameControl : MonoBehaviour
                         }
                     }
                 }
+                if (lastMove.hellStaffActivePower == true)
+                    marysHealth -= marysTempPoints + 1;
+
                 enemyHealth -= marysTempPoints + 1;
                 marysTempPoints = 0;
                 lastMove.maryCashedOutThisTurn=true;

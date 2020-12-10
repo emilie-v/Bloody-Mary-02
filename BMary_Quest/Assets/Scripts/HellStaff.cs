@@ -28,6 +28,7 @@ public class HellStaff : MonoBehaviour
     }
     public void hellStaffActiveAbility()
     {
-        
+        lastMove.hellStaffActivePower = true;
+        //set cooldown to 2 turns
     }
 }

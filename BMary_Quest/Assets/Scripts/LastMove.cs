@@ -7,6 +7,7 @@ public class LastMove : MonoBehaviour
     public bool staffUsed = false;
     public bool enemyCashedOutThisTurn = false;
     public bool maryCashedOutThisTurn = false;
+    public bool hellStaffActivePower = false;
     public int[] lastMovesX = new int[5] {6,6,6,6,6};
     public int[] lastMovesY = new int[5] {6,6,6,6,6};
 
