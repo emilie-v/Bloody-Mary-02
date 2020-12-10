@@ -20,6 +20,7 @@ public class ChooseStaff : MonoBehaviour
     bool isUnlocked = false;
     BackgroundMusic backgroundMusic;
     public SoundManager soundManager;
+    public LevelLoaderTransition levelLoaderTransition;
 
     public GameObject padlockImage;
 
@@ -133,7 +134,7 @@ public class ChooseStaff : MonoBehaviour
         {
             SoundManager.Instance.SelectButtonSound();
             StaffManager.playerSelectedStaff = index;
-            SceneManager.LoadScene("GameBoard");
+            levelLoaderTransition.LoadGameScene();
         }
         else
         {

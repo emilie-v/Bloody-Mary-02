@@ -395,7 +395,20 @@ public class GameControl : MonoBehaviour
             DOFillAmount((float) playerStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
         GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
             DOFillAmount((float) enemyStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
+        GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text =
+            "" + playerStaffCooldown;
+        GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text =
+            "" + enemyStaffCooldown;
 
+        if (playerStaffCooldown <= 0)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text = null;
+        }
+        if (enemyStaffCooldown <= 0)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text = null;
+        }
+        
         UpdateMarkedPiece();
     }
     
