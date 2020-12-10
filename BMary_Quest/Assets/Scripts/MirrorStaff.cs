@@ -16,7 +16,7 @@ public class MirrorStaff : MonoBehaviour
     private int[] mirroredX=new int[5] {6,6,6,6,6};
     private int[] mirroredY=new int[5]{6,6,6,6,6};
 
-    void Start()
+    void Awake()
     {
         spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
