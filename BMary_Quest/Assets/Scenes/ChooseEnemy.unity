@@ -1021,21 +1021,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1085600876461852426, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964,
-        type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1085600876461852426, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1085600876461852426, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4626731115068837226, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964,
         type: 3}
       propertyPath: m_RootOrder
@@ -1096,14 +1081,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 4626731115068837237, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964,
-        type: 3}
-      propertyPath: transitionTime
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1085600875155325611, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964, type: 3}
-    - {fileID: 556887029, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 196eb7fcc76a88f4aa6c8e6dc73a9964, type: 3}
 --- !u!114 &762505022 stripped
 MonoBehaviour:
