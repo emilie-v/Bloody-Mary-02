@@ -179,7 +179,8 @@ public class GameControl : MonoBehaviour
                 aiBehaviour.Behaviour();
             }
         }
-        
+
+        placeMode = false;
         canCashOut = true;
         if (firstTurn)
         {
@@ -198,6 +199,7 @@ public class GameControl : MonoBehaviour
         UpdateBloodPoints();
         UpdateMarkIndicators();
         UpdateMarkedPiece();
+        guiManager.ButtonGlow();
     }
 
     public void CashOut() 
