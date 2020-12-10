@@ -109,12 +109,12 @@ public class Owner : MonoBehaviour
 
     public void PiecePlaced()
     {
-        if(gameControl.playerTurn == 0)
+        if(gameControl.playerTurn == (int)Player_Turn.mary)
         {
             SoundManager.Instance.MaryMarkPlacedSound();
         }
 
-        else if (gameControl.playerTurn == 1)
+        else if (gameControl.playerTurn == (int)Player_Turn.enemy)
         {
             SoundManager.Instance.EnemyMarkPlacedSound();
         }
@@ -196,7 +196,7 @@ public class Owner : MonoBehaviour
     //reset methods
     public void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
     {
-        owned = 0;
+        owned = (int)Tile_State.empty;
         tile.sprite = neutral;
         gameControl.marysTempPoints = 0;
         gameControl.enemyTempPoints = 0;
@@ -206,7 +206,7 @@ public class Owner : MonoBehaviour
     {
         if (owned == (int)Tile_State.player1)
         {
-            owned = 0;
+            owned = (int)Tile_State.empty;
         }
         if (specialState == 1)
         {
@@ -218,7 +218,7 @@ public class Owner : MonoBehaviour
     {
         if (owned == (int)Tile_State.player2)
         {
-            owned = 0;
+            owned = (int)Tile_State.empty;
         }
         if (specialState == 2)
         {
@@ -247,11 +247,11 @@ public class Owner : MonoBehaviour
         CheckNeighbours();
         if (gameControl.placeMode && !gameControl.pauseMode)
         {
-            if (owned == 0 && canChange && gameControl.playerMoves > 0)
+            if (owned == (int)Tile_State.empty && canChange && gameControl.playerMoves > 0)
             {
                 GetComponent<SpriteRenderer>().color = Color.green;
             }
-            else if (owned == 0 && !canChange && gameControl.playerMoves > 0)
+            else if (owned == (int)Tile_State.empty && !canChange && gameControl.playerMoves > 0)
             {
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
@@ -266,11 +266,11 @@ public class Owner : MonoBehaviour
     {
         if (gameControl.placeMode)
         {
-            if (owned == 0 && canChange && gameControl.playerMoves > 0)
+            if (owned == (int)Tile_State.empty && canChange && gameControl.playerMoves > 0)
             {
                 GetComponent<SpriteRenderer>().color = new Color(0.8f, 1f, 0.8f, 1f);
             }
-            else if (owned == 0 && !canChange && gameControl.playerMoves > 0)
+            else if (owned == (int)Tile_State.empty && !canChange && gameControl.playerMoves > 0)
             {
                 GetComponent<SpriteRenderer>().color = new Color(1f, 0.8f, 0.8f, 1f);
             }
