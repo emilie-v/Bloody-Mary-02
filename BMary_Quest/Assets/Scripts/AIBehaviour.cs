@@ -164,11 +164,14 @@ public class AIBehaviour : MonoBehaviour
 
     private void UseStaff()
     {
-        Debug.Log("Enemy uses staff");
-        if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0)
+        if (!gameControl.staffUsed)
         {
-            Debug.Log("Enemy uses hellstaff");
-            hellstaff.hellStaffActiveAbility();
+            Debug.Log("Enemy uses staff");
+            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0)
+            {
+                Debug.Log("Enemy uses hellstaff");
+                hellstaff.hellStaffActiveAbility();
+            }
         }
         useStaffDone = true;
     }

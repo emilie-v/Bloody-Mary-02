@@ -376,7 +376,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1933171020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d23817c0388e61b418750d41920f722e, type: 3}
@@ -1137,6 +1137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1933171020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 419697110313574613, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1959032273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,14 +1344,14 @@ PrefabInstance:
     - target: {fileID: 818135137, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1933171020}
     - target: {fileID: 818135137, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 818135137, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StaffPower
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 818135137, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

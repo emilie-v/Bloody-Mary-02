@@ -49,6 +49,9 @@ public class HellStaff : MonoBehaviour
             gameControl.playerStaffCooldown = staffCooldown;
             lastMove.playerHellStaffActivePower = true;
         }
+
+        gameControl.staffUsed = true;
+        gameControl.Staff();
         //set cooldown to 2 turns
     }
 }

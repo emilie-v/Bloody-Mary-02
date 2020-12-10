@@ -371,7 +371,7 @@ public class GameControl : MonoBehaviour
 
     public void Staff()
     {
-        if (staffUsed)
+        if (staffUsed && playerTurn == (int)Player_Turn.mary || playerStaffCooldown > 0)
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
@@ -379,6 +379,17 @@ public class GameControl : MonoBehaviour
         {
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = Color.white;
         }
+
+        if (staffUsed && playerTurn == (int)Player_Turn.enemy || enemyStaffCooldown > 0)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
+        }
+        else if (!staffUsed)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = Color.white;
+        }
+
+        UpdateMarkedPiece();
     }
     
     public void CheckCanCashOut()
