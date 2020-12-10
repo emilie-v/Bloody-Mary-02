@@ -804,6 +804,8 @@ MonoBehaviour:
   enemyMaxHealth: 20
   marysHealth: 20
   enemyHealth: 20
+  playerStaffCooldown: 0
+  enemyStaffCooldown: 0
   playerPlaceModeHotkey: 113
   playerStaffHotkey: 119
   playerCashOutHotkey: 101
@@ -826,6 +828,7 @@ MonoBehaviour:
   enemyCashOutButton: {fileID: 3568027160121143519}
   player: {fileID: 368794418}
   enemy: {fileID: 526051854}
+  hellStaffMark: {fileID: 21300000, guid: 796e06bec3722d34ca4ac66466a89605, type: 3}
 --- !u!114 &1324767609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,6 +848,7 @@ MonoBehaviour:
   ownedPieces: 0
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
+  hellstaff: {fileID: 1324767612}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
@@ -874,6 +878,8 @@ MonoBehaviour:
   staffUsed: 0
   enemyCashedOutThisTurn: 0
   maryCashedOutThisTurn: 0
+  enemyHellStaffActivePower: 0
+  playerHellStaffActivePower: 0
   lastMovesX: 0600000006000000060000000600000006000000
   lastMovesY: 0600000006000000060000000600000006000000
 --- !u!114 &1324767612
@@ -891,6 +897,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  staffCooldown: 2
 --- !u!1 &1422405482
 GameObject:
   m_ObjectHideFlags: 0
