@@ -10,10 +10,12 @@ public class GUIManagerMainMenu : MonoBehaviour
     {
         if (optionsPanel.activeSelf)
         {
+            SoundManager.Instance.LockedWarningPopUpSound();
             optionsPanel.SetActive(false);
         }
         else if (!optionsPanel.activeSelf)
         {
+            SoundManager.Instance.MenuButtonSound();
             optionsPanel.SetActive(true);
         }
     }
