@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
         mainMenuMusic.volume = mainMenuMusicVolume;
     }
     
-    public void updateMainMenuMusicVolume(float volume)
+    public void UpdateMainMenuMusicVolume(float volume)
     {
         mainMenuMusicVolume = volume;
     }
