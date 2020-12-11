@@ -471,11 +471,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Making an attack move consumes your markers. Based on how many markers
+  m_Text: Making an attack move consumes your markers. Based on how many markers
     on the board you own, you deal more damage.
-
-    Insert animated something here
-    as well as on button.'
 --- !u!222 &352414378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -630,8 +627,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
   m_Text: "Once you feel that you\u2019re done with all your moves, click the icon
-    with the arrows to end your turn and let your opponent try and stop you.\nInsert
-    animated arrows here as well as on button"
+    with the arrows to end your turn and let your opponent try and stop you."
 --- !u!222 &415703445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1341,7 +1337,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: "You can put down a number of marks on the board every turn. When you\u2019ve
     reached a number of marks you want, you can make an attack move to deal damage
-    to your opponents health points.\nInsert animated marks here as well as on button."
+    to your opponents health points."
 --- !u!222 &1071029341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1763,11 +1759,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Staffs are used by all manners of magical creatures. They bring tactical
+  m_Text: Staffs are used by all manners of magical creatures. They bring tactical
     elements to the fight and give you advantages and disadvantages depending on
     the staff you use.
-
-    Insert animated staffs here as well as on button.'
 --- !u!222 &1281782282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1848,7 +1842,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: "Both you and your opponent have a certain amount of health, which you
     can tell by the number in the blood droplet. Once a player's health points reach
-    0, they\u2019re defeated.\nInsert animated blood droplet here as well as on button."
+    0, they\u2019re defeated."
 --- !u!222 &1303057137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2549,7 +2543,7 @@ MonoBehaviour:
     m_LineSpacing: 1.5
   m_Text: "The game board is a 5x5 grid. \nYou own one of the squares permanently
     as does your opponent. From your starting square you can place marks to own new
-    squares.\r\nInsert animated grid here as well as on button."
+    squares.\r"
 --- !u!222 &2142415387
 CanvasRenderer:
   m_ObjectHideFlags: 0
