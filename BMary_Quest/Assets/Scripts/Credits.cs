@@ -7,6 +7,7 @@ public class Credits : MonoBehaviour
 {
     public void Menu()
     {
+        SoundManager.Instance.LockedWarningPopUpSound();
         SceneManager.LoadScene("MainMenu");
     }
 }
