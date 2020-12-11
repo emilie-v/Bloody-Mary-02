@@ -14,7 +14,7 @@ public class GUIManagerMainMenu : MonoBehaviour
         slider = GameObject.Find("MusicVolume_Slider").GetComponent<Slider>();
         slider.onValueChanged.AddListener(SoundManager.Instance.UpdateMainMenuMusicVolume);
         slider.value = SoundManager.Instance.mainMenuMusic.volume;
-        OptionsPanel();
+        optionsPanel.SetActive(false);
     }
 
     public void OptionsPanel()
