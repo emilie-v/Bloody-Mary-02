@@ -63,6 +63,7 @@ public class ChooseStaff : MonoBehaviour
             Debug.Log("Reset all save data! Please restart!");
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("Staff" + 0, 1);
+            UpdateCurrentStaff();
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
