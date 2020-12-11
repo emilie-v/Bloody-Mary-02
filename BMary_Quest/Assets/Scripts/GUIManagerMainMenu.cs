@@ -7,13 +7,18 @@ using UnityEngine.UI;
 public class GUIManagerMainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject optionsPanel;
-    private Slider slider;
+    private Slider musicSlider;
+    private Button musicMuteButton;
 
     private void Start()
     {
-        slider = GameObject.Find("MusicVolume_Slider").GetComponent<Slider>();
-        slider.onValueChanged.AddListener(SoundManager.Instance.UpdateMainMenuMusicVolume);
-        slider.value = SoundManager.Instance.mainMenuMusic.volume;
+        musicSlider = GameObject.Find("MusicVolume_Slider").GetComponent<Slider>();
+        musicSlider.onValueChanged.AddListener(SoundManager.Instance.UpdateMainMenuMusicVolume);
+        musicSlider.value = SoundManager.Instance.mainMenuMusic.volume;
+
+        musicMuteButton = GameObject.Find("MusicVolume_MuteButton").GetComponent<Button>();
+        musicMuteButton.onClick.AddListener(SoundManager.Instance.MuteMainMenuMusicVolume);
+        
         optionsPanel.SetActive(false);
     }
 

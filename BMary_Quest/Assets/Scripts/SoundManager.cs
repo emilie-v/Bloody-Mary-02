@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] audioClips;
     
     private float mainMenuMusicVolume = 1f;
+    private float setMainMenuMusicVolume = 1f;
+    private bool mainMenuMusicMute;
 
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
@@ -38,7 +40,22 @@ public class SoundManager : MonoBehaviour
     
     public void UpdateMainMenuMusicVolume(float volume)
     {
-        mainMenuMusicVolume = volume;
+        setMainMenuMusicVolume = volume;
+        mainMenuMusicVolume = setMainMenuMusicVolume;
+    }
+
+    public void MuteMainMenuMusicVolume()
+    {
+        if (mainMenuMusicMute)
+        {
+            mainMenuMusicVolume = setMainMenuMusicVolume;
+            mainMenuMusicMute = false;
+        }
+        else if (!mainMenuMusicMute)
+        {
+            mainMenuMusicVolume = 0;
+            mainMenuMusicMute = true;
+        }
     }
     
     void GetAllComponents()
