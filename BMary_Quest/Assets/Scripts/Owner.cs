@@ -14,6 +14,7 @@ public class Owner : MonoBehaviour
     //public bool OwnedByMary = false;
     //public bool OwnedByEnemy = false;
     public bool canChange = false;
+    public bool locked;
     public int specialState;
     /* 
     potentiella states: 1: startbricka för Mary, kan alltid vara hennes, aldrig fiendens, 2: tvärtom mot 1, 3: ett state som t.ex. en stav kan lägga på, gör så att poäng dubblas 4: mer stavspecial. Kanske ska ha separata variabler för stavgrejer. 
@@ -152,6 +153,12 @@ public class Owner : MonoBehaviour
     //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
     public void CheckNeighbours()
     {
+        if (locked)
+        {
+            canChange = false;
+            return;
+        }
+        
         //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
         {

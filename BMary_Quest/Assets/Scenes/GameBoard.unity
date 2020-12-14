@@ -394,12 +394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd941880ac614994fadb914e8e3dd28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marysTempPoints: 0
-  enemyTempPoints: 0
-  spelplan: {fileID: 773677183}
+  dialogueManager: {fileID: 3568027160121143521}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
-  dialogueManager: {fileID: 3568027160121143521}
+  spelplan: {fileID: 773677183}
   gameOver: {fileID: 853304023}
   marysMaxHealth: 20
   enemyMaxHealth: 20
@@ -420,6 +418,8 @@ MonoBehaviour:
   playerMoves: 0
   playerMovesPerTurn: 0
   enemyMovesPerTurn: 0
+  marysTempPoints: 0
+  enemyTempPoints: 0
   playerBloodPointsText: {fileID: 1006340443}
   enemyBloodPointsText: {fileID: 590074179}
   playerBloodPointsFilling: {fileID: 3568027160121143524}
@@ -451,6 +451,7 @@ MonoBehaviour:
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
+  darkNightStaff: {fileID: 1324767613}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0

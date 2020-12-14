@@ -21,6 +21,11 @@ public class StaffManager : MonoBehaviour
             gameObject.AddComponent(typeof(HellStaff));
             DataAcrossScenes.PlayerChosenStaff = 1;
         }
+        else if (playerSelectedStaff == 2)
+        {
+            gameObject.AddComponent(typeof(DarkNightStaff));
+            DataAcrossScenes.PlayerChosenStaff = 2;
+        }
         else
         {
             Debug.LogError("No staff selected!");

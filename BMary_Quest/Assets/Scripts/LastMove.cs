@@ -20,7 +20,7 @@ public class LastMove : MonoBehaviour
    public void resetArray()
    {
        Debug.Log("ResetArray körs");
-    lastMovesX = new int[5] {6,6,6,6,6};
-    lastMovesY = new int[5] {6,6,6,6,6};  
+       lastMovesX = new int[5] {6,6,6,6,6};
+       lastMovesY = new int[5] {6,6,6,6,6};  
    }
 }

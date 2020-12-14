@@ -239,7 +239,7 @@ public class GameControl : MonoBehaviour
                 }
                 if(DataAcrossScenes.PlayerChosenStaff == 2)
                 {
-                    darknightstaff.darkNightStaffPassiveAbility();
+                    darknightstaff.DarkNightStaffPassiveAbility();
                 }
 
                 enemyHealth -= marysTempPoints + 1;
@@ -273,7 +273,7 @@ public class GameControl : MonoBehaviour
                 }
                 if (DataAcrossScenes.EnemyChosenStaff == 2)
                 {
-                    darknightstaff.darkNightStaffPassiveAbility();
+                    darknightstaff.DarkNightStaffPassiveAbility();
                 }
 
                 marysHealth -= enemyTempPoints + 1;
