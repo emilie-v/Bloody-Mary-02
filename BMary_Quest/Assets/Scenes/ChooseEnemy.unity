@@ -1552,6 +1552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e881fa5e12f6a5498431f624e4c2acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staffInformationList: []
+  staffName: []
+  abilityInformation: {fileID: 1730514953}
+  staffNameText: {fileID: 1308411517}
   chooseEnemy: {fileID: 1149771666}
   chooseStaff: {fileID: 187582374}
   selectWarning: {fileID: 1456561489}

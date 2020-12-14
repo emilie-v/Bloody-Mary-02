@@ -145,7 +145,7 @@ public class ChooseEnemy : MonoBehaviour
         {
             padlockImage.SetActive(false);
         }
-        else if(index == 1)
+        else if(index == 1 || index == 2)
         {
             padlockImage.SetActive(true);
         }

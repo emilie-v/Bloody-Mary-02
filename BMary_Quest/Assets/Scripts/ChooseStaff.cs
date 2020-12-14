@@ -11,6 +11,12 @@ public class ChooseStaff : MonoBehaviour
     Sprite hell;
     Sprite padlock;
 
+    public string[] staffInformationList;
+    public string[] staffName;
+
+    public Text abilityInformation;
+    public Text staffNameText;
+
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
 
@@ -35,6 +41,9 @@ public class ChooseStaff : MonoBehaviour
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
+
+        staffInformationList = new string[] {"Information: Mirror staff is...", "Information: Hell staff is...."};
+        staffName = new string[] { "Mirror Staff", "Hell Staff" };
         
         staffList = new Sprite[2];
         staffList[0] = mirror;
@@ -119,7 +128,11 @@ public class ChooseStaff : MonoBehaviour
             padlockImage.SetActive(true);
             isUnlocked = false;
         }
-    
+
+        staffNameText.text = staffName[index];
+        currentStaff.sprite = staffList[index];
+
+        abilityInformation.text = staffInformationList[index];
         currentStaff.sprite = staffList[index];
     }
 
