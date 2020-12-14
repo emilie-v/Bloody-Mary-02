@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 91144847}
   - component: {fileID: 91144846}
   - component: {fileID: 91144845}
+  - component: {fileID: 91144848}
   m_Layer: 5
   m_Name: MusicVolume_MuteButton
   m_TagString: Untagged
@@ -269,8 +270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 135, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: 125, y: -10}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &91144845
 MonoBehaviour:
@@ -365,6 +366,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91144843}
   m_CullTransparentMesh: 0
+--- !u!114 &91144848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91144843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &97293561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2004,7 @@ GameObject:
   - component: {fileID: 777195319}
   - component: {fileID: 777195318}
   - component: {fileID: 777195317}
+  - component: {fileID: 777195320}
   m_Layer: 5
   m_Name: MainVolume_MuteButton
   m_TagString: Untagged
@@ -2009,8 +2028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 135, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: 125, y: -10}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &777195317
 MonoBehaviour:
@@ -2055,13 +2074,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1009629920}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: MuteMainVolume
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2105,6 +2124,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777195315}
   m_CullTransparentMesh: 0
+--- !u!114 &777195320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777195315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &813622865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,6 +3223,7 @@ GameObject:
   - component: {fileID: 1650724596}
   - component: {fileID: 1650724595}
   - component: {fileID: 1650724598}
+  - component: {fileID: 1650724599}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -3319,6 +3356,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1650724599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650724593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCursor: {fileID: 0}
+  hoverCursor: {fileID: 0}
+  markerCursor: {fileID: 0}
+  staffCursor: {fileID: 0}
+  gameControl: {fileID: 0}
 --- !u!1 &1668799909
 GameObject:
   m_ObjectHideFlags: 0
