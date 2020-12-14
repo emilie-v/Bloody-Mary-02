@@ -41,6 +41,7 @@
           <e p="GUIManagerMainMenu.cs" t="Include" />
           <e p="HellStaff.cs" t="Include" />
           <e p="LastMove.cs" t="Include" />
+          <e p="LevelLoaderTransition.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="MaryDialogue.cs" t="Include" />
           <e p="MirrorStaff.cs" t="Include" />

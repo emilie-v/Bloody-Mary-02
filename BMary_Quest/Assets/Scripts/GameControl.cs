@@ -29,6 +29,7 @@ public class GameControl : MonoBehaviour
     public int enemyMaxHealth = 20;
     public int marysHealth;
     public int enemyHealth;
+    public Button abilityButton;
 
     private int maxMarksToPlace;
 
@@ -510,7 +511,9 @@ public class GameControl : MonoBehaviour
 
             if (Input.GetKeyDown(playerStaffHotkey))
             {
-                //Staffs
+                abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
+                abilityButton.onClick.Invoke();
+                Staff();
             }
         
             if (Input.GetKeyDown(playerCashOutHotkey))
@@ -521,35 +524,6 @@ public class GameControl : MonoBehaviour
             if (Input.GetKeyDown(playerEndTurnHotkey))
             {
                 EndTurn();
-            }
-        }
-        else if (playerTurn == (int)Player_Turn.enemy && !aiBehaviour.AIMode)
-        {
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                EndTurn();
-            }
-            
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                CashOut();
-            }
-            
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                //Staffs
-            }
-        
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                if (placeMode == false)
-                {
-                    placeMode = true;
-                }
-                else if (placeMode)
-                {
-                    placeMode = false;
-                }
             }
         }
 

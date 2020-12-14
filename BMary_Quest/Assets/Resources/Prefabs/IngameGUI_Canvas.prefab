@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 497795255839905049}
   - component: {fileID: 7028106201841692269}
   - component: {fileID: 7378318309266686497}
+  - component: {fileID: 3568027160121143532}
   m_Layer: 5
   m_Name: EndTurnButton
   m_TagString: Buttons
@@ -377,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.3, y: -308.5}
+  m_AnchoredPosition: {x: -57, y: -309.7}
   m_SizeDelta: {x: 51.06534, y: 51.06534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &736026943
@@ -408,7 +409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d5fa0e53b52d02f439e3027d35173fcb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d67bedbb5dda0d418a1ebd0557a5233, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -603,6 +604,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3568027160121143532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736026939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &740267481
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,9 +829,7 @@ GameObject:
   - component: {fileID: 1029516194}
   - component: {fileID: 1029516199}
   - component: {fileID: 7982898828937184005}
-  - component: {fileID: 8715039609953734824}
-  - component: {fileID: 7598355833696369581}
-  - component: {fileID: 1167934482404610439}
+  - component: {fileID: 3568027160121143534}
   m_Layer: 5
   m_Name: StaffButton
   m_TagString: Buttons
@@ -1012,50 +1026,7 @@ MonoBehaviour:
   staffButtonInfo: {fileID: 6656271873863549541}
   cashoutButtonInfo: {fileID: 5936288588553064045}
   endTurnButtonInfo: {fileID: 6939069953686464436}
---- !u!61 &8715039609953734824
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818135135}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 51.06534, y: 51.06534}
-  m_EdgeRadius: 0
---- !u!114 &7598355833696369581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818135135}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f459d4ec38b0eb4ea1eef3222c12eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
-  markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
-  gameControl: {fileID: 0}
---- !u!114 &1167934482404610439
+--- !u!114 &3568027160121143534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1064,9 +1035,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 818135135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &869130308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1517,7 @@ GameObject:
   - component: {fileID: 2341671153801975525}
   - component: {fileID: 4135715326467347754}
   - component: {fileID: 3769770371014656060}
+  - component: {fileID: 3568027160121143533}
   m_Layer: 5
   m_Name: OutCashButton
   m_TagString: Buttons
@@ -1792,6 +1767,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdd2d603db7cf64aac4496696b53201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3568027160121143533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038446337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1179378680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 31.389954}
+  m_AnchoredPosition: {x: 6, y: 34}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1179378683
@@ -1901,7 +1891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 31.299988}
+  m_AnchoredPosition: {x: -20, y: 34}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1231100493
@@ -2718,7 +2708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: 31.389954}
+  m_AnchoredPosition: {x: -7, y: 34}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1572255944
@@ -3176,7 +3166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 31.389954}
+  m_AnchoredPosition: {x: 19, y: 34}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1956279401
@@ -4223,6 +4213,7 @@ GameObject:
   - component: {fileID: 1768268202847684321}
   - component: {fileID: 595444194022894865}
   - component: {fileID: 4411930358922344385}
+  - component: {fileID: 3568027160121143536}
   m_Layer: 5
   m_Name: EndTurnButton
   m_TagString: Buttons
@@ -4342,6 +4333,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3568027160121143536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532912875699886358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &714590520604833236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,6 +4398,7 @@ GameObject:
   - component: {fileID: 9167619558315115287}
   - component: {fileID: 2565164840130304407}
   - component: {fileID: 9091412538933844000}
+  - component: {fileID: 3568027160121143538}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -4416,7 +4423,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 680, y: 160}
+  m_SizeDelta: {x: 720, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2565164840130304407
 CanvasRenderer:
@@ -4456,6 +4463,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3568027160121143538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807333503554642699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.7169812, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1203726931270869042
 GameObject:
   m_ObjectHideFlags: 0
@@ -4855,6 +4877,7 @@ GameObject:
   - component: {fileID: 2242234880779878257}
   - component: {fileID: 984647982297643423}
   - component: {fileID: 1365498202654730297}
+  - component: {fileID: 3568027160121143530}
   m_Layer: 5
   m_Name: OutCashButton
   m_TagString: Buttons
@@ -4974,6 +4997,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3568027160121143530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065254235868626201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3217821853308982954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5077,6 +5115,7 @@ GameObject:
   - component: {fileID: 1677023422049072411}
   - component: {fileID: 351279809004953783}
   - component: {fileID: 3468845824308882836}
+  - component: {fileID: 3568027160121143535}
   m_Layer: 5
   m_Name: StaffButton
   m_TagString: Buttons
@@ -5186,6 +5225,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3568027160121143535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620185084790052862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3852273646725708612
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,6 +5329,7 @@ GameObject:
   - component: {fileID: 222054989001479289}
   - component: {fileID: 3196770521999799621}
   - component: {fileID: 7262668914291628023}
+  - component: {fileID: 3568027160121143531}
   m_Layer: 5
   m_Name: MarkButton_Glow
   m_TagString: Untagged
@@ -5398,6 +5453,21 @@ MonoBehaviour:
   staffButtonInfo: {fileID: 6656271873863549541}
   cashoutButtonInfo: {fileID: 5936288588553064045}
   endTurnButtonInfo: {fileID: 6939069953686464436}
+--- !u!114 &3568027160121143531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026827358855251774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4324655300378117089
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,7 +6215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Person Wins
+  m_Text: Everyone Lose!
 --- !u!1 &7669121974512859662
 GameObject:
   m_ObjectHideFlags: 0
@@ -6219,7 +6289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 32.5}
+  m_AnchoredPosition: {x: -20, y: 35}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6785023573284577103
@@ -6351,6 +6421,7 @@ GameObject:
   - component: {fileID: 4996703478065097708}
   - component: {fileID: 4143094857072621172}
   - component: {fileID: 3564978543830502608}
+  - component: {fileID: 320736649}
   m_Layer: 5
   m_Name: MarkButton
   m_TagString: Buttons
@@ -6474,6 +6545,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &320736649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744570027570182111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8968318370688651873
 GameObject:
   m_ObjectHideFlags: 0
@@ -6508,7 +6594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 32.59}
+  m_AnchoredPosition: {x: 19, y: 35}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1216595378909212074
@@ -6583,7 +6669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: 32.59}
+  m_AnchoredPosition: {x: -7, y: 35}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5870241022015005559
@@ -6737,7 +6823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 32.59}
+  m_AnchoredPosition: {x: 6, y: 35}
   m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6812831811857788627
