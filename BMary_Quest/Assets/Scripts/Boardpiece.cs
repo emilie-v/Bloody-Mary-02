@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Boardpiece : MonoBehaviour
@@ -11,6 +12,8 @@ public class Boardpiece : MonoBehaviour
 
     Sprite enemyStarter;
     Sprite maryStarter;
+
+    Sprite locked;
 
     private SpriteRenderer tile;
 
@@ -25,6 +28,8 @@ public class Boardpiece : MonoBehaviour
 
         enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
         maryStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary_Start");
+
+        locked = Resources.Load<Sprite>("Sprites/Marks/Lucifer_staff_ability");
     }
 
     // Update is called once per frame
@@ -44,5 +49,8 @@ public class Boardpiece : MonoBehaviour
 
         if (GetComponentInParent<Owner>().specialState == 2)
             piece.sprite = enemyStarter;
+
+        if (GetComponentInParent<Owner>().locked)
+            piece.sprite = locked;
     }
 }

@@ -52,6 +52,5 @@ public class HellStaff : MonoBehaviour
 
         gameControl.staffUsed = true;
         gameControl.Staff();
-        //set cooldown to 2 turns
     }
 }
