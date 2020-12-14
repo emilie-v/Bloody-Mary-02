@@ -12,11 +12,8 @@ using DG.Tweening;
 
 public class GameControl : MonoBehaviour
 {
-    public int marysTempPoints;
-    private int Char;
-    public int enemyTempPoints;
-    public GameObject spelplan;
     private Owner owner;
+    public DialogueManager dialogueManager;
     private HellStaff hellstaff;
     private DarkNightStaff darknightstaff;
     private Boardpiece boardpiece;
@@ -24,13 +21,14 @@ public class GameControl : MonoBehaviour
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
 
-    public DialogueManager dialogueManager;
+    public GameObject spelplan;
     public GameObject gameOver;
 
     public int marysMaxHealth = 20;
     public int enemyMaxHealth = 20;
     public int marysHealth;
     public int enemyHealth;
+
     public Button abilityButton;
 
     private int maxMarksToPlace;
@@ -51,6 +49,9 @@ public class GameControl : MonoBehaviour
     public int playerMoves;
     public int playerMovesPerTurn;
     public int enemyMovesPerTurn;
+    public int marysTempPoints;
+    public int enemyTempPoints;
+    private int Char;
     private bool canCashOut;
     
     //UI Text
@@ -224,6 +225,7 @@ public class GameControl : MonoBehaviour
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             dialogueManager.index = 2;
+                            dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueEnemyList[dialogueManager.index];
                             marysTempPoints ++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
@@ -244,8 +246,6 @@ public class GameControl : MonoBehaviour
                 marysTempPoints = 0;
                 lastMove.maryCashedOutThisTurn=true;
                 
-                
-
                 GameOver();
             }
             else if (playerTurn == (int)Player_Turn.enemy)
@@ -259,8 +259,7 @@ public class GameControl : MonoBehaviour
                     for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
-                        {
-                            
+                        {  
                             enemyTempPoints ++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }

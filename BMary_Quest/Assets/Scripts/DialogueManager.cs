@@ -13,11 +13,10 @@ public class DialogueManager : MonoBehaviour
 private void Start()
     {
         dialogueEnemyList = new string[] { "Hurry up", "Hi there", "Is this working?"};
-        
     }
 
     void Update()
     {
-        currentEnemyDialogue.text = dialogueEnemyList[index];
+      //  currentEnemyDialogue.text = dialogueEnemyList[index];
     }
 }
