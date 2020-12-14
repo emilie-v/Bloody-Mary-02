@@ -9,7 +9,10 @@ public class DarkNightStaff : MonoBehaviour
     public Button abilityButton;
     public LastMove lastMove;
 
-    private int bricksToLock;
+    public int bricksToLock = 2;
+    public int bricksToLockLeft = 2;
+    
+    public int staffCooldown = 1;
     
 
     void Start()
@@ -39,20 +42,32 @@ public class DarkNightStaff : MonoBehaviour
     {
         if (DataAcrossScenes.PlayerChosenStaff == 2 || DataAcrossScenes.EnemyChosenStaff == 2)
         {
-            while (!gameControl.staffUsed && bricksToLock > 0)
+            while (!gameControl.staffUsed && bricksToLockLeft > 0)
             {
                 foreach (Transform child in GameObject.Find("Spelplan").transform)
                 {
-                    if (child.GetComponent<Owner>().owned == (int)Tile_State.empty)
+                    if (child.GetComponent<Owner>().owned == (int)Tile_State.empty && !child.GetComponent<Owner>().locked)
                     {
-                        if (Random.Range(0, 25) == 0 && bricksToLock > 0)
+                        if (Random.Range(0, 25) == 0 && bricksToLockLeft > 0)
                         {
-                            bricksToLock--;
+                            bricksToLockLeft--;
                             child.GetComponent<Owner>().locked = true;
                         }
                     }
                 }
             }
+
+            if (DataAcrossScenes.PlayerChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.mary)
+            {
+                gameControl.playerStaffCooldown = staffCooldown;
+            }
+            if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            {
+                gameControl.enemyStaffCooldown = staffCooldown;
+            }
+
+            gameControl.staffUsed = true;
+            gameControl.Staff();
         }
     }
 }

@@ -16,6 +16,8 @@ public class MirrorStaff : MonoBehaviour
     private int[] mirroredX=new int[5] {6,6,6,6,6};
     private int[] mirroredY=new int[5]{6,6,6,6,6};
 
+    public int staffCooldown = 1;
+
     void Awake()
     {
         spelplan = GameObject.FindGameObjectWithTag("Spelplan");
@@ -66,6 +68,16 @@ public class MirrorStaff : MonoBehaviour
                     }
                 }
             }    
+            
+            if (DataAcrossScenes.PlayerChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.mary)
+            {
+                gameControl.playerStaffCooldown = staffCooldown;
+            }
+            if (DataAcrossScenes.EnemyChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            {
+                gameControl.enemyStaffCooldown = staffCooldown;
+            }
+            
             lastMove.staffUsed = true;
             gameControl.staffUsed = true;
             gameControl.Staff();

@@ -26,10 +26,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DarkNightStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DarkNightStaff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaffManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaffManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager_MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChooseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" />
@@ -68,11 +64,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaffManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DarkNightStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DarkNightStaff.cs" />
       </list>
     </option>
   </component>

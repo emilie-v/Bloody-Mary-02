@@ -173,7 +173,6 @@ public class AIBehaviour : MonoBehaviour
             }
             else if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.enemyStaffCooldown == 0)
             {
-                Debug.Log("enemy uses darknight staff");
                 darkNightStaff.DarkNightStaffActiveAbility();
             }
         }

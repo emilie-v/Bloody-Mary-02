@@ -29,7 +29,7 @@ public class Boardpiece : MonoBehaviour
         enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
         maryStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary_Start");
 
-        locked = Resources.Load<Sprite>("Sprites/GUI/GUI_Padlock");
+        locked = Resources.Load<Sprite>("Sprites/Marks/Lucifer_staff_ability");
     }
 
     // Update is called once per frame
