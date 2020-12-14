@@ -18,6 +18,7 @@ public class GameControl : MonoBehaviour
     public GameObject spelplan;
     private Owner owner;
     private HellStaff hellstaff;
+    private DarkNightStaff darknightstaff;
     private Boardpiece boardpiece;
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
@@ -93,6 +94,7 @@ public class GameControl : MonoBehaviour
         spelplan = GameObject.Find("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellstaff = GameObject.Find("PController").GetComponent<HellStaff>();
+        darknightstaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
         playerTurn = (int)Random.Range(0, 2);
         
         marysHealth = marysMaxHealth;
@@ -136,6 +138,7 @@ public class GameControl : MonoBehaviour
             playerTurn = (int)Player_Turn.enemy;
             lastMove.enemyCashedOutThisTurn = false;
             lastMove.enemyHellStaffActivePower = false;
+            lastMove.enemyDarkNightStaffActivePower = false;
             if (DataAcrossScenes.PlayerChosenStaff == 1)
             {
                 hellstaff.hellStaffPassiveAbility();
@@ -153,6 +156,7 @@ public class GameControl : MonoBehaviour
             lastMove.staffUsed = false;
             lastMove.maryCashedOutThisTurn = false;
             lastMove.playerHellStaffActivePower = false;
+            lastMove.playerDarkNightStaffActivePower = false;
             if (DataAcrossScenes.EnemyChosenStaff==1)
             {
                 hellstaff.hellStaffPassiveAbility();
@@ -229,6 +233,10 @@ public class GameControl : MonoBehaviour
                     marysHealth -= marysTempPoints + 1;
                     playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 }
+                if(DataAcrossScenes.PlayerChosenStaff == 2)
+                {
+                    darknightstaff.darkNightStaffPassiveAbility();
+                }
 
                 enemyHealth -= marysTempPoints + 1;
                 marysTempPoints = 0;
@@ -261,7 +269,11 @@ public class GameControl : MonoBehaviour
                     enemyHealth -= enemyTempPoints + 1;
                     enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
                 }
-                
+                if (DataAcrossScenes.EnemyChosenStaff == 2)
+                {
+                    darknightstaff.darkNightStaffPassiveAbility();
+                }
+
                 marysHealth -= enemyTempPoints + 1;
                 enemyTempPoints = 0;
                 lastMove.enemyCashedOutThisTurn=true;

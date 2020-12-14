@@ -104,6 +104,22 @@ public class ChooseEnemy : MonoBehaviour
             chooseStaff.SetActive(true);
         }
 
+        if (index == 1)
+        {
+            Debug.Log("Ghastella is chosen");
+            chooseEnemy.SetActive(false);
+            DataAcrossScenes.EnemyChosenStaff = 3; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+            chooseStaff.SetActive(true);
+        }
+
+        if (index == 2)
+        {
+            Debug.Log("The Count is chosen");
+            chooseEnemy.SetActive(false);
+            DataAcrossScenes.EnemyChosenStaff = 2; //temp, sets the value to reflect that the chosen staff is the darknightstaff
+            chooseStaff.SetActive(true);
+        }
+
         else
         {
             SoundManager.Instance.LockedWarningPopUpSound();
