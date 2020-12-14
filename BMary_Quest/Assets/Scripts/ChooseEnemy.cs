@@ -7,12 +7,25 @@ using UnityEngine.SceneManagement;
 public class ChooseEnemy : MonoBehaviour
 {
     Sprite[] enemyList;
+    Sprite[] enemyNameList;
     Sprite lucifer;
+    Sprite luciferName;
     Sprite ghastella;
+    Sprite ghastellaName;
+
     Sprite padlock;
 
     int index = 0;
     Image currentEnemy;
+    public Image currentEnemyName;
+    public Text currentEnemyStaff;
+
+    public string[] enemyStaffList = 
+        { 
+        "HellStaff", 
+        "GhastellaStaff" 
+        };
+
     public GameObject selectWarning;
     public GameObject cancelWarning;
     public GameObject chooseEnemy;
@@ -25,12 +38,20 @@ public class ChooseEnemy : MonoBehaviour
 
         lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
+
+        luciferName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_LuciferName");
+        ghastellaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
+
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
 
         enemyList = new Sprite[2];
-        enemyList[0] = lucifer;
-        enemyList[1] = ghastella;
+        enemyNameList = new Sprite[2];
 
+        enemyList[0] = lucifer;
+        enemyNameList[0] = luciferName;
+        enemyList[1] = ghastella;
+        enemyNameList[1] = ghastellaName;
+        
         currentEnemy.sprite = enemyList[index];
     }
 
@@ -45,7 +66,9 @@ public class ChooseEnemy : MonoBehaviour
             index = 0;
         }
 
+        currentEnemyStaff.text = enemyStaffList[index];
         currentEnemy.sprite = enemyList[index];
+        currentEnemyName.sprite = enemyNameList[index];
     }
 
     public void LeftArrowButton()
@@ -58,7 +81,9 @@ public class ChooseEnemy : MonoBehaviour
             index = enemyList.Length - 1;
         }
 
+        currentEnemyStaff.text = enemyStaffList[index];
         currentEnemy.sprite = enemyList[index];
+        currentEnemyName.sprite = enemyNameList[index];
     }
 
     public void SelectEnemyButton()
