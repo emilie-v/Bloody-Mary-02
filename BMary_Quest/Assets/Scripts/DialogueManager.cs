@@ -5,46 +5,19 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    public int index = 0;
+    public Text currentEnemyDialogue;
+    public string [] dialogueEnemyList;
 
-    public Text characterName;
-    public Text characterLine;
 
-    int dialogueLine;
-
-    bool started;
-    void Start()
+private void Start()
     {
-        sentences = new Queue<string>();
+        dialogueEnemyList = new string[] { "Hurry up", "Hi there", "Is this working?"};
+        
     }
-    /*
-    public void StartDialogue(Dialogue dialogue)
+
+    void Update()
     {
-        if (!started)
-        {
-
-            characterName.text = dialogue.name;
-            dialogueLine = 0;
-            started = true;
-        }
-        if (dialogue.sentences.Length > dialogueLine)
-        {
-            characterLine.text = dialogue.sentences[dialogueLine];
-        }
-        else
-        {
-            started = false;
-
-            characterName.text = "";
-            characterLine.text = "";
-        }
-
-       Debug.Log("Starting conversation with " + dialogue.name);
-
-
-
-        dialogueLine++;
-    }*/
-
-
+        currentEnemyDialogue.text = dialogueEnemyList[index];
+    }
 }

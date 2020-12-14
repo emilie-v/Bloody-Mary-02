@@ -23,7 +23,8 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
-    
+
+    public DialogueManager dialogueManager;
     public GameObject gameOver;
 
     public int marysMaxHealth = 20;
@@ -222,6 +223,7 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
+                            dialogueManager.index = 2;
                             marysTempPoints ++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
@@ -258,6 +260,7 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
+                            
                             enemyTempPoints ++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }
