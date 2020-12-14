@@ -280,6 +280,16 @@ public class Owner : MonoBehaviour
             }
         }
     }
+    
+    private void OnDestroy()
+    {
+        DOTween.Kill(transform);
+        DOTween.Kill(gameObject);
+        foreach (Transform child in transform)
+        {
+            DOTween.Kill(child);
+        }
+    }
 }
 
 public enum Tile_State : int

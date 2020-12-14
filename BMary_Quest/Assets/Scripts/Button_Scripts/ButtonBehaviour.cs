@@ -39,6 +39,5 @@ public class ButtonBehaviour : MonoBehaviour
         {
             DOTween.Kill(child);
         }
-        
     }
 }
