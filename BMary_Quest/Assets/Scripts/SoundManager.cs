@@ -4,17 +4,24 @@ using System.Collections.Generic;
 using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioListener audioListener;
     public AudioSource effectSource;
     public AudioSource mainMenuMusic;
     public AudioClip[] audioClips;
     public Image musicMuteButton;
+    public Image mainMuteButton;
 
     private Sprite highVolume;
     private Sprite lowVolume;
     private Sprite noVolume;
+    
+    private float mainVolume = 1f;
+    private float setMainVolume = 1f;
+    private bool mainVolumeMute;
     
     private float mainMenuMusicVolume = 1f;
     private float setMainMenuMusicVolume = 1f;
@@ -40,6 +47,24 @@ public class SoundManager : MonoBehaviour
         GetAllComponents();
     }
     
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu")
+        {
+            GetAllComponents();
+        }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Update()
     {
         mainMenuMusic.volume = mainMenuMusicVolume;
@@ -47,6 +72,8 @@ public class SoundManager : MonoBehaviour
     
     void GetAllComponents()
     {
+        audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
+        
         audioClips = new AudioClip[12];
         audioClips[0] = Resources.Load<AudioClip>("Audios/Audios_Select_Sound");
         audioClips[1] = Resources.Load<AudioClip>("Audios/Audios_Arrows_Sound");
@@ -65,32 +92,55 @@ public class SoundManager : MonoBehaviour
         lowVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_LowVolume");
         noVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_NoVolume");
 
+        mainMuteButton = GameObject.Find("Options_Panel/Background/Audio/MainVolume/MainVolume_MuteButton").GetComponent<Image>();
         musicMuteButton = GameObject.Find("Options_Panel/Background/Audio/MusicVolume/MusicVolume_MuteButton").GetComponent<Image>();
+    }
+
+    public void UpdateMainVolume(float volume)
+    {
+        setMainVolume = volume;
+        AudioListener.volume = setMainVolume;
+
+        UpdateSprite(AudioListener.volume, mainMuteButton);
+    }
+
+    public void MuteMainVolume()
+    {
+        if (mainVolumeMute)
+        {
+            AudioListener.volume = setMainVolume;
+            mainVolumeMute = false;
+        }
+        else if (!mainVolumeMute)
+        {
+            AudioListener.volume = 0;
+            mainVolumeMute = true;
+        }
+        
+        UpdateSprite(AudioListener.volume, mainMuteButton);
     }
     
     public void UpdateMainMenuMusicVolume(float volume)
     {
-        setMainMenuMusicVolume = volume;
+        setMainMenuMusicVolume = Mathf.Pow(volume, 2);
         mainMenuMusicVolume = setMainMenuMusicVolume;
-        
-        Debug.Log(mainMenuMusicVolume);
 
-        UpdateSprite();
+        UpdateSprite(mainMenuMusicVolume, musicMuteButton);
     }
 
-    private void UpdateSprite()
+    private void UpdateSprite(float volume, Image button)
     {
-        if (mainMenuMusicVolume > 0.5f)
+        if (volume > 0.5f)
         {
-            musicMuteButton.sprite = highVolume;
+            button.sprite = highVolume;
         }
-        else if (mainMenuMusicVolume > 0)
+        else if (volume > 0)
         {
-            musicMuteButton.sprite = lowVolume;
+            button.sprite = lowVolume;
         }
-        else if (mainMenuMusicVolume <= 0)
+        else if (volume <= 0)
         {
-            musicMuteButton.sprite = noVolume;
+            button.sprite = noVolume;
         }
     }
 
@@ -107,7 +157,7 @@ public class SoundManager : MonoBehaviour
             mainMenuMusicMute = true;
         }
         
-        UpdateSprite();
+        UpdateSprite(mainMenuMusicVolume, musicMuteButton);
     }
     
     public void PlaySounds(AudioClip clip)
