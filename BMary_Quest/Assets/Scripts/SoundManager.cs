@@ -19,7 +19,6 @@ public class SoundManager : MonoBehaviour
     private Sprite lowVolume;
     private Sprite noVolume;
     
-    private float mainVolume = 1f;
     private float setMainVolume = 1f;
     private bool mainVolumeMute;
     

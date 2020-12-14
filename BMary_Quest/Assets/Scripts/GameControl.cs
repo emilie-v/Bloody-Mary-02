@@ -215,7 +215,6 @@ public class GameControl : MonoBehaviour
         {
             if (playerTurn == (int)Player_Turn.mary)
             {
-                enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
                 SoundManager.Instance.CashOutButtonSound();
                 //Reset placed pieces and set temp blood points
                 for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
@@ -232,10 +231,11 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
+                enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
                 if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
                 {
                     marysHealth -= marysTempPoints + 1;
-                    playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
+                    playerBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
                 }
                 if(DataAcrossScenes.PlayerChosenStaff == 2)
                 {
@@ -250,7 +250,6 @@ public class GameControl : MonoBehaviour
             }
             else if (playerTurn == (int)Player_Turn.enemy)
             {
-                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.1f, enemyTempPoints, 25, 10);
                 SoundManager.Instance.CashOutButtonSound();
                 
                 //Reset placed pieces and set temp blood points
@@ -266,10 +265,11 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
+                playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
                 if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
                 {
                     enemyHealth -= enemyTempPoints + 1;
-                    enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.1f, 1 + marysTempPoints, 25, 10);
+                    enemyBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
                 }
                 if (DataAcrossScenes.EnemyChosenStaff == 2)
                 {
