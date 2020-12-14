@@ -12,6 +12,8 @@ public class ChooseEnemy : MonoBehaviour
     Sprite luciferName;
     Sprite ghastella;
     Sprite ghastellaName;
+    Sprite count;
+    Sprite countName;
 
     Sprite padlock;
 
@@ -20,11 +22,7 @@ public class ChooseEnemy : MonoBehaviour
     public Image currentEnemyName;
     public Text currentEnemyStaff;
 
-    public string[] enemyStaffList = 
-        { 
-        "HellStaff", 
-        "GhastellaStaff" 
-        };
+    public string[] enemyStaffList;
 
     public GameObject selectWarning;
     public GameObject cancelWarning;
@@ -38,21 +36,29 @@ public class ChooseEnemy : MonoBehaviour
 
         lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
+        count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
 
         luciferName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_LuciferName");
         ghastellaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
+        countName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
 
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
 
-        enemyList = new Sprite[2];
-        enemyNameList = new Sprite[2];
+        enemyList = new Sprite[3];
+        enemyNameList = new Sprite[3];
+        enemyStaffList = new string[]{ "HellStaff", "GhastellaStaff","CountStaff"};
+
 
         enemyList[0] = lucifer;
         enemyNameList[0] = luciferName;
         enemyList[1] = ghastella;
         enemyNameList[1] = ghastellaName;
+        enemyList[2] = count;
+        enemyNameList[2] = countName;
         
         currentEnemy.sprite = enemyList[index];
+
+        Debug.Log(enemyStaffList.Length);
     }
 
     public void RightArrowButton()

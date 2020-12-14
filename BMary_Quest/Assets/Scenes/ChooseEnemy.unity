@@ -3883,6 +3883,7 @@ MonoBehaviour:
   enemyStaffList:
   - HellStaff
   - GhastellaStaff
+  - CountStaff
   selectWarning: {fileID: 1678590416}
   cancelWarning: {fileID: 1501035033}
   chooseEnemy: {fileID: 1149771666}
