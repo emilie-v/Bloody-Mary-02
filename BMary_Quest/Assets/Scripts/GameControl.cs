@@ -235,16 +235,16 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
-<<<<<<< Updated upstream
+
                 enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
-=======
+
                 if(marysTempPoints > 0)
                 {
                     dialogueManager.enemyIndex = Random.Range(4,5);
                     dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
                 }
 
->>>>>>> Stashed changes
+
                 if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
                 {
                     marysHealth -= marysTempPoints + 1;
@@ -280,16 +280,16 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
-<<<<<<< Updated upstream
+
                 playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
-=======
+
                 if (enemyTempPoints > 0)
                 {
                     dialogueManager.maryIndex = Random.Range(4, 5);
                     dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 }
 
->>>>>>> Stashed changes
+
                 if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
                 {
                     enemyHealth -= enemyTempPoints + 1;
