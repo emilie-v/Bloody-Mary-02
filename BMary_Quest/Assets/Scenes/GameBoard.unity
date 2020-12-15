@@ -565,7 +565,6 @@ GameObject:
   - component: {fileID: 1324767608}
   - component: {fileID: 1324767609}
   - component: {fileID: 1324767611}
-  - component: {fileID: 1324767614}
   - component: {fileID: 1324767612}
   - component: {fileID: 1324767613}
   m_Layer: 0
@@ -592,7 +591,6 @@ MonoBehaviour:
   aiBehaviour: {fileID: 1324767609}
   spelplan: {fileID: 773677183}
   gameOver: {fileID: 853304023}
-  rewardScreen: {fileID: 187312945}
   marysMaxHealth: 20
   enemyMaxHealth: 20
   marysHealth: 20
@@ -714,26 +712,6 @@ MonoBehaviour:
   lastMove: {fileID: 0}
   bricksToLock: 2
   bricksToLockLeft: 2
-  staffCooldown: 1
---- !u!114 &1324767614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324767607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db171b79f1cd11d4fa9f0e6e948c69cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameControl: {fileID: 0}
-  abilityButton: {fileID: 0}
-  owner: {fileID: 0}
-  spelplan: {fileID: 0}
-  lastMove: {fileID: 0}
-  lastMovesX: 
-  lastMovesY: 
   staffCooldown: 1
 --- !u!1 &1422405482
 GameObject:

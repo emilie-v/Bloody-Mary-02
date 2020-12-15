@@ -16,15 +16,20 @@ public class StaffManager : MonoBehaviour
             gameObject.AddComponent(typeof(MirrorStaff));
             DataAcrossScenes.PlayerChosenStaff = 0;
         }
-        else if(playerSelectedStaff == 1)
+        else if (playerSelectedStaff == 1)
         {
-            gameObject.AddComponent(typeof(HellStaff));
+            gameObject.AddComponent(typeof(PumpkinStaff));
             DataAcrossScenes.PlayerChosenStaff = 1;
         }
         else if (playerSelectedStaff == 2)
         {
             gameObject.AddComponent(typeof(DarkNightStaff));
             DataAcrossScenes.PlayerChosenStaff = 2;
+        }
+        else if (playerSelectedStaff == 3)
+        {
+            gameObject.AddComponent(typeof(HellStaff));
+            DataAcrossScenes.PlayerChosenStaff = 3;
         }
         else
         {

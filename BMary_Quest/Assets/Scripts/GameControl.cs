@@ -145,7 +145,7 @@ public class GameControl : MonoBehaviour
             lastMove.enemyCashedOutThisTurn = false;
             lastMove.enemyHellStaffActivePower = false;
             lastMove.enemyDarkNightStaffActivePower = false;
-            if (DataAcrossScenes.PlayerChosenStaff == 1)
+            if (DataAcrossScenes.PlayerChosenStaff == 3)
             {
                 hellstaff.hellStaffPassiveAbility();
             }
@@ -173,7 +173,7 @@ public class GameControl : MonoBehaviour
             lastMove.maryCashedOutThisTurn = false;
             lastMove.playerHellStaffActivePower = false;
             lastMove.playerDarkNightStaffActivePower = false;
-            if (DataAcrossScenes.EnemyChosenStaff == 1)
+            if (DataAcrossScenes.EnemyChosenStaff == 3)
             {
                 hellstaff.hellStaffPassiveAbility();
             }
@@ -263,7 +263,7 @@ public class GameControl : MonoBehaviour
                 }
 
 
-                if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
+                if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 3)
                 {
                     marysHealth -= marysTempPoints + 1;
                     playerBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
@@ -308,7 +308,7 @@ public class GameControl : MonoBehaviour
                 }
 
 
-                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 1)
+                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 3)
                 {
                     enemyHealth -= enemyTempPoints + 1;
                     enemyBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
@@ -509,12 +509,12 @@ public class GameControl : MonoBehaviour
         }
         
         //Hellstaff
-        if (DataAcrossScenes.PlayerChosenStaff == 1)
+        if (DataAcrossScenes.PlayerChosenStaff == 3)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == 3)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);

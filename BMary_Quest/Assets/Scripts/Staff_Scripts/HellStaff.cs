@@ -25,13 +25,13 @@ public class HellStaff : MonoBehaviour
 
     public void hellStaffPassiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == 3)
         {
             if(lastMove.enemyCashedOutThisTurn)
             gameControl.enemyHealth++;
         }
 
-        if (DataAcrossScenes.PlayerChosenStaff == 1)
+        if (DataAcrossScenes.PlayerChosenStaff == 3)
         {
             if(lastMove.maryCashedOutThisTurn)
                 gameControl.marysHealth++;
@@ -39,18 +39,28 @@ public class HellStaff : MonoBehaviour
     }
     public void hellStaffActiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
+        if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
         {
             gameControl.enemyStaffCooldown = staffCooldown;
             lastMove.enemyHellStaffActivePower = true;
         }
-        if (DataAcrossScenes.PlayerChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
+        if (DataAcrossScenes.PlayerChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
         {
             gameControl.playerStaffCooldown = staffCooldown;
             lastMove.playerHellStaffActivePower = true;
         }
 
-        gameControl.staffUsed = true;
-        gameControl.Staff();
+        if (DataAcrossScenes.PlayerChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.mary)
+        {
+            Debug.Log("Hellstaff");
+            gameControl.staffUsed = true;
+            gameControl.Staff();
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.enemy)
+        {
+            Debug.Log("Hellstaff");
+            gameControl.staffUsed = true;
+            gameControl.Staff();
+        }
     }
 }

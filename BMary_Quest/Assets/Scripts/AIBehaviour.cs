@@ -167,7 +167,7 @@ public class AIBehaviour : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0)
+            if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.enemyStaffCooldown == 0)
             {
                 hellstaff.hellStaffActiveAbility();
             }

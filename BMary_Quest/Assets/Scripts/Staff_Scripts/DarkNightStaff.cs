@@ -42,6 +42,7 @@ public class DarkNightStaff : MonoBehaviour
     {
         if (DataAcrossScenes.PlayerChosenStaff == 2 || DataAcrossScenes.EnemyChosenStaff == 2)
         {
+            Debug.Log(gameControl.staffUsed + "  " + bricksToLockLeft);
             while (!gameControl.staffUsed && bricksToLockLeft > 0)
             {
                 foreach (Transform child in GameObject.Find("Spelplan").transform)
@@ -60,14 +61,15 @@ public class DarkNightStaff : MonoBehaviour
             if (DataAcrossScenes.PlayerChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
             }
             if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
             }
-
-            gameControl.staffUsed = true;
-            gameControl.Staff();
         }
     }
 }
