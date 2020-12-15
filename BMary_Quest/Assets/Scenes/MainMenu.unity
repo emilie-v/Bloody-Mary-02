@@ -1974,16 +1974,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777135848}
-  m_LocalRotation: {x: -0, y: -0, z: 0.008004805, w: -0.999968}
+  m_LocalRotation: {x: -0, y: -0, z: 0.014336771, w: 0.9998973}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1246009461}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.643}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.2, y: -13}
+  m_AnchoredPosition: {x: 11.200012, y: -12.999992}
   m_SizeDelta: {x: 224.9837, y: 53.595337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777135850
@@ -2019,7 +2019,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tutorial
+  m_Text: 'How to play
+
+'
 --- !u!222 &777135851
 CanvasRenderer:
   m_ObjectHideFlags: 0
