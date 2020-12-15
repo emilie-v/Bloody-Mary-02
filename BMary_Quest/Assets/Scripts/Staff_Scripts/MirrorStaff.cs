@@ -72,16 +72,19 @@ public class MirrorStaff : MonoBehaviour
             if (DataAcrossScenes.PlayerChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
+                lastMove.staffUsed = true;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
+                resetMirrorArray();   
             }
             if (DataAcrossScenes.EnemyChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
+                lastMove.staffUsed = true;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
+                resetMirrorArray(); 
             }
-            
-            lastMove.staffUsed = true;
-            gameControl.staffUsed = true;
-            gameControl.Staff();
-            resetMirrorArray();   
         }
     }
     void resetMirrorArray()

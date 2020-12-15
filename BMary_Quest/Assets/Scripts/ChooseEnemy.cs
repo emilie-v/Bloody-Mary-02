@@ -100,7 +100,7 @@ public class ChooseEnemy : MonoBehaviour
         {
             Debug.Log("Lucifer is chosen");
             chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = 1; //temp, sets the value to reflect that the chosen staff is the hellstaff
+            DataAcrossScenes.EnemyChosenStaff = 3; //temp, sets the value to reflect that the chosen staff is the hellstaff
             chooseStaff.SetActive(true);
         }
 
@@ -108,7 +108,7 @@ public class ChooseEnemy : MonoBehaviour
         {
             Debug.Log("Ghastella is chosen");
             chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = 3; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+            DataAcrossScenes.EnemyChosenStaff = 1; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
             chooseStaff.SetActive(true);
         }
 
