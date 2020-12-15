@@ -194,7 +194,7 @@ public class ChooseStaff : MonoBehaviour
 
     public void SelectStaffButton()
     {
-        if (isUnlocked == true)
+        if (isUnlocked)
         {
             SoundManager.Instance.SelectButtonSound();
             StaffManager.playerSelectedStaff = index;
