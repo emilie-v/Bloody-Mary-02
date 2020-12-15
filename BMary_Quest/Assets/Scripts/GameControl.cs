@@ -499,12 +499,12 @@ public class GameControl : MonoBehaviour
         //Mirrorstaff
         if (DataAcrossScenes.PlayerChosenStaff == 0)
         {
-            GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+            GameObject.Find("Buttons/PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
         if (DataAcrossScenes.EnemyChosenStaff == 0)
         {
-            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+            GameObject.Find("Buttons/EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
         
