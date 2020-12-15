@@ -28,6 +28,7 @@ public class Owner : MonoBehaviour
     public GameControl gameControl;
     public GameObject Spelplan;
     private Boardpiece boardpiece;
+    private DialogueManager dialogueManager;
 
     public LastMove lastMove;
     
@@ -43,6 +44,7 @@ public class Owner : MonoBehaviour
         neutral = Resources.Load<Sprite>("Sprites/Board_Tile");
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
+        dialogueManager = GameObject.Find("IngameGUI_Canvas").GetComponent<DialogueManager>();
     }
 
     void FixedUpdate()
@@ -211,6 +213,9 @@ public class Owner : MonoBehaviour
 
     public void resetMary() //Todo, when you use your tiles, reset your tiles, subtract the number and eventual modifiers from the enemy, et cetera...
     {
+        dialogueManager.maryIndex = 1;
+        dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
+
         if (owned == (int)Tile_State.player1)
         {
             owned = (int)Tile_State.empty;
@@ -223,6 +228,9 @@ public class Owner : MonoBehaviour
     }
     public void resetEnemy() //Todo...
     {
+        dialogueManager.enemyIndex = 1;
+        dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
+
         if (owned == (int)Tile_State.player2)
         {
             owned = (int)Tile_State.empty;

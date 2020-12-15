@@ -8,6 +8,8 @@ public class ChooseStaff : MonoBehaviour
 {
     Sprite[] staffList;
     Sprite mirror;
+    Sprite pumpkin;
+    Sprite count;
     Sprite hell;
     Sprite padlock;
 
@@ -33,12 +35,18 @@ public class ChooseStaff : MonoBehaviour
 
         backgroundMusic = GameObject.Find("AudioSource").GetComponent<BackgroundMusic>();
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
-        hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
+        pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+       hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
         
-        staffList = new Sprite[2];
+        staffList = new Sprite[4];
         staffList[0] = mirror;
-        staffList[1] = hell;
+        staffList[1] = pumpkin;
+        staffList[2] = count;
+        staffList[3] = hell;
+
+
 
         //Unlock the first staff
         PlayerPrefs.SetInt("Staff" + index, 1);
@@ -56,7 +64,7 @@ public class ChooseStaff : MonoBehaviour
 #if UNITY_EDITOR
     void Update()
     {
-        //Debug code for testing staff unlock
+        /*Debug code for testing staff unlock
 
         if(Input.GetKeyDown(KeyCode.R))
         {
@@ -76,6 +84,23 @@ public class ChooseStaff : MonoBehaviour
             Debug.Log("Debug Unlocked staff 2");
             PlayerPrefs.SetInt("Staff" + 2, 1);
             UpdateCurrentStaff();
+        }
+        */
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DataAcrossScenes.pumpkinStaffUnlocked = true;
+            DataAcrossScenes.darkNightStaffUnlocked = true;
+            DataAcrossScenes.hellStaffUnlocked = true;
+
+            Debug.Log("Three staffs unlocked");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DataAcrossScenes.pumpkinStaffUnlocked = false;
+            DataAcrossScenes.darkNightStaffUnlocked = false;
+            DataAcrossScenes.hellStaffUnlocked = false;
+            Debug.Log("Three staffs locked");
         }
     }
 #endif
@@ -107,19 +132,57 @@ public class ChooseStaff : MonoBehaviour
 
     void UpdateCurrentStaff()
     {
-        int unlocked = PlayerPrefs.GetInt("Staff" + index);
+        //int unlocked = PlayerPrefs.GetInt("Staff" + index);
 
-        if(unlocked == 1)
+        if (index == 0 && DataAcrossScenes.mirrorStaffUnlocked == true)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
         }
-        else
+        else if (index == 0 && DataAcrossScenes.mirrorStaffUnlocked == false)
         {
             padlockImage.SetActive(true);
             isUnlocked = false;
         }
-    
+
+        //pumpkin staff == 1
+        if (index == 1 && DataAcrossScenes.pumpkinStaffUnlocked == true)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else if(index == 1 && DataAcrossScenes.pumpkinStaffUnlocked == false)
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+        
+        //count ==2
+        if (index == 2 && DataAcrossScenes.darkNightStaffUnlocked == true)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else if (index == 2 && DataAcrossScenes.darkNightStaffUnlocked == false)
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+
+        //lucifer ==3
+        if (index == 3 && DataAcrossScenes.hellStaffUnlocked == true)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else if (index == 3 && DataAcrossScenes.hellStaffUnlocked == false)
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+
+
+
         currentStaff.sprite = staffList[index];
     }
 
@@ -131,7 +194,7 @@ public class ChooseStaff : MonoBehaviour
 
     public void SelectStaffButton()
     {
-        if (isUnlocked == true)
+        if (isUnlocked)
         {
             SoundManager.Instance.SelectButtonSound();
             StaffManager.playerSelectedStaff = index;
