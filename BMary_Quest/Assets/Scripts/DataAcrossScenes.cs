@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class DataAcrossScenes
 {
+    public static bool darkNightStaffUnlocked;
+    public static bool hellStaffUnlocked;
+    public static bool pumpkinStaffUnlocked;
+
+    public static bool luciferUnlocked;
+    public static bool countUnlocked;
+
     private static int enemyChosenStaff;
 
     private static int playerChosenStaff;
@@ -31,4 +38,6 @@ public class DataAcrossScenes
             playerChosenStaff = value;
         }
     }
+
+
 }

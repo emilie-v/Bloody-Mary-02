@@ -109,12 +109,12 @@ public class ChooseStaff : MonoBehaviour
     {
         int unlocked = PlayerPrefs.GetInt("Staff" + index);
 
-        if(unlocked == 1)
+        if(unlocked == 1 || DataAcrossScenes.pumpkinStaffUnlocked)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
         }
-        else
+        else if(DataAcrossScenes.pumpkinStaffUnlocked == false)
         {
             padlockImage.SetActive(true);
             isUnlocked = false;
