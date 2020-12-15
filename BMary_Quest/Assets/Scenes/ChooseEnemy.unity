@@ -1559,6 +1559,10 @@ MonoBehaviour:
   soundManager: {fileID: 0}
   levelLoaderTransition: {fileID: 1607409413}
   padlockImage: {fileID: 567017195}
+  staffInformationList: []
+  staffNameList: []
+  currentStaffInformation: {fileID: 1730514953}
+  currentStaffName: {fileID: 1308411517}
 --- !u!1 &969523498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,7 +2481,7 @@ GameObject:
   - component: {fileID: 1308411518}
   - component: {fileID: 1308411517}
   m_Layer: 5
-  m_Name: AttributesText
+  m_Name: StaffNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,17 +2494,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308411515}
-  m_LocalRotation: {x: -0, y: -0, z: 0.09922351, w: 0.9950652}
+  m_LocalRotation: {x: -0, y: -0, z: 0.13878632, w: 0.99032235}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 187582378}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.955}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237, y: 149}
-  m_SizeDelta: {x: 206.98038, y: 55.99048}
+  m_AnchoredPosition: {x: 233, y: 159}
+  m_SizeDelta: {x: 294.13998, y: 73.04817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308411517
 MonoBehaviour:
@@ -2524,12 +2528,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2d7fb7fe353bb3d4d993acb6eaa77b1f, type: 3}
-    m_FontSize: 40
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 124
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

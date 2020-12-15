@@ -26,6 +26,11 @@ public class ChooseStaff : MonoBehaviour
 
     public GameObject padlockImage;
 
+    public string[] staffInformationList;
+    public string[] staffNameList;
+    public Text currentStaffInformation;
+    public Text currentStaffName;
+
     int index = 0;
     Image currentStaff;
 
@@ -37,7 +42,7 @@ public class ChooseStaff : MonoBehaviour
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
         pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
-       hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
+        hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
         
         staffList = new Sprite[4];
@@ -46,11 +51,13 @@ public class ChooseStaff : MonoBehaviour
         staffList[2] = count;
         staffList[3] = hell;
 
-
-
+        staffInformationList = new string[] { "Mirror staff information", "Pumpkin staff information", "Dark Night staff information", "Hell staff information" };
+        staffNameList = new string[] { "Mirror Staff", "Pumpkin Staff", "Dark Night Staff", "Hell Staff" };
         //Unlock the first staff
         PlayerPrefs.SetInt("Staff" + index, 1);
 
+        currentStaffName.text = staffNameList[index];
+        currentStaffInformation.text = staffInformationList[index];
 
         // //Example, look staff 1 (hellstaff)
         // PlayerPrefs.SetInt("Staff" + 1, 0);
@@ -114,6 +121,8 @@ public class ChooseStaff : MonoBehaviour
         {
             index = 0;
         }
+        currentStaffName.text = staffNameList[index];
+        currentStaffInformation.text = staffInformationList[index];
         UpdateCurrentStaff();
     }
 
@@ -126,7 +135,8 @@ public class ChooseStaff : MonoBehaviour
         {
             index = staffList.Length - 1;
         }
-
+        currentStaffName.text = staffNameList[index];
+        currentStaffInformation.text = staffInformationList[index];
         UpdateCurrentStaff();
     }
 

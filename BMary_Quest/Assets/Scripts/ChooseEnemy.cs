@@ -48,14 +48,14 @@ public class ChooseEnemy : MonoBehaviour
         enemyNameList = new Sprite[3];
         enemyStaffList = new string[]{ "HellStaff", "GhastellaStaff","CountStaff"};
 
-
         enemyList[0] = lucifer;
         enemyNameList[0] = luciferName;
         enemyList[1] = ghastella;
         enemyNameList[1] = ghastellaName;
         enemyList[2] = count;
         enemyNameList[2] = countName;
-        
+
+        currentEnemyStaff.text = enemyStaffList[index];
         currentEnemy.sprite = enemyList[index];
 
         Debug.Log(enemyStaffList.Length);
