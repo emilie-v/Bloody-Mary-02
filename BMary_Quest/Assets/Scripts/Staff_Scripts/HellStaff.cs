@@ -28,13 +28,13 @@ public class HellStaff : MonoBehaviour
         if (DataAcrossScenes.EnemyChosenStaff == 3)
         {
             if(lastMove.enemyCashedOutThisTurn)
-            gameControl.enemyHealth++;
+                gameControl.enemyHealth += 2;
         }
 
         if (DataAcrossScenes.PlayerChosenStaff == 3)
         {
             if(lastMove.maryCashedOutThisTurn)
-                gameControl.marysHealth++;
+                gameControl.marysHealth += 2;
         }
     }
     public void hellStaffActiveAbility()

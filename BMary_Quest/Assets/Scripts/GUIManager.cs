@@ -195,7 +195,6 @@ public class GUIManager : MonoBehaviour
         {
             enemySprite.sprite = theCountSprite;
         }
-
         if (DataAcrossScenes.EnemyChosenStaff == 3)
         {
             enemySprite.sprite = luciferSprite;
