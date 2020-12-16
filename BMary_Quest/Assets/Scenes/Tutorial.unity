@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af915ca84a87684682d18882853dae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: {fileID: 460929162}
   gameBoardTutorial: {fileID: 2142415384}
   bloodPointsTutorial: {fileID: 1303057134}
   marksTutorial: {fileID: 1071029338}
