@@ -20,6 +20,7 @@ public class GameControl : MonoBehaviour
     private PumpkinStaff pumpkinStaff;
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
+    public RewardScreen rewardScreen;
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
@@ -97,6 +98,7 @@ public class GameControl : MonoBehaviour
     public void Start()
     {
         spelplan = GameObject.Find("Spelplan");
+        rewardScreen = GameObject.Find("PController").GetComponent<RewardScreen>();
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellStaff = GameObject.Find("PController").GetComponent<HellStaff>();
         darknightStaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
@@ -381,20 +383,30 @@ public class GameControl : MonoBehaviour
                 //wait x seconds, win-screen? Story goes on?
                 if (DataAcrossScenes.EnemyChosenStaff == 1)
                 {
-                    DataAcrossScenes.pumpkinStaffUnlocked = true;
-                    DataAcrossScenes.countUnlocked = true;
+                    if(DataAcrossScenes.pumpkinStaffUnlocked == false)
+                    {
+                        rewardScreen.newReward(0);
+                        DataAcrossScenes.pumpkinStaffUnlocked = true;
+                        DataAcrossScenes.countUnlocked = true;
+                    }
                 }
                 if (DataAcrossScenes.EnemyChosenStaff == 2)
                 {
-                    DataAcrossScenes.darkNightStaffUnlocked = true;
-                    DataAcrossScenes.luciferUnlocked = true;
+                    if (DataAcrossScenes.pumpkinStaffUnlocked == false)
+                    {
+                        rewardScreen.newReward(1);
+                        DataAcrossScenes.darkNightStaffUnlocked = true;
+                        DataAcrossScenes.luciferUnlocked = true;
+                    }
                 }
                 if (DataAcrossScenes.EnemyChosenStaff == 3)
                 {
-                    DataAcrossScenes.hellStaffUnlocked = true;
-                    //You won the game screen?
+                    if (DataAcrossScenes.hellStaffUnlocked == false)
+                    {
+                        rewardScreen.newReward(2);
+                        DataAcrossScenes.hellStaffUnlocked = true;
+                    }
                 }
-                SceneManager.LoadScene("ChooseEnemy");
 
             }
             pauseMode = true;
@@ -696,7 +708,12 @@ public class GameControl : MonoBehaviour
             DOTween.Kill(child);
         }
     }
+    public void NextOpponentButton()
+    {
+        SceneManager.LoadScene("ChooseEnemy");
+    }
 }
+
 
 public enum Player_Turn : int
 {
