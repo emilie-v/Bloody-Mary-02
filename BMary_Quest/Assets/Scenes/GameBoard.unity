@@ -1007,8 +1007,8 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
-  bricksToLock: 2
-  bricksToLockLeft: 2
+  bricksToLock: 1
+  bricksToLockLeft: 1
   staffCooldown: 1
 --- !u!114 &1324767614
 MonoBehaviour:

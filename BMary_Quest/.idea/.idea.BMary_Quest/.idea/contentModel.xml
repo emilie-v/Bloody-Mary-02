@@ -44,6 +44,7 @@
           <e p="MouseBehaviour.cs" t="Include" />
           <e p="Owner.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="PoseAnimation.cs" t="Include" />
           <e p="RewardScreen.cs" t="Include" />
           <e p="Sound.cs" t="Include" />
           <e p="SoundAssets.cs" t="Include" />

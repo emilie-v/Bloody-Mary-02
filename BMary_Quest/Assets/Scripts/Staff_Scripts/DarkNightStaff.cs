@@ -9,8 +9,8 @@ public class DarkNightStaff : MonoBehaviour
     public Button abilityButton;
     public LastMove lastMove;
 
-    public int bricksToLock = 2;
-    public int bricksToLockLeft = 2;
+    public int bricksToLock = 1;
+    public int bricksToLockLeft = 1;
     
     public int staffCooldown = 1;
     
@@ -42,7 +42,6 @@ public class DarkNightStaff : MonoBehaviour
     {
         if (DataAcrossScenes.PlayerChosenStaff == 2 || DataAcrossScenes.EnemyChosenStaff == 2)
         {
-            Debug.Log(gameControl.staffUsed + "  " + bricksToLockLeft);
             while (!gameControl.staffUsed && bricksToLockLeft > 0)
             {
                 int check = 0;
@@ -53,7 +52,7 @@ public class DarkNightStaff : MonoBehaviour
                         if (Random.Range(0, 25) == 0 && bricksToLockLeft > 0)
                         {
                             bricksToLockLeft--;
-                            child.GetComponent<Owner>().locked = 2;
+                            child.GetComponent<Owner>().locked = 4;
                         }
                     }
 
