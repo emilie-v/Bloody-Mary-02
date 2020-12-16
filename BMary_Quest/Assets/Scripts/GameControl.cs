@@ -15,8 +15,9 @@ public class GameControl : MonoBehaviour
 {
     private Owner owner;
     public DialogueManager dialogueManager;
-    private HellStaff hellstaff;
-    private DarkNightStaff darknightstaff;
+    private HellStaff hellStaff;
+    private DarkNightStaff darknightStaff;
+    private PumpkinStaff pumpkinStaff;
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     [SerializeField] private GUIManager guiManager;
@@ -97,8 +98,9 @@ public class GameControl : MonoBehaviour
     {
         spelplan = GameObject.Find("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
-        hellstaff = GameObject.Find("PController").GetComponent<HellStaff>();
-        darknightstaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
+        hellStaff = GameObject.Find("PController").GetComponent<HellStaff>();
+        darknightStaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
+        pumpkinStaff = GameObject.Find("PController").GetComponent<PumpkinStaff>();
         mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
         playerTurn = (int)Random.Range(0, 2);
         
@@ -108,6 +110,8 @@ public class GameControl : MonoBehaviour
         firstTurn = true;
         
         Marks(playerMarks, enemyMarks);
+        
+        pumpkinStaff.PumpkinStaffPassiveAbility();
         
         TurnStart();
 
@@ -148,11 +152,11 @@ public class GameControl : MonoBehaviour
             lastMove.enemyDarkNightStaffActivePower = false;
             if (DataAcrossScenes.PlayerChosenStaff == 3)
             {
-                hellstaff.hellStaffPassiveAbility();
+                hellStaff.hellStaffPassiveAbility();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == 2)
             {
-                darknightstaff.bricksToLockLeft = darknightstaff.bricksToLock;
+                darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }
             
             foreach (Transform child in GameObject.Find("Spelplan").transform)
@@ -178,11 +182,11 @@ public class GameControl : MonoBehaviour
             lastMove.playerDarkNightStaffActivePower = false;
             if (DataAcrossScenes.EnemyChosenStaff == 3)
             {
-                hellstaff.hellStaffPassiveAbility();
+                hellStaff.hellStaffPassiveAbility();
             }
             else if (DataAcrossScenes.PlayerChosenStaff == 2)
             {
-                darknightstaff.bricksToLockLeft = darknightstaff.bricksToLock;
+                darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }
             
             foreach (Transform child in GameObject.Find("Spelplan").transform)
@@ -275,7 +279,7 @@ public class GameControl : MonoBehaviour
                 }
                 if(DataAcrossScenes.PlayerChosenStaff == 2)
                 {
-                    darknightstaff.DarkNightStaffPassiveAbility();
+                    darknightStaff.DarkNightStaffPassiveAbility();
                 }
 
                 enemyHealth -= marysTempPoints + 1;
@@ -320,7 +324,7 @@ public class GameControl : MonoBehaviour
                 }
                 if (DataAcrossScenes.EnemyChosenStaff == 2)
                 {
-                    darknightstaff.DarkNightStaffPassiveAbility();
+                    darknightStaff.DarkNightStaffPassiveAbility();
                 }
 
                 marysHealth -= enemyTempPoints + 1;
@@ -519,7 +523,7 @@ public class GameControl : MonoBehaviour
 
     private void StaffCooldown()
     {
-        //Mirrorstaff
+        //mirrorStaff
         if (DataAcrossScenes.PlayerChosenStaff == 0)
         {
             GameObject.Find("Buttons/PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -531,28 +535,40 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
         
-        //Hellstaff
-        if (DataAcrossScenes.PlayerChosenStaff == 3)
+        //pumpkinStaff
+        if (DataAcrossScenes.PlayerChosenStaff == 1)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
-                DOFillAmount((float) playerStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
+                DOFillAmount((float) playerStaffCooldown / (float) pumpkinStaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        if (DataAcrossScenes.EnemyChosenStaff == 1)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
-                DOFillAmount((float) enemyStaffCooldown / (float) hellstaff.staffCooldown, 0.5f);
+                DOFillAmount((float) enemyStaffCooldown / (float) pumpkinStaff.staffCooldown, 0.5f);
         }
-
-        //Darknightstaff
+        
+        //darknightStaff
         if (DataAcrossScenes.PlayerChosenStaff == 2)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
-                DOFillAmount((float) playerStaffCooldown / (float) darknightstaff.staffCooldown, 0.5f);
+                DOFillAmount((float) playerStaffCooldown / (float) darknightStaff.staffCooldown, 0.5f);
         }
         if (DataAcrossScenes.EnemyChosenStaff == 2)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
-                DOFillAmount((float) enemyStaffCooldown / (float) darknightstaff.staffCooldown, 0.5f);
+                DOFillAmount((float) enemyStaffCooldown / (float) darknightStaff.staffCooldown, 0.5f);
+        }
+        
+        //hellStaff
+        if (DataAcrossScenes.PlayerChosenStaff == 3)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) playerStaffCooldown / (float) hellStaff.staffCooldown, 0.5f);
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) enemyStaffCooldown / (float) hellStaff.staffCooldown, 0.5f);
         }
     }
     

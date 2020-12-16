@@ -566,8 +566,9 @@ GameObject:
   - component: {fileID: 1324767609}
   - component: {fileID: 1324767611}
   - component: {fileID: 1324767614}
-  - component: {fileID: 1324767612}
+  - component: {fileID: 1324767615}
   - component: {fileID: 1324767613}
+  - component: {fileID: 1324767612}
   m_Layer: 0
   m_Name: PController
   m_TagString: Player
@@ -645,6 +646,7 @@ MonoBehaviour:
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
   darkNightStaff: {fileID: 1324767613}
+  pumpkinStaff: {fileID: 1324767615}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
@@ -734,6 +736,22 @@ MonoBehaviour:
   lastMovesX: 
   lastMovesY: 
   staffCooldown: 1
+--- !u!114 &1324767615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2284cfc2d1ae74e884f23c4c3734eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameControl: {fileID: 0}
+  abilityButton: {fileID: 0}
+  lastMove: {fileID: 0}
+  staffCooldown: 2
 --- !u!1 &1422405482
 GameObject:
   m_ObjectHideFlags: 0

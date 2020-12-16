@@ -21,6 +21,7 @@ public class AIBehaviour : MonoBehaviour
     [SerializeField] private GameControl gameControl;
     [SerializeField] private HellStaff hellstaff;
     [SerializeField] private DarkNightStaff darkNightStaff;
+    [SerializeField] private PumpkinStaff pumpkinStaff;
     
 
     private void Start()
@@ -164,13 +165,17 @@ public class AIBehaviour : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.enemyStaffCooldown == 0)
+            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
             {
-                hellstaff.hellStaffActiveAbility();
+                pumpkinStaff.PumpkinStaffActiveAbility();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.enemyStaffCooldown == 0)
             {
                 darkNightStaff.DarkNightStaffActiveAbility();
+            }
+            else if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.enemyStaffCooldown == 0)
+            {
+                hellstaff.hellStaffActiveAbility();
             }
         }
         useStaffDone = true;
