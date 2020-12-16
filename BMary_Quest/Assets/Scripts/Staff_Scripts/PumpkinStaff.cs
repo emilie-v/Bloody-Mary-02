@@ -39,19 +39,22 @@ public class PumpkinStaff : MonoBehaviour
 
     public void PumpkinStaffActiveAbility()
     {
-        if (DataAcrossScenes.PlayerChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.mary)
+        if (!gameControl.staffUsed)
         {
-            gameControl.enemyStaffCooldown++;
-            gameControl.playerStaffCooldown = staffCooldown;
-            gameControl.staffUsed = true;
-            gameControl.Staff();
-        }
-        if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.enemy)
-        {
-            gameControl.playerStaffCooldown++;
-            gameControl.enemyStaffCooldown = staffCooldown;
-            gameControl.staffUsed = true;
-            gameControl.Staff();
+            if (DataAcrossScenes.PlayerChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.mary)
+            {
+                gameControl.enemyStaffCooldown++;
+                gameControl.playerStaffCooldown = staffCooldown;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
+            }
+            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            {
+                gameControl.playerStaffCooldown++;
+                gameControl.enemyStaffCooldown = staffCooldown;
+                gameControl.staffUsed = true;
+                gameControl.Staff();
+            }
         }
     }
 }
