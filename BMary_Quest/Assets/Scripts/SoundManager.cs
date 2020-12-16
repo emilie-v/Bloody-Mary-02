@@ -11,14 +11,20 @@ public class SoundManager : MonoBehaviour
     public AudioListener audioListener;
     public AudioSource effectSource;
     public AudioSource mainMenuMusic;
+    public AudioSource sfxSource;
     public BackgroundMusic backgroundMusic;
     public AudioClip[] audioClips;
     public Image musicMuteButton;
     public Image mainMuteButton;
+    public Image sfxMuteButton;
 
     private Sprite highVolume;
     private Sprite lowVolume;
     private Sprite noVolume;
+
+    private float sfxVolume = 1f;
+    private float setSFXVolume = 1f;
+    private bool sfxVolumeMute;
     
     private float setMainVolume = 1f;
     private bool mainVolumeMute;
@@ -68,6 +74,7 @@ public class SoundManager : MonoBehaviour
     private void Update()
     {
         mainMenuMusic.volume = mainMenuMusicVolume;
+        sfxSource.volume = sfxVolume;
     }
     
     void GetAllComponents()
@@ -95,6 +102,7 @@ public class SoundManager : MonoBehaviour
 
         mainMuteButton = GameObject.Find("Options_Panel/Background/Audio/MainVolume/MainVolume_MuteButton").GetComponent<Image>();
         musicMuteButton = GameObject.Find("Options_Panel/Background/Audio/MusicVolume/MusicVolume_MuteButton").GetComponent<Image>();
+        sfxMuteButton = GameObject.Find("Options_Panel/Background/Audio/SFXVolume/SFXVolume_MuteButton").GetComponent<Image>();
     }
 
     public void UpdateMainVolume(float volume)
@@ -127,6 +135,30 @@ public class SoundManager : MonoBehaviour
         mainMenuMusicVolume = setMainMenuMusicVolume;
 
         UpdateSprite(mainMenuMusicVolume, musicMuteButton);
+    }
+
+    public void MuteSFXVolume()
+    {
+        if (sfxVolumeMute)
+        {
+            sfxSource.volume = setMainVolume;
+            sfxVolumeMute = false;
+        }
+        else if (!sfxVolumeMute)
+        {
+            sfxSource.volume = 0;
+            sfxVolumeMute = true;
+        }
+        
+        UpdateSprite(sfxSource.volume, sfxMuteButton);
+    }
+
+    public void UpdateSFXVolume(float volume)
+    {
+        setSFXVolume = Mathf.Pow(volume, 2);
+        sfxVolume = setSFXVolume;
+        
+        UpdateSprite(sfxSource.volume, sfxMuteButton);
     }
 
     private void UpdateSprite(float volume, Image button)
