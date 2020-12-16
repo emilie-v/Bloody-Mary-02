@@ -347,7 +347,6 @@ public class GameControl : MonoBehaviour
     
     public void GameOver()
     {
-        //TODO Make it change dynamically depending on who is vs who
         if (marysHealth <= 0 || enemyHealth <= 0)
         {
             gameOver.SetActive(true);

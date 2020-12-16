@@ -231,10 +231,4 @@ public class AIBehaviour : MonoBehaviour
 
         gameControl.EndTurn();
     }
-    //TODO First, place Bricks at random
-    //TODO Second, use staff
-    //TODO Third, decide if cashout or not (randomize a thresh hold)
-    //TODO Fourth, end turn
-
-    //TODO Randomize delay between moves
 }

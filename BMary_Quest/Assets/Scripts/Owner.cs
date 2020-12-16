@@ -67,7 +67,7 @@ public class Owner : MonoBehaviour
         if (gameControl.playerMoves > 0 && gameControl.placeMode)
         {
             //spelare 2(enemy) controller
-            if (gameControl.playerTurn == (int)Player_Turn.enemy) //todo  alternativ tänkt lösning, få den att gå på gamestate (vilket den ska göra till slut ändå där det beror på vilken spelare som är aktiv)
+            if (gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 if (specialState == 2)
                 {
@@ -203,7 +203,7 @@ public class Owner : MonoBehaviour
     }
 
     //reset methods
-    public void resetBoard() //Todo, maybe reset the scene instead? Lägga till fienderensning
+    public void resetBoard()
     {
         owned = (int)Tile_State.empty;
         tile.sprite = neutral;
@@ -211,7 +211,7 @@ public class Owner : MonoBehaviour
         gameControl.enemyTempPoints = 0;
     }
 
-    public void resetMary() //Todo, when you use your tiles, reset your tiles, subtract the number and eventual modifiers from the enemy, et cetera...
+    public void resetMary()
     {
         dialogueManager.maryIndex = 1;
         dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
@@ -226,7 +226,7 @@ public class Owner : MonoBehaviour
             canChange = false;
         }
     }
-    public void resetEnemy() //Todo...
+    public void resetEnemy()
     {
         dialogueManager.enemyIndex = 1;
         dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
