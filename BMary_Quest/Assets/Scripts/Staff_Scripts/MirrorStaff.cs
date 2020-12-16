@@ -35,7 +35,7 @@ public class MirrorStaff : MonoBehaviour
 
     void staffPower()
     {
-        if (!gameControl.staffUsed)
+        if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == 0)
         {
             //lastMovesX = lastMove.lastMoveX;
             //lastMovesY = lastMove.lastMoveY;
