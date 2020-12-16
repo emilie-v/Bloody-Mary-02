@@ -207,6 +207,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &368794419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368794418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1531e41991da1814bbb2dd365bc69fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maryPoseList: []
+  maryAngry: {fileID: 0}
+  maryDamaged: {fileID: 0}
+  maryScared: {fileID: 0}
+  currentMaryPose: {fileID: 3568027160121143522}
+  maryIndex: 0
 --- !u!114 &452916885 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
@@ -405,6 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 3568027160121143521}
   rewardScreen: {fileID: 0}
+  poseAnimation: {fileID: 368794419}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
   spelplan: {fileID: 773677183}
@@ -776,6 +795,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1324767608}
+    - target: {fileID: 944890336, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_Name
+      value: PlayerMary
+      objectReference: {fileID: 0}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: aiBehaviour
       value: 
@@ -959,6 +982,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e7b378e7ec7a4428669ed87fa78e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3568027160121143522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 944890338, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368794418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3568027160121143523 stripped
