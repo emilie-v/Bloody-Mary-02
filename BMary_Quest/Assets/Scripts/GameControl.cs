@@ -9,6 +9,7 @@ using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -369,6 +370,24 @@ public class GameControl : MonoBehaviour
 
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
+                //wait x seconds, win-screen? Story goes on?
+                if (DataAcrossScenes.EnemyChosenStaff == 1)
+                {
+                    DataAcrossScenes.pumpkinStaffUnlocked = true;
+                    DataAcrossScenes.countUnlocked = true;
+                }
+                if (DataAcrossScenes.EnemyChosenStaff == 2)
+                {
+                    DataAcrossScenes.darkNightStaffUnlocked = true;
+                    DataAcrossScenes.luciferUnlocked = true;
+                }
+                if (DataAcrossScenes.EnemyChosenStaff == 3)
+                {
+                    DataAcrossScenes.hellStaffUnlocked = true;
+                    //You won the game screen?
+                }
+                SceneManager.LoadScene("ChooseEnemy");
+
             }
             pauseMode = true;
         }
