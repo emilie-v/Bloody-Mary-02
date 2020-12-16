@@ -10,7 +10,7 @@ public class PoseAnimation : MonoBehaviour
     public Sprite maryDamaged;
     public Sprite maryScared;
 
-    public Sprite currentMaryPose;
+    public Image currentMaryPose;
 
     public int maryIndex;
 
@@ -28,6 +28,6 @@ public class PoseAnimation : MonoBehaviour
 
     public void updateMaryPose(int index)
     {
-     //   currentMaryPose.sprite = maryPoseList[index];
+      currentMaryPose.sprite = maryPoseList[index];
     }
 }
