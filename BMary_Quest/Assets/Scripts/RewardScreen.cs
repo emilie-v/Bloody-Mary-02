@@ -10,6 +10,7 @@ public class RewardScreen : MonoBehaviour
     Sprite pumpkinReward;
     Sprite countReward;
     Sprite hellReward;
+    Sprite replayReward;
 
     public Image currentStaffReward;
 
@@ -20,11 +21,13 @@ public class RewardScreen : MonoBehaviour
         pumpkinReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         countReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
         hellReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
+        replayReward = Resources.Load<Sprite>("Sprites/Staffs/Replay");
 
-        staffRewardList = new Sprite[3];
+        staffRewardList = new Sprite[4];
         staffRewardList[0] = pumpkinReward;
         staffRewardList[1] = countReward;
         staffRewardList[2] = hellReward;
+        staffRewardList[3] = replayReward;
     }
 
     public void newReward(int index)
