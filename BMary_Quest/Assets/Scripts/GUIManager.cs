@@ -11,6 +11,11 @@ public class GUIManager : MonoBehaviour
     public GameObject closeMenuTab;
     public GameObject restartTab;
     public GameObject exitGame;
+
+    private Sprite luciferSprite;
+    private Sprite ghastellaSprite;
+    private Sprite theCountSprite;
+    
     
     [SerializeField] private AIBehaviour aiBehaviour;
     
@@ -24,6 +29,12 @@ public class GUIManager : MonoBehaviour
         GameObject.Find("Button_Info").transform.GetChild(1).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerStaffHotkey;
         GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey;
         GameObject.Find("Button_Info").transform.GetChild(3).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerEndTurnHotkey;
+
+        luciferSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer");
+        ghastellaSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella");
+        theCountSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+        
+        EnemySpriteChange();
     }
 
     private void Update()
@@ -170,6 +181,24 @@ public class GUIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OpenMenuTab();
+        }
+    }
+
+    private void EnemySpriteChange()
+    {
+        var enemySprite = GameObject.Find("MaskEnemy/Enemy").GetComponent<Image>();
+        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        {
+            enemySprite.sprite = ghastellaSprite;
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == 2)
+        {
+            enemySprite.sprite = theCountSprite;
+        }
+
+        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        {
+            enemySprite.sprite = luciferSprite;
         }
     }
 }
