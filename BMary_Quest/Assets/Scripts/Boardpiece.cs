@@ -24,10 +24,25 @@ public class Boardpiece : MonoBehaviour
     {
         piece = GetComponent<SpriteRenderer>();
         mary = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
-        enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
-
-        enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
         maryStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary_Start");
+
+        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        {
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Ghastella_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Ghastella");
+        }
+        else if (DataAcrossScenes.EnemyChosenStaff == 2)
+        {
+            //TODO change when the counts marks has been added
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+        }
+        else if (DataAcrossScenes.EnemyChosenStaff == 3)
+        {
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+        }
+        
 
         locked = Resources.Load<Sprite>("Sprites/Marks/Lucifer_staff_ability");
     }
