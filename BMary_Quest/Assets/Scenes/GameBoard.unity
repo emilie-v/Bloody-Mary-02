@@ -396,7 +396,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1324767608}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
-        m_MethodName: ChooseNextOpponent
+        m_MethodName: NextOpponentButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -883,6 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 3568027160121143521}
+  rewardScreen: {fileID: 0}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
   spelplan: {fileID: 773677183}
