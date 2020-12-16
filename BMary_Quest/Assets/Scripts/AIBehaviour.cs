@@ -65,14 +65,12 @@ public class AIBehaviour : MonoBehaviour
             CashOut();
         }
 
-        if (gameControl.gameOver.activeSelf)
-        {
-            StopCoroutine(DefaultActionOrder());
-        }
-        
         yield return new WaitUntil(() => cashOutDone);
         yield return new WaitForSeconds(0.2f);
-        EndTurn();
+        if (!gameControl.gameOver.activeSelf)
+        {
+            EndTurn();
+        }
     }
 
     private IEnumerator BlockedActionOrder()
@@ -81,11 +79,6 @@ public class AIBehaviour : MonoBehaviour
         if (!cashOutDone)
         {
             ForceCashOut();
-        }
-        
-        if (gameControl.gameOver.activeSelf)
-        {
-            StopCoroutine(DefaultActionOrder());
         }
         
         CheckCanPlace();
@@ -103,9 +96,13 @@ public class AIBehaviour : MonoBehaviour
             UseStaff();
         }
         
+        
         yield return new WaitUntil(() => useStaffDone);
         yield return new WaitForSeconds(0.2f);
-        EndTurn();
+        if (!gameControl.gameOver.activeSelf)
+        {
+            EndTurn();
+        }
     }
 
     private IEnumerator PlaceBricks()

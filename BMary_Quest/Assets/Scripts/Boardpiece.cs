@@ -50,7 +50,7 @@ public class Boardpiece : MonoBehaviour
         if (GetComponentInParent<Owner>().specialState == 2)
             piece.sprite = enemyStarter;
 
-        if (GetComponentInParent<Owner>().locked)
+        if (GetComponentInParent<Owner>().locked > 0)
             piece.sprite = locked;
     }
 }
