@@ -153,11 +153,13 @@ public class GameControl : MonoBehaviour
             else if (DataAcrossScenes.EnemyChosenStaff == 2)
             {
                 darknightstaff.bricksToLockLeft = darknightstaff.bricksToLock;
-                foreach (Transform child in GameObject.Find("Spelplan").transform)
-                {
-                    child.GetComponent<Owner>().locked = false;
-                }
             }
+            
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                child.GetComponent<Owner>().locked--;
+            }
+            
             if (enemyStaffCooldown > 0)
             {
                 enemyStaffCooldown--;
@@ -181,11 +183,13 @@ public class GameControl : MonoBehaviour
             else if (DataAcrossScenes.PlayerChosenStaff == 2)
             {
                 darknightstaff.bricksToLockLeft = darknightstaff.bricksToLock;
-                foreach (Transform child in GameObject.Find("Spelplan").transform)
-                {
-                    child.GetComponent<Owner>().locked = false;
-                }
             }
+            
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                child.GetComponent<Owner>().locked--;
+            }
+            
             if (playerStaffCooldown > 0)
             {
                 playerStaffCooldown--;
