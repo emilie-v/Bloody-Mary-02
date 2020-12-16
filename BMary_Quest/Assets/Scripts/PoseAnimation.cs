@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PoseAnimation : MonoBehaviour
 {
-    Sprite[] maryPoses;
-    Sprite maryAngry;
-    Sprite maryDamaged;
-    Sprite maryScared;
+    public Sprite[] maryPoseList;
+    public Sprite maryAngry;
+    public Sprite maryDamaged;
+    public Sprite maryScared;
+
+    public Sprite currentMaryPose;
+
+    public int maryIndex;
 
     public void Start()
     {
@@ -15,9 +20,14 @@ public class PoseAnimation : MonoBehaviour
         maryDamaged = Resources.Load<Sprite>("Sprites/Characters/Mary_Reactions/Pose_Mary_Damaged");
         maryScared = Resources.Load<Sprite>("Sprites/Characters/Mary_Reactions/Pose_Mary_Scared");
 
-        maryPoses = new Sprite[3];
-        maryPoses[0] = maryAngry;
-        maryPoses[1] = maryDamaged;
-        maryPoses[2] = maryScared;
+        maryPoseList = new Sprite[3];
+        maryPoseList[0] = maryAngry;
+        maryPoseList[1] = maryDamaged;
+        maryPoseList[2] = maryScared;
+    }
+
+    public void updateMaryPose(int index)
+    {
+     //   currentMaryPose.sprite = maryPoseList[index];
     }
 }
