@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioListener audioListener;
     public AudioSource effectSource;
     public AudioSource mainMenuMusic;
+    public BackgroundMusic backgroundMusic;
     public AudioClip[] audioClips;
     public Image musicMuteButton;
     public Image mainMuteButton;
@@ -73,7 +74,7 @@ public class SoundManager : MonoBehaviour
     {
         audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
         
-        audioClips = new AudioClip[12];
+        audioClips = new AudioClip[13];
         audioClips[0] = Resources.Load<AudioClip>("Audios/Audios_Select_Sound");
         audioClips[1] = Resources.Load<AudioClip>("Audios/Audios_Arrows_Sound");
         audioClips[2] = Resources.Load<AudioClip>("Audios/Audios_Locked_Sound");
@@ -86,6 +87,7 @@ public class SoundManager : MonoBehaviour
         audioClips[9] = Resources.Load<AudioClip>("Audios/Audios_EndTurn_Sound");
         audioClips[10] = Resources.Load<AudioClip>("Audios/Audios_WinState_Sound");
         audioClips[11] = Resources.Load<AudioClip>("Audios/Audios_LoseState_Sound");
+        audioClips[12] = Resources.Load<AudioClip>("Audios/Audios_Menu_Music");
 
         highVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_HighVolume");
         lowVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_LowVolume");
@@ -236,6 +238,12 @@ public class SoundManager : MonoBehaviour
         effectSource.Play();
     }
 
+    public void NextOpponentSound()
+    {
+        effectSource.clip = audioClips[(int)SoundEnum.NextOpponent];
+        effectSource.Play();
+    }
+
     public enum SoundEnum : int
     {
         SelectButton,
@@ -249,6 +257,7 @@ public class SoundManager : MonoBehaviour
         CashOutButton,
         EndTurnButton,
         WinState,
-        LoseState
+        LoseState,
+        NextOpponent
     }
 }

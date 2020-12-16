@@ -8,7 +8,7 @@ public class BackgroundMusic : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip gameMusic;
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     private static BackgroundMusic instance = null;
 
@@ -36,7 +36,7 @@ public class BackgroundMusic : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenu" && audioSource.clip != menuMusic)
         { 
