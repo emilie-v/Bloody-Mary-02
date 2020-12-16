@@ -388,7 +388,7 @@ public class GameControl : MonoBehaviour
                         DataAcrossScenes.pumpkinStaffUnlocked = true;
                         DataAcrossScenes.countUnlocked = true;
                     }
-                    if (DataAcrossScenes.pumpkinStaffUnlocked == true)
+                    else if (DataAcrossScenes.pumpkinStaffUnlocked == true)
                     {
                         rewardScreen.newReward(3);
                     }
@@ -401,7 +401,7 @@ public class GameControl : MonoBehaviour
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
                     }
-                    if (DataAcrossScenes.darkNightStaffUnlocked == true)
+                    else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {
                         rewardScreen.newReward(3);
                     }
@@ -413,7 +413,7 @@ public class GameControl : MonoBehaviour
                         rewardScreen.newReward(2);
                         DataAcrossScenes.hellStaffUnlocked = true;
                     }
-                    if(DataAcrossScenes.hellStaffUnlocked == true)
+                    else if(DataAcrossScenes.hellStaffUnlocked == true)
                     {
                         rewardScreen.newReward(3);
                     }

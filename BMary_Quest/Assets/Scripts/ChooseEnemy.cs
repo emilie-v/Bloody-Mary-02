@@ -17,7 +17,7 @@ public class ChooseEnemy : MonoBehaviour
 
     Sprite padlock;
 
-    int index = 0;
+    int index = 1;
     Image currentEnemy;
     public Image currentEnemyName;
     public Text currentEnemyStaff;
@@ -47,7 +47,7 @@ public class ChooseEnemy : MonoBehaviour
         enemyList = new Sprite[3];
         enemyNameList = new Sprite[3];
         enemyStaffList = new string[]{ "HellStaff", "GhastellaStaff","CountStaff"};
-
+       
         enemyList[0] = lucifer;
         enemyNameList[0] = luciferName;
         enemyList[1] = ghastella;
@@ -142,11 +142,25 @@ public class ChooseEnemy : MonoBehaviour
     {
         if(index == 0)
         {
-            padlockImage.SetActive(false);
+            if (DataAcrossScenes.luciferUnlocked == true)
+                padlockImage.SetActive(false);
+            else
+                padlockImage.SetActive(true);
         }
         else if(index == 1)
         {
-            padlockImage.SetActive(true);
+            if (DataAcrossScenes.ghastellaUnlocked == true)
+                padlockImage.SetActive(false);
+            else
+                padlockImage.SetActive(true);
         }
+        else if(index ==2)
+        {
+            if (DataAcrossScenes.countUnlocked == true)
+                padlockImage.SetActive(false);
+            else
+                padlockImage.SetActive(true);
+        }
+
     }
 }

@@ -9,6 +9,7 @@ public class DataAcrossScenes
     public static bool hellStaffUnlocked;
     public static bool pumpkinStaffUnlocked;
 
+    public static bool ghastellaUnlocked=true;
     public static bool luciferUnlocked;
     public static bool countUnlocked;
 
