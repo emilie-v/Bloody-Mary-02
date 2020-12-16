@@ -712,6 +712,11 @@ public class GameControl : MonoBehaviour
     {
         SceneManager.LoadScene("ChooseEnemy");
     }
+
+    public void BackToMainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
 
 
