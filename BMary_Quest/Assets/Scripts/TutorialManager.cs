@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
+    public GameObject tutorial;
     public GameObject gameBoardTutorial;
     public GameObject bloodPointsTutorial;
     public GameObject marksTutorial;
@@ -13,11 +15,34 @@ public class TutorialManager : MonoBehaviour
     public GameObject endTurnTutorial;
     public GameObject backTutorial;
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SetAllToFalse();
+            tutorial.SetActive(false);
+        }
+    }
+
     public void BackToMainMenuButton()
     {
-        SetAllToFalse();
         SoundManager.Instance.LockedWarningPopUpSound();
+        SetAllToFalse();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void BackToGameButton()
+    {
+        SoundManager.Instance.MenuButtonSound();
+        SetAllToFalse();
+        tutorial.SetActive(false);
+    }
+
+    public void OpenTutorialButton()
+    {
+        SoundManager.Instance.MenuButtonSound();
+        SetAllToFalse();
+        tutorial.SetActive(true);
     }
 
     public void GameBoardTutorialButton()
@@ -71,7 +96,4 @@ public class TutorialManager : MonoBehaviour
         staffsTutorial.SetActive(false);
         endTurnTutorial.SetActive(false);
     }
-
-
-
 }
