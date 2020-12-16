@@ -44,7 +44,12 @@ public class BackgroundMusic : MonoBehaviour
             audioSource.clip = menuMusic;
             audioSource.Play();
         }
-
+        if (scene.name == "ChooseEnemy" && audioSource.clip != menuMusic)
+        {
+            audioSource.Stop();
+            audioSource.clip = menuMusic;
+            audioSource.Play();
+        }
         if (scene.name == "GameBoard")
         {
             audioSource.Stop();
