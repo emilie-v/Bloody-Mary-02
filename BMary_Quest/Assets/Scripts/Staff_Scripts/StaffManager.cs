@@ -9,29 +9,43 @@ public class StaffManager : MonoBehaviour
 
     void Start()
     {
-        if (playerSelectedStaff == 0)
+        if (playerSelectedStaff == (int)Chosen_Staff.mirror)
         {
-            gameObject.AddComponent(typeof(MirrorStaff));
-            DataAcrossScenes.PlayerChosenStaff = 0;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.mirror;
         }
-        else if (playerSelectedStaff == 1)
+        else if (playerSelectedStaff == (int)Chosen_Staff.pumpkin)
         {
-            gameObject.AddComponent(typeof(PumpkinStaff));
-            DataAcrossScenes.PlayerChosenStaff = 1;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.pumpkin;
         }
-        else if (playerSelectedStaff == 2)
+        else if (playerSelectedStaff == (int)Chosen_Staff.skeleton)
         {
-            gameObject.AddComponent(typeof(DarkNightStaff));
-            DataAcrossScenes.PlayerChosenStaff = 2;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.skeleton;
         }
-        else if (playerSelectedStaff == 3)
+        else if (playerSelectedStaff == (int)Chosen_Staff.moon)
         {
-            gameObject.AddComponent(typeof(HellStaff));
-            DataAcrossScenes.PlayerChosenStaff = 3;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.moon;
+        }
+        else if (playerSelectedStaff == (int)Chosen_Staff.night)
+        {
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.night;
+        }
+        else if (playerSelectedStaff == (int)Chosen_Staff.hell)
+        {
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.hell;
         }
         else
         {
             Debug.LogError("No staff selected!");
         }
     }
+}
+
+public enum Chosen_Staff : int
+{
+    mirror,
+    pumpkin,
+    skeleton,
+    moon,
+    night,
+    hell
 }

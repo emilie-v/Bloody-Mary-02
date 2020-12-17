@@ -187,15 +187,23 @@ public class GUIManager : MonoBehaviour
     private void EnemySpriteChange()
     {
         var enemySprite = GameObject.Find("MaskEnemy/Enemy").GetComponent<Image>();
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             enemySprite.sprite = ghastellaSprite;
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 2)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
+        {
+            enemySprite.sprite = ghastellaSprite; //change to senior bones sprite
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        {
+            enemySprite.sprite = ghastellaSprite; //change to umbralina sprite
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             enemySprite.sprite = theCountSprite;
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
             enemySprite.sprite = luciferSprite;
         }

@@ -393,6 +393,8 @@ GameObject:
   - component: {fileID: 1324767611}
   - component: {fileID: 1324767614}
   - component: {fileID: 1324767615}
+  - component: {fileID: 1324767618}
+  - component: {fileID: 1324767617}
   - component: {fileID: 1324767613}
   - component: {fileID: 1324767612}
   - component: {fileID: 1324767616}
@@ -416,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 3568027160121143521}
-  rewardScreen: {fileID: 0}
+  rewardScreen: {fileID: 1324767616}
   poseAnimation: {fileID: 368794419}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
@@ -426,6 +428,8 @@ MonoBehaviour:
   enemyMaxHealth: 20
   marysHealth: 20
   enemyHealth: 20
+  maryDamageMultiplier: 0
+  enemyDamageMultiplier: 0
   abilityButton: {fileID: 0}
   playerStaffCooldown: 0
   enemyStaffCooldown: 0
@@ -475,6 +479,8 @@ MonoBehaviour:
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
   darkNightStaff: {fileID: 1324767613}
+  moonStaff: {fileID: 1324767617}
+  skeletonStaff: {fileID: 1324767618}
   pumpkinStaff: {fileID: 1324767615}
 --- !u!4 &1324767610
 Transform:
@@ -595,6 +601,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStaffReward: {fileID: 1438666249}
   rewardScreen: {fileID: 187312945}
+--- !u!114 &1324767617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c6241ae86c67f4098e288f511f0141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameControl: {fileID: 0}
+  abilityButton: {fileID: 0}
+  lastMove: {fileID: 0}
+  piecesToMark: 1
+  piecesToMarkLeft: 1
+  staffCooldown: 2
+--- !u!114 &1324767618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516522cb807f86f4e97104f5344789e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameControl: {fileID: 0}
+  abilityButton: {fileID: 0}
+  lastMove: {fileID: 0}
+  piecesToMark: 1
+  piecesToMarkLeft: 1
+  staffCooldown: 1
 --- !u!1 &1422405482
 GameObject:
   m_ObjectHideFlags: 0

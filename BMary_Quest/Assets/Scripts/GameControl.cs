@@ -18,6 +18,8 @@ public class GameControl : MonoBehaviour
     private HellStaff hellStaff;
     private DarkNightStaff darknightStaff;
     private PumpkinStaff pumpkinStaff;
+    private SkeletonStaff skeletonStaff;
+    private MoonStaff moonStaff;
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
@@ -33,6 +35,9 @@ public class GameControl : MonoBehaviour
     public int enemyMaxHealth = 20;
     public int marysHealth;
     public int enemyHealth;
+
+    public int maryDamageMultiplier;
+    public int enemyDamageMultiplier;
 
     public Button abilityButton;
 
@@ -104,6 +109,8 @@ public class GameControl : MonoBehaviour
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellStaff = GameObject.Find("PController").GetComponent<HellStaff>();
         darknightStaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
+        moonStaff = GameObject.Find("PController").GetComponent<MoonStaff>();
+        skeletonStaff = GameObject.Find("PController").GetComponent<SkeletonStaff>();
         pumpkinStaff = GameObject.Find("PController").GetComponent<PumpkinStaff>();
         mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
         playerTurn = (int)Random.Range(0, 2);
@@ -155,11 +162,11 @@ public class GameControl : MonoBehaviour
             lastMove.enemyCashedOutThisTurn = false;
             lastMove.enemyHellStaffActivePower = false;
             lastMove.enemyDarkNightStaffActivePower = false;
-            if (DataAcrossScenes.PlayerChosenStaff == 3)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
             {
                 hellStaff.hellStaffPassiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == 2)
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
             {
                 darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }
@@ -185,11 +192,11 @@ public class GameControl : MonoBehaviour
             lastMove.maryCashedOutThisTurn = false;
             lastMove.playerHellStaffActivePower = false;
             lastMove.playerDarkNightStaffActivePower = false;
-            if (DataAcrossScenes.EnemyChosenStaff == 3)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
             {
                 hellStaff.hellStaffPassiveAbility();
             }
-            else if (DataAcrossScenes.PlayerChosenStaff == 2)
+            else if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
             {
                 darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }
@@ -223,6 +230,14 @@ public class GameControl : MonoBehaviour
             }
         }
 
+        foreach (Transform child in GameObject.Find("Spelplan").transform)
+        {
+            child.GetComponent<Owner>().skeletonMark = false;
+        }
+        maryDamageMultiplier = 1;
+        enemyDamageMultiplier = 1;
+        skeletonStaff.piecesToMarkLeft = skeletonStaff.piecesToMark;
+        
         placeMode = false;
         canCashOut = true;
         if (firstTurn)
@@ -278,17 +293,17 @@ public class GameControl : MonoBehaviour
                 }
 
 
-                if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 3)
+                if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
                 {
                     marysHealth -= marysTempPoints + 1;
                     playerBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
                 }
-                if(DataAcrossScenes.PlayerChosenStaff == 2)
+                if(DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
                 {
                     darknightStaff.DarkNightStaffPassiveAbility();
                 }
 
-                enemyHealth -= marysTempPoints + 1;
+                enemyHealth -= (marysTempPoints + 1) * maryDamageMultiplier;
                 marysTempPoints = 0;
                 lastMove.maryCashedOutThisTurn=true;
                 
@@ -324,17 +339,17 @@ public class GameControl : MonoBehaviour
                 }
 
 
-                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == 3)
+                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
                 {
                     enemyHealth -= enemyTempPoints + 1;
                     enemyBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
                 }
-                if (DataAcrossScenes.EnemyChosenStaff == 2)
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
                 {
                     darknightStaff.DarkNightStaffPassiveAbility();
                 }
 
-                marysHealth -= enemyTempPoints + 1;
+                marysHealth -= (enemyTempPoints + 1) * enemyDamageMultiplier;
                 enemyTempPoints = 0;
                 lastMove.enemyCashedOutThisTurn=true;
 
@@ -343,6 +358,10 @@ public class GameControl : MonoBehaviour
             else
             {
                 Debug.Log("Cashout error! This should not happen!");
+            }
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                child.GetComponent<Owner>().skeletonMark = false;
             }
             UpdateBloodPoints();
             canCashOut = false;
@@ -386,7 +405,7 @@ public class GameControl : MonoBehaviour
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
                 //wait x seconds, win-screen? Story goes on?
-                if (DataAcrossScenes.EnemyChosenStaff == 1)
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
                 {
                     if(DataAcrossScenes.pumpkinStaffUnlocked == false)
                     {
@@ -396,10 +415,36 @@ public class GameControl : MonoBehaviour
                     }
                     else if (DataAcrossScenes.pumpkinStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(3);
+                        rewardScreen.newReward(5);
                     }
                 }
-                if (DataAcrossScenes.EnemyChosenStaff == 2)
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
+                {
+                    if(DataAcrossScenes.skeletonStaffUnlocked == false)
+                    {
+                        rewardScreen.newReward(1);
+                        DataAcrossScenes.skeletonStaffUnlocked = true;
+                        DataAcrossScenes.seniorBonesUnlocked = true;
+                    }
+                    else if (DataAcrossScenes.skeletonStaffUnlocked == true)
+                    {
+                        rewardScreen.newReward(5);
+                    }
+                }
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+                {
+                    if(DataAcrossScenes.moonStaffUnlocked == false)
+                    {
+                        rewardScreen.newReward(2);
+                        DataAcrossScenes.moonStaffUnlocked = true;
+                        DataAcrossScenes.umbralinaUnlocked = true;
+                    }
+                    else if (DataAcrossScenes.moonStaffUnlocked == true)
+                    {
+                        rewardScreen.newReward(5);
+                    }
+                }
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
                 {
                     if (DataAcrossScenes.darkNightStaffUnlocked == false)
                     {
@@ -409,10 +454,10 @@ public class GameControl : MonoBehaviour
                     }
                     else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(3);
+                        rewardScreen.newReward(5);
                     }
                 }
-                if (DataAcrossScenes.EnemyChosenStaff == 3)
+                if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
                 {
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
@@ -421,7 +466,7 @@ public class GameControl : MonoBehaviour
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(3);
+                        rewardScreen.newReward(5);
                     }
                 }
 
@@ -559,48 +604,72 @@ public class GameControl : MonoBehaviour
     private void StaffCooldown()
     {
         //mirrorStaff
-        if (DataAcrossScenes.PlayerChosenStaff == 0)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
         {
             GameObject.Find("Buttons/PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 0)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror)
         {
             GameObject.Find("Buttons/EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
         
         //pumpkinStaff
-        if (DataAcrossScenes.PlayerChosenStaff == 1)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) pumpkinStaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) pumpkinStaff.staffCooldown, 0.5f);
         }
         
+        //skeletonStaff
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.skeleton)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) playerStaffCooldown / (float) skeletonStaff.staffCooldown, 0.5f);
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) enemyStaffCooldown / (float) skeletonStaff.staffCooldown, 0.5f);
+        }
+        
+        //moonStaff
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon)
+        {
+            GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) playerStaffCooldown / (float) moonStaff.staffCooldown, 0.5f);
+        }
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        {
+            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
+                DOFillAmount((float) enemyStaffCooldown / (float) moonStaff.staffCooldown, 0.5f);
+        }
+        
         //darknightStaff
-        if (DataAcrossScenes.PlayerChosenStaff == 2)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) darknightStaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 2)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) darknightStaff.staffCooldown, 0.5f);
         }
         
         //hellStaff
-        if (DataAcrossScenes.PlayerChosenStaff == 3)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) playerStaffCooldown / (float) hellStaff.staffCooldown, 0.5f);
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
             GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
                 DOFillAmount((float) enemyStaffCooldown / (float) hellStaff.staffCooldown, 0.5f);
@@ -656,6 +725,7 @@ public class GameControl : MonoBehaviour
 
     private void UpdateMarkedPiece()
     {
+        //Hell Staff
         if (lastMove.enemyHellStaffActivePower)
         {
             spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;

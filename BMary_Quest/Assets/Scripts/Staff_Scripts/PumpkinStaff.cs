@@ -27,11 +27,11 @@ public class PumpkinStaff : MonoBehaviour
 
     public void PumpkinStaffPassiveAbility()
     {
-        if (DataAcrossScenes.PlayerChosenStaff == 1)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             gameControl.playerMovesPerTurn = movesPerTurn;
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             gameControl.enemyMovesPerTurn = movesPerTurn;
         }
@@ -41,14 +41,14 @@ public class PumpkinStaff : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.PlayerChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.mary)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.enemyStaffCooldown++;
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
             }
-            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.playerStaffCooldown++;
                 gameControl.enemyStaffCooldown = staffCooldown;

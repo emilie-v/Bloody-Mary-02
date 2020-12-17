@@ -23,11 +23,13 @@ public class RewardScreen : MonoBehaviour
         hellReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         replayReward = Resources.Load<Sprite>("Sprites/Staffs/Replay");
 
-        staffRewardList = new Sprite[4];
+        staffRewardList = new Sprite[6];
         staffRewardList[0] = pumpkinReward;
-        staffRewardList[1] = countReward;
-        staffRewardList[2] = hellReward;
-        staffRewardList[3] = replayReward;
+        staffRewardList[1] = pumpkinReward; //Change to Skeleton
+        staffRewardList[2] = pumpkinReward; //Change to moon
+        staffRewardList[3] = countReward;
+        staffRewardList[4] = hellReward;
+        staffRewardList[5] = replayReward;
     }
 
     public void newReward(int index)

@@ -21,6 +21,8 @@ public class AIBehaviour : MonoBehaviour
     [SerializeField] private GameControl gameControl;
     [SerializeField] private HellStaff hellstaff;
     [SerializeField] private DarkNightStaff darkNightStaff;
+    [SerializeField] private MoonStaff moonStaff;
+    [SerializeField] private SkeletonStaff skeletonStaff;
     [SerializeField] private PumpkinStaff pumpkinStaff;
     
 
@@ -53,21 +55,21 @@ public class AIBehaviour : MonoBehaviour
         }
 
         yield return new WaitUntil(() => placeBricksDone);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         if (!useStaffDone)
         {
             UseStaff();
         }
 
         yield return new WaitUntil(() => useStaffDone);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         if (!cashOutDone)
         {
             CashOut();
         }
 
         yield return new WaitUntil(() => cashOutDone);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         if (!gameControl.gameOver.activeSelf)
         {
             EndTurn();
@@ -77,6 +79,13 @@ public class AIBehaviour : MonoBehaviour
     private IEnumerator BlockedActionOrder()
     {
         yield return new WaitForSeconds(1.2f);
+        if (!useStaffDone)
+        {
+            UseStaff();
+        }
+        
+        yield return new WaitUntil(() => useStaffDone);
+        yield return new WaitForSeconds(0.5f);
         if (!cashOutDone)
         {
             ForceCashOut();
@@ -84,22 +93,14 @@ public class AIBehaviour : MonoBehaviour
         
         CheckCanPlace();
         yield return new WaitUntil(() => cashOutDone);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         if (!placeBricksDone)
         { 
             StartCoroutine(PlaceBricks());
         }
         
         yield return new WaitUntil(() => placeBricksDone);
-        yield return new WaitForSeconds(0.2f);
-        if (!useStaffDone)
-        {
-            UseStaff();
-        }
-        
-        
-        yield return new WaitUntil(() => useStaffDone);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         if (!gameControl.gameOver.activeSelf)
         {
             EndTurn();
@@ -165,15 +166,23 @@ public class AIBehaviour : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.EnemyChosenStaff == 1 && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
             {
                 pumpkinStaff.PumpkinStaffActiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.enemyStaffCooldown == 0)
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton && gameControl.enemyStaffCooldown == 0)
+            {
+                skeletonStaff.SkeletonStaffActiveAbility();
+            }
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0)
+            {
+                moonStaff.MoonStaffActiveAbility();
+            }
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.enemyStaffCooldown == 0)
             {
                 darkNightStaff.DarkNightStaffActiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.enemyStaffCooldown == 0)
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.enemyStaffCooldown == 0)
             {
                 hellstaff.hellStaffActiveAbility();
             }

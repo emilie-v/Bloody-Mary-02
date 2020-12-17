@@ -29,13 +29,16 @@ public class MirrorStaff : MonoBehaviour
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
-        gameControl.marysMaxHealth = 25;
-        gameControl.marysHealth = 25;
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
+        {
+            gameControl.marysMaxHealth = 25;
+            gameControl.marysHealth = 25;
+        }
     }
 
     void staffPower()
     {
-        if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == 0)
+        if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
         {
             //lastMovesX = lastMove.lastMoveX;
             //lastMovesY = lastMove.lastMoveY;
@@ -69,7 +72,7 @@ public class MirrorStaff : MonoBehaviour
                 }
             }    
             
-            if (DataAcrossScenes.PlayerChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.mary)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
                 lastMove.staffUsed = true;
@@ -77,7 +80,7 @@ public class MirrorStaff : MonoBehaviour
                 gameControl.Staff();
                 resetMirrorArray();   
             }
-            if (DataAcrossScenes.EnemyChosenStaff == 0 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
                 lastMove.staffUsed = true;
