@@ -31,7 +31,8 @@ public class MoonStaff : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.mary 
+                || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 foreach (Transform child in GameObject.Find("Spelplan").transform)
                 {
@@ -49,13 +50,13 @@ public class MoonStaff : MonoBehaviour
                 }
             }
 
-            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
             }
-            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
