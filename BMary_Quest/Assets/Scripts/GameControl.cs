@@ -411,7 +411,7 @@ public class GameControl : MonoBehaviour
                     {
                         rewardScreen.newReward(0);
                         DataAcrossScenes.pumpkinStaffUnlocked = true;
-                        DataAcrossScenes.countUnlocked = true;
+                        DataAcrossScenes.seniorBonesUnlocked = true;
                     }
                     else if (DataAcrossScenes.pumpkinStaffUnlocked == true)
                     {
@@ -424,7 +424,7 @@ public class GameControl : MonoBehaviour
                     {
                         rewardScreen.newReward(1);
                         DataAcrossScenes.skeletonStaffUnlocked = true;
-                        DataAcrossScenes.seniorBonesUnlocked = true;
+                        DataAcrossScenes.umbralinaUnlocked = true;
                     }
                     else if (DataAcrossScenes.skeletonStaffUnlocked == true)
                     {
@@ -437,7 +437,7 @@ public class GameControl : MonoBehaviour
                     {
                         rewardScreen.newReward(2);
                         DataAcrossScenes.moonStaffUnlocked = true;
-                        DataAcrossScenes.umbralinaUnlocked = true;
+                        DataAcrossScenes.countUnlocked = true;
                     }
                     else if (DataAcrossScenes.moonStaffUnlocked == true)
                     {
@@ -448,7 +448,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (DataAcrossScenes.darkNightStaffUnlocked == false)
                     {
-                        rewardScreen.newReward(1);
+                        rewardScreen.newReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
                     }
@@ -461,7 +461,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
-                        rewardScreen.newReward(2);
+                        rewardScreen.newReward(4);
                         DataAcrossScenes.hellStaffUnlocked = true;
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
