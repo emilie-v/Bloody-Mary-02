@@ -39,6 +39,10 @@ public class AIBehaviour : MonoBehaviour
         {
             StartCoroutine(DefaultActionOrder());
         }
+        else if (DataAcrossScenes.EnemyChosenStaff == (int) Chosen_Staff.moon)
+        {
+            StartCoroutine(UmbralinaOrder());
+        }
         else
         {
             StartCoroutine(BlockedActionOrder());
@@ -68,6 +72,36 @@ public class AIBehaviour : MonoBehaviour
             CashOut();
         }
 
+        yield return new WaitUntil(() => cashOutDone);
+        yield return new WaitForSeconds(0.5f);
+        if (!gameControl.gameOver.activeSelf)
+        {
+            EndTurn();
+        }
+    }
+
+    private IEnumerator UmbralinaOrder()
+    {
+        yield return new WaitForSeconds(1.2f);
+        if (!useStaffDone)
+        {
+            UseStaff();
+        }
+        
+        yield return new WaitUntil(() => useStaffDone);
+        yield return new WaitForSeconds(1f);
+        if (!placeBricksDone)
+        { 
+            StartCoroutine(PlaceBricks());
+        }
+        
+        yield return new WaitUntil(() => placeBricksDone);
+        yield return new WaitForSeconds(1f);
+        if (!cashOutDone)
+        {
+            CashOut();
+        }
+        
         yield return new WaitUntil(() => cashOutDone);
         yield return new WaitForSeconds(0.5f);
         if (!gameControl.gameOver.activeSelf)
@@ -164,6 +198,23 @@ public class AIBehaviour : MonoBehaviour
 
     private void UseStaff()
     {
+        int flipOrNoFlip = 0;
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        {
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                if (child.GetComponent<Owner>().owned == (int)Player_Turn.mary && child.GetComponent<Owner>().specialState == 0)
+                {
+                    flipOrNoFlip--;
+                }
+                if (child.GetComponent<Owner>().owned == (int)Player_Turn.enemy && child.GetComponent<Owner>().specialState == 0)
+                {
+                    flipOrNoFlip++;
+                }
+            }
+        }
+        
+        
         if (!gameControl.staffUsed)
         {
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
@@ -174,7 +225,7 @@ public class AIBehaviour : MonoBehaviour
             {
                 skeletonStaff.SkeletonStaffActiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0)
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0 && flipOrNoFlip > 0)
             {
                 moonStaff.MoonStaffActiveAbility();
             }
