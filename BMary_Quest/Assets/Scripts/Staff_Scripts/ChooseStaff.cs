@@ -155,7 +155,7 @@ public class ChooseStaff : MonoBehaviour
     {
         //int unlocked = PlayerPrefs.GetInt("Staff" + index);
 
-        if (index == 0 && DataAcrossScenes.mirrorStaffUnlocked == true)
+        if (index == 0 && DataAcrossScenes.mirrorStaffUnlocked)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
@@ -167,7 +167,7 @@ public class ChooseStaff : MonoBehaviour
         }
 
         //pumpkin staff == 1
-        if (index == 1 && DataAcrossScenes.pumpkinStaffUnlocked == true)
+        if (index == 1 && DataAcrossScenes.pumpkinStaffUnlocked)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
@@ -178,25 +178,47 @@ public class ChooseStaff : MonoBehaviour
             isUnlocked = false;
         }
         
-        //count ==2
-        if (index == 2 && DataAcrossScenes.darkNightStaffUnlocked == true)
+        if (index == 2 && DataAcrossScenes.skeletonStaffUnlocked)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
         }
-        else if (index == 2 && DataAcrossScenes.darkNightStaffUnlocked == false)
+        else if(index == 2 && DataAcrossScenes.skeletonStaffUnlocked == false)
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+        
+        if (index == 3 && DataAcrossScenes.moonStaffUnlocked)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else if(index == 3 && DataAcrossScenes.moonStaffUnlocked == false)
+        {
+            padlockImage.SetActive(true);
+            isUnlocked = false;
+        }
+        
+        //count ==2
+        if (index == 4 && DataAcrossScenes.darkNightStaffUnlocked)
+        {
+            padlockImage.SetActive(false);
+            isUnlocked = true;
+        }
+        else if (index == 4 && DataAcrossScenes.darkNightStaffUnlocked == false)
         {
             padlockImage.SetActive(true);
             isUnlocked = false;
         }
 
         //lucifer ==3
-        if (index == 3 && DataAcrossScenes.hellStaffUnlocked == true)
+        if (index == 5 && DataAcrossScenes.hellStaffUnlocked)
         {
             padlockImage.SetActive(false);
             isUnlocked = true;
         }
-        else if (index == 3 && DataAcrossScenes.hellStaffUnlocked == false)
+        else if (index == 5 && DataAcrossScenes.hellStaffUnlocked == false)
         {
             padlockImage.SetActive(true);
             isUnlocked = false;
