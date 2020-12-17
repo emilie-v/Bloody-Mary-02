@@ -34,12 +34,13 @@ public class ChooseEnemy : MonoBehaviour
     {
         currentEnemy = GetComponent<Image>();
 
+
         lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
         count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
 
         luciferName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_LuciferName");
-        ghastellaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
+        ghastellaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_GhastellaName");
         countName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
 
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
@@ -57,6 +58,7 @@ public class ChooseEnemy : MonoBehaviour
 
         currentEnemyStaff.text = enemyStaffList[index];
         currentEnemy.sprite = enemyList[index];
+        currentEnemyName.sprite = enemyNameList[index];
 
         Debug.Log(enemyStaffList.Length);
     }
