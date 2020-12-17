@@ -12,6 +12,8 @@ public class StaffManager : MonoBehaviour
 
     Sprite selectedMirrorStaff;
     Sprite selectedPumpkinStaff;
+    Sprite selectedSkeletonStaff;
+    Sprite selectedMoonStaff;
     Sprite selectedDarkestNightStaff;
     Sprite selectedHellStaff;
 
@@ -20,41 +22,53 @@ public class StaffManager : MonoBehaviour
     {
         selectedMirrorStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror");
         selectedPumpkinStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        selectedSkeletonStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        selectedMoonStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         selectedDarkestNightStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night");
         selectedHellStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_HellStaff");
 
-        selectedStaffList = new Sprite[4];
+        selectedStaffList = new Sprite[6];
 
         selectedStaffList[0] = selectedMirrorStaff;
         selectedStaffList[1] = selectedPumpkinStaff;
-        selectedStaffList[2] = selectedDarkestNightStaff;
-        selectedStaffList[3] = selectedHellStaff;
+        selectedStaffList[2] = selectedSkeletonStaff;
+        selectedStaffList[3] = selectedMoonStaff;
+        selectedStaffList[4] = selectedDarkestNightStaff;
+        selectedStaffList[5] = selectedHellStaff;
 
-        if (playerSelectedStaff == 0)
+        if (playerSelectedStaff == (int)Chosen_Staff.mirror)
         {
-            gameObject.AddComponent(typeof(MirrorStaff));
-            DataAcrossScenes.PlayerChosenStaff = 0;
-
-            currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
-        }
-        else if (playerSelectedStaff == 1)
-        {
-            gameObject.AddComponent(typeof(PumpkinStaff));
-            DataAcrossScenes.PlayerChosenStaff = 1;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.mirror;
 
             currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
         }
-        else if (playerSelectedStaff == 2)
+        else if (playerSelectedStaff == (int)Chosen_Staff.pumpkin)
         {
-            gameObject.AddComponent(typeof(DarkNightStaff));
-            DataAcrossScenes.PlayerChosenStaff = 2;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.pumpkin;
 
             currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
         }
-        else if (playerSelectedStaff == 3)
+        else if (playerSelectedStaff == (int)Chosen_Staff.skeleton)
         {
-            gameObject.AddComponent(typeof(HellStaff));
-            DataAcrossScenes.PlayerChosenStaff = 3;
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.skeleton;
+
+            currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
+        }
+        else if (playerSelectedStaff == (int)Chosen_Staff.moon)
+        {
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.moon;
+
+            currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
+        }
+        else if (playerSelectedStaff == (int)Chosen_Staff.night)
+        {
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.night;
+
+            currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
+        }
+        else if (playerSelectedStaff == (int)Chosen_Staff.hell)
+        {
+            DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.hell;
 
             currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
         }
@@ -63,4 +77,14 @@ public class StaffManager : MonoBehaviour
             Debug.LogError("No staff selected!");
         }
     }
+}
+
+public enum Chosen_Staff : int
+{
+    mirror,
+    pumpkin,
+    skeleton,
+    moon,
+    night,
+    hell
 }
