@@ -14,6 +14,7 @@ public class Owner : MonoBehaviour
     //public bool OwnedByMary = false;
     //public bool OwnedByEnemy = false;
     public bool canChange = false;
+    public bool skeletonMark;
     public int locked;
     public int specialState;
     /* 

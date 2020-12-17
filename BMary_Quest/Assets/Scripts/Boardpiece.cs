@@ -6,6 +6,7 @@ using UnityEngine;
 public class Boardpiece : MonoBehaviour
 {
     SpriteRenderer piece;
+    SpriteRenderer markedPiece;
     public Sprite mary;
     public Sprite enemys;
     public Sprite nothing;
@@ -14,6 +15,7 @@ public class Boardpiece : MonoBehaviour
     Sprite maryStarter;
 
     Sprite locked;
+    Sprite skeletonMark;
 
     private SpriteRenderer tile;
 
@@ -23,27 +25,40 @@ public class Boardpiece : MonoBehaviour
     void Start()
     {
         piece = GetComponent<SpriteRenderer>();
+        markedPiece = transform.GetChild(0).GetComponent<SpriteRenderer>();
         mary = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
         maryStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary_Start");
 
-        if (DataAcrossScenes.EnemyChosenStaff == 1)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Ghastella_Start");
             enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Ghastella");
         }
-        else if (DataAcrossScenes.EnemyChosenStaff == 2)
+        else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
+        {
+            //TODO change when the senior bones marks has been added
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+        }
+        else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        {
+            //TODO change when the umbralina marks has been added
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+        }
+        else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             //TODO change when the counts marks has been added
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
             enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
         }
-        else if (DataAcrossScenes.EnemyChosenStaff == 3)
+        else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
             enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
         }
-        
 
+        skeletonMark = null;
         locked = Resources.Load<Sprite>("Sprites/Marks/Lucifer_staff_ability");
     }
 
@@ -67,5 +82,11 @@ public class Boardpiece : MonoBehaviour
 
         if (GetComponentInParent<Owner>().locked > 0)
             piece.sprite = locked;
+
+        if (GetComponentInParent<Owner>().skeletonMark)
+            markedPiece.sprite = locked;
+        
+        if (!GetComponentInParent<Owner>().skeletonMark)
+            markedPiece.sprite = null;
     }
 }
