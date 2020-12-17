@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class CharacterAnimations : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     SpriteRenderer spriteRenderer;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            animator.SetTrigger("Idle");
-        }
+        animator.SetTrigger("Idle");
     }
 }

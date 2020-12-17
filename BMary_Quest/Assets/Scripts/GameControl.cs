@@ -24,6 +24,7 @@ public class GameControl : MonoBehaviour
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
     public PoseAnimation poseAnimation;
+    public CharacterAnimations characterAnimations;
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
@@ -104,8 +105,8 @@ public class GameControl : MonoBehaviour
     public void Start()
     {
         spelplan = GameObject.Find("Spelplan");
+        characterAnimations = GameObject.Find("PlayerMary").GetComponent<CharacterAnimations>();
         rewardScreen = GameObject.Find("PController").GetComponent<RewardScreen>();
-        poseAnimation = GameObject.Find("PlayerMary").GetComponent<PoseAnimation>();
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellStaff = GameObject.Find("PController").GetComponent<HellStaff>();
         darknightStaff = GameObject.Find("PController").GetComponent<DarkNightStaff>();
@@ -183,6 +184,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            characterAnimations.animator.SetTrigger("Idle");
             dialogueManager.enemyIndex = 0;
             dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
             SoundManager.Instance.EndTurnButtonSound();
@@ -290,12 +292,12 @@ public class GameControl : MonoBehaviour
                     dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
                 }
 
-
                 if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
                 {
                     marysHealth -= marysTempPoints + 1;
                     playerBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
                 }
+
                 if(DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
                 {
                     darknightStaff.DarkNightStaffPassiveAbility();
@@ -331,6 +333,7 @@ public class GameControl : MonoBehaviour
 
                 if (enemyTempPoints > 0)
                 {
+                    characterAnimations.animator.SetTrigger("Damaged");
                     dialogueManager.maryIndex = Random.Range(4, 5);
                     dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 }
@@ -383,6 +386,7 @@ public class GameControl : MonoBehaviour
             }
             else if (marysHealth <= 0)
             {
+                characterAnimations.animator.SetTrigger("Angry");
                 dialogueManager.maryIndex = 6;
                 dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 dialogueManager.enemyIndex = 7;
@@ -393,6 +397,7 @@ public class GameControl : MonoBehaviour
             } 
             else if (enemyHealth <= 0)
             {
+                characterAnimations.animator.SetBool("WinState", true);
                 dialogueManager.maryIndex = 7;
                 dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 dialogueManager.enemyIndex = 6;
@@ -572,6 +577,7 @@ public class GameControl : MonoBehaviour
 
         if (staffUsed && playerTurn == (int)Player_Turn.enemy || enemyStaffCooldown > 0)
         {
+            characterAnimations.animator.SetTrigger("Scared");
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (!staffUsed && playerTurn == (int)Player_Turn.enemy)
