@@ -9,6 +9,8 @@ public class ChooseStaff : MonoBehaviour
     Sprite[] staffList;
     Sprite mirror;
     Sprite pumpkin;
+    Sprite skeleton;
+    Sprite moon;
     Sprite count;
     Sprite hell;
     Sprite padlock;
@@ -40,19 +42,23 @@ public class ChooseStaff : MonoBehaviour
 
         backgroundMusic = GameObject.Find("AudioSource").GetComponent<BackgroundMusic>();
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
-        pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
-        count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+        pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
+        skeleton = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        moon = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        count = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
         
-        staffList = new Sprite[4];
+        staffList = new Sprite[6];
         staffList[0] = mirror;
         staffList[1] = pumpkin;
-        staffList[2] = count;
-        staffList[3] = hell;
+        staffList[2] = skeleton;
+        staffList[3] = moon;
+        staffList[4] = count;
+        staffList[5] = hell;
 
-        staffInformationList = new string[] { "Mirror staff information", "Pumpkin staff information", "Dark Night staff information", "Hell staff information" };
-        staffNameList = new string[] { "Mirror Staff", "Pumpkin Staff", "Dark Night Staff", "Hell Staff" };
+        staffInformationList = new string[] { "Mirror staff information", "Pumpkin staff information", "Skeleton staff information", "Moon staff information", "Dark Night staff information", "Hell staff information" };
+        staffNameList = new string[] { "Mirror Staff", "Pumpkin Staff", "Skeleton Staff", "Moon Staff", "Dark Night Staff", "Hell Staff" };
         //Unlock the first staff
         PlayerPrefs.SetInt("Staff" + index, 1);
 
@@ -99,6 +105,8 @@ public class ChooseStaff : MonoBehaviour
             DataAcrossScenes.darkNightStaffUnlocked = true;
             DataAcrossScenes.hellStaffUnlocked = true;
 
+            UpdateCurrentStaff();
+            
             Debug.Log("Three staffs unlocked");
         }
 
@@ -107,6 +115,9 @@ public class ChooseStaff : MonoBehaviour
             DataAcrossScenes.pumpkinStaffUnlocked = false;
             DataAcrossScenes.darkNightStaffUnlocked = false;
             DataAcrossScenes.hellStaffUnlocked = false;
+            
+            UpdateCurrentStaff();
+            
             Debug.Log("Three staffs locked");
         }
     }

@@ -28,19 +28,19 @@ public class DarkNightStaff : MonoBehaviour
 
    public void DarkNightStaffPassiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.enemy) 
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.enemy) 
         {
             gameControl.enemyHealth += gameControl.enemyTempPoints / 2;
         }
 
-        if (DataAcrossScenes.PlayerChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.mary)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.mary)
         {
             gameControl.marysHealth += gameControl.marysTempPoints / 2;
         }
     }
     public void DarkNightStaffActiveAbility()
     {
-        if (DataAcrossScenes.PlayerChosenStaff == 2 || DataAcrossScenes.EnemyChosenStaff == 2)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             while (!gameControl.staffUsed && bricksToLockLeft > 0)
             {
@@ -68,13 +68,13 @@ public class DarkNightStaff : MonoBehaviour
                 }
             }
 
-            if (DataAcrossScenes.PlayerChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.mary)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
             }
-            if (DataAcrossScenes.EnemyChosenStaff == 2 && gameControl.playerTurn == (int)Player_Turn.enemy)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class DataAcrossScenes
 {
-    public static bool mirrorStaffUnlocked =true;
+    public static bool mirrorStaffUnlocked = true;
+    public static bool pumpkinStaffUnlocked;
+    public static bool skeletonStaffUnlocked;
+    public static bool moonStaffUnlocked;
     public static bool darkNightStaffUnlocked;
     public static bool hellStaffUnlocked;
-    public static bool pumpkinStaffUnlocked;
 
-    public static bool ghastellaUnlocked=true;
-    public static bool luciferUnlocked;
+    public static bool ghastellaUnlocked = true;
+    public static bool seniorBonesUnlocked;
+    public static bool umbralinaUnlocked;
     public static bool countUnlocked;
+    public static bool luciferUnlocked;
 
     private static int enemyChosenStaff;
 
@@ -40,6 +44,4 @@ public class DataAcrossScenes
             playerChosenStaff = value;
         }
     }
-
-
 }

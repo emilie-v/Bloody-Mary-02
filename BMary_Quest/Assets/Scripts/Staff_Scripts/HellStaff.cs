@@ -25,13 +25,13 @@ public class HellStaff : MonoBehaviour
 
     public void hellStaffPassiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == 3)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
             if(lastMove.enemyCashedOutThisTurn)
                 gameControl.enemyHealth += 2;
         }
 
-        if (DataAcrossScenes.PlayerChosenStaff == 3)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
         {
             if(lastMove.maryCashedOutThisTurn)
                 gameControl.marysHealth += 2;
@@ -39,26 +39,24 @@ public class HellStaff : MonoBehaviour
     }
     public void hellStaffActiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
         {
             gameControl.enemyStaffCooldown = staffCooldown;
             lastMove.enemyHellStaffActivePower = true;
         }
-        if (DataAcrossScenes.PlayerChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
         {
             gameControl.playerStaffCooldown = staffCooldown;
             lastMove.playerHellStaffActivePower = true;
         }
 
-        if (DataAcrossScenes.PlayerChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.mary)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.mary)
         {
-            Debug.Log("Hellstaff");
             gameControl.staffUsed = true;
             gameControl.Staff();
         }
-        if (DataAcrossScenes.EnemyChosenStaff == 3 && gameControl.playerTurn == (int)Player_Turn.enemy)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy)
         {
-            Debug.Log("Hellstaff");
             gameControl.staffUsed = true;
             gameControl.Staff();
         }
