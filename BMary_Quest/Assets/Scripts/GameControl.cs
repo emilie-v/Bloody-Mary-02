@@ -154,7 +154,6 @@ public class GameControl : MonoBehaviour
         }
         if (playerTurn == (int)Player_Turn.mary) 
         {
-            poseAnimation.updateMaryPose(0);
             dialogueManager.maryIndex = 0;
             dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
             SoundManager.Instance.EndTurnButtonSound();
@@ -287,7 +286,6 @@ public class GameControl : MonoBehaviour
 
                 if(marysTempPoints > 0)
                 {
-                    poseAnimation.updateMaryPose(0);
                     dialogueManager.enemyIndex = Random.Range(4,5);
                     dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
                 }
@@ -333,7 +331,6 @@ public class GameControl : MonoBehaviour
 
                 if (enemyTempPoints > 0)
                 {
-                    poseAnimation.updateMaryPose(2);
                     dialogueManager.maryIndex = Random.Range(4, 5);
                     dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 }
@@ -386,7 +383,6 @@ public class GameControl : MonoBehaviour
             }
             else if (marysHealth <= 0)
             {
-                poseAnimation.updateMaryPose(1);
                 dialogueManager.maryIndex = 6;
                 dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 dialogueManager.enemyIndex = 7;
@@ -574,7 +570,6 @@ public class GameControl : MonoBehaviour
 
         if (staffUsed && playerTurn == (int)Player_Turn.enemy || enemyStaffCooldown > 0)
         {
-            poseAnimation.currentMaryPose.sprite = poseAnimation.maryPoseList[3];
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (!staffUsed && playerTurn == (int)Player_Turn.enemy)
