@@ -504,12 +504,12 @@ public class GameControl : MonoBehaviour
             enemy.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set mary back to right size
-            player.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        } 
+            player.transform.parent.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+        }
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set mary to smaller size
-            player.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
+            player.transform.parent.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
             //Set enemy back to right size
             enemy.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
@@ -525,11 +525,13 @@ public class GameControl : MonoBehaviour
             
             //Set mary back to right size
             player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
+            player.transform.parent.GetChild(0).GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
             //Set enemy to smaller size
             player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
+            player.transform.parent.GetChild(0).GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
             //Set enemy back to right size
             enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
