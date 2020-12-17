@@ -49,8 +49,8 @@ public class Boardpiece : MonoBehaviour
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             //TODO change when the counts marks has been added
-            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Count_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Mark_Count");
         }
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
@@ -59,7 +59,7 @@ public class Boardpiece : MonoBehaviour
         }
 
         skeletonMark = null;
-        locked = Resources.Load<Sprite>("Sprites/Marks/Lucifer_staff_ability");
+        locked = Resources.Load<Sprite>("Sprites/Marks/Count_staff_ability_(Sowilo)");
     }
 
     // Update is called once per frame

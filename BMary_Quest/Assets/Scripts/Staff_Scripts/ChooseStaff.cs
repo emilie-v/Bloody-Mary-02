@@ -45,7 +45,7 @@ public class ChooseStaff : MonoBehaviour
         pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
         skeleton = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         moon = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
-        count = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night");
+        count = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night_Portrait");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
         
