@@ -435,8 +435,13 @@ public class GameControl : MonoBehaviour
         playerBloodPointsText.GetComponent<Text>().text = marysHealth.ToString();
         enemyBloodPointsText.GetComponent<Text>().text = enemyHealth.ToString();
 
-        playerBloodPointsFilling.fillAmount = (float) marysHealth / (float) marysMaxHealth;
-        enemyBloodPointsFilling.fillAmount = (float) enemyHealth / (float) enemyMaxHealth;
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject.Find("Player_BloodPointsBar").transform.GetChild(i).GetComponent<Image>().fillAmount 
+                = ((float) marysHealth - (i * (float) marysMaxHealth)) / (float) marysMaxHealth;
+            GameObject.Find("Enemy_BloodPointsBar").transform.GetChild(i).GetComponent<Image>().fillAmount 
+                = ((float) enemyHealth - (i * (float) enemyMaxHealth)) / (float) enemyMaxHealth;
+        }
     }
 
     private void ResetCanChange()
