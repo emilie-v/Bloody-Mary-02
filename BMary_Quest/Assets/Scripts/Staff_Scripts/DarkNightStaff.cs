@@ -30,12 +30,12 @@ public class DarkNightStaff : MonoBehaviour
     {
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.enemy) 
         {
-            gameControl.enemyHealth += gameControl.enemyTempPoints / 2;
+            gameControl.enemyHealth += (gameControl.enemyTempPoints + 1) / 2;
         }
 
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.mary)
         {
-            gameControl.marysHealth += gameControl.marysTempPoints / 2;
+            gameControl.marysHealth += (gameControl.marysTempPoints + 1) / 2;
         }
     }
     public void DarkNightStaffActiveAbility()
