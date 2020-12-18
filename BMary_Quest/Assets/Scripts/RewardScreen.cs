@@ -18,6 +18,8 @@ public class RewardScreen : MonoBehaviour
 
     Sprite theCountReward;
     Sprite luciferReward;
+    Sprite bonesReward;
+    Sprite umbralinaReward;
 
     public Image currentStaffReward;
     public Image currentOpponentReward;
@@ -32,6 +34,8 @@ public class RewardScreen : MonoBehaviour
         hellReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         replayReward = Resources.Load<Sprite>("Sprites/Staffs/Replay");
 
+        bonesReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_SenorBones_Portrait");
+        umbralinaReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Umbralina_Portrait");
         theCountReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count_Portrait");
         luciferReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
 
@@ -44,8 +48,10 @@ public class RewardScreen : MonoBehaviour
         staffRewardList[5] = replayReward;
 
         opponentRewardList = new Sprite[6];
-        opponentRewardList[0] = theCountReward;
-        opponentRewardList[1] = luciferReward;
+        opponentRewardList[0] = bonesReward;
+        opponentRewardList[1] = umbralinaReward;
+        opponentRewardList[2] = theCountReward;
+        opponentRewardList[3] = luciferReward;
         opponentRewardList[5] = replayReward;
     }
 
