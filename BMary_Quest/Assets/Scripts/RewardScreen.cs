@@ -25,14 +25,14 @@ public class RewardScreen : MonoBehaviour
 
     void Start()
     {
-        pumpkinReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        pumpkinReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
         skeletonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         moonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
-        countReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+        countReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night_Portrait");
         hellReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         replayReward = Resources.Load<Sprite>("Sprites/Staffs/Replay");
 
-        theCountReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+        theCountReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count_Portrait");
         luciferReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
 
         staffRewardList = new Sprite[6];
