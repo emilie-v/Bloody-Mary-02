@@ -345,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 6990335170171203614, guid: e1a654030a7f701449f9f46613858b50,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a654030a7f701449f9f46613858b50, type: 3}
@@ -402,6 +402,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 3568027160121143521}
   rewardScreen: {fileID: 1324767616}
   poseAnimation: {fileID: 0}
+  characterAnimations: {fileID: 0}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
   spelplan: {fileID: 773677183}
