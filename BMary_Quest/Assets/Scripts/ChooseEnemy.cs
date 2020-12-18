@@ -113,47 +113,48 @@ public class ChooseEnemy : MonoBehaviour
     public void SelectEnemyButton()
     {
         SoundManager.Instance.MenuButtonSound();
-
-        if (index == 0)
+        if (!padlockImage.activeSelf)
         {
-            Debug.Log("Lucifer is chosen");
-            chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.hell; //temp, sets the value to reflect that the chosen staff is the hellstaff
-            chooseStaff.SetActive(true);
-        }
+            if (index == 0)
+            {
+                Debug.Log("Lucifer is chosen");
+                chooseEnemy.SetActive(false);
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.hell; //temp, sets the value to reflect that the chosen staff is the hellstaff
+                chooseStaff.SetActive(true);
+            }
 
-        if (index == (int)Chosen_Staff.pumpkin)
-        {
-            Debug.Log("Ghastella is chosen");
-            chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.pumpkin; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
-            chooseStaff.SetActive(true);
-        }
+            if (index == (int)Chosen_Staff.pumpkin)
+            {
+                Debug.Log("Ghastella is chosen");
+                chooseEnemy.SetActive(false);
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.pumpkin; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                chooseStaff.SetActive(true);
+            }
         
-        if (index == (int)Chosen_Staff.skeleton)
-        {
-            Debug.Log("Ghastella is chosen");
-            chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.skeleton; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
-            chooseStaff.SetActive(true);
-        }
+            if (index == (int)Chosen_Staff.skeleton)
+            {
+                Debug.Log("Ghastella is chosen");
+                chooseEnemy.SetActive(false);
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.skeleton; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                chooseStaff.SetActive(true);
+            }
         
-        if (index == (int)Chosen_Staff.moon)
-        {
-            Debug.Log("Ghastella is chosen");
-            chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.moon; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
-            chooseStaff.SetActive(true);
-        }
+            if (index == (int)Chosen_Staff.moon)
+            {
+                Debug.Log("Ghastella is chosen");
+                chooseEnemy.SetActive(false);
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.moon; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                chooseStaff.SetActive(true);
+            }
 
-        if (index == (int)Chosen_Staff.night)
-        {
-            Debug.Log("The Count is chosen");
-            chooseEnemy.SetActive(false);
-            DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.night; //temp, sets the value to reflect that the chosen staff is the darknightstaff
-            chooseStaff.SetActive(true);
+            if (index == (int)Chosen_Staff.night)
+            {
+                Debug.Log("The Count is chosen");
+                chooseEnemy.SetActive(false);
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.night; //temp, sets the value to reflect that the chosen staff is the darknightstaff
+                chooseStaff.SetActive(true);
+            }
         }
-
         else
         {
             selectWarning.SetActive(true);
