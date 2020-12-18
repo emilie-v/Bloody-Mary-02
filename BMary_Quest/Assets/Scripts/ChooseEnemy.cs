@@ -157,6 +157,7 @@ public class ChooseEnemy : MonoBehaviour
         }
         else
         {
+            SoundManager.Instance.LockedWarningPopUpSound();
             selectWarning.SetActive(true);
         }
     }
