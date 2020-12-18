@@ -28,20 +28,20 @@ public class AIBehaviour : MonoBehaviour
 
     private void Start()
     {
-        cashOutThreshhold = (int) Random.Range(1, 7);
+        cashOutThreshhold = (int)Random.Range(1, 7);
         cashOutVariable = cashOutThreshhold;
     }
 
     public void Behaviour()
     {
         CheckCanPlace();
-        if (canChangeAmount > 1)
-        {
-            StartCoroutine(DefaultActionOrder());
-        }
-        else if (DataAcrossScenes.EnemyChosenStaff == (int) Chosen_Staff.moon)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
         {
             StartCoroutine(UmbralinaOrder());
+        }
+        else if (canChangeAmount > 1)
+        {
+            StartCoroutine(DefaultActionOrder());
         }
         else
         {
