@@ -43,8 +43,8 @@ public class ChooseStaff : MonoBehaviour
         backgroundMusic = GameObject.Find("AudioSource").GetComponent<BackgroundMusic>();
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
         pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
-        skeleton = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
-        moon = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        skeleton = Resources.Load<Sprite>("Sprites/Staffs/Staff_Skeleton_Portrait");
+        moon = Resources.Load<Sprite>("Sprites/Staffs/Staff_Moon_Portrait");
         count = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night_Portrait");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
