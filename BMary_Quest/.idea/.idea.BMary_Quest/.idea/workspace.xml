@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +72,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
       </list>
     </option>
   </component>

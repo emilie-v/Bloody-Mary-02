@@ -108,23 +108,27 @@ public class ChooseStaff : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             DataAcrossScenes.pumpkinStaffUnlocked = true;
+            DataAcrossScenes.skeletonStaffUnlocked = true;
+            DataAcrossScenes.moonStaffUnlocked = true;
             DataAcrossScenes.darkNightStaffUnlocked = true;
             DataAcrossScenes.hellStaffUnlocked = true;
 
             UpdateCurrentStaff();
             
-            Debug.Log("Three staffs unlocked");
+            Debug.Log("All staffs unlocked");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             DataAcrossScenes.pumpkinStaffUnlocked = false;
+            DataAcrossScenes.skeletonStaffUnlocked = false;
+            DataAcrossScenes.moonStaffUnlocked = false;
             DataAcrossScenes.darkNightStaffUnlocked = false;
             DataAcrossScenes.hellStaffUnlocked = false;
             
             UpdateCurrentStaff();
             
-            Debug.Log("Three staffs locked");
+            Debug.Log("All staffs locked");
         }
     }
 #endif
