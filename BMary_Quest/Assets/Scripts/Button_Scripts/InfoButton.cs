@@ -41,7 +41,7 @@ public class InfoButton : MonoBehaviour
     void SetText()
     {
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
-            marysStaff.text = "Passive ability: Adds 5 hp, Active ability: mirrors the opponents move";
+            marysStaff.text = "Passive ability: Adds 5 hp \n Active ability: mirrors the opponents move";
     }
 
 
