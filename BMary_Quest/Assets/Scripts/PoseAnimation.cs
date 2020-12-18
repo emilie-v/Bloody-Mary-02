@@ -12,7 +12,6 @@ public class PoseAnimation : MonoBehaviour
     public Sprite maryScared;
 
     public Image currentMaryPose;
-
     public int maryIndex;
 
     public void Start()
@@ -29,6 +28,8 @@ public class PoseAnimation : MonoBehaviour
         maryPoseList[3] = maryScared;
 
         updateMaryPose(0);
+
+
     }
 
     public void updateMaryPose(int index)
