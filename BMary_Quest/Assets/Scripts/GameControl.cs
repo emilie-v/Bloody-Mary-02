@@ -97,6 +97,8 @@ public class GameControl : MonoBehaviour
         playerMovesPerTurn = 2;
         enemyMovesPerTurn = 2;
         maxMarksToPlace = 4;
+        marysMaxHealth = 20;
+        enemyMaxHealth = 20;
         playerMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary");
         enemyMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
     }
