@@ -277,6 +277,7 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
+                            characterAnimations.animator.SetTrigger("Smiling");
                             dialogueManager.maryIndex = Random.Range(2, 3);
                             dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                             marysTempPoints ++;
