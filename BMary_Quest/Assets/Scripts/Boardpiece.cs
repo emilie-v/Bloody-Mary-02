@@ -58,8 +58,8 @@ public class Boardpiece : MonoBehaviour
             enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
         }
 
-        skeletonMark = null;
         locked = Resources.Load<Sprite>("Sprites/Marks/Count_staff_ability_(Sowilo)");
+        skeletonMark = locked;
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class Boardpiece : MonoBehaviour
             piece.sprite = locked;
 
         if (GetComponentInParent<Owner>().skeletonMark)
-            markedPiece.sprite = locked;
+            markedPiece.sprite = skeletonMark;
         
         if (!GetComponentInParent<Owner>().skeletonMark && GetComponentInParent<Owner>().specialState == 0)
             markedPiece.sprite = null;
