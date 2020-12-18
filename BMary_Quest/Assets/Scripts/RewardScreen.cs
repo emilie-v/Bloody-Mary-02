@@ -43,9 +43,10 @@ public class RewardScreen : MonoBehaviour
         staffRewardList[4] = hellReward;
         staffRewardList[5] = replayReward;
 
-        opponentRewardList = new Sprite[2];
+        opponentRewardList = new Sprite[6];
         opponentRewardList[0] = theCountReward;
         opponentRewardList[1] = luciferReward;
+        opponentRewardList[5] = replayReward;
     }
 
     public void newReward(int index)
