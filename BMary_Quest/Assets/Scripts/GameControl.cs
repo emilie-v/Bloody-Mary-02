@@ -168,7 +168,7 @@ public class GameControl : MonoBehaviour
             {
                 hellStaff.hellStaffPassiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
             {
                 darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }
@@ -199,7 +199,7 @@ public class GameControl : MonoBehaviour
             {
                 hellStaff.hellStaffPassiveAbility();
             }
-            else if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
             {
                 darknightStaff.bricksToLockLeft = darknightStaff.bricksToLock;
             }

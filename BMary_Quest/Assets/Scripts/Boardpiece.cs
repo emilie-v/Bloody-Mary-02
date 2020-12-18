@@ -86,7 +86,7 @@ public class Boardpiece : MonoBehaviour
         if (GetComponentInParent<Owner>().skeletonMark)
             markedPiece.sprite = locked;
         
-        if (!GetComponentInParent<Owner>().skeletonMark)
+        if (!GetComponentInParent<Owner>().skeletonMark && GetComponentInParent<Owner>().specialState == 0)
             markedPiece.sprite = null;
     }
 }
