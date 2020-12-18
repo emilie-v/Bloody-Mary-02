@@ -43,7 +43,7 @@ public class ChooseEnemy : MonoBehaviour
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
         seniorBones = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_SenorBones_Portrait");
         umbralina = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Umbralina_Portrait");
-        count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
+        count = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count_Portrait");
 
         luciferName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_LuciferName");
         ghastellaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_GhastellaName");

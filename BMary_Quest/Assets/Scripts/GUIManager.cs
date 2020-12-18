@@ -34,7 +34,7 @@ public class GUIManager : MonoBehaviour
 
         luciferSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer");
         ghastellaSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella");
-        senorBonesSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/senior_Bones_PH");
+        senorBonesSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_SenorBones");
         umbralinaSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Umbralina");
         theCountSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
         
