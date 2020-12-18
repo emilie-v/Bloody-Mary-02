@@ -58,7 +58,7 @@ public class ChooseStaff : MonoBehaviour
         staffList[4] = count;
         staffList[5] = hell;
 
-        staffInformationList = new string[] { "Using its active ability mirrors the last mark move", 
+        staffInformationList = new string[] { "Using its active ability mirrors the opponents last move, if able", 
             "Gain one extra mark move. Using its active ability freezes the opponents' staff ability for 1 turn, with a cooldown of 1 turn.", 
             "Using its active ability, a random owned marked square is marked with a flower which doubles the attack power of attack moves. Lasts for 1 turn, cooldown of 2 turns.", 
             "Using its active ability turns all owned marks into the opponents marks and vice versa. Also makes the user bark like a dog.", 
