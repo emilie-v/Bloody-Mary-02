@@ -35,7 +35,7 @@ public class AIBehaviour : MonoBehaviour
     public void Behaviour()
     {
         CheckCanPlace();
-        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && canChangeAmount > 1)
         {
             StartCoroutine(UmbralinaOrder());
         }
@@ -203,14 +203,15 @@ public class AIBehaviour : MonoBehaviour
         {
             foreach (Transform child in GameObject.Find("Spelplan").transform)
             {
-                if (child.GetComponent<Owner>().owned == (int)Player_Turn.mary && child.GetComponent<Owner>().specialState == 0)
-                {
-                    flipOrNoFlip--;
-                }
-                if (child.GetComponent<Owner>().owned == (int)Player_Turn.enemy && child.GetComponent<Owner>().specialState == 0)
+                if (child.GetComponent<Owner>().owned == (int)Tile_State.player1 && child.GetComponent<Owner>().specialState == 0)
                 {
                     flipOrNoFlip++;
                 }
+                if (child.GetComponent<Owner>().owned == (int)Tile_State.player2 && child.GetComponent<Owner>().specialState == 0)
+                {
+                    flipOrNoFlip--;
+                }
+                Debug.Log(flipOrNoFlip);
             }
         }
         
@@ -225,7 +226,7 @@ public class AIBehaviour : MonoBehaviour
             {
                 skeletonStaff.SkeletonStaffActiveAbility();
             }
-            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0 && flipOrNoFlip > 0)
+            else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0 && flipOrNoFlip >= 0)
             {
                 moonStaff.MoonStaffActiveAbility();
             }
