@@ -25,6 +25,7 @@ public class ChooseStaff : MonoBehaviour
     BackgroundMusic backgroundMusic;
     public SoundManager soundManager;
     public LevelLoaderTransition levelLoaderTransition;
+    public ChooseEnemy chooseEnemyClass;
 
     public GameObject padlockImage;
 
@@ -262,6 +263,7 @@ public class ChooseStaff : MonoBehaviour
 
     public void BackToEnemyButton()
     {
+        chooseEnemyClass.selectWarning.SetActive(false);
         SoundManager.Instance.LockedWarningPopUpSound();
         chooseStaff.SetActive(false);
         chooseEnemy.SetActive(true);

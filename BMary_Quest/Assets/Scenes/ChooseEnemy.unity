@@ -1323,7 +1323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This opponent hasn't been unlocked yet!
+  m_Text: This staff hasn't been unlocked yet!
 --- !u!222 &883557421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1558,6 +1558,7 @@ MonoBehaviour:
   cancelWarning: {fileID: 907958419}
   soundManager: {fileID: 0}
   levelLoaderTransition: {fileID: 1607409413}
+  chooseEnemyClass: {fileID: 2070504134}
   padlockImage: {fileID: 567017195}
   staffInformationList: []
   staffNameList: []
@@ -3893,6 +3894,7 @@ MonoBehaviour:
   chooseEnemy: {fileID: 1149771666}
   chooseStaff: {fileID: 187582374}
   padlockImage: {fileID: 1038689554}
+  chooseStaffClass: {fileID: 908859133}
 --- !u!1 &2146042477
 GameObject:
   m_ObjectHideFlags: 0
