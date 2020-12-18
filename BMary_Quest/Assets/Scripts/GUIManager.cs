@@ -14,6 +14,8 @@ public class GUIManager : MonoBehaviour
 
     private Sprite luciferSprite;
     private Sprite ghastellaSprite;
+    private Sprite senorBonesSprite;
+    private Sprite umbralinaSprite;
     private Sprite theCountSprite;
     
     
@@ -32,6 +34,8 @@ public class GUIManager : MonoBehaviour
 
         luciferSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer");
         ghastellaSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella");
+        senorBonesSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/senior_Bones_PH");
+        umbralinaSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Umbralina");
         theCountSprite = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count");
         
         EnemySpriteChange();
@@ -193,11 +197,11 @@ public class GUIManager : MonoBehaviour
         }
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
         {
-            enemySprite.sprite = ghastellaSprite; //change to senior bones sprite
+            enemySprite.sprite = senorBonesSprite;
         }
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
         {
-            enemySprite.sprite = ghastellaSprite; //change to umbralina sprite
+            enemySprite.sprite = umbralinaSprite;
         }
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {

@@ -38,24 +38,24 @@ public class Boardpiece : MonoBehaviour
         {
             //TODO change when the senior bones marks has been added
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
         }
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
         {
             //TODO change when the umbralina marks has been added
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
         }
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
             //TODO change when the counts marks has been added
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Count_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Mark_Count");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Count");
         }
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
             enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
         }
 
         skeletonMark = null;
