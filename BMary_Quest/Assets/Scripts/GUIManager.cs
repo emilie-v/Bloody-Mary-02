@@ -156,11 +156,14 @@ public class GUIManager : MonoBehaviour
             tile.resetBoard();
             tile.resetMary();
             tile.resetEnemy();
+            tile.locked = 0;
         }
 
         gameControl.marysHealth = gameControl.marysMaxHealth;
         gameControl.enemyHealth = gameControl.enemyMaxHealth;
         gameControl.UpdateBloodPoints();
+        gameControl.playerStaffCooldown = 0;
+        gameControl.enemyStaffCooldown = 0;
         gameControl.GameOver();
         
         gameControl.Start();
