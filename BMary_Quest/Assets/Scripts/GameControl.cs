@@ -396,7 +396,8 @@ public class GameControl : MonoBehaviour
                 dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
 
                 SoundManager.Instance.LoseStateSound();
-                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Lucifer Wins!";
+                GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
+                rewardScreen.newReward(6);
             } 
             else if (enemyHealth <= 0)
             {

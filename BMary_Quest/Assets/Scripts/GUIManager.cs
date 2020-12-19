@@ -11,6 +11,7 @@ public class GUIManager : MonoBehaviour
     public GameObject closeMenuTab;
     public GameObject restartTab;
     public GameObject exitGame;
+    public GameObject lossScreen;
 
     private Sprite luciferSprite;
     private Sprite ghastellaSprite;
@@ -169,6 +170,8 @@ public class GUIManager : MonoBehaviour
         gameControl.Start();
         gameControl.gameOver.SetActive(false);
         gameControl.pauseMode = false;
+        lossScreen.SetActive(false);
+        
     }
 
     public void BackToMainMenuButton()
