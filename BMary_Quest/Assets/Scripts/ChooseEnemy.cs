@@ -21,7 +21,7 @@ public class ChooseEnemy : MonoBehaviour
 
     Sprite padlock;
 
-    int index = 1;
+    int index = DataAcrossScenes.ChosenEnemy;
     Image currentEnemy;
     public Image currentEnemyName;
     public Text currentEnemyStaff;
@@ -36,6 +36,7 @@ public class ChooseEnemy : MonoBehaviour
 
     void Start()
     {
+        int index = DataAcrossScenes.ChosenEnemy;
         currentEnemy = GetComponent<Image>();
 
 

@@ -405,7 +405,7 @@ public class GameControl : MonoBehaviour
                 dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 dialogueManager.enemyIndex = 6;
                 dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
-
+                DataAcrossScenes.ChosenEnemy += 1;
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
                 //wait x seconds, win-screen? Story goes on?
@@ -465,6 +465,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
+                        DataAcrossScenes.ChosenEnemy = 1;
                         rewardScreen.newReward(4);
                         DataAcrossScenes.hellStaffUnlocked = true;
                     }
