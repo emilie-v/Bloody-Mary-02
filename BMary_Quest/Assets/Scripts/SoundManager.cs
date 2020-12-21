@@ -8,30 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioListener audioListener;
-    public AudioSource effectSource;
-    public AudioSource mainMenuMusic;
-    public AudioSource sfxSource;
     public BackgroundMusic backgroundMusic;
     public AudioClip[] audioClips;
-    public Image musicMuteButton;
-    public Image mainMuteButton;
-    public Image sfxMuteButton;
-
-    private Sprite highVolume;
-    private Sprite lowVolume;
-    private Sprite noVolume;
-
-    private float sfxVolume = 1f;
-    private float setSFXVolume = 1f;
-    private bool sfxVolumeMute;
-    
-    private float setMainVolume = 1f;
-    private bool mainVolumeMute;
-    
-    private float mainMenuMusicVolume = 1f;
-    private float setMainMenuMusicVolume = 1f;
-    private bool mainMenuMusicMute;
+    public AudioSource effectSource;
 
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
@@ -60,7 +39,7 @@ public class SoundManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu")
+        if (scene.name == "MainMenu" || scene.name == "GameBoard")
         {
             GetAllComponents();
         }
@@ -70,17 +49,9 @@ public class SoundManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    private void Update()
-    {
-        mainMenuMusic.volume = mainMenuMusicVolume;
-        sfxSource.volume = sfxVolume;
-    }
     
     void GetAllComponents()
     {
-        audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
-        
         audioClips = new AudioClip[13];
         audioClips[0] = Resources.Load<AudioClip>("Audios/Audios_Select_Sound");
         audioClips[1] = Resources.Load<AudioClip>("Audios/Audios_Arrows_Sound");
@@ -95,103 +66,9 @@ public class SoundManager : MonoBehaviour
         audioClips[10] = Resources.Load<AudioClip>("Audios/Audios_WinState_Sound");
         audioClips[11] = Resources.Load<AudioClip>("Audios/Audios_LoseState_Sound");
         audioClips[12] = Resources.Load<AudioClip>("Audios/Audios_Menu_Music");
-
-        highVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_HighVolume");
-        lowVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_LowVolume");
-        noVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_NoVolume");
-
-        mainMuteButton = GameObject.Find("Options_Panel/Background/Audio/MainVolume/MainVolume_MuteButton").GetComponent<Image>();
-        musicMuteButton = GameObject.Find("Options_Panel/Background/Audio/MusicVolume/MusicVolume_MuteButton").GetComponent<Image>();
-        sfxMuteButton = GameObject.Find("Options_Panel/Background/Audio/SFXVolume/SFXVolume_MuteButton").GetComponent<Image>();
     }
 
-    public void UpdateMainVolume(float volume)
-    {
-        setMainVolume = volume;
-        AudioListener.volume = setMainVolume;
-
-        UpdateSprite(AudioListener.volume, mainMuteButton);
-    }
-
-    public void MuteMainVolume()
-    {
-        if (mainVolumeMute)
-        {
-            AudioListener.volume = setMainVolume;
-            mainVolumeMute = false;
-        }
-        else if (!mainVolumeMute)
-        {
-            AudioListener.volume = 0;
-            mainVolumeMute = true;
-        }
-        
-        UpdateSprite(AudioListener.volume, mainMuteButton);
-    }
     
-    public void UpdateMainMenuMusicVolume(float volume)
-    {
-        setMainMenuMusicVolume = Mathf.Pow(volume, 2);
-        mainMenuMusicVolume = setMainMenuMusicVolume;
-
-        UpdateSprite(mainMenuMusicVolume, musicMuteButton);
-    }
-
-    public void MuteSFXVolume()
-    {
-        if (sfxVolumeMute)
-        {
-            sfxSource.volume = setMainVolume;
-            sfxVolumeMute = false;
-        }
-        else if (!sfxVolumeMute)
-        {
-            sfxSource.volume = 0;
-            sfxVolumeMute = true;
-        }
-        
-        UpdateSprite(sfxSource.volume, sfxMuteButton);
-    }
-
-    public void UpdateSFXVolume(float volume)
-    {
-        setSFXVolume = Mathf.Pow(volume, 2);
-        sfxVolume = setSFXVolume;
-        
-        UpdateSprite(sfxSource.volume, sfxMuteButton);
-    }
-
-    private void UpdateSprite(float volume, Image button)
-    {
-        if (volume > 0.5f)
-        {
-            button.sprite = highVolume;
-        }
-        else if (volume > 0)
-        {
-            button.sprite = lowVolume;
-        }
-        else if (volume <= 0)
-        {
-            button.sprite = noVolume;
-        }
-    }
-
-    public void MuteMainMenuMusicVolume()
-    {
-        if (mainMenuMusicMute)
-        {
-            mainMenuMusicVolume = setMainMenuMusicVolume;
-            mainMenuMusicMute = false;
-        }
-        else if (!mainMenuMusicMute)
-        {
-            mainMenuMusicVolume = 0;
-            mainMenuMusicMute = true;
-        }
-        
-        UpdateSprite(mainMenuMusicVolume, musicMuteButton);
-    }
     
     public void PlaySounds(AudioClip clip)
     {
