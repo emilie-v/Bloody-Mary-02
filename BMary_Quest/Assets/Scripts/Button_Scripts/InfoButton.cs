@@ -42,7 +42,7 @@ public class InfoButton : MonoBehaviour
     {
         // Marys Descriptions
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
-            marysStaff.text = "Passive ability: Adds 5 hp\nActive ability: mirrors the opponents move if able";
+            marysStaff.text = "Passive ability: Adds 5 hp\nActive ability: mirrors the opponents move, flipped on the y-axis";
         else if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin)
             marysStaff.text = "Passive ability: Adds a extra move\nActive ability:Adds extra cooldown to the enemy staff ability";
         else if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.skeleton)
