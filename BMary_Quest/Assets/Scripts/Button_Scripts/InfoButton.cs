@@ -28,13 +28,13 @@ public class InfoButton : MonoBehaviour
     }
     public void OnMouseEnter()
     {
-        Debug.Log("Vi hovrade över knappen!");
+        //Debug.Log("Vi hovrade över knappen!");
         marysInfoCanvas.SetActive(true);
         enemyInfoCanvas.SetActive(true);
     }
     public void OnMouseExit()
     {
-        Debug.Log("Vi lämnade knappen!");
+        //Debug.Log("Vi lämnade knappen!");
         marysInfoCanvas.SetActive(false);
         enemyInfoCanvas.SetActive(false);
     }
@@ -55,7 +55,7 @@ public class InfoButton : MonoBehaviour
             marysStaff.text = "Passive ability:you gain health every time you attack\nActive ability:curses the enemy, if they attack during that turn, they take the same amount of damage";
         // Enemy Descriptions
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror)
-            enemyStaff.text = "Passive ability: Adds 5 hp\nActive ability: mirrors the players move if able";
+            enemyStaff.text = "Passive ability: Adds 5 hp\nActive ability: mirrors the players move if able,flipped on the y-axis";
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
             enemyStaff.text = "Passive ability: Adds a extra move for them\nActive ability:Adds extra cooldown to the player staff ability";
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
