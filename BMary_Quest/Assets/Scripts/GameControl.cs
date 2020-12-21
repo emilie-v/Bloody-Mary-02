@@ -342,7 +342,7 @@ public class GameControl : MonoBehaviour
                 }
 
 
-                if (lastMove.playerHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
+                if (lastMove.playerHellStaffActivePower == true)
                 {
                     enemyHealth -= enemyTempPoints + 1;
                     enemyBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
@@ -386,6 +386,7 @@ public class GameControl : MonoBehaviour
 
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Everyone Lose!";
+                rewardScreen.newReward(6);
             }
             else if (marysHealth <= 0)
             {
