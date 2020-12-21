@@ -737,19 +737,23 @@ public class GameControl : MonoBehaviour
         if (lastMove.enemyHellStaffActivePower)
         {
             spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;
+            GameObject.Find("PlayerButtons/OutCashButton/LuciferMark").SetActive(true);
         }
         else if (!lastMove.enemyHellStaffActivePower)
         {
             spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            GameObject.Find("PlayerButtons/OutCashButton/LuciferMark").SetActive(false);
         }
 
         if (lastMove.playerHellStaffActivePower)
         {
             spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;
+            GameObject.Find("EnemyButtons/OutCashButton/LuciferMark").SetActive(true);
         }
         else if (!lastMove.playerHellStaffActivePower)
         {
             spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            GameObject.Find("EnemyButtons/OutCashButton/LuciferMark").SetActive(false);
         }
 
     }
