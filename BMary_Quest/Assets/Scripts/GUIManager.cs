@@ -171,7 +171,8 @@ public class GUIManager : MonoBehaviour
         gameControl.gameOver.SetActive(false);
         gameControl.pauseMode = false;
         lossScreen.SetActive(false);
-        
+
+        SceneManager.LoadScene("GameBoard");
     }
 
     public void BackToMainMenuButton()
