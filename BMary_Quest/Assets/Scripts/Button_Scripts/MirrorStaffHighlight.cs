@@ -52,10 +52,13 @@ public class MirrorStaffHighlight : MonoBehaviour,
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        mirrorPreview = false;
-        foreach (Transform child in GameObject.Find("Spelplan").transform)
+        if (gameControl.playerTurn == (int)Player_Turn.mary)
         {
-            child.GetComponent<SpriteRenderer>().color = Color.white;
+            mirrorPreview = false;
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                child.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 }

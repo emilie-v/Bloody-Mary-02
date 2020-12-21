@@ -24,6 +24,7 @@ public class AIBehaviour : MonoBehaviour
     [SerializeField] private MoonStaff moonStaff;
     [SerializeField] private SkeletonStaff skeletonStaff;
     [SerializeField] private PumpkinStaff pumpkinStaff;
+    [SerializeField] private StartRandomizer startRandomizer;
     
 
     private void Start()
@@ -51,6 +52,7 @@ public class AIBehaviour : MonoBehaviour
     
     private IEnumerator DefaultActionOrder()
     {
+        yield return new WaitUntil(() => startRandomizer.gameStart);
         CheckCanPlace();
         yield return new WaitForSeconds(1.2f);
         if (!placeBricksDone)
@@ -82,6 +84,7 @@ public class AIBehaviour : MonoBehaviour
 
     private IEnumerator UmbralinaOrder()
     {
+        yield return new WaitUntil(() => startRandomizer.gameStart);
         yield return new WaitForSeconds(1.2f);
         if (!useStaffDone)
         {
@@ -112,6 +115,7 @@ public class AIBehaviour : MonoBehaviour
 
     private IEnumerator BlockedActionOrder()
     {
+        yield return new WaitUntil(() => startRandomizer.gameStart);
         yield return new WaitForSeconds(1.2f);
         if (!useStaffDone)
         {

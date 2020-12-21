@@ -66,6 +66,8 @@
             <e p="SkeletonStaff.cs" t="Include" />
             <e p="StaffManager.cs" t="Include" />
           </e>
+          <e p="StartRandomizer.cs" t="Include" />
+          <e p="TurnStartText.cs" t="Include" />
           <e p="TutorialManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
