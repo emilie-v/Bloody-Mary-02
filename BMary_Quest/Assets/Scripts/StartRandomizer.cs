@@ -17,7 +17,7 @@ public class StartRandomizer : MonoBehaviour
     private IEnumerator TurnRandomizer()
     {
         yield return new WaitForSeconds(0);
-        for (int i = 0; i < Random.Range(10, 20); i++)
+        for (int i = 0; i < Random.Range(8, 13); i++)
         {
             yield return new WaitForSeconds(0.05f * i);
             if (gameControl.playerTurn == (int)Player_Turn.mary)

@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/IngameGUI_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/IngameGUI_Canvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +77,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
       </list>
     </option>
   </component>
@@ -141,7 +137,7 @@
       <workItem from="1607933503923" duration="8278000" />
       <workItem from="1608027686981" duration="1794000" />
       <workItem from="1608193722207" duration="10727000" />
-      <workItem from="1608544902645" duration="3561000" />
+      <workItem from="1608544902645" duration="3845000" />
     </task>
     <servers />
   </component>

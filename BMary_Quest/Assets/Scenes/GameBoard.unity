@@ -780,6 +780,8 @@ GameObject:
   - component: {fileID: 1324767613}
   - component: {fileID: 1324767612}
   - component: {fileID: 1324767616}
+  - component: {fileID: 1324767620}
+  - component: {fileID: 1324767619}
   m_Layer: 0
   m_Name: PController
   m_TagString: Player
@@ -805,6 +807,7 @@ MonoBehaviour:
   characterAnimations: {fileID: 0}
   guiManager: {fileID: 452916885}
   aiBehaviour: {fileID: 1324767609}
+  turnStartText: {fileID: 1324767619}
   spelplan: {fileID: 773677183}
   gameOver: {fileID: 853304023}
   marysMaxHealth: 20
@@ -865,6 +868,7 @@ MonoBehaviour:
   moonStaff: {fileID: 1324767617}
   skeletonStaff: {fileID: 1324767618}
   pumpkinStaff: {fileID: 1324767615}
+  startRandomizer: {fileID: 1324767620}
 --- !u!4 &1324767610
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,6 +1026,34 @@ MonoBehaviour:
   piecesToMark: 1
   piecesToMarkLeft: 1
   staffCooldown: 1
+--- !u!114 &1324767619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8fe62bbb7cc864d88347d48cf7e007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameControl: {fileID: 1324767608}
+  turnStartText: {fileID: 3568027160121143531}
+--- !u!114 &1324767620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324767607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8184adeb444e847ac2faa143932fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStart: 0
+  gameControl: {fileID: 1324767608}
 --- !u!1 &1330500868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +1926,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 643446114, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 740267482, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 194.35648
@@ -2184,6 +2220,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618819037664980049, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4969255730029987469, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_IsActive
@@ -2341,6 +2382,18 @@ MonoBehaviour:
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
   mirrorPreview: 0
+--- !u!114 &3568027160121143531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3057842592018234650, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4522758225502767400
 PrefabInstance:
   m_ObjectHideFlags: 0
