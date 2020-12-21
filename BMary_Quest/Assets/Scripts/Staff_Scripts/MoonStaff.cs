@@ -31,6 +31,7 @@ public class MoonStaff : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
+            SoundManager.Instance.ActivateStaffButtonSound();
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.mary 
                 || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
@@ -55,12 +56,14 @@ public class MoonStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
         }
     }

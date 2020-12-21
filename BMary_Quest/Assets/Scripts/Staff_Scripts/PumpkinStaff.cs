@@ -41,6 +41,7 @@ public class PumpkinStaff : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
+            SoundManager.Instance.ActivateStaffButtonSound();
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.enemyStaffCooldown++;

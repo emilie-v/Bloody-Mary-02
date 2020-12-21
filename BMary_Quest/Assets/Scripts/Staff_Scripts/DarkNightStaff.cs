@@ -73,12 +73,14 @@ public class DarkNightStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
                 gameControl.enemyStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
         }
     }

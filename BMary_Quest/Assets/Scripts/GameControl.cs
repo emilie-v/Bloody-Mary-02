@@ -589,7 +589,7 @@ public class GameControl : MonoBehaviour
         {
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(1f, 0.1921569f, 0.1921569f);
         }
-
+       
         StaffCooldown();
 
         GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text =
@@ -603,7 +603,7 @@ public class GameControl : MonoBehaviour
         }
         if (enemyStaffCooldown <= 0)
         {
-            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text = null;
+            GameObject.Find("EnemyButtons/StaffButton").transform.GetChild(1).GetComponent<Text>().text = null;       
         }
         
         UpdateMarkedPiece();
@@ -751,6 +751,7 @@ public class GameControl : MonoBehaviour
         {
             spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         }
+
     }
 
     private void HotKeys()

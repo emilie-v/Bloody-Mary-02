@@ -66,7 +66,7 @@ public class MirrorStaff : MonoBehaviour
                     {
                         if(mirroredX[i] < 5 && mirroredY[i] < 5)
                         {
-                            SoundManager.Instance.ActivateStaffButtonSound();
+                            //SoundManager.Instance.ActivateStaffButtonSound();
                             Debug.Log("Using staff mirror");
                             spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
                             //gameControl.marysTempPoints++;
@@ -81,7 +81,8 @@ public class MirrorStaff : MonoBehaviour
                 lastMove.staffUsed = true;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
-                resetMirrorArray();   
+                resetMirrorArray();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerTurn == (int)Player_Turn.enemy)
             {
@@ -89,7 +90,8 @@ public class MirrorStaff : MonoBehaviour
                 lastMove.staffUsed = true;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
-                resetMirrorArray(); 
+                resetMirrorArray();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
         }
     }

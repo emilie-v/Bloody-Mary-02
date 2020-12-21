@@ -54,11 +54,13 @@ public class HellStaff : MonoBehaviour
         {
             gameControl.staffUsed = true;
             gameControl.Staff();
+            SoundManager.Instance.ActivateStaffButtonSound();
         }
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy)
         {
             gameControl.staffUsed = true;
             gameControl.Staff();
+            SoundManager.Instance.ActivateStaffButtonSound();
         }
     }
 }

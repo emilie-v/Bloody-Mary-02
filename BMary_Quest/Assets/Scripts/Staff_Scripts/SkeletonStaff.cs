@@ -70,6 +70,7 @@ public class SkeletonStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
 
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton && gameControl.playerTurn == (int)Player_Turn.enemy)
@@ -78,6 +79,7 @@ public class SkeletonStaff : MonoBehaviour
                 gameControl.enemyStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                SoundManager.Instance.ActivateStaffButtonSound();
             }
         }
     }
