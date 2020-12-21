@@ -29,8 +29,8 @@ public class RewardScreen : MonoBehaviour
     void Start()
     {
         pumpkinReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
-        skeletonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
-        moonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
+        skeletonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Skeleton_Portrait");
+        moonReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Moon_Portrait");
         countReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night_Portrait");
         hellReward = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
         replayReward = Resources.Load<Sprite>("Sprites/Staffs/Replay");
