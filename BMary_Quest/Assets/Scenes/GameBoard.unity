@@ -953,6 +953,8 @@ MonoBehaviour:
   lastMove: {fileID: 0}
   lastMovesX: 
   lastMovesY: 
+  mirroredX: 0600000006000000060000000600000006000000
+  mirroredY: 0600000006000000060000000600000006000000
   staffCooldown: 1
 --- !u!114 &1324767615
 MonoBehaviour:
@@ -2185,7 +2187,7 @@ PrefabInstance:
     - target: {fileID: 4969255730029987469, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6373953937134693074, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
