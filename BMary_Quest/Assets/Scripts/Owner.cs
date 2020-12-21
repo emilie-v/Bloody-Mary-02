@@ -30,6 +30,7 @@ public class Owner : MonoBehaviour
     public GameObject Spelplan;
     private Boardpiece boardpiece;
     private DialogueManager dialogueManager;
+    private MirrorStaffHighlight mirrorStaffHighlight;
 
     public LastMove lastMove;
     
@@ -46,6 +47,7 @@ public class Owner : MonoBehaviour
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         dialogueManager = GameObject.Find("IngameGUI_Canvas").GetComponent<DialogueManager>();
+        mirrorStaffHighlight = GameObject.Find("PlayerButtons/StaffButton").GetComponent<MirrorStaffHighlight>();
     }
 
     void FixedUpdate()
@@ -243,17 +245,20 @@ public class Owner : MonoBehaviour
         }
     }
 
-    private void ResetCanChange()
+    public void ResetCanChange()
     {
         canChange = false;
         CheckNeighbours();
-        if (canChange)
+        if (!mirrorStaffHighlight.mirrorPreview)
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else  if (canChange == false)
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            if (canChange)
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else  if (canChange == false)
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
     
