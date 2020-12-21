@@ -26,13 +26,17 @@
           <e p="Boardpiece.cs" t="Include" />
           <e p="Button_Scripts" t="Include">
             <e p="ButtonBehaviour.cs" t="Include" />
+            <e p="InfoButton.cs" t="Include" />
+            <e p="MirrorStaffHighlight.cs" t="Include" />
             <e p="PlayerGameButtons.cs" t="Include" />
           </e>
+          <e p="CharacterAnimations.cs" t="Include" />
           <e p="ChooseEnemy.cs" t="Include" />
           <e p="Credits.cs" t="Include" />
           <e p="DataAcrossScenes.cs" t="Include" />
           <e p="DialogueManager.cs" t="Include" />
           <e p="DialogueTrigger.cs" t="Include" />
+          <e p="EnemyAnimations.cs" t="Include" />
           <e p="GameControl.cs" t="Include" />
           <e p="GridManager.cs" t="Include" />
           <e p="GUIManager.cs" t="Include" />
@@ -56,8 +60,10 @@
             <e p="DarkNightStaff.cs" t="Include" />
             <e p="HellStaff.cs" t="Include" />
             <e p="MirrorStaff.cs" t="Include" />
+            <e p="MoonStaff.cs" t="Include" />
             <e p="PumpkinStaff.cs" t="Include" />
             <e p="SecondBaseStaff.cs" t="Include" />
+            <e p="SkeletonStaff.cs" t="Include" />
             <e p="StaffManager.cs" t="Include" />
           </e>
           <e p="TutorialManager.cs" t="Include" />

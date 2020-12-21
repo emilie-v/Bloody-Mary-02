@@ -953,6 +953,8 @@ MonoBehaviour:
   lastMove: {fileID: 0}
   lastMovesX: 
   lastMovesY: 
+  mirroredX: 0600000006000000060000000600000006000000
+  mirroredY: 0600000006000000060000000600000006000000
   staffCooldown: 1
 --- !u!114 &1324767615
 MonoBehaviour:
@@ -2160,6 +2162,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3568027160121143525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 818135135, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3568027160121143526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568027160121143525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04092b47a35efc543aecac41720040f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirrorStaff: {fileID: 1324767614}
+  lastmove: {fileID: 1324767611}
+  spelplan: {fileID: 773677183}
+  gameControl: {fileID: 1324767608}
+  mirrorPreview: 0
 --- !u!1001 &4522758225502767400
 PrefabInstance:
   m_ObjectHideFlags: 0
