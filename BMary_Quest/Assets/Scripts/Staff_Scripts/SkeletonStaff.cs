@@ -42,7 +42,7 @@ public class SkeletonStaff : MonoBehaviour
                     int check = 0;
                     foreach (Transform child in GameObject.Find("Spelplan").transform)
                     {
-                        if (child.GetComponent<Owner>().owned == gameControl.playerTurn + 1 && !child.GetComponent<Owner>().skeletonMark && child.GetComponent<Owner>().specialState == 0)
+                        if (child.GetComponent<Owner>().owned == gameControl.playerTurn + 1 && !child.GetComponent<Owner>().skeletonMark)
                         {
                             if (Random.Range(0, 25) == 0 && piecesToMarkLeft > 0)
                             {
