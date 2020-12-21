@@ -14,8 +14,8 @@ public class MirrorStaff : MonoBehaviour
 
     public int[] lastMovesX;
     public int[] lastMovesY;
-    public int[] mirroredX=new int[5] {6,6,6,6,6};
-    public int[] mirroredY=new int[5]{6,6,6,6,6};
+    public int[] mirroredX = new int[5] {6,6,6,6,6};
+    public int[] mirroredY = new int[5]{6,6,6,6,6};
 
     public int staffCooldown = 1;
 
