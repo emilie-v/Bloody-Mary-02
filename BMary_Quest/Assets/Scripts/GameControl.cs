@@ -28,6 +28,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
+    [SerializeField] private TurnStartText turnStartText;
 
     public GameObject spelplan;
     public GameObject gameOver;
@@ -54,7 +55,7 @@ public class GameControl : MonoBehaviour
 
     public bool placeMode;
     public bool staffUsed;
-    public bool pauseMode;
+    public bool pauseMode = true;
     public bool firstTurn;
     public int playerTurn;
     public int playerMoves;
@@ -126,8 +127,6 @@ public class GameControl : MonoBehaviour
         Marks(playerMarks, enemyMarks);
         
         pumpkinStaff.PumpkinStaffPassiveAbility();
-        
-        TurnStart();
 
         lastMove.staffUsed = true;         
     }
@@ -219,6 +218,7 @@ public class GameControl : MonoBehaviour
     
     public void TurnStart()
     {
+        turnStartText.StartCoroutine(turnStartText.TurnStart());
         if (playerTurn == (int)Player_Turn.mary) 
         {
             playerMoves = playerMovesPerTurn;
@@ -506,7 +506,7 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void CharacterScaling()
+    public void CharacterScaling()
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
@@ -526,7 +526,7 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void CharacterDarkening()
+    public void CharacterDarkening()
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
