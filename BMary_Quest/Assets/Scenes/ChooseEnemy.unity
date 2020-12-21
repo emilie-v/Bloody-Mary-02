@@ -3156,6 +3156,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2393623218291054335, guid: e1a654030a7f701449f9f46613858b50,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 351.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2393623218383083026, guid: e1a654030a7f701449f9f46613858b50,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 116a4f70c914c374ea69f85a7c729e89, type: 2}
     - target: {fileID: 6990335170171203584, guid: e1a654030a7f701449f9f46613858b50,
         type: 3}
       propertyPath: m_RootOrder
@@ -3215,11 +3225,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader_Slider
-      objectReference: {fileID: 0}
-    - target: {fileID: 6990335170171203614, guid: e1a654030a7f701449f9f46613858b50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a654030a7f701449f9f46613858b50, type: 3}
@@ -3894,7 +3899,6 @@ MonoBehaviour:
   chooseEnemy: {fileID: 1149771666}
   chooseStaff: {fileID: 187582374}
   padlockImage: {fileID: 1038689554}
-  chooseStaffClass: {fileID: 908859133}
 --- !u!1 &2146042477
 GameObject:
   m_ObjectHideFlags: 0
