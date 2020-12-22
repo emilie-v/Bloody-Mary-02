@@ -37,8 +37,8 @@ public class Boardpiece : MonoBehaviour
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
         {
             //TODO change when the senior bones marks has been added
-            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer_Start");
-            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
+            enemyStarter = Resources.Load<Sprite>("Sprites/Marks/Mark_SenorBones_Start");
+            enemys = Resources.Load<Sprite>("Sprites/Marks/Mark_SenorBones");
         }
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
         {
@@ -59,7 +59,7 @@ public class Boardpiece : MonoBehaviour
         }
 
         locked = Resources.Load<Sprite>("Sprites/Marks/Count_staff_ability_(Sowilo)");
-        skeletonMark = locked;
+        skeletonMark = Resources.Load<Sprite>("Sprites/Marks/SenorBones_Staff_Ability");
     }
 
     // Update is called once per frame
