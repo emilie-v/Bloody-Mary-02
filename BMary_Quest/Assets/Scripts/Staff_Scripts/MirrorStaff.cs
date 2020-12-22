@@ -30,11 +30,19 @@ public class MirrorStaff : MonoBehaviour
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
 
+       /* if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
+        {
+            gameControl.marysMaxHealth = 25;
+            gameControl.marysHealth = 25;
+        }*/
+    }
+    private void Start()
+    {
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
         {
             gameControl.marysMaxHealth = 25;
             gameControl.marysHealth = 25;
-        }
+        }  
     }
 
     private void FixedUpdate()
