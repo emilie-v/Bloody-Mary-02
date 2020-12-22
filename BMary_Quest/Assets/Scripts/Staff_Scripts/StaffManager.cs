@@ -25,7 +25,7 @@ public class StaffManager : MonoBehaviour
         selectedSkeletonStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         selectedMoonStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin");
         selectedDarkestNightStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night");
-        selectedHellStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_HellStaff");
+        selectedHellStaff = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell");
 
         selectedStaffList = new Sprite[6];
 
