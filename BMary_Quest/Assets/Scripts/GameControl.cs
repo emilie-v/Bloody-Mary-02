@@ -454,6 +454,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (DataAcrossScenes.darkNightStaffUnlocked == false)
                     {
+                        DataAcrossScenes.ChosenEnemy = 0;
                         rewardScreen.newReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
@@ -468,7 +469,7 @@ public class GameControl : MonoBehaviour
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
                         DataAcrossScenes.ChosenEnemy = 1;
-                        rewardScreen.newReward(4);
+                        rewardScreen.newReward(7);
                         DataAcrossScenes.hellStaffUnlocked = true;
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
