@@ -25,6 +25,7 @@ public class RewardScreen : MonoBehaviour
     public Image currentOpponentReward;
     public GameObject rewardScreen;
     public GameObject lossScreen;
+    public GameObject FinalwinScreen;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class RewardScreen : MonoBehaviour
         theCountReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Count_Portrait");
         luciferReward = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
 
-        staffRewardList = new Sprite[7];
+        staffRewardList = new Sprite[8];
         staffRewardList[0] = pumpkinReward;
         staffRewardList[1] = skeletonReward;
         staffRewardList[2] = moonReward;
@@ -48,13 +49,16 @@ public class RewardScreen : MonoBehaviour
         staffRewardList[4] = hellReward;
         staffRewardList[5] = replayReward;
         staffRewardList[6] = replayReward; //Placeholder
-        opponentRewardList = new Sprite[7];
+        staffRewardList[7] = replayReward; //Placeholder
+        opponentRewardList = new Sprite[8];
         opponentRewardList[0] = bonesReward;
         opponentRewardList[1] = umbralinaReward;
         opponentRewardList[2] = theCountReward;
         opponentRewardList[3] = luciferReward;
+        opponentRewardList[4] = replayReward;
         opponentRewardList[5] = replayReward;
         opponentRewardList[6] = replayReward; //placeholder
+        opponentRewardList[7] = replayReward; //placeholder
     }
 
     public void newReward(int index)
@@ -65,6 +69,8 @@ public class RewardScreen : MonoBehaviour
             rewardScreen.SetActive(true);
         else if (index == 6)
             lossScreen.SetActive(true);
+        else if (index == 7)
+            FinalwinScreen.SetActive(true);
     }
 
 
