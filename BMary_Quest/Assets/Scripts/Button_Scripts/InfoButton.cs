@@ -28,7 +28,8 @@ public class InfoButton : MonoBehaviour
     }
     public void OnMouseEnter()
     {
-        //Debug.Log("Vi hovrade över knappen!");
+        SetText();
+        //Debug.Log("DataAcross scenes säger att vi spelar med staff nr.! "+ DataAcrossScenes.PlayerChosenStaff);
         marysInfoCanvas.SetActive(true);
         enemyInfoCanvas.SetActive(true);
     }
