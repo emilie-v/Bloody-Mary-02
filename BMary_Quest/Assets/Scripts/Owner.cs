@@ -216,8 +216,6 @@ public class Owner : MonoBehaviour
 
     public void resetMary()
     {
-        dialogueManager.maryIndex = 1;
-        dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
 
         if (owned == (int)Tile_State.player1)
         {
@@ -231,8 +229,6 @@ public class Owner : MonoBehaviour
     }
     public void resetEnemy()
     {
-        dialogueManager.enemyIndex = 1;
-        dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
 
         if (owned == (int)Tile_State.player2)
         {
