@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 3568027160121143521}
+  dialogueTrigger: {fileID: 3568027160121143534}
   rewardScreen: {fileID: 1324767616}
   poseAnimation: {fileID: 0}
   characterAnimations: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-  /*  public int maryIndex = 0;
+   /* public int maryIndex = 0;
     public int enemyIndex = 0;
 
     public Text currentMaryDialogue;
@@ -32,17 +32,17 @@ public class DialogueManager : MonoBehaviour
     string maryDamaged02 = "- You will pay for this!";
     string maryLose = "- I will finish you next time we meet again!";
     string maryWin = "- Haha! Too easy!";
-    string maryEveryoneLose = "- I know you are cheating...";
+    string maryEveryoneLose = "- I know you are cheating..."; */
 
     public void Start()
     {
-        dialogueLuciferList = new string[] { emptyDialgoue, luciferWelcome, luciferCashOut01, luciferCashOut02, luciferDamaged01, luciferDamaged02, luciferLose, luciferWin, luciferEveryoneLose };
+      /*  dialogueLuciferList = new string[] { emptyDialgoue, luciferWelcome, luciferCashOut01, luciferCashOut02, luciferDamaged01, luciferDamaged02, luciferLose, luciferWin, luciferEveryoneLose };
         dialogueMaryList = new string[] { emptyDialgoue, maryWelcome, maryCashOut01, maryCashOut02, maryDamaged01, maryDamaged02, maryLose, maryWin, maryEveryoneLose };
 
         enemyIndex = 1;
         maryIndex = 1;
 
         currentEnemyDialogue.text = dialogueLuciferList[enemyIndex];
-        currentMaryDialogue.text = dialogueMaryList[enemyIndex];
-    } */
+        currentMaryDialogue.text = dialogueMaryList[enemyIndex]; */
+    } 
 }
