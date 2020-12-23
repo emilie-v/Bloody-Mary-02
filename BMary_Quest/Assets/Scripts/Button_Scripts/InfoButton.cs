@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class InfoButton : MonoBehaviour
 {
-        public UnityEvent hover = new UnityEvent();
+    public UnityEvent hover = new UnityEvent();
     public GameObject marysInfoCanvas;
     public GameObject enemyInfoCanvas;
     public Text marysStaff;

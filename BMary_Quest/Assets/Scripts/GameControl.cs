@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour
 {
     private Owner owner;
     public DialogueManager dialogueManager;
+    public DialogueTrigger dialogueTrigger;
     private HellStaff hellStaff;
     private DarkNightStaff darknightStaff;
     private PumpkinStaff pumpkinStaff;
