@@ -63,7 +63,7 @@ public class MirrorStaff : MonoBehaviour
 
     void staffPower()
     {
-        if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
+        if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerStaffCooldown <= 0)
         {
             for(int i=0; i<lastMove.lastMovesX.Length; i++)
             {
