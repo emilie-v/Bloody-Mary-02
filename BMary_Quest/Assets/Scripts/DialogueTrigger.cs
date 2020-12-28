@@ -82,7 +82,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = MarysGreetings[i][j];
+        MaryText.text = MarysGreetings[i][j];
     }
     public void MaryStaffPower()
     {
