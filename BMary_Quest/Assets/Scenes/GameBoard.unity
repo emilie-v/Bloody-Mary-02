@@ -527,6 +527,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   staffCooldown: 2
 --- !u!114 &1324767613
 MonoBehaviour:
@@ -543,6 +544,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   bricksToLock: 1
   bricksToLockLeft: 1
   staffCooldown: 1
@@ -563,6 +565,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   spelplan: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   lastMovesX: 
   lastMovesY: 
   mirroredX: 0600000006000000060000000600000006000000
@@ -583,6 +586,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   staffCooldown: 2
 --- !u!114 &1324767616
 MonoBehaviour:
@@ -615,6 +619,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   staffCooldown: 2
 --- !u!114 &1324767618
 MonoBehaviour:
@@ -631,6 +636,7 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
   lastMove: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   piecesToMark: 1
   piecesToMarkLeft: 1
   staffCooldown: 1
@@ -1349,6 +1355,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!114 &3568027160121143528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3568027160121143534, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568027160121143529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3568027160121143529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 419697110313574613, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,

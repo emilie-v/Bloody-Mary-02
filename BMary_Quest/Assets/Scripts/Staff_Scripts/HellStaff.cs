@@ -8,6 +8,7 @@ public class HellStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
+    [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int staffCooldown = 2;
     
@@ -52,6 +53,7 @@ public class HellStaff : MonoBehaviour
 
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.mary)
         {
+            dialogueTrigger.MaryStaffPower();
             gameControl.staffUsed = true;
             gameControl.Staff();
             SoundManager.Instance.ActivateStaffButtonSound();

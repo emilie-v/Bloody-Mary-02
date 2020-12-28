@@ -11,6 +11,7 @@ public class MirrorStaff : MonoBehaviour
     public Owner owner;
     public GameObject spelplan;
     public LastMove lastMove;
+    [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int[] lastMovesX;
     public int[] lastMovesY;
@@ -90,6 +91,7 @@ public class MirrorStaff : MonoBehaviour
                 gameControl.staffUsed = true;
                 gameControl.Staff();
                 resetMirrorArray();
+                dialogueTrigger.MaryStaffPower();
                 SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerTurn == (int)Player_Turn.enemy)
@@ -105,7 +107,7 @@ public class MirrorStaff : MonoBehaviour
     }
     void resetMirrorArray()
     {
-        Debug.Log("ResetMirrorArray körs");
+        //Debug.Log("ResetMirrorArray körs");
     mirroredX = new int[5] {6,6,6,6,6}; 
     mirroredY = new int[5] {6,6,6,6,6};  
     }

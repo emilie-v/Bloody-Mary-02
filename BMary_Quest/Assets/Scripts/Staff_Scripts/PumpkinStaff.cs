@@ -8,7 +8,7 @@ public class PumpkinStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
-
+    [SerializeField] private DialogueTrigger dialogueTrigger;
     public int staffCooldown = 2;
 
     private int movesPerTurn = 3;
@@ -44,6 +44,7 @@ public class PumpkinStaff : MonoBehaviour
             SoundManager.Instance.ActivateStaffButtonSound();
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown <= 0)
             {
+                dialogueTrigger.MaryStaffPower();
                 gameControl.enemyStaffCooldown++;
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;

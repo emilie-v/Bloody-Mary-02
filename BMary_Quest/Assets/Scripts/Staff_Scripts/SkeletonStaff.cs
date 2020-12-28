@@ -8,6 +8,7 @@ public class SkeletonStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
+    [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int piecesToMark = 1;
     public int piecesToMarkLeft = 1;
@@ -71,6 +72,7 @@ public class SkeletonStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                dialogueTrigger.MaryStaffPower();
                 SoundManager.Instance.ActivateStaffButtonSound();
             }
 

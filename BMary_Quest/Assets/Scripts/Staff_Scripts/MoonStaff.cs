@@ -8,7 +8,8 @@ public class MoonStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
-    
+    [SerializeField] private DialogueTrigger dialogueTrigger;
+
     public int staffCooldown = 1;
     
     void Start()
@@ -56,6 +57,7 @@ public class MoonStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                dialogueTrigger.MaryStaffPower();
                 SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)

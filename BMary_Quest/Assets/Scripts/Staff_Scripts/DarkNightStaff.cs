@@ -8,6 +8,7 @@ public class DarkNightStaff : MonoBehaviour
     public GameControl gameControl;
     public Button abilityButton;
     public LastMove lastMove;
+    [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int bricksToLock = 1;
     public int bricksToLockLeft = 1;
@@ -56,6 +57,7 @@ public class DarkNightStaff : MonoBehaviour
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
+                dialogueTrigger.MaryStaffPower();
                 SoundManager.Instance.ActivateStaffButtonSound();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.enemy)

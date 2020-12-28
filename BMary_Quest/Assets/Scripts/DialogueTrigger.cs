@@ -18,6 +18,16 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"Naww, it’s a puppy!","What’s that? Little Billy stuck in the well? Show me!","Nice doggy…!","Hey, when I throw you a staff, you’re supposed to retrieve it, not use it against me!","If you let me win I’ll give you a treat!",""},
         new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweety.",""}
     };
+
+    private string[][] MaryUsingStaffs =
+    {
+        new string[] {"Blood Magic!","Reflectga","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""}, //Generic staff usage atm, but if we want we can change it to reflect *haha* what staff she's using.
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""}
+    };
     //lots of jagged arrays, order of enemies, 0:Luci, 1:Ghastella, 2:Senor B 3:Umbra 4: Count not-dracula  
     private string[][] EnemyGreetings =
     {
@@ -86,7 +96,9 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void MaryStaffPower()
     {
-        MaryText.text = "Reflectga!!!";
+        int i = DataAcrossScenes.PlayerChosenStaff;
+        int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
+        MaryText.text = MaryUsingStaffs[i][j];
     }
     public void MaryCashOut()
     {
