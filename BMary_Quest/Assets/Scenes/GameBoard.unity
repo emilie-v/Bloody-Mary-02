@@ -468,6 +468,7 @@ MonoBehaviour:
   cashOutVariable: 0
   cashOutThreshhold: 0
   ownedPieces: 0
+  dialogueTrigger: {fileID: 3568027160121143534}
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
@@ -599,7 +600,6 @@ MonoBehaviour:
   currentOpponentReward: {fileID: 1613081710}
   rewardScreen: {fileID: 187312945}
   lossScreen: {fileID: 643446113}
-  FinalwinScreen: {fileID: 3568027160121143528}
 --- !u!114 &1324767617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,12 +1349,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
---- !u!1 &3568027160121143528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7121495000230469414, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3568027160121143529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 419697110313574613, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
