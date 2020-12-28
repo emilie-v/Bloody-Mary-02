@@ -10,7 +10,15 @@ public class DialogueTrigger : MonoBehaviour
     public Text EnemyText;
 
 
-    //greetings
+    private string[][] MarysGreetings =
+    {
+        new string[] {"There you are! Where have you been hiding, Luci?","Hey, I’ve been looking for you!","Don’t be scared, Luci. This will be over with quickly!","Jesus, would it kill you to put a shirt on?","Hit the bricks, Luci. There’s a new Princess of darkness in town!",""},
+        new string[] {"Hey, give me back my staff!","Long time no see, Ghastella","Oh boy… you…","No, you can’t borrow any money","Oh no… Ghastella. This will be awkward",""},
+        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Señor Boned,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
+        new string[] {"Naww, it’s a puppy!","What’s that? Little Billy stuck in the well? Show me!","Nice doggy…!","Hey, when I throw you a staff, you’re supposed to retrieve it, not use it against me!","If you let me win I’ll give you a treat!",""},
+        new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweety.",""}
+    };
+    //lots of jagged arrays, order of enemies, 0:Luci, 1:Ghastella, 2:Senor B 3:Umbra 4: Count not-dracula  
     private string[][] EnemyGreetings =
     {
         new string[] {"And now we finally meet, Bloody Mary…!","Sorry, just came out of the brimstone showers.","Have you been a bad girl this year?","There’s no need for this, dear pet. We can rule the world together!","What’s all this I hear about some witch wanting to steal my staff?",""},
@@ -72,10 +80,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public void MaryGreeting()
     {
-        if(DataAcrossScenes.EnemyChosenStaff ==(int)Chosen_Staff.pumpkin)
-            MaryText.text = "Ghastella hello, is this thing on";
-        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
-            MaryText.text = "Senor boned I presume";
+        int i = DataAcrossScenes.EnemyChosenStaff;
+        int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
+        EnemyText.text = MarysGreetings[i][j];
     }
     public void MaryStaffPower()
     {
