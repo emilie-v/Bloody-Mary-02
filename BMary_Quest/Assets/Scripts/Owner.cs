@@ -69,26 +69,7 @@ public class Owner : MonoBehaviour
         transform.DOScale(new Vector3(1.22f, 1.22f, 1f), 0.2f);
         if (gameControl.playerMoves > 0 && gameControl.placeMode)
         {
-            //spelare 2(enemy) controller
-            if (gameControl.playerTurn == (int)Player_Turn.enemy)
-            {
-                if (specialState == 2)
-                {
-                    owned = (int)Tile_State.player2;
-                    canChange = false;
-                }
-                else
-                {
-                    CheckNeighbours();
-                    if (owned == (int)Tile_State.empty && canChange)
-                    {
-                        owned = (int)Tile_State.player2;
-                        //gameControl.enemyTempPoints++;
-                        PiecePlaced();
-                    }
-                }
-            }
-            else if (gameControl.playerTurn == (int)Player_Turn.mary)
+            if (gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 if (specialState == 1)
                 {
@@ -105,10 +86,6 @@ public class Owner : MonoBehaviour
                         PiecePlaced();
                     }
                 }
-            }
-            else
-            {
-                Debug.Log("Turn Order Error");
             }
         }
     }

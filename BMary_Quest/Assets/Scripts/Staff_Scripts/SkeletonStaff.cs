@@ -34,7 +34,8 @@ public class SkeletonStaff : MonoBehaviour
     {
         if (!gameControl.staffUsed)
         {
-            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.skeleton || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.skeleton && gameControl.playerStaffCooldown <= 0
+                || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton && gameControl.enemyStaffCooldown <= 0)
             {
                 Debug.Log(piecesToMarkLeft);
                 while (piecesToMarkLeft > 0)

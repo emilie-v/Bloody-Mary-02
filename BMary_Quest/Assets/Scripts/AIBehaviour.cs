@@ -17,6 +17,7 @@ public class AIBehaviour : MonoBehaviour
     private bool cashOutDone;
     private bool readyToEndTurn;
 
+    [SerializeField] private DialogueTrigger dialogueTrigger;
     [SerializeField] private GameObject spelplan;
     [SerializeField] private GameControl gameControl;
     [SerializeField] private HellStaff hellstaff;
@@ -221,26 +222,31 @@ public class AIBehaviour : MonoBehaviour
         
         
         if (!gameControl.staffUsed)
-        {
+        {           
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
             {
                 pumpkinStaff.PumpkinStaffActiveAbility();
+                dialogueTrigger.EnemyUsingStaff();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton && gameControl.enemyStaffCooldown == 0)
             {
                 skeletonStaff.SkeletonStaffActiveAbility();
+                dialogueTrigger.EnemyUsingStaff();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.enemyStaffCooldown == 0 && flipOrNoFlip >= 0)
             {
                 moonStaff.MoonStaffActiveAbility();
+                dialogueTrigger.EnemyUsingStaff();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night && gameControl.enemyStaffCooldown == 0)
             {
                 darkNightStaff.DarkNightStaffActiveAbility();
+                dialogueTrigger.EnemyUsingStaff();
             }
             else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.enemyStaffCooldown == 0)
             {
                 hellstaff.hellStaffActiveAbility();
+                dialogueTrigger.EnemyUsingStaff();
             }
         }
         useStaffDone = true;

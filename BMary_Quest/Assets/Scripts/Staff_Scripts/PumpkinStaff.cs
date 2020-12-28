@@ -42,14 +42,14 @@ public class PumpkinStaff : MonoBehaviour
         if (!gameControl.staffUsed)
         {
             SoundManager.Instance.ActivateStaffButtonSound();
-            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.mary)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown <= 0)
             {
                 gameControl.enemyStaffCooldown++;
                 gameControl.playerStaffCooldown = staffCooldown;
                 gameControl.staffUsed = true;
                 gameControl.Staff();
             }
-            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.enemy)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerStaffCooldown <= 0)
             {
                 gameControl.playerStaffCooldown++;
                 gameControl.enemyStaffCooldown = staffCooldown;

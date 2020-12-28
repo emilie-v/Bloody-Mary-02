@@ -25,8 +25,10 @@ public class ChooseEnemy : MonoBehaviour
     Image currentEnemy;
     public Image currentEnemyName;
     public Text currentEnemyStaff;
+    public Text currentEnemyStaffName;
 
     public string[] enemyStaffList;
+    public string[] enemyStaffNameList;
 
     public GameObject selectWarning;
     public GameObject cancelWarning;
@@ -61,6 +63,7 @@ public class ChooseEnemy : MonoBehaviour
             "Using its active ability, a random owned marked square is marked with a flower which doubles the attack power of attack moves. Lasts for 1 turn, cooldown of 2 turns.", 
             "Using its active ability turns all owned marks into the opponents marks and vice versa. Also makes the user bark like a dog.", 
             "Half of the blood point drained from the opponents blood pool is added to the users' blood points. Using its active ability renders one random square on the board inaccessible for 2 turns and has a cooldown of 1 turn."};
+        enemyStaffNameList = new string[]{"Hell Staff", "Pumpkin Staff", "Skeleton Staff", "Moon Staff", "Dark Night Staff"};
 
         enemyList[0] = lucifer;
         enemyNameList[0] = luciferName;
@@ -74,6 +77,7 @@ public class ChooseEnemy : MonoBehaviour
         enemyNameList[4] = countName;
 
         currentEnemyStaff.text = enemyStaffList[index];
+        currentEnemyStaffName.text = enemyStaffNameList[index];
         currentEnemy.sprite = enemyList[index];
         currentEnemyName.sprite = enemyNameList[index];
 
@@ -91,9 +95,7 @@ public class ChooseEnemy : MonoBehaviour
             index = 0;
         }
 
-        currentEnemyStaff.text = enemyStaffList[index];
-        currentEnemy.sprite = enemyList[index];
-        currentEnemyName.sprite = enemyNameList[index];
+        UpdateEnemy();
     }
 
     public void LeftArrowButton()
@@ -106,6 +108,12 @@ public class ChooseEnemy : MonoBehaviour
             index = enemyList.Length - 1;
         }
 
+        UpdateEnemy();
+    }
+
+    private void UpdateEnemy()
+    {
+        currentEnemyStaffName.text = enemyStaffNameList[index];
         currentEnemyStaff.text = enemyStaffList[index];
         currentEnemy.sprite = enemyList[index];
         currentEnemyName.sprite = enemyNameList[index];
