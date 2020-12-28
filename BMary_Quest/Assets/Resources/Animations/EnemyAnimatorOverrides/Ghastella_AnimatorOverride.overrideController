@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ghastella_AnimatorOverride
+  m_Controller: {fileID: 9100000, guid: 9e5fe8e782023b942aa13a88ce005059, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2e0a68eedb18ef3419504578495a451a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7a4da72f5c2395142a840386989bb505, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f7a9dd38a2188f43954d77983686ae9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d3a72a77d9dd2d64a8b1d72f6667490b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d74b9be36ae9bc243ba1d49af02c2963, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8ffd645ab2235d249871de9126894ce9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d74230e942389e8478703b28e390edd4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 060d3f19e3985a24ab826a7dcde66c3c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d44dd16886d92674cbc9cb41616a078e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4f41feedc8ec45f4c987d5d1904ea45f, type: 2}

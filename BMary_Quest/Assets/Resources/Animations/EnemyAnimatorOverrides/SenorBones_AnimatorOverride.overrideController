@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SenorBones_AnimatorOverride
+  m_Controller: {fileID: 9100000, guid: 9e5fe8e782023b942aa13a88ce005059, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2e0a68eedb18ef3419504578495a451a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7ec3325112f28cc478fcacda09c33800, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f7a9dd38a2188f43954d77983686ae9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ac6fb6e128e9aba49a8ea32c81c56d6b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d74b9be36ae9bc243ba1d49af02c2963, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3801ef165950a645a075c86079fa784, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d44dd16886d92674cbc9cb41616a078e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a275bc6d68dec64b838e6e27a938798, type: 2}
