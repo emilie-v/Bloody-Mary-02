@@ -39,12 +39,12 @@ public class HellStaff : MonoBehaviour
     }
     public void hellStaffActiveAbility()
     {
-        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown == 0)
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown <= 0)
         {
             gameControl.enemyStaffCooldown = staffCooldown;
             lastMove.enemyHellStaffActivePower = true;
         }
-        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown == 0)
+        if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown <= 0)
         {
             gameControl.playerStaffCooldown = staffCooldown;
             lastMove.playerHellStaffActivePower = true;

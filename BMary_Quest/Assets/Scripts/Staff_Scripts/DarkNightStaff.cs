@@ -42,32 +42,15 @@ public class DarkNightStaff : MonoBehaviour
     {
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
         {
-            while (!gameControl.staffUsed && bricksToLockLeft > 0)
+            if (gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown <= 0)
             {
-                int check = 0;
-                foreach (Transform child in GameObject.Find("Spelplan").transform)
-                {
-                    if (child.GetComponent<Owner>().owned == (int)Tile_State.empty && child.GetComponent<Owner>().locked <= 0)
-                    {
-                        if (Random.Range(0, 25) == 0 && bricksToLockLeft > 0)
-                        {
-                            bricksToLockLeft--;
-                            child.GetComponent<Owner>().locked = 4;
-                        }
-                    }
-
-                    if (child.GetComponent<Owner>().owned != (int)Tile_State.empty || child.GetComponent<Owner>().locked > 0)
-                    {
-                        check++;
-                    }
-                }
-
-                if (check >= 25)
-                {
-                    return;
-                }
+                LockBrick();
             }
-
+            if (gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown <= 0)
+            {
+                LockBrick();
+            }
+            
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.mary)
             {
                 gameControl.playerStaffCooldown = staffCooldown;
@@ -81,6 +64,35 @@ public class DarkNightStaff : MonoBehaviour
                 gameControl.staffUsed = true;
                 gameControl.Staff();
                 SoundManager.Instance.ActivateStaffButtonSound();
+            }
+        }
+    }
+
+    private void LockBrick()
+    {
+        while (!gameControl.staffUsed && bricksToLockLeft > 0)
+        {
+            int check = 0;
+            foreach (Transform child in GameObject.Find("Spelplan").transform)
+            {
+                if (child.GetComponent<Owner>().owned == (int)Tile_State.empty && child.GetComponent<Owner>().locked <= 0)
+                {
+                    if (Random.Range(0, 25) == 0 && bricksToLockLeft > 0)
+                    {
+                        bricksToLockLeft--;
+                        child.GetComponent<Owner>().locked = 4;
+                    }
+                }
+
+                if (child.GetComponent<Owner>().owned != (int)Tile_State.empty || child.GetComponent<Owner>().locked > 0)
+                {
+                    check++;
+                }
+            }
+
+            if (check >= 25)
+            {
+                return;
             }
         }
     }

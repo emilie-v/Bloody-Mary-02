@@ -32,8 +32,8 @@ public class MoonStaff : MonoBehaviour
         if (!gameControl.staffUsed)
         {
             SoundManager.Instance.ActivateStaffButtonSound();
-            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.mary 
-                || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy)
+            if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.mary && gameControl.playerStaffCooldown <= 0
+                || DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown <= 0)
             {
                 foreach (Transform child in GameObject.Find("Spelplan").transform)
                 {
