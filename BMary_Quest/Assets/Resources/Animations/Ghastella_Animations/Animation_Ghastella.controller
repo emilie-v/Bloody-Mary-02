@@ -197,31 +197,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Concerned
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Damaged
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Scared
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Happy
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -324,13 +324,13 @@ AnimatorStateMachine:
     m_Position: {x: 680, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6507589587901616418}
-    m_Position: {x: 450, y: 260, z: 0}
+    m_Position: {x: 600, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2226019357317593554}
-    m_Position: {x: 200, y: -50, z: 0}
+    m_Position: {x: 150, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4674083439785988997}
-    m_Position: {x: 180, y: 260, z: 0}
+    m_Position: {x: 250, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4569098304171101606}
     m_Position: {x: 450, y: -40, z: 0}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lucifer_AnimatorOverride
+  m_Controller: {fileID: 9100000, guid: 9e5fe8e782023b942aa13a88ce005059, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2e0a68eedb18ef3419504578495a451a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c31796c399ec0642a9daad76531fe71, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d74230e942389e8478703b28e390edd4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eaf0794da8173b3449504008e58294c1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f7a9dd38a2188f43954d77983686ae9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 512c6654faedbc14986459c7b8190cb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d44dd16886d92674cbc9cb41616a078e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 338806f6a5b582e42b6f4fe7f2dc691d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d74b9be36ae9bc243ba1d49af02c2963, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c31796c399ec0642a9daad76531fe71, type: 2}
