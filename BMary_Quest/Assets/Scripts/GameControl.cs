@@ -304,6 +304,7 @@ public class GameControl : MonoBehaviour
 
                 enemyHealth -= (marysTempPoints + 1) * maryDamageMultiplier;
                 dialogueTrigger.EnemyHurts();
+                dialogueTrigger.MaryCashOut();
                 marysTempPoints = 0;
                 lastMove.maryCashedOutThisTurn=true;
                 
@@ -347,6 +348,7 @@ public class GameControl : MonoBehaviour
 
                 marysHealth -= (enemyTempPoints + 1) * enemyDamageMultiplier;
                 dialogueTrigger.EnemyAttack();
+                dialogueTrigger.MaryTakingDamage();
                 enemyTempPoints = 0;
                 lastMove.enemyCashedOutThisTurn=true;
 
@@ -380,6 +382,7 @@ public class GameControl : MonoBehaviour
             else if (marysHealth <= 0)
             {
                 dialogueTrigger.EnemyWins();
+                dialogueTrigger.MaryLoss();
                 characterAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
@@ -388,6 +391,7 @@ public class GameControl : MonoBehaviour
             else if (enemyHealth <= 0)
             {
                 dialogueTrigger.EnemyLoses();
+                dialogueTrigger.MaryWin();
                 characterAnimations.animator.SetBool("WinState", true);
                 DataAcrossScenes.ChosenEnemy += 1;
                 SoundManager.Instance.WinStateSound();
