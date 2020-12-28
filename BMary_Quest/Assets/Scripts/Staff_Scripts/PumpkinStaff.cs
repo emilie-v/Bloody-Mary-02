@@ -50,7 +50,7 @@ public class PumpkinStaff : MonoBehaviour
                 gameControl.staffUsed = true;
                 gameControl.Staff();
             }
-            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.playerStaffCooldown <= 0)
+            if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown <= 0)
             {
                 gameControl.playerStaffCooldown++;
                 gameControl.enemyStaffCooldown = staffCooldown;
