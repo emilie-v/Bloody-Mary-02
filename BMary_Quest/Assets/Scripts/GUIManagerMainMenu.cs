@@ -14,6 +14,7 @@ public class GUIManagerMainMenu : MonoBehaviour
     [SerializeField] public GameObject mainMuteButton;
     [SerializeField] public GameObject musicMuteButton;
     [SerializeField] public GameObject sfxMuteButton;
+    [SerializeField] public GameObject fullscreenButton;
     
     public AudioListener audioListener;
     
@@ -34,7 +35,7 @@ public class GUIManagerMainMenu : MonoBehaviour
     private float mainMenuMusicVolume = 1f;
     private float setMainMenuMusicVolume = 1f;
     private bool mainMenuMusicMute;
-    
+
     private void Start()
     {
         GetComponents();
@@ -75,6 +76,9 @@ public class GUIManagerMainMenu : MonoBehaviour
         
         sfxMuteButton = GameObject.Find("Options_Panel/Background/Audio/SFXVolume/SFXVolume_MuteButton");
         sfxMuteButton.GetComponent<Button>().onClick.AddListener(MuteSFXVolume);
+
+        fullscreenButton = GameObject.Find("Options_Panel/Background/Fullscreen/Fullscreen_Text/Fullscreen_Checkbox");
+        fullscreenButton.GetComponent<Button>().onClick.AddListener(Fullscreen);
         
         highVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_HighVolume");
         lowVolume = Resources.Load<Sprite>("Sprites/GUI/GUI_Options/GUI_Options_LowVolume");
@@ -184,6 +188,20 @@ public class GUIManagerMainMenu : MonoBehaviour
             UpdateSprite(AudioListener.volume, mainMuteButton.GetComponent<Image>());
             UpdateSprite(sfxSource.volume, sfxMuteButton.GetComponent<Image>());
             UpdateSprite(mainMenuMusicVolume, musicMuteButton.GetComponent<Image>());
+        }
+    }
+
+    public void Fullscreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+
+        if (Screen.fullScreen)
+        {
+            fullscreenButton.GetComponent<Image>().color = Color.black;
+        }
+        else if (!Screen.fullScreen)
+        {
+            fullscreenButton.GetComponent<Image>().color = Color.white;
         }
     }
 }
