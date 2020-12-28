@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a99ece03ce4eb524a815e0f0f4044f4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73beedb6b676b7f43b2e4d11b40c0e89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.4117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e58987805bc08794aaceea557db6dd63, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2599,8 +2599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.49, y: -19.889992}
-  m_SizeDelta: {x: 176.22797, y: 47.013878}
+  m_AnchoredPosition: {x: 0.67, y: -19.889992}
+  m_SizeDelta: {x: 163.65546, y: 47.013878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &926957494
 CanvasRenderer:
@@ -3086,7 +3086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &990588783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3234,7 +3234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 065c0f48a3480f043b77798762134a1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16cdc427be542e7459dcd296a6098a55, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3594,7 +3594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a6ef9d577f12a4b48859a08417bbe570, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4270,8 +4270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.88, y: 61.86}
-  m_SizeDelta: {x: 197.75195, y: 36.888718}
+  m_AnchoredPosition: {x: 0.61, y: 61.86}
+  m_SizeDelta: {x: 402.57904, y: 36.888718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1330500871
 CanvasRenderer:
@@ -4308,7 +4308,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4351,8 +4351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.88, y: 4.5426}
-  m_SizeDelta: {x: 197.75195, y: 88.21127}
+  m_AnchoredPosition: {x: 0.35, y: 4.5426}
+  m_SizeDelta: {x: 407.29376, y: 88.21127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1333961047
 CanvasRenderer:
@@ -4389,7 +4389,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5332,6 +5332,7 @@ GameObject:
   - component: {fileID: 1572870399}
   - component: {fileID: 1572870401}
   - component: {fileID: 1572870400}
+  - component: {fileID: 8807090460260269233}
   m_Layer: 5
   m_Name: Enemy header
   m_TagString: Untagged
@@ -5456,6 +5457,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8807090460260269233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572870398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: 1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1613081708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,7 +6097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1952496122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6354,8 +6370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.49, y: -58}
-  m_SizeDelta: {x: 176.22797, y: 47.013878}
+  m_AnchoredPosition: {x: 0.66996, y: -58}
+  m_SizeDelta: {x: 163.65564, y: 47.013878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2006359335
 CanvasRenderer:
@@ -7467,6 +7483,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 8898270582310696194}
+  volumeSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  mainMuteButton: {fileID: 3918203009184630225}
+  musicMuteButton: {fileID: 8256440424253835880}
+  sfxMuteButton: {fileID: 6398298074130472828}
+  audioListener: {fileID: 0}
+  mainMenuMusic: {fileID: 0}
+  sfxSource: {fileID: 0}
 --- !u!114 &3568027160121143521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9274,8 +9299,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GUIManager_MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 3618412771699007936}
+        m_TargetAssemblyTypeName: GUIManagerMainMenu, Assembly-CSharp
         m_MethodName: OptionsPanel
         m_Mode: 1
         m_Arguments:
@@ -9347,8 +9372,8 @@ RectTransform:
   m_Father: {fileID: 4819811990836290136}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10196,8 +10221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.49, y: -58}
-  m_SizeDelta: {x: 176.22797, y: 47.013878}
+  m_AnchoredPosition: {x: -7.19, y: -58}
+  m_SizeDelta: {x: 151.08295, y: 47.013878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8052122412813059723
 CanvasRenderer:
@@ -10513,7 +10538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10642,7 +10667,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11907,7 +11932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Retry
+  m_Text: Replay?
 --- !u!1 &4969255730029987469
 GameObject:
   m_ObjectHideFlags: 0
@@ -11925,7 +11950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7823021461814998265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12493,8 +12518,8 @@ RectTransform:
   m_Father: {fileID: 4800188120459745091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12766,7 +12791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a99ece03ce4eb524a815e0f0f4044f4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73beedb6b676b7f43b2e4d11b40c0e89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13887,7 +13912,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14038,8 +14063,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.88, y: 61.86}
-  m_SizeDelta: {x: 197.75195, y: 36.888718}
+  m_AnchoredPosition: {x: 0.6, y: 61.86}
+  m_SizeDelta: {x: 404.6744, y: 36.888718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2327936530347418461
 CanvasRenderer:
@@ -14076,15 +14101,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sadly, you lost!
-
-'
+  m_Text: You have triumphed!
 --- !u!1 &6900874323069058397
 GameObject:
   m_ObjectHideFlags: 0
@@ -14329,7 +14352,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14381,7 +14404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093066835852754352}
   m_Layer: 5
-  m_Name: Loss
+  m_Name: Final win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14517,8 +14540,8 @@ RectTransform:
   m_Father: {fileID: 3194381206581995491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14749,8 +14772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.88, y: 4.5426}
-  m_SizeDelta: {x: 197.75195, y: 88.21127}
+  m_AnchoredPosition: {x: 0.08, y: 4.5426}
+  m_SizeDelta: {x: 409.91315, y: 88.21127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8440502482234512766
 CanvasRenderer:
@@ -14787,13 +14810,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Would you like to try again?
+  m_Text: You won against Lucifer and have claimed the hellstaff!                 
+    The world is yours for the taking!
 --- !u!1 &7469845563997513358
 GameObject:
   m_ObjectHideFlags: 0
@@ -15015,7 +15039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15595,7 +15619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Audio
+  m_Text: Options
 --- !u!1 &8074906881364989135
 GameObject:
   m_ObjectHideFlags: 0
@@ -15789,8 +15813,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.49, y: -19.889992}
-  m_SizeDelta: {x: 176.22797, y: 47.013878}
+  m_AnchoredPosition: {x: -7.19, y: -19.889992}
+  m_SizeDelta: {x: 151.08307, y: 47.013878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8896011462384927664
 CanvasRenderer:
@@ -15873,9 +15897,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953807058}
-        m_TargetAssemblyTypeName: GUIManager, Assembly-CSharp
-        m_MethodName: RestartButton
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: NextOpponentButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17097,7 +17121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4042425802384228398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17190,7 +17214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 51.06534, y: 51.06534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &666398674921661853

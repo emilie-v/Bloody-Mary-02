@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour
 {
     private Owner owner;
     public DialogueManager dialogueManager;
+    public DialogueTrigger dialogueTrigger;
     private HellStaff hellStaff;
     private DarkNightStaff darknightStaff;
     private PumpkinStaff pumpkinStaff;
@@ -128,7 +129,9 @@ public class GameControl : MonoBehaviour
         
         pumpkinStaff.PumpkinStaffPassiveAbility();
 
-        lastMove.staffUsed = true;         
+        lastMove.staffUsed = true;
+        dialogueTrigger.MaryGreeting();
+        dialogueTrigger.EnemyGreeting();
     }
 
     private void Update()
@@ -156,8 +159,6 @@ public class GameControl : MonoBehaviour
         }
         if (playerTurn == (int)Player_Turn.mary) 
         {
-            dialogueManager.maryIndex = 0;
-            dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
             SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.enemy;
             lastMove.enemyCashedOutThisTurn = false;
@@ -186,8 +187,6 @@ public class GameControl : MonoBehaviour
         else
         {
             characterAnimations.animator.SetTrigger("Idle");
-            dialogueManager.enemyIndex = 0;
-            dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
             SoundManager.Instance.EndTurnButtonSound();
             playerTurn = (int)Player_Turn.mary;
             lastMove.staffUsed = false;
@@ -278,8 +277,6 @@ public class GameControl : MonoBehaviour
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             characterAnimations.animator.SetTrigger("Smiling");
-                            dialogueManager.maryIndex = Random.Range(2, 3);
-                            dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                             marysTempPoints ++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
@@ -291,8 +288,7 @@ public class GameControl : MonoBehaviour
 
                 if(marysTempPoints > 0)
                 {
-                    dialogueManager.enemyIndex = Random.Range(4,5);
-                    dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
+
                 }
 
                 if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
@@ -323,9 +319,7 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
-                            dialogueManager.enemyIndex = Random.Range(2,3);
-                            dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
-                            enemyTempPoints ++;
+                            enemyTempPoints++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }
                     }
@@ -337,8 +331,6 @@ public class GameControl : MonoBehaviour
                 if (enemyTempPoints > 0)
                 {
                     characterAnimations.animator.SetTrigger("Damaged");
-                    dialogueManager.maryIndex = Random.Range(4, 5);
-                    dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
                 }
 
 
@@ -379,11 +371,6 @@ public class GameControl : MonoBehaviour
             gameOver.SetActive(true);
             if (marysHealth <= 0 && enemyHealth <= 0)
             {
-                dialogueManager.maryIndex = 8;
-                dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
-                dialogueManager.enemyIndex = 8;
-                dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
-
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Everyone Lose!";
                 rewardScreen.newReward(6);
@@ -391,11 +378,6 @@ public class GameControl : MonoBehaviour
             else if (marysHealth <= 0)
             {
                 characterAnimations.animator.SetTrigger("Angry");
-                dialogueManager.maryIndex = 6;
-                dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
-                dialogueManager.enemyIndex = 7;
-                dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
-
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
                 rewardScreen.newReward(6);
@@ -403,10 +385,6 @@ public class GameControl : MonoBehaviour
             else if (enemyHealth <= 0)
             {
                 characterAnimations.animator.SetBool("WinState", true);
-                dialogueManager.maryIndex = 7;
-                dialogueManager.currentMaryDialogue.text = dialogueManager.dialogueMaryList[dialogueManager.maryIndex];
-                dialogueManager.enemyIndex = 6;
-                dialogueManager.currentEnemyDialogue.text = dialogueManager.dialogueLuciferList[dialogueManager.enemyIndex];
                 DataAcrossScenes.ChosenEnemy += 1;
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
@@ -454,6 +432,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (DataAcrossScenes.darkNightStaffUnlocked == false)
                     {
+                        DataAcrossScenes.ChosenEnemy = 0;
                         rewardScreen.newReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
@@ -468,7 +447,7 @@ public class GameControl : MonoBehaviour
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
                         DataAcrossScenes.ChosenEnemy = 1;
-                        rewardScreen.newReward(4);
+                        rewardScreen.newReward(7);
                         DataAcrossScenes.hellStaffUnlocked = true;
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
