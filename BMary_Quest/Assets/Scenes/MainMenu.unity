@@ -1012,6 +1012,7 @@ MonoBehaviour:
   mainMuteButton: {fileID: 777195315}
   musicMuteButton: {fileID: 91144843}
   sfxMuteButton: {fileID: 915220161}
+  fullscreenButton: {fileID: 0}
   audioListener: {fileID: 0}
   mainMenuMusic: {fileID: 0}
   sfxSource: {fileID: 0}
