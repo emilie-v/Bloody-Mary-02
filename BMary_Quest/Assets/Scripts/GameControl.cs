@@ -26,6 +26,7 @@ public class GameControl : MonoBehaviour
     public RewardScreen rewardScreen;
     public PoseAnimation poseAnimation;
     public CharacterAnimations characterAnimations;
+    public EnemyAnimations enemyAnimations;
     [SerializeField] private GUIManager guiManager;
     private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
@@ -110,6 +111,7 @@ public class GameControl : MonoBehaviour
     {
         spelplan = GameObject.Find("Spelplan");
         characterAnimations = GameObject.Find("PlayerMary").GetComponent<CharacterAnimations>();
+        enemyAnimations = GameObject.Find("PlayerEnemy").GetComponent<EnemyAnimations>();
         rewardScreen = GameObject.Find("PController").GetComponent<RewardScreen>();
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
         hellStaff = GameObject.Find("PController").GetComponent<HellStaff>();
@@ -288,7 +290,7 @@ public class GameControl : MonoBehaviour
 
                 if(marysTempPoints > 0)
                 {
-
+                    enemyAnimations.animator.SetTrigger("Damaged");
                 }
 
                 if (lastMove.enemyHellStaffActivePower == true && DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
@@ -321,12 +323,12 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
+                            enemyAnimations.animator.SetTrigger("Angry");
                             enemyTempPoints++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }
                     }
                 }
-
 
                 playerBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
 
@@ -385,6 +387,7 @@ public class GameControl : MonoBehaviour
             {
                 dialogueTrigger.EnemyWins();
                 dialogueTrigger.MaryLoss();
+                enemyAnimations.animator.SetBool("WinState", true);
                 characterAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
@@ -395,6 +398,7 @@ public class GameControl : MonoBehaviour
                 dialogueTrigger.EnemyLoses();
                 dialogueTrigger.MaryWin();
                 characterAnimations.animator.SetBool("WinState", true);
+                enemyAnimations.animator.SetTrigger("Angry");
                 DataAcrossScenes.ChosenEnemy += 1;
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
@@ -470,7 +474,7 @@ public class GameControl : MonoBehaviour
             pauseMode = true;
         }
     }
-    
+
     public void UpdateBloodPoints()
     {
         playerBloodPointsText.GetComponent<Text>().text = marysHealth.ToString();
@@ -563,6 +567,7 @@ public class GameControl : MonoBehaviour
     {
         if (staffUsed && playerTurn == (int)Player_Turn.mary || playerStaffCooldown > 0)
         {
+            enemyAnimations.animator.SetTrigger("Scared");
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (!staffUsed && playerTurn == (int)Player_Turn.mary)
