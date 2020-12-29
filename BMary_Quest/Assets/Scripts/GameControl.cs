@@ -378,6 +378,8 @@ public class GameControl : MonoBehaviour
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Everyone Lose!";
                 rewardScreen.newReward(6);
+                dialogueTrigger.EnemyStalemate();
+                dialogueTrigger.MaryStalemate();
             }
             else if (marysHealth <= 0)
             {

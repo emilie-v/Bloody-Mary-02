@@ -28,6 +28,45 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
         new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""}
     };
+
+    private string[][] MaryAttacks =
+ {
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""}
+    };
+
+    private string[][] MaryHurts =
+{
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},  //Generic getting hurt message atm.
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""}
+    };
+
+    private string[][] MaryWins =
+{
+        new string[] {"This, was just the beginning","Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
+        new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},  //Generic victory message atm.
+        new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
+        new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
+        new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
+    };
+
+    private string[][] MaryLoses =
+{
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},  //Generic loss message atm.
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
+        new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
+    };
+
+
     //lots of jagged arrays, order of enemies, 0:Luci, 1:Ghastella, 2:Senor B 3:Umbra 4: Count not-dracula  
     private string[][] EnemyGreetings =
     {
@@ -97,28 +136,42 @@ public class DialogueTrigger : MonoBehaviour
     public void MaryStaffPower()
     {
         int i = DataAcrossScenes.PlayerChosenStaff;
-        int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
+        int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //alternativt så kan man ju bara köra +1 på random.Range efter .GetUpperBound, smidigare osv...men nu kör jag på denna, så får man komma ihåg till nästa.
         MaryText.text = MaryUsingStaffs[i][j];
     }
     public void MaryCashOut()
     {
-        MaryText.text = "This is going to hurt, for you";
+        int i = DataAcrossScenes.EnemyChosenStaff;
+        int j = Random.Range(0, MaryAttacks[i].GetUpperBound(0));
+        MaryText.text = MaryAttacks[i][j];
     }
     public void MaryTakingDamage()
     {
-        MaryText.text = "You DARE?!";
+        int i = DataAcrossScenes.EnemyChosenStaff;
+        int j = Random.Range(0, MaryHurts[i].GetUpperBound(0));
+        MaryText.text = MaryHurts[i][j];
+        
     }
     public void MaryWin()
     {
-        MaryText.text = "This is just a stepping stone";
+        int i = DataAcrossScenes.EnemyChosenStaff;
+        int j = Random.Range(0, MaryWins[i].GetUpperBound(0));
+        MaryText.text = MaryWins[i][j];
     }
     public void MaryLoss()
     {
-        MaryText.text = "I'll see you, in hell...again";
+        int i = DataAcrossScenes.EnemyChosenStaff;
+        int j = Random.Range(0, MaryLoses[i].GetUpperBound(0));
+        MaryText.text = MaryLoses[i][j];
     }
     public void MaryStalemate()
     {
         MaryText.text = "Using a mirror power on me...how qaint";
+    }
+
+    public void EnemyStalemate()
+    {
+        EnemyText.text = "I'm wasting your time, it's part of my job you know";
     }
 
     public void EnemyGreeting()
