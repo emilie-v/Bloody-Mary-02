@@ -120,7 +120,7 @@ public class GameControl : MonoBehaviour
         skeletonStaff = GameObject.Find("PController").GetComponent<SkeletonStaff>();
         pumpkinStaff = GameObject.Find("PController").GetComponent<PumpkinStaff>();
         mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
-        playerTurn = (int)Random.Range(0, 2);
+        playerTurn = 0;
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
