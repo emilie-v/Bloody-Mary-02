@@ -399,7 +399,6 @@ public class GameControl : MonoBehaviour
                 dialogueTrigger.MaryWin();
                 characterAnimations.animator.SetBool("WinState", true);
                 enemyAnimations.animator.SetTrigger("Angry");
-                DataAcrossScenes.ChosenEnemy += 1;
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
                 //wait x seconds, win-screen? Story goes on?
@@ -410,6 +409,7 @@ public class GameControl : MonoBehaviour
                         rewardScreen.newReward(0);
                         DataAcrossScenes.pumpkinStaffUnlocked = true;
                         DataAcrossScenes.seniorBonesUnlocked = true;
+                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.pumpkinStaffUnlocked == true)
                     {
@@ -423,6 +423,7 @@ public class GameControl : MonoBehaviour
                         rewardScreen.newReward(1);
                         DataAcrossScenes.skeletonStaffUnlocked = true;
                         DataAcrossScenes.umbralinaUnlocked = true;
+                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.skeletonStaffUnlocked == true)
                     {
@@ -436,6 +437,7 @@ public class GameControl : MonoBehaviour
                         rewardScreen.newReward(2);
                         DataAcrossScenes.moonStaffUnlocked = true;
                         DataAcrossScenes.countUnlocked = true;
+                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.moonStaffUnlocked == true)
                     {
@@ -450,6 +452,7 @@ public class GameControl : MonoBehaviour
                         rewardScreen.newReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
+                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {
@@ -462,7 +465,7 @@ public class GameControl : MonoBehaviour
                     {
                         DataAcrossScenes.ChosenEnemy = 1;
                         rewardScreen.newReward(7);
-                        DataAcrossScenes.hellStaffUnlocked = true;
+                        DataAcrossScenes.hellStaffUnlocked = true;                    
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
                     {
