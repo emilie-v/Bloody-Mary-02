@@ -32,20 +32,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] MaryAttacks =
  {
-        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
-        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
-        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
-        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
-        new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"This shouldn't be seen"},
+        new string[] {"Out of my way!","Let the ectoplasm flow!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale, like a sheet!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
+        new string[] {"Out of my way!","You'll be my source for bone dust","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","I feel kind of bad about this","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow, from you!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
         new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""}
     };
 
     private string[][] MaryHurts =
 {
-        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
-        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},  //Generic getting hurt message atm.
-        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
-        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
+        new string[] {"This shouldn't be seen"},
+        new string[] {"Agh!", "YOU DARE!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},  //Generic getting hurt message atm.
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I'll carve your rib bones into flutes", ""},
+        new string[] {"Agh!", "Bad dog, BAD DOG", "You’re spilling all my blood, bad pet!", "Oh no…!", "Okey, I won’t forget that one.", "I hope you don't have rabies!", ""},
         new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
         new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""}
     };
@@ -84,7 +84,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] EnemyUsingStaffs =
     {
-        new string[] {"Brimstone!","I mark you, mirror wench!","Be careful now…","Power!","Let’s make this interesting…",""},
+        new string[] {"This line is empty and should never be seen"},
         new string[] {"Freeze!","I didn’t want to do this…","I think I broke your staff…","Oops…!","I don’t think your staff is working correctly.",""},
         new string[] {"Feliz día de los Muertos!","Tiempo De morir!","Poder de la flor!","Grow and bloom, Mis hijos!","They always underestimate the power of flowers!",""},
         new string[] {"*Howls at the moon*","*Howls*","*Happy japing*","*Growl*","*Bark bark!*",""},
@@ -94,7 +94,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] EnemyAttacking =
     {
-        new string[] {"Pain is pleasure, my sweet.","You’ve already lost, you just don’t know it yet…","No dishonor in giving up, girl.","What’s wrong, Mary? Don’t you want to live forever?","I can make the pain go away, Mary…",""},
+        new string[] {"This line is empty and should never be seen"},
         new string[] {"Hope you won’t get too hurt","Oh, SORRY!","That must have hurt. I’m terribly sorry!","Heavens, Mary! You’re bleeding!","Man, I wish I could bleed…",""},
         new string[] {"Taste the power of flowers, tonto!","Don’t you know flesh is weak?","I love the smell of flowers in the morning!","If I kill you now, want to hang out later?","You don’t need that pesky flesh anyways.",""},
         new string[] {"*Growl*","*Howl*","*Pounce*","*Bark bark!*",""},
@@ -104,7 +104,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] EnemyHurt =
     {
-        new string[] {"Sweet pain!","Do you think you’re hurting me?","Stop this foolishness, girl and join me.","Puny necromancer…","Fun fact; my blood is flammable.Do you want to know the secret to this power?",""},
+        new string[] {"This line is empty and should never be seen"},
         new string[] {"Wait… I’m bleeding?","Ouch!","Yikes!","Look what you did! You got ectoplasm all over the floor!","I didn’t sign up to being a ghost, just to bleed out!",""},
         new string[] {"Ay!","I’m going to need two shots of milk for that one.","Bruto!","Hey! Who said you could touch my bones?","You don’t like flowers? What kind of loco broad are you?",""},
         new string[] {"*whimper*","*Bark bark bark!*","*woff!*","*Yelp!*",""},
@@ -114,7 +114,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] EnemyLoss =
     {
-        new string[] {"This… is… impossible!","Mary, think this through!","What have you done?!","I will have my revenge…","My staff! My power! NO!",""},
+        new string[] {"This line is empty and should never be seen"},
         new string[] {"Mary!!!","Okey, okey! You can have the staff back!","Wait… where am I going now?","Did I just… die again?","I should have stayed in bed…",""},
         new string[] {"No! Don’t step on the flowers, tonto!","I’m going to need lots and lots of milk to repair this damage.","Stop kicking me, I’m a skeleton! I’m already dead!","This went a lot smoother in my head…","Estupendo…",""},
         new string[] {"*Sad howl*","*Whimper…*","*Sniff-…*","*Tucks tail between legs*",""},
@@ -124,7 +124,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] EnemyWin =
     {
-        new string[] {"Who would have suspected this outcome, Muahahaha!","I’ll bring you back and destroy you again, Mary!","Now back in line, filthy sinner!","As punishment, you will be my personal plaything for the next few eternities.","Ridiculous display, my sweet daughter. You cannot best me.",""},
+        new string[] {"This line is empty and should never be seen"},
         new string[] {"Oh hey, I won!","Holy smokes! I didn’t mean to hurt you that much!","You owe me a drink","W-want to try again?","This was… unexpected",""},
         new string[] {"And just like that, the great Bloody Mary has now become fertilizer for Senior Bones’ flower garden!","Bested! Oh yeah, did you want to go out for lunch or something?","Don’t mess with me or my flowers again, chica!","Would it be weird of me to ask for a date now?","Don’t feel bad, Mary. You only got totally owned by the power of flowers, tonto!",""},
         new string[] {"*Howl!*","*Chases tail*","*Nap time*",""},
