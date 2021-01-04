@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/IngameGUI_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/IngameGUI_Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" afterDir="false" />
     </list>
@@ -176,9 +174,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="109" y="122" width="1701" height="820" key="VCS.FileHistoryDialog/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1606817965402" />
-    <state x="622" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1607947681511">
+    <state x="622" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1609755633260">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="622" y="246" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1607947681511" />
+    <state x="622" y="246" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1609755633260" />
   </component>
 </project>
