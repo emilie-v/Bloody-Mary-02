@@ -75,10 +75,7 @@ public class MirrorStaff : MonoBehaviour
                     {
                         if(mirroredX[i] < 5 && mirroredY[i] < 5)
                         {
-                            //SoundManager.Instance.ActivateStaffButtonSound();
-                            Debug.Log("Using staff mirror");
                             spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned = (int)Tile_State.player1;
-                            //gameControl.marysTempPoints++;
                         }
                     }
                 }
@@ -107,7 +104,6 @@ public class MirrorStaff : MonoBehaviour
     }
     void resetMirrorArray()
     {
-        //Debug.Log("ResetMirrorArray körs");
     mirroredX = new int[5] {6,6,6,6,6}; 
     mirroredY = new int[5] {6,6,6,6,6};  
     }

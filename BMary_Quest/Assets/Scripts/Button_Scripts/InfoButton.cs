@@ -22,23 +22,19 @@ public class InfoButton : MonoBehaviour
         
     }
 
-    public void Update()
-    {
-       
-    }
     public void OnMouseEnter()
     {
         SetText();
-        //Debug.Log("DataAcross scenes säger att vi spelar med staff nr.! "+ DataAcrossScenes.PlayerChosenStaff);
         marysInfoCanvas.SetActive(true);
         enemyInfoCanvas.SetActive(true);
     }
+
     public void OnMouseExit()
     {
-        //Debug.Log("Vi lämnade knappen!");
         marysInfoCanvas.SetActive(false);
         enemyInfoCanvas.SetActive(false);
     }
+
     void SetText()
     {
         // Marys Descriptions

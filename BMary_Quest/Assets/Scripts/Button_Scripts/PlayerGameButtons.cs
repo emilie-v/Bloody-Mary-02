@@ -45,7 +45,6 @@ public class PlayerGameButtons : MonoBehaviour
             }
             marysTP++; // för startbrickan
             marysTP = marysTP * gameControl.maryDamageMultiplier; //om det finns ett skeleton märke
-            Debug.Log("Antalet brickor som Mary har ute är: " + marysTP);
             GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey + "\nCurrent Damage: " +marysTP;
             cashoutButtonInfo.SetActive(true);
         }

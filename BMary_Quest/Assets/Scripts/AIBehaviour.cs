@@ -216,7 +216,6 @@ public class AIBehaviour : MonoBehaviour
                 {
                     flipOrNoFlip--;
                 }
-                Debug.Log(flipOrNoFlip);
             }
         }
         

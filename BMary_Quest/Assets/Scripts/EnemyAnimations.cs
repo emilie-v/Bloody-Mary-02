@@ -9,7 +9,6 @@ public class EnemyAnimations : MonoBehaviour
     {
         int index = DataAcrossScenes.EnemyChosenStaff;
         animator = gameObject.GetComponent<Animator>();
-        Debug.Log("indexEnemy: " + index);
         if(index == (int)Chosen_Staff.pumpkin)
         {
             animator.runtimeAnimatorController = Resources.Load("Animations/EnemyAnimatorOverrides/Ghastella_AnimatorOverride") as RuntimeAnimatorController;
