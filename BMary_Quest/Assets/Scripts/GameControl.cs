@@ -604,7 +604,7 @@ public class GameControl : MonoBehaviour
         UpdateMarkedPiece();
     }
 
-    private void StaffCooldown()
+    public void StaffCooldown()
     {
         //mirrorStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
@@ -726,7 +726,7 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    private void UpdateMarkedPiece()
+    public void UpdateMarkedPiece()
     {
         //Hell Staff
         if (lastMove.enemyHellStaffActivePower)
