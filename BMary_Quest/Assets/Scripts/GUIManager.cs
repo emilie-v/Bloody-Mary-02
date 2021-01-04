@@ -197,7 +197,7 @@ public class GUIManager : MonoBehaviour
 
     private void EnemySpriteChange()
     {
-        var enemySprite = GameObject.Find("MaskEnemy/Enemy").GetComponent<Image>();
+        var enemySprite = GameObject.Find("MaskEnemy/PlayerEnemy").GetComponent<Image>();
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             enemySprite.sprite = ghastellaSprite;

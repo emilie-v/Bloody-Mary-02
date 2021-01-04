@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +74,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
@@ -82,6 +81,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManagerMainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
       </list>
     </option>
   </component>
@@ -141,6 +142,7 @@
       <workItem from="1608193722207" duration="10727000" />
       <workItem from="1608544902645" duration="11782000" />
       <workItem from="1608626125638" duration="128000" />
+      <workItem from="1609747981719" duration="217000" />
     </task>
     <servers />
   </component>

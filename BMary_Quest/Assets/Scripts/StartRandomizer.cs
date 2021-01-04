@@ -17,6 +17,8 @@ public class StartRandomizer : MonoBehaviour
     private IEnumerator TurnRandomizer()
     {
         yield return new WaitForSeconds(0);
+        gameControl.UpdateBloodPoints();
+        
         for (int i = 0; i < Random.Range(8, 13); i++)
         {
             yield return new WaitForSeconds(0.05f * i);
