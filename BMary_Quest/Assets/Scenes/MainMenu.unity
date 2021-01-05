@@ -381,7 +381,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &97293561
 GameObject:
@@ -536,7 +535,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &142811880
 GameObject:
@@ -1013,7 +1011,6 @@ MonoBehaviour:
   musicMuteButton: {fileID: 91144843}
   sfxMuteButton: {fileID: 915220161}
   fullscreenButton: {fileID: 0}
-  audioListener: {fileID: 0}
   mainMenuMusic: {fileID: 0}
   sfxSource: {fileID: 0}
 --- !u!1 &461655295
@@ -1165,7 +1162,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &461655301
 MonoBehaviour:
@@ -1296,7 +1292,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &547011941
 GameObject:
@@ -1522,7 +1517,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &548549212
 MonoBehaviour:
@@ -2266,7 +2260,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &789483010
 GameObject:
@@ -2378,7 +2371,6 @@ MonoBehaviour:
   attackMovesTutorial: {fileID: 0}
   staffsTutorial: {fileID: 0}
   endTurnTutorial: {fileID: 0}
-  backTutorial: {fileID: 0}
 --- !u!4 &813622867
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,7 +2534,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &830250996
 MonoBehaviour:
@@ -2741,7 +2732,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &915220164
 MonoBehaviour:
@@ -2985,7 +2975,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &941685623
 MonoBehaviour:
@@ -3426,7 +3415,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &1246009466
 MonoBehaviour:
@@ -4035,7 +4023,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &1668799909
 GameObject:
@@ -4277,7 +4264,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &1724916072
 MonoBehaviour:
@@ -4611,7 +4597,6 @@ GameObject:
   - component: {fileID: 2069570821}
   - component: {fileID: 2069570820}
   - component: {fileID: 2069570822}
-  - component: {fileID: 2069570823}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -4744,20 +4729,6 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: c06eeda5a506e034da88a90d08775cea, type: 3}
   gameMusic: {fileID: 8300000, guid: 37797e716a5df1d4583dc617ab4631e6, type: 3}
   audioSource: {fileID: 0}
---- !u!114 &2069570823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069570819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0999da4464d3964699785f6c683ec69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: b0e37de182d48844691a0d659fce636a, type: 3}
 --- !u!1 &2077362066
 GameObject:
   m_ObjectHideFlags: 0
