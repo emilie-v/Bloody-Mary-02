@@ -11,6 +11,14 @@ public class DialogueTrigger : MonoBehaviour
     private string MarysCurrentText;
     private string EnemysCurrentText;
 
+    public CharacterAnimations characterAnimations;
+    public EnemyAnimations enemyAnimations;
+
+    public void Awake()
+    {
+        characterAnimations = GameObject.Find("PlayerMary").GetComponent<CharacterAnimations>();
+        enemyAnimations = GameObject.Find("PlayerEnemy").GetComponent<EnemyAnimations>();
+    }
 
     private string[][] MarysGreetings =
     {
@@ -141,6 +149,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void MaryGreeting()
     {
+        characterAnimations.animator.SetTrigger("Smiling");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
         //MaryText.text = MarysGreetings[i][j];
@@ -148,6 +157,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void MaryStaffPower()
     {
+        enemyAnimations.animator.SetTrigger("Scared");
         int i = DataAcrossScenes.PlayerChosenStaff;
         int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //alternativt så kan man ju bara köra +1 på random.Range efter .GetUpperBound, smidigare osv...men nu kör jag på denna, så får man komma ihåg till nästa.
         //MaryText.text = MaryUsingStaffs[i][j];
@@ -155,6 +165,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void MaryCashOut()
     {
+        characterAnimations.animator.SetTrigger("Smiling");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryAttacks[i].GetUpperBound(0));
         //MaryText.text = MaryAttacks[i][j];
@@ -195,6 +206,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void EnemyGreeting()
     {
+        enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
         //EnemyText.text = EnemyGreetings[i][j];
@@ -203,6 +215,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void EnemyUsingStaff()
     {
+        characterAnimations.animator.SetTrigger("Scared");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyUsingStaffs[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
         //EnemyText.text = EnemyUsingStaffs[i][j];
@@ -211,6 +224,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void EnemyAttack()
     {
+        enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyAttacking[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
         //EnemyText.text = EnemyAttacking[i][j];
@@ -227,6 +241,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void EnemyLoses()
     {
+        enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyLoss[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
         //EnemyText.text = EnemyLoss[i][j];
