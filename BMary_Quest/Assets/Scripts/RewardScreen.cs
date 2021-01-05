@@ -25,6 +25,7 @@ public class RewardScreen : MonoBehaviour
     public GameObject rewardScreen;
     public GameObject lossScreen;
     public GameObject finalWin;
+    public Text rewardUnlockedText;
 
     void Start()
     {
@@ -70,5 +71,14 @@ public class RewardScreen : MonoBehaviour
             lossScreen.SetActive(true);
         else if (index == 7)
             finalWin.SetActive(true);
+
+        if(index == 5)
+        {
+            rewardUnlockedText.text = "The rewards have already been acquired.";
+        }
+        else
+        {
+            rewardUnlockedText.text = "A new staff and opponent has been unlocked!";
+        }
     }
 }
