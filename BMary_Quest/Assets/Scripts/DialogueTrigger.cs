@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
+    public float Delay = 0.08f;
     public Text MaryText;
     public Text EnemyText;
+    private string MarysCurrentText;
+    private string EnemysCurrentText;
 
 
     private string[][] MarysGreetings =
@@ -33,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
     private string[][] MaryAttacks =
  {
         new string[] {"This shouldn't be seen"},
-        new string[] {"Out of my way!","Let the ectoplasm flow!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale, like a sheet!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
+        new string[] {"Out of my way!","Let the ectoplasm flow!","Doesn’t look like you’re going to last long!","You feeling light headed?  You look a little pale, like a sheet!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
         new string[] {"Out of my way!","You'll be my source for bone dust","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
         new string[] {"Out of my way!","Let the blood flow!","I feel kind of bad about this","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
         new string[] {"Out of my way!","Let the blood flow, from you!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
@@ -141,38 +143,45 @@ public class DialogueTrigger : MonoBehaviour
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        MaryText.text = MarysGreetings[i][j];
+        //MaryText.text = MarysGreetings[i][j];
+        StartCoroutine(TypeWriterEffect(MarysGreetings[i][j]));
     }
     public void MaryStaffPower()
     {
         int i = DataAcrossScenes.PlayerChosenStaff;
         int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //alternativt så kan man ju bara köra +1 på random.Range efter .GetUpperBound, smidigare osv...men nu kör jag på denna, så får man komma ihåg till nästa.
-        MaryText.text = MaryUsingStaffs[i][j];
+        //MaryText.text = MaryUsingStaffs[i][j];
+        StartCoroutine(TypeWriterEffect(MaryUsingStaffs[i][j]));
     }
     public void MaryCashOut()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryAttacks[i].GetUpperBound(0));
-        MaryText.text = MaryAttacks[i][j];
+        //MaryText.text = MaryAttacks[i][j];
+        StartCoroutine(TypeWriterEffect(MaryAttacks[i][j]));
     }
     public void MaryTakingDamage()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryHurts[i].GetUpperBound(0));
-        MaryText.text = MaryHurts[i][j];
-        
+        //MaryText.text = MaryHurts[i][j];
+        StartCoroutine(TypeWriterEffect(MaryHurts[i][j]));
+
     }
     public void MaryWin()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryWins[i].GetUpperBound(0));
-        MaryText.text = MaryWins[i][j];
+        //MaryText.text = MaryWins[i][j];
+        StartCoroutine(TypeWriterEffect(MaryWins[i][j]));
     }
     public void MaryLoss()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryLoses[i].GetUpperBound(0));
-        MaryText.text = MaryLoses[i][j];
+        //MaryText.text = MaryLoses[i][j];
+        StartCoroutine(TypeWriterEffect(MaryLoses[i][j]));
+
     }
     public void MaryStalemate()
     {
@@ -188,42 +197,67 @@ public class DialogueTrigger : MonoBehaviour
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyGreetings[i][j];
+        //EnemyText.text = EnemyGreetings[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyGreetings[i][j]));
     }
 
     public void EnemyUsingStaff()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyUsingStaffs[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyUsingStaffs[i][j];
+        //EnemyText.text = EnemyUsingStaffs[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyUsingStaffs[i][j]));
     }
 
     public void EnemyAttack()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyAttacking[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyAttacking[i][j];
+        //EnemyText.text = EnemyAttacking[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyAttacking[i][j]));
     }
 
     public void EnemyHurts()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyHurt[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyHurt[i][j];
+        //EnemyText.text = EnemyHurt[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyHurt[i][j]));
     }
 
     public void EnemyLoses()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyLoss[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyLoss[i][j];
+        //EnemyText.text = EnemyLoss[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyLoss[i][j]));
     }
 
     public void EnemyWins()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, EnemyWin[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        EnemyText.text = EnemyWin[i][j];
+        //EnemyText.text = EnemyWin[i][j];
+        StartCoroutine(TypeWriterEffectEnemy(EnemyWin[i][j]));
     }
 
+    IEnumerator TypeWriterEffect(string MarysCurrentText)
+    {
+        Debug.Log("This runs");
+        for (int i = 0; i < MarysCurrentText.Length+1; i++)
+        {
+            MaryText.text = MarysCurrentText.Substring(0, i);
+
+            yield return new WaitForSeconds(Delay);
+        }
+    }
+    IEnumerator TypeWriterEffectEnemy(string EnemysCurrentText)
+    {
+        for (int i = 0; i < EnemysCurrentText.Length + 1; i++)
+        {
+            EnemyText.text = EnemysCurrentText.Substring(0, i);
+
+            yield return new WaitForSeconds(Delay);
+        }
+    }
 }
