@@ -24,9 +24,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         new string[] {"This line is as empty as my soul."},
         new string[] {"Hey, give me back my staff!","Long time no see, Ghastella","Oh boy… you…","No, you can’t borrow any money","Oh no… Ghastella. This will be awkward",""},
-        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senor Boned,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
+        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senor Bones,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
         new string[] {"Naww, it’s a puppy!","What’s that? Little Billy stuck in the well? Show me!","Nice doggy…!","Hey, when I throw you a staff, you’re supposed to retrieve it, not use it against me!","If you let me win I’ll give you a treat!",""},
-        new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweety.",""},
+        new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweetie.",""},
         new string[] {"There you are! Where have you been hiding, Luci?","Hey, I’ve been looking for you!","Don’t be scared, Luci. This will be over with quickly!","Jesus, would it kill you to put a shirt on?","Hit the bricks, Luci. There’s a new Princess of darkness in town!",""}
     };
 
@@ -117,7 +117,7 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"Ay!","I’m going to need two shots of milk for that one.","Bruto!","Hey! Who said you could touch my bones?","You don’t like flowers? What kind of loco broad are you?",""},
         new string[] {"*whimper*","*Bark bark bark!*","*woff!*","*Yelp!*",""},
         new string[] {"Argh!","Don’t spill the little blood I have left, you stupid little girl!","How dare you!","Ouch!","I’ll get you for that one, peasant!",""},
-        new string[] {"Sweet pain!","Do you think you’re hurting me?","Stop this foolishness, girl and join me.","Puny necromancer…","Fun fact; my blood is flammable.Do you want to know the secret to this power?",""}
+        new string[] {"Sweet pain!","Do you think you’re hurting me?","Stop this foolishness, girl, and join me!","Puny necromancer…","Fun fact; my blood is flammable.Do you want to know the secret to this power?",""}
     };
 
     private string[][] EnemyLoss =
@@ -134,7 +134,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         new string[] {"This line is empty and should never be seen"},
         new string[] {"Oh hey, I won!","Holy smokes! I didn’t mean to hurt you that much!","You owe me a drink","W-want to try again?","This was… unexpected",""},
-        new string[] {"And just like that, the great Bloody Mary has now become fertilizer for Senior Bones’ flower garden!","Bested! Oh yeah, did you want to go out for lunch or something?","Don’t mess with me or my flowers again, chica!","Would it be weird of me to ask for a date now?","Don’t feel bad, Mary. You only got totally owned by the power of flowers, tonto!",""},
+        new string[] {"Aha! The great Bloody Mary has now become fertilizer for Senior Bones’ flower garden!","Bested! Oh yeah, did you want to go out for lunch or something?","Don’t mess with me or my flowers again, chica!","Would it be weird of me to ask for a date now?","Don’t feel bad, Mary. You only got totally owned by the power of flowers, tonto!",""},
         new string[] {"*Howl!*","*Chases tail*","*Nap time*",""},
         new string[] {"Unsurprising…","You’re nothing but a clueless little girl, my dear.","And now for a taste test!","Lord, I’m thirsty!","Ah, the crimson water will flow like wine!",""},
         new string[] {"Who would have suspected this outcome, Muahahaha!","I’ll bring you back and destroy you again, Mary!","Now back in line, filthy sinner!","As punishment, you will be my personal plaything for the next few eternities.","Ridiculous display, my sweet daughter. You cannot best me.",""}
