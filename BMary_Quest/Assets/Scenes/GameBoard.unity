@@ -465,7 +465,7 @@ MonoBehaviour:
   cashOutVariable: 0
   cashOutThreshhold: 0
   ownedPieces: 0
-  dialogueTrigger: {fileID: 0}
+  dialogueTrigger: {fileID: 3568027160121143528}
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
