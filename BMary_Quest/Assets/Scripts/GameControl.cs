@@ -438,7 +438,6 @@ public class GameControl : MonoBehaviour
                         rewardScreen.NewReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
-                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {
