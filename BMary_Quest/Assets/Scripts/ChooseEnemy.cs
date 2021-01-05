@@ -53,11 +53,11 @@ public class ChooseEnemy : MonoBehaviour
 
         enemyList = new Sprite[5];
         enemyNameList = new Sprite[5];
-        enemyStaffList = new string[]{ "At the end of the users turn, the user regenerates 2 blood points if the user dealt damage this turn. Using its active ability marks the opponent for that turn with the brimstone mark. Attacking while under the brimstone mark deals damage to yourself as well as your opponent",
+        enemyStaffList = new string[]{ "If the user deals damage, they regenerate 2 blood points at the end of the users turn. Using its active ability marks the opponent for that turn with the brimstone mark. Attacking while under the brimstone mark deals damage to yourself as well as your opponent",
             "Gain one extra mark move. Using its active ability freezes the opponents' staff ability for 1 turn, with a cooldown of 1 turn.", 
-            "Using its active ability, a random owned marked square is marked with a flower which doubles the attack power of attack moves. Lasts for 1 turn, cooldown of 2 turns.", 
-            "Using its active ability turns all owned marks into the opponents marks and vice versa. Also makes the user bark like a dog.", 
-            "Half of the blood point drained from the opponents blood pool is added to the users' blood points. Using its active ability renders one random square on the board inaccessible for 2 turns and has a cooldown of 1 turn."};
+            "Using its active ability, a random owned marked square is marked with a flower - which doubles the attack power of attack moves. Lasts for 1 turn, cooldown of 2 turns.", 
+            "Using its active ability turns all owned marks into the opponents marks and vice versa.", 
+            "Half of the blood points drained from the opponents blood pool is added to the users' blood points. Using its active ability renders one random square inaccessible for 2 turns and has a cooldown of 1 turn."};
         enemyStaffNameList = new string[]{"Hell Staff", "Pumpkin Staff", "Skeleton Staff", "Moon Staff", "Dark Night Staff"};
 
         enemyList[0] = lucifer;
