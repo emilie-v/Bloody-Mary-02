@@ -25,8 +25,8 @@ public class DialogueTrigger : MonoBehaviour
     private string[][] MarysGreetings =
     {
         new string[] {"This line is as empty as my soul."},
-        new string[] {"Hey, give me back my staff!","Long time no see, Ghastella","Oh boy… you…","No, you can’t borrow any money","Oh no… Ghastella. This will be awkward",""},
-        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senior Bones,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
+        new string[] {"Hey, give me back my staff!","Long time no see, Ghastella.","Oh boy… you…","No, you can’t borrow any money.","Oh no… Ghastella. This will be awkward...",""},
+        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senior Bones, I presume?","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
         new string[] {"Naww, it’s a puppy!","What’s that? Little Billy stuck in the well? Show me!","Nice doggy…!","Hey, when I throw you a staff, you’re supposed to retrieve it, not use it against me!","If you let me win I’ll give you a treat!",""},
         new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweetie.",""},
         new string[] {"There you are! Where have you been hiding, Luci?","Hey, I’ve been looking for you!","Don’t be scared, Luci. This will be over with quickly!","Jesus, would it kill you to put a shirt on?","Hit the bricks, Luci. There’s a new Princess of darkness in town!",""}
@@ -34,20 +34,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] MaryUsingStaffs =
     {
-        new string[] {"Blood Magic!","Reflectga","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
-        new string[] {"Time Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""}, //Generic staff usage atm, but if we want we can change it to reflect *haha* what staff she's using.
-        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
-        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
-        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""},
-        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works","Oops, did I do that?",""}
+        new string[] {"Blood Magic!","Reflectga!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""},
+        new string[] {"Time Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""}, //Generic staff usage atm, but if we want we can change it to reflect *haha* what staff she's using.
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""},
+        new string[] {"Blood Magic!","I wonder what this will do…!","I’m the most powerful witch alive!","Hope this old thing still works...","Oops, did I do that?",""}
     };
 
     private string[][] MaryAttacks =
     {
         new string[] {"This shouldn't be seen"},
         new string[] {"Out of my way!","Let the ectoplasm flow!","Doesn’t look like you’re going to last long!","You feeling light headed?  You look a little pale, like a sheet!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
-        new string[] {"Out of my way!","You'll be my source for bone dust","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
-        new string[] {"Out of my way!","Let the blood flow!","I feel kind of bad about this","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","You'll be my source for bone dust!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
+        new string[] {"Out of my way!","Let the blood flow!","I feel kind of bad about this...","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
         new string[] {"Out of my way!","Let the blood flow, from you!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
         new string[] {"Out of my way!","Let the blood flow!","Mhm! Sweet crimson!","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""}
     };
@@ -56,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         new string[] {"This shouldn't be seen"},
         new string[] {"Agh!", "YOU DARE!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},  //Generic getting hurt message atm.
-        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I'll carve your rib bones into flutes", ""},
+        new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I'll carve your rib bones into flutes!", ""},
         new string[] {"Agh!", "Bad dog, BAD DOG", "You’re spilling all my blood, bad pet!", "Oh no…!", "Okey, I won’t forget that one.", "I hope you don't have rabies!", ""},
         new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},
         new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""}
@@ -64,7 +64,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] MaryWins =
     {
-        new string[] {"This, was just the beginning","Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
+        new string[] {"This, was just the beginning","Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you!...", ""},
         new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},  //Generic victory message atm.
         new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
         new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
@@ -74,12 +74,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private string[][] MaryLoses =
     {
-        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
-        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},  //Generic loss message atm.
-        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
-        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
-        new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
-        new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""}
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""},
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""},  //Generic loss message atm.
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""},
+        new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""},
+        new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""},
+        new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over...", ""}
     };
     
     private string[][] EnemyGreetings =
@@ -105,10 +105,10 @@ public class DialogueTrigger : MonoBehaviour
     private string[][] EnemyAttacking =
     {
         new string[] {"This line is empty and should never be seen"},
-        new string[] {"Hope you won’t get too hurt","Oh, SORRY!","That must have hurt. I’m terribly sorry!","Heavens, Mary! You’re bleeding!","Man, I wish I could bleed…",""},
+        new string[] {"Hope you won’t get too hurt!","Oh, SORRY!","That must have hurt. I’m terribly sorry!","Heavens, Mary! You’re bleeding!","Man, I wish I could bleed…",""},
         new string[] {"Taste the power of flowers, tonto!","Don’t you know flesh is weak?","I love the smell of flowers in the morning!","If I kill you now, want to hang out later?","You don’t need that pesky flesh anyways.",""},
         new string[] {"*Growl*","*Howl*","*Pounce*","*Bark bark!*",""},
-        new string[] {"Let me have a taste.","Mhm! Fresh blood.","Could you gather any spilt blood in a cup, please?","Your blood looks delicious!","*Sigh* I remember when I used to bleed.",""},
+        new string[] {"Let me have a taste.","Mhm! Fresh blood.","Could you gather any spilt blood in a cup, please?","Your blood looks delicious!","*Sigh* I remember when I used to bleed...",""},
         new string[] {"Pain is pleasure, my sweet.","You’ve already lost, you just don’t know it yet…","No dishonor in giving up, girl.","What’s wrong, Mary? Don’t you want to live forever?","I can make the pain go away, Mary…",""}
     };
 
@@ -129,13 +129,13 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"No! Don’t step on the flowers, tonto!","I’m going to need lots and lots of milk to repair this damage.","Stop kicking me, I’m a skeleton! I’m already dead!","This went a lot smoother in my head…","Estupendo…",""},
         new string[] {"*Sad howl*","*Whimper…*","*Sniff-…*","*Tucks tail between legs*",""},
         new string[] {"Wha-what happened?","Oh… no…","Back to the grave it is…","I’ll be back…","I am a son of darkness! You can’t do this to me!",""},
-        new string[] {"This… is… impossible!","Mary, think this through!","What have you done?!","I will have my revenge…","My staff! My power! NO!",""}
+        new string[] {"This… is… impossible!","Mary, think this through!","What have you done?!","I will have my revenge…","My staff! My power! NO!!",""}
     };
 
     private string[][] EnemyWin =
     {
         new string[] {"This line is empty and should never be seen"},
-        new string[] {"Oh hey, I won!","Holy smokes! I didn’t mean to hurt you that much!","You owe me a drink","W-want to try again?","This was… unexpected",""},
+        new string[] {"Oh hey, I won!","Holy smokes! I didn’t mean to hurt you that much!","You owe me a drink","W-want to try again?","This was… unexpected...",""},
         new string[] {"Aha! The great Bloody Mary has now become fertilizer for Senior Bones’ flower garden!","Bested! Oh yeah, did you want to go out for lunch or something?","Don’t mess with me or my flowers again, chica!","Would it be weird of me to ask for a date now?","Don’t feel bad, Mary. You only got totally owned by the power of flowers, tonto!",""},
         new string[] {"*Howl!*","*Chases tail*","*Nap time*",""},
         new string[] {"Unsurprising…","You’re nothing but a clueless little girl, my dear.","And now for a taste test!","Lord, I’m thirsty!","Ah, the crimson water will flow like wine!",""},
@@ -191,7 +191,7 @@ public class DialogueTrigger : MonoBehaviour
     public void MaryStalemate()
     {
         //MaryText.text = "Using a mirror power on me...how qaint";
-        StartCoroutine(TypeWriterEffect("Using a mirror power on me...how quaint."));
+        StartCoroutine(TypeWriterEffect("Using a mirror power on me... how quaint."));
     }
 
     public void EnemyStalemate()
