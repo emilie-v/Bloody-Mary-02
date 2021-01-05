@@ -114,8 +114,6 @@ public class GameControl : MonoBehaviour
         pumpkinStaff = GameObject.Find("PController").GetComponent<PumpkinStaff>();
         mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
         playerTurn = 0;
-
-        levelLoaderTransition.transition.SetBool("Close", false);
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;
