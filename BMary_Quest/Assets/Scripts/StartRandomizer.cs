@@ -13,6 +13,7 @@ public class StartRandomizer : MonoBehaviour
     
     public Sprite maryCard;
     public Sprite enemysCard;
+    public DialogueTrigger dialogueTrigger;
 
     private Transform playerCard;
     private Transform enemyCard;
@@ -63,7 +64,9 @@ public class StartRandomizer : MonoBehaviour
         gameControl.UpdateBloodPoints();
         gameControl.UpdateMarkedPiece();
         gameControl.Staff();
-        
+        dialogueTrigger.MaryGreeting();
+        dialogueTrigger.EnemyGreeting();
+
         for (int i = 0; i < Random.Range(8, 13); i++)
         {
             yield return new WaitForSeconds(0.1f * i);

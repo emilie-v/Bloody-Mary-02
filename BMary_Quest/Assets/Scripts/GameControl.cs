@@ -98,6 +98,7 @@ public class GameControl : MonoBehaviour
         enemyMaxHealth = 20;
         playerMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary");
         enemyMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
+ 
     }
 
     public void Start()
@@ -125,8 +126,7 @@ public class GameControl : MonoBehaviour
         pumpkinStaff.PumpkinStaffPassiveAbility();
 
         lastMove.staffUsed = true;
-        dialogueTrigger.MaryGreeting();
-        dialogueTrigger.EnemyGreeting();
+
     }
 
     private void Update()
@@ -151,6 +151,7 @@ public class GameControl : MonoBehaviour
         if (firstTurn)
         {
             firstTurn = false;
+
         }
         if (playerTurn == (int)Player_Turn.mary) 
         {
