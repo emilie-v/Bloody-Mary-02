@@ -20,11 +20,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioManager2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioManager2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameBoard.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BloodPointsBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BloodPointsBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/InfoButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/InfoButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterAnimations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterAnimations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataAcrossScenes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataAcrossScenes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAnimations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManagerMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManagerMainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelLoaderTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelLoaderTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaryDialogue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaryDialogue.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Owner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PoseAnimation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PoseAnimation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundAssets.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundAssets.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/HellStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/HellStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SecondBaseStaff.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SecondBaseStaff.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/StaffManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/StaffManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +91,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/d5/9f53537e/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/661E3775-59A9-4698-8BFE-2B8CA98F93BC/87/3c7d65f4/IPointerUpHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/a7/782ddedc/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/c9/0180ebe2/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/58/f2f9453c/Sprite.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99D9AB48-AE7D-46A6-AD56-DF1D8D1589ED/1f/bc5beb86/AudioListener.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -49,43 +103,51 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Boardpiece.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BaseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SecondBaseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MirrorStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager_MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaffManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChooseStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/HellStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DataAcrossScenes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/StaffManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManagerMainMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/ButtonBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/InfoButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/HellStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MirrorStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/StaffManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMusic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Boardpiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterAnimations.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DataAcrossScenes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAnimations.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelLoaderTransition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RewardScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spelplan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StartRandomizer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TurnStartText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManagerMainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
       </list>
     </option>
   </component>

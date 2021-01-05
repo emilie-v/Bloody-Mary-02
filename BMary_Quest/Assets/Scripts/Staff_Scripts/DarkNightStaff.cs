@@ -7,7 +7,6 @@ public class DarkNightStaff : MonoBehaviour
 {
     public GameControl gameControl;
     public Button abilityButton;
-    public LastMove lastMove;
     [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int bricksToLock = 1;
@@ -18,13 +17,10 @@ public class DarkNightStaff : MonoBehaviour
 
     void Start()
     {
-        //Find player button. 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
-        //Connect button with function.
         abilityButton.onClick.AddListener(DarkNightStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
     }
 
    public void DarkNightStaffPassiveAbility()
@@ -33,7 +29,6 @@ public class DarkNightStaff : MonoBehaviour
         {
             gameControl.enemyHealth += (gameControl.enemyTempPoints + 1) / 2;
         }
-
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night && gameControl.playerTurn == (int)Player_Turn.mary)
         {
             gameControl.marysHealth += (gameControl.marysTempPoints + 1) / 2;

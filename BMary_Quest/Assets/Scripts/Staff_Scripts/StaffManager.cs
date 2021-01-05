@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 public class StaffManager : MonoBehaviour
 {
-    //Index for playerSelectedStaff. 
     public static int playerSelectedStaff;
 
-    Sprite[] selectedStaffList;
+    private Sprite[] selectedStaffList;
 
-    Sprite selectedMirrorStaff;
-    Sprite selectedPumpkinStaff;
-    Sprite selectedSkeletonStaff;
-    Sprite selectedMoonStaff;
-    Sprite selectedDarkestNightStaff;
-    Sprite selectedHellStaff;
+    private Sprite selectedMirrorStaff;
+    private Sprite selectedPumpkinStaff;
+    private Sprite selectedSkeletonStaff;
+    private Sprite selectedMoonStaff;
+    private Sprite selectedDarkestNightStaff;
+    private Sprite selectedHellStaff;
 
     public Image currentSelectedStaff;
     void Start()
@@ -71,10 +70,6 @@ public class StaffManager : MonoBehaviour
             DataAcrossScenes.PlayerChosenStaff = (int)Chosen_Staff.hell;
 
             currentSelectedStaff.sprite = selectedStaffList[playerSelectedStaff];
-        }
-        else
-        {
-            Debug.LogError("No staff selected!");
         }
     }
 }

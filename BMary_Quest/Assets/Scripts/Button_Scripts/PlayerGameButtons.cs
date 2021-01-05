@@ -37,15 +37,20 @@ public class PlayerGameButtons : MonoBehaviour
             {
                 for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                 {
-                    if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                    if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 
+                        && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                     {                    
                         marysTP++;                    
                     }
                 }
             }
+            
             marysTP++; //Startmarker
             marysTP = marysTP * gameControl.maryDamageMultiplier; //Skeletonmark
-            GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey + "\nCurrent Damage: " + marysTP;
+            
+            GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text 
+                = "Hotkey: " + gameControl.playerCashOutHotkey + "\nCurrent Damage: " + marysTP;
+            
             cashoutButtonInfo.SetActive(true);
         }
         else if (gameObject == endTurnButton)

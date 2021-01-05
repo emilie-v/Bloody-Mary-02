@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class TurnStartText : MonoBehaviour
 {
     [SerializeField] private GameControl gameControl;
-
     [SerializeField] private Text turnStartText;
+    
     public IEnumerator TurnStart()
     {
         yield return new WaitForSeconds(0);

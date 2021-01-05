@@ -7,22 +7,17 @@ public class PumpkinStaff : MonoBehaviour
 {
     public GameControl gameControl;
     public Button abilityButton;
-    public LastMove lastMove;
     [SerializeField] private DialogueTrigger dialogueTrigger;
     public int staffCooldown = 2;
 
     private int movesPerTurn = 3;
-    
 
     void Awake()
     {
-        //Find player button. 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
-        //Connect button with function.
         abilityButton.onClick.AddListener(PumpkinStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
     }
 
     public void PumpkinStaffPassiveAbility()

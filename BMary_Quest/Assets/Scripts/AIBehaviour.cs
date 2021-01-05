@@ -219,7 +219,6 @@ public class AIBehaviour : MonoBehaviour
             }
         }
         
-        
         if (!gameControl.staffUsed)
         {           
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin && gameControl.enemyStaffCooldown == 0 && gameControl.playerStaffCooldown > 0)
@@ -244,10 +243,11 @@ public class AIBehaviour : MonoBehaviour
             }
             else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.enemyStaffCooldown == 0)
             {
-                hellstaff.hellStaffActiveAbility();
+                hellstaff.HellStaffActiveAbility();
                 dialogueTrigger.EnemyUsingStaff();
             }
         }
+        
         useStaffDone = true;
     }
 
@@ -269,6 +269,7 @@ public class AIBehaviour : MonoBehaviour
             gameControl.CashOut();
             cashOutVariable = cashOutThreshhold;
         }
+        
         cashOutDone = true;
         ownedPieces = 0;
     }

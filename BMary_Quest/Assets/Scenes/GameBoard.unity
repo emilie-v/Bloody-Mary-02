@@ -407,10 +407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd941880ac614994fadb914e8e3dd28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 3568027160121143521}
-  dialogueTrigger: {fileID: 3568027160121143534}
+  dialogueTrigger: {fileID: 3568027160121143528}
   rewardScreen: {fileID: 1324767616}
-  poseAnimation: {fileID: 0}
   characterAnimations: {fileID: 0}
   enemyAnimations: {fileID: 0}
   guiManager: {fileID: 452916885}
@@ -443,8 +441,6 @@ MonoBehaviour:
   enemyTempPoints: 0
   playerBloodPointsText: {fileID: 1006340443}
   enemyBloodPointsText: {fileID: 590074179}
-  playerBloodPointsFilling: {fileID: 3568027160121143524}
-  enemyBloodPointsFilling: {fileID: 3568027160121143523}
   playerMarkButton: {fileID: 1877827183}
   enemyMarkButton: {fileID: 320736648}
   playerCashOutButton: {fileID: 3568027160121143520}
@@ -469,7 +465,7 @@ MonoBehaviour:
   cashOutVariable: 0
   cashOutThreshhold: 0
   ownedPieces: 0
-  dialogueTrigger: {fileID: 3568027160121143534}
+  dialogueTrigger: {fileID: 0}
   spelplan: {fileID: 773677183}
   gameControl: {fileID: 1324767608}
   hellstaff: {fileID: 1324767612}
@@ -509,8 +505,6 @@ MonoBehaviour:
   maryCashedOutThisTurn: 0
   enemyHellStaffActivePower: 0
   playerHellStaffActivePower: 0
-  enemyDarkNightStaffActivePower: 0
-  playerDarkNightStaffActivePower: 0
   lastMovesX: 0600000006000000060000000600000006000000
   lastMovesY: 0600000006000000060000000600000006000000
 --- !u!114 &1324767612
@@ -544,7 +538,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
-  lastMove: {fileID: 0}
   dialogueTrigger: {fileID: 3568027160121143528}
   bricksToLock: 1
   bricksToLockLeft: 1
@@ -563,12 +556,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
-  owner: {fileID: 0}
   spelplan: {fileID: 0}
   lastMove: {fileID: 0}
   dialogueTrigger: {fileID: 3568027160121143528}
-  lastMovesX: 
-  lastMovesY: 
   mirroredX: 0600000006000000060000000600000006000000
   mirroredY: 0600000006000000060000000600000006000000
   staffCooldown: 1
@@ -586,7 +576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
-  lastMove: {fileID: 0}
   dialogueTrigger: {fileID: 3568027160121143528}
   staffCooldown: 2
 --- !u!114 &1324767616
@@ -620,7 +609,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
-  lastMove: {fileID: 0}
   dialogueTrigger: {fileID: 3568027160121143528}
   staffCooldown: 2
 --- !u!114 &1324767618
@@ -637,7 +625,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameControl: {fileID: 0}
   abilityButton: {fileID: 0}
-  lastMove: {fileID: 0}
   dialogueTrigger: {fileID: 3568027160121143528}
   piecesToMark: 1
   piecesToMarkLeft: 1
@@ -884,6 +871,50 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1324767608}
+    - target: {fileID: 499930994, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 499930995, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 499930995, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 499930995, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 499930995, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187310, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 620187311, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 953807058, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: aiBehaviour
       value: 
@@ -1075,6 +1106,11 @@ PrefabInstance:
       propertyPath: mirrorStaff
       value: 
       objectReference: {fileID: 1324767614}
+    - target: {fileID: 3568027160121143534, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: Delay
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 3884424061636178218, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: spelplan
@@ -1126,6 +1162,12 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8ff218c5c0947d944979a51cd95aee1a, type: 2}
+    - target: {fileID: 7000075719101529542, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2d7fb7fe353bb3d4d993acb6eaa77b1f,
+        type: 3}
     - target: {fileID: 7179506105214888925, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
         type: 3}
       propertyPath: m_Sprite
@@ -1167,7 +1209,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1324767608}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8241430186529781817, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
 --- !u!114 &3568027160121143519 stripped
 MonoBehaviour:
@@ -1184,42 +1227,6 @@ MonoBehaviour:
 --- !u!114 &3568027160121143520 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1038446340, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3568027160121143521 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3568027160121143525, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e7b378e7ec7a4428669ed87fa78e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3568027160121143523 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6373953937134693075, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3568027160121143524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 419697109348309993, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
     type: 3}
   m_PrefabInstance: {fileID: 3568027160121143518}
   m_PrefabAsset: {fileID: 0}
@@ -1265,20 +1272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3568027160121143534 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8241430186529781817, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3568027160121143518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaryText: {fileID: 3568027160121143533}
-  EnemyText: {fileID: 3568027160121143530}
 --- !u!1 &3568027160121143535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7121495000230469414, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,

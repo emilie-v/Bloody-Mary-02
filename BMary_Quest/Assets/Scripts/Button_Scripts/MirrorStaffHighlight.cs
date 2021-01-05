@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MirrorStaffHighlight : MonoBehaviour,
-    IPointerEnterHandler,
-    IPointerExitHandler
+public class MirrorStaffHighlight : MonoBehaviour
+    , IPointerEnterHandler
+    , IPointerExitHandler
 {
     public MirrorStaff mirrorStaff;
     public LastMove lastmove;
@@ -42,7 +42,8 @@ public class MirrorStaffHighlight : MonoBehaviour,
                     {
                         if(mirrorStaff.mirroredX[i] < 5 && mirrorStaff.mirroredY[i] < 5)
                         {
-                            spelplan.GetComponent<Spelplan>().gridArray[mirrorStaff.mirroredX[i], mirrorStaff.mirroredY[i]].GetComponent<SpriteRenderer>().color = new Color(0.8f, 1f, 0.8f, 1f);
+                            spelplan.GetComponent<Spelplan>().gridArray[mirrorStaff.mirroredX[i], mirrorStaff.mirroredY[i]].GetComponent<SpriteRenderer>().color 
+                                = new Color(0.8f, 1f, 0.8f, 1f);
                         }
                     }
                 }

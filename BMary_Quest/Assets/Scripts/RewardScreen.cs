@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class RewardScreen : MonoBehaviour
 {
     Sprite[] staffRewardList;
-    //TODO change countReward to his staff
     Sprite pumpkinReward;
     Sprite skeletonReward;
     Sprite moonReward;
@@ -49,7 +48,7 @@ public class RewardScreen : MonoBehaviour
         staffRewardList[4] = hellReward;
         staffRewardList[5] = replayReward;
         staffRewardList[6] = replayReward;
-        staffRewardList[7] = replayReward;//Placeholder
+        staffRewardList[7] = replayReward;
         opponentRewardList = new Sprite[8];
         opponentRewardList[0] = bonesReward;
         opponentRewardList[1] = umbralinaReward;
@@ -57,10 +56,10 @@ public class RewardScreen : MonoBehaviour
         opponentRewardList[3] = luciferReward;
         opponentRewardList[5] = replayReward;
         opponentRewardList[6] = replayReward;
-        opponentRewardList[7] = replayReward;//placeholder
+        opponentRewardList[7] = replayReward;
     }
 
-    public void newReward(int index)
+    public void NewReward(int index)
     {
         currentStaffReward.sprite = staffRewardList[index];
         currentOpponentReward.sprite = opponentRewardList[index];
@@ -71,8 +70,5 @@ public class RewardScreen : MonoBehaviour
             lossScreen.SetActive(true);
         else if (index == 7)
             finalWin.SetActive(true);
-
     }
-
-
 }

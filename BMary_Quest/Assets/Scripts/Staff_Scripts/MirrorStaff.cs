@@ -8,13 +8,10 @@ public class MirrorStaff : MonoBehaviour
 {
     public GameControl gameControl;
     public Button abilityButton;
-    public Owner owner;
     public GameObject spelplan;
     public LastMove lastMove;
     [SerializeField] private DialogueTrigger dialogueTrigger;
-
-    public int[] lastMovesX;
-    public int[] lastMovesY;
+    
     public int[] mirroredX = new int[5] {6,6,6,6,6};
     public int[] mirroredY = new int[5]{6,6,6,6,6};
 
@@ -27,16 +24,11 @@ public class MirrorStaff : MonoBehaviour
 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
 
-        abilityButton.onClick.AddListener(staffPower);
+        abilityButton.onClick.AddListener(StaffPower);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-
-       /* if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
-        {
-            gameControl.marysMaxHealth = 25;
-            gameControl.marysHealth = 25;
-        }*/
     }
+    
     private void Start()
     {
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
@@ -62,7 +54,7 @@ public class MirrorStaff : MonoBehaviour
         }
     }
 
-    void staffPower()
+    void StaffPower()
     {
         if (!gameControl.staffUsed && DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror && gameControl.playerStaffCooldown <= 0)
         {
@@ -71,7 +63,8 @@ public class MirrorStaff : MonoBehaviour
                 //Debug.Log("MirroredX: " + mirroredX + "MirroredY: " + mirroredY);
                 if (mirroredX[i] <5)
                 {
-                    if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
+                    if (spelplan.GetComponent<Spelplan>().gridArray[mirroredX[i], mirroredY[i]].GetComponent<Owner>().owned == (int)Tile_State.empty 
+                        && gameControl.playerTurn == 0 && lastMove.staffUsed == false)
                     {
                         if(mirroredX[i] < 5 && mirroredY[i] < 5)
                         {
@@ -102,6 +95,7 @@ public class MirrorStaff : MonoBehaviour
             }
         }
     }
+    
     void resetMirrorArray()
     {
     mirroredX = new int[5] {6,6,6,6,6}; 

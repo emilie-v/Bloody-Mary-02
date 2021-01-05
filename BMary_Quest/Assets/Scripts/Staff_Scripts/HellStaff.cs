@@ -12,19 +12,16 @@ public class HellStaff : MonoBehaviour
 
     public int staffCooldown = 2;
     
-
     void Start()
     {
-        //Find player button. 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
-        //Connect button with function.
-        abilityButton.onClick.AddListener(hellStaffActiveAbility);
+        abilityButton.onClick.AddListener(HellStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
     }
 
-    public void hellStaffPassiveAbility()
+    public void HellStaffPassiveAbility()
     {
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
         {
@@ -38,7 +35,7 @@ public class HellStaff : MonoBehaviour
                 gameControl.marysHealth += 2;
         }
     }
-    public void hellStaffActiveAbility()
+    public void HellStaffActiveAbility()
     {
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell && gameControl.playerTurn == (int)Player_Turn.enemy && gameControl.enemyStaffCooldown <= 0)
         {

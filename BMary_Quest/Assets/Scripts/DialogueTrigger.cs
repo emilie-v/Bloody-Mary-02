@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public float Delay = 0.08f;
+    public float Delay;
     public Text MaryText;
     public Text EnemyText;
     private string MarysCurrentText;
@@ -41,7 +41,7 @@ public class DialogueTrigger : MonoBehaviour
     };
 
     private string[][] MaryAttacks =
- {
+    {
         new string[] {"This shouldn't be seen"},
         new string[] {"Out of my way!","Let the ectoplasm flow!","Doesn’t look like you’re going to last long!","You feeling light headed?  You look a little pale, like a sheet!",""}, //Generic attack message atm, but if we want we can change it to match the opponent here.
         new string[] {"Out of my way!","You'll be my source for bone dust","Doesn’t look like you’re going to last long!","You feeling light headed? You look a little pale!",""},
@@ -51,7 +51,7 @@ public class DialogueTrigger : MonoBehaviour
     };
 
     private string[][] MaryHurts =
-{
+    {
         new string[] {"This shouldn't be seen"},
         new string[] {"Agh!", "YOU DARE!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I’ll get you back, you loser!", ""},  //Generic getting hurt message atm.
         new string[] {"Agh!", "What the hell, man!?", "You’re spilling all my blood, you nerd!", "Oh no…!", "Okey, I won’t forget that one.", "I'll carve your rib bones into flutes", ""},
@@ -61,7 +61,7 @@ public class DialogueTrigger : MonoBehaviour
     };
 
     private string[][] MaryWins =
-{
+    {
         new string[] {"This, was just the beginning","Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
         new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},  //Generic victory message atm.
         new string[] {"Like there was any doubt…!","Would you believe it if I said I knew I was going to win?","Loser!","Now get out of my way. I’m on a quest!","I’ll take that staff, please and thank you", ""},
@@ -71,7 +71,7 @@ public class DialogueTrigger : MonoBehaviour
     };
 
     private string[][] MaryLoses =
-{
+    {
         new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
         new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},  //Generic loss message atm.
         new string[] {"No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
@@ -79,9 +79,7 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""},
         new string[] {"I'll See you in Hell.....again","No no no!","Okey, fine. You got me.","This doesn’t make you better than me!","I wasn’t even trying.","This game sucks…", "Game over man, Game Over", ""}
     };
-
-
-    //lots of jagged arrays, order of enemies, 0:Luci, 1:Ghastella, 2:Senor B 3:Umbra 4: Count not-dracula  
+    
     private string[][] EnemyGreetings =
     {
         new string[] {"This line is empty and should never be seen"},
@@ -142,58 +140,51 @@ public class DialogueTrigger : MonoBehaviour
         new string[] {"Who would have suspected this outcome, Muahahaha!","I’ll bring you back and destroy you again, Mary!","Now back in line, filthy sinner!","As punishment, you will be my personal plaything for the next few eternities.","Ridiculous display, my sweet daughter. You cannot best me.",""}
     };
 
-
-
-
-    //ok, vi har, greetings/staff power/Cashout/Taking damage/ victory / loss / stalemate
-
     public void MaryGreeting()
     {
         characterAnimations.animator.SetTrigger("Smiling");
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //MaryText.text = MarysGreetings[i][j];
+        int j = Random.Range(0, MarysGreetings[i].GetUpperBound(0));
         StartCoroutine(TypeWriterEffect(MarysGreetings[i][j]));
     }
+    
     public void MaryStaffPower()
     {
         enemyAnimations.animator.SetTrigger("Scared");
         int i = DataAcrossScenes.PlayerChosenStaff;
-        int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0)); //alternativt så kan man ju bara köra +1 på random.Range efter .GetUpperBound, smidigare osv...men nu kör jag på denna, så får man komma ihåg till nästa.
-        //MaryText.text = MaryUsingStaffs[i][j];
+        int j = Random.Range(0, MaryUsingStaffs[i].GetUpperBound(0));
         StartCoroutine(TypeWriterEffect(MaryUsingStaffs[i][j]));
     }
+    
     public void MaryCashOut()
     {
         characterAnimations.animator.SetTrigger("Smiling");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryAttacks[i].GetUpperBound(0));
-        //MaryText.text = MaryAttacks[i][j];
         StartCoroutine(TypeWriterEffect(MaryAttacks[i][j]));
     }
+    
     public void MaryTakingDamage()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryHurts[i].GetUpperBound(0));
-        //MaryText.text = MaryHurts[i][j];
         StartCoroutine(TypeWriterEffect(MaryHurts[i][j]));
-
     }
+    
     public void MaryWin()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryWins[i].GetUpperBound(0));
-        //MaryText.text = MaryWins[i][j];
         StartCoroutine(TypeWriterEffect(MaryWins[i][j]));
     }
+    
     public void MaryLoss()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryLoses[i].GetUpperBound(0));
-        //MaryText.text = MaryLoses[i][j];
         StartCoroutine(TypeWriterEffect(MaryLoses[i][j]));
-
     }
+    
     public void MaryStalemate()
     {
         MaryText.text = "Using a mirror power on me...how qaint";
@@ -208,8 +199,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyGreetings[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyGreetings[i][j];
+        int j = Random.Range(0, EnemyGreetings[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyGreetings[i][j]));
     }
 
@@ -217,8 +207,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         characterAnimations.animator.SetTrigger("Scared");
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyUsingStaffs[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyUsingStaffs[i][j];
+        int j = Random.Range(0, EnemyUsingStaffs[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyUsingStaffs[i][j]));
     }
 
@@ -226,16 +215,14 @@ public class DialogueTrigger : MonoBehaviour
     {
         enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyAttacking[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyAttacking[i][j];
+        int j = Random.Range(0, EnemyAttacking[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyAttacking[i][j]));
     }
 
     public void EnemyHurts()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyHurt[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyHurt[i][j];
+        int j = Random.Range(0, EnemyHurt[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyHurt[i][j]));
     }
 
@@ -243,22 +230,19 @@ public class DialogueTrigger : MonoBehaviour
     {
         enemyAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyLoss[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyLoss[i][j];
+        int j = Random.Range(0, EnemyLoss[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyLoss[i][j]));
     }
 
     public void EnemyWins()
     {
         int i = DataAcrossScenes.EnemyChosenStaff;
-        int j = Random.Range(0, EnemyWin[i].GetUpperBound(0)); //glöm inte att lägga till en tom string på arrayen då random range är icke-inklusiv på upper range när det är ints! 
-        //EnemyText.text = EnemyWin[i][j];
+        int j = Random.Range(0, EnemyWin[i].GetUpperBound(0)); 
         StartCoroutine(TypeWriterEffectEnemy(EnemyWin[i][j]));
     }
 
-    IEnumerator TypeWriterEffect(string MarysCurrentText)
+    private IEnumerator TypeWriterEffect(string MarysCurrentText)
     {
-        Debug.Log("This runs");
         for (int i = 0; i < MarysCurrentText.Length+1; i++)
         {
             MaryText.text = MarysCurrentText.Substring(0, i);
@@ -266,7 +250,8 @@ public class DialogueTrigger : MonoBehaviour
             yield return new WaitForSeconds(Delay);
         }
     }
-    IEnumerator TypeWriterEffectEnemy(string EnemysCurrentText)
+    
+    private IEnumerator TypeWriterEffectEnemy(string EnemysCurrentText)
     {
         for (int i = 0; i < EnemysCurrentText.Length + 1; i++)
         {

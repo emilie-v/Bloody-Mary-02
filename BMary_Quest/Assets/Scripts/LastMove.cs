@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class LastMove : MonoBehaviour
 {
-    public bool staffUsed = false;
-    public bool enemyCashedOutThisTurn = false;
-    public bool maryCashedOutThisTurn = false;
+    public bool staffUsed;
+    public bool enemyCashedOutThisTurn;
+    public bool maryCashedOutThisTurn;
 
-    public bool enemyHellStaffActivePower = false;
-    public bool playerHellStaffActivePower = false;
-
-    public bool enemyDarkNightStaffActivePower = false;
-    public bool playerDarkNightStaffActivePower = false;
+    public bool enemyHellStaffActivePower;
+    public bool playerHellStaffActivePower;
 
     public int[] lastMovesX = new int[5] {6,6,6,6,6};
     public int[] lastMovesY = new int[5] {6,6,6,6,6};

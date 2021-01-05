@@ -5,23 +5,22 @@ using UnityEngine;
 
 public class Boardpiece : MonoBehaviour
 {
-    SpriteRenderer piece;
-    SpriteRenderer markedPiece;
+    private SpriteRenderer piece;
+    private SpriteRenderer markedPiece;
     public Sprite mary;
     public Sprite enemys;
     public Sprite nothing;
 
-    Sprite enemyStarter;
-    Sprite maryStarter;
+    private Sprite enemyStarter;
+    private Sprite maryStarter;
 
-    Sprite locked;
-    Sprite skeletonMark;
+    private Sprite locked;
+    private Sprite skeletonMark;
 
     private SpriteRenderer tile;
 
     private GameControl gameControl;
 
-    // Start is called before the first frame update
     void Start()
     {
         piece = GetComponent<SpriteRenderer>();
@@ -59,7 +58,6 @@ public class Boardpiece : MonoBehaviour
         skeletonMark = Resources.Load<Sprite>("Sprites/Marks/SenorBones_Staff_Ability");
     }
 
-    // Update is called once per frame
     public void Update()
     {
         if (GetComponentInParent<Owner>().owned == (int)Tile_State.empty)

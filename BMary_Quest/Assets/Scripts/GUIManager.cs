@@ -8,9 +8,6 @@ using UnityEngine.SceneManagement;
 public class GUIManager : MonoBehaviour
 {
     public GameObject menuTab;
-    public GameObject closeMenuTab;
-    public GameObject restartTab;
-    public GameObject exitGame;
     public GameObject lossScreen;
 
     private Sprite luciferSprite;
@@ -18,7 +15,6 @@ public class GUIManager : MonoBehaviour
     private Sprite senorBonesSprite;
     private Sprite umbralinaSprite;
     private Sprite theCountSprite;
-    
     
     [SerializeField] private AIBehaviour aiBehaviour;
     
@@ -181,12 +177,6 @@ public class GUIManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void ExitGameButton()
-    {
-        SoundManager.Instance.LockedWarningPopUpSound();
-        Application.Quit();
-    }
-    
     private void HotKeys()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

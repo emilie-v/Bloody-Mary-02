@@ -12,16 +12,16 @@ public class MouseBehaviour : MonoBehaviour
     public Texture2D baseCursor;
     public Texture2D hoverCursor;
     public Texture2D markerCursor;
-    public Texture2D staffCursor;
     public GameControl gameControl;
 
     private bool cursorNotBase;
+    
     private void Start()
     {
         baseCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Base");
         hoverCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Hover");
         markerCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Marker");
-        staffCursor = (Texture2D)Resources.Load("Sprites/GUI/GUI_Mouse/Mouse_Staff");
+        
         if (SceneManager.GetActiveScene().name == "GameBoard")
         {
             gameControl = GameObject.Find("PController").GetComponent<GameControl>();
@@ -48,7 +48,6 @@ public class MouseBehaviour : MonoBehaviour
             {
                 Cursor.SetCursor(markerCursor, Vector2.zero, CursorMode.Auto);
                 cursorNotBase = true;
-            
             }
             else if (cursorNotBase)
             {
@@ -56,6 +55,5 @@ public class MouseBehaviour : MonoBehaviour
                 cursorNotBase = false;
             }
         }
-        
     }
 }

@@ -16,8 +16,6 @@ public class GUIManagerMainMenu : MonoBehaviour
     [SerializeField] public GameObject sfxMuteButton;
     [SerializeField] public GameObject fullscreenButton;
     
-    public AudioListener audioListener;
-    
     public AudioSource mainMenuMusic;
     public AudioSource sfxSource;
 
@@ -50,8 +48,6 @@ public class GUIManagerMainMenu : MonoBehaviour
     void GetComponents()
     {
         optionsPanel.SetActive(true);
-        
-        audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
 
         mainMenuMusic = GameObject.Find("AudioSource").GetComponent<AudioSource>();
         sfxSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
@@ -62,11 +58,11 @@ public class GUIManagerMainMenu : MonoBehaviour
         
         musicSlider = GameObject.Find("MusicVolume_Slider").GetComponent<Slider>();
         musicSlider.onValueChanged.AddListener(UpdateMainMenuMusicVolume);
-        musicSlider.value = mainMenuMusic.volume;
+        musicSlider.value = Mathf.Sqrt(mainMenuMusic.volume);
         
         sfxSlider = GameObject.Find("SFXVolume_Slider").GetComponent<Slider>();
         sfxSlider.onValueChanged.AddListener(UpdateSFXVolume);
-        sfxSlider.value = sfxSource.volume;
+        sfxSlider.value = Mathf.Sqrt(sfxSource.volume);
 
         mainMuteButton = GameObject.Find("Options_Panel/Background/Audio/MainVolume/MainVolume_MuteButton");
         mainMuteButton.GetComponent<Button>().onClick.AddListener(MuteMainVolume);

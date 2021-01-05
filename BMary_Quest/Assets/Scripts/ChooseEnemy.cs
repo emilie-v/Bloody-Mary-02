@@ -6,23 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class ChooseEnemy : MonoBehaviour
 {
-    Sprite[] enemyList;
-    Sprite[] enemyNameList;
-    Sprite lucifer;
-    Sprite luciferName;
-    Sprite ghastella;
-    Sprite ghastellaName;
-    Sprite seniorBones;
-    Sprite seniorBonesName;
-    Sprite umbralina;
-    Sprite umbralinaName;
-    Sprite count;
-    Sprite countName;
-
-    Sprite padlock;
+    private Sprite[] enemyList;
+    private Sprite[] enemyNameList;
+    private Sprite lucifer;
+    private Sprite luciferName;
+    private Sprite ghastella;
+    private Sprite ghastellaName;
+    private Sprite seniorBones;
+    private Sprite seniorBonesName;
+    private Sprite umbralina;
+    private Sprite umbralinaName;
+    private Sprite count;
+    private Sprite countName;
 
     int index = DataAcrossScenes.ChosenEnemy;
-    Image currentEnemy;
+    private Image currentEnemy;
     public Image currentEnemyName;
     public Text currentEnemyStaff;
     public Text currentEnemyStaffName;
@@ -31,7 +29,6 @@ public class ChooseEnemy : MonoBehaviour
     public string[] enemyStaffNameList;
 
     public GameObject selectWarning;
-    public GameObject cancelWarning;
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
     public GameObject padlockImage;
@@ -40,8 +37,7 @@ public class ChooseEnemy : MonoBehaviour
     {
         int index = DataAcrossScenes.ChosenEnemy;
         currentEnemy = GetComponent<Image>();
-
-
+        
         lucifer = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Lucifer_Portrait");
         ghastella = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_Ghastella_Portrait");
         seniorBones = Resources.Load<Sprite>("Sprites/Characters/Enemies/Enemy_SenorBones_Portrait");
@@ -53,8 +49,6 @@ public class ChooseEnemy : MonoBehaviour
         seniorBonesName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_SenorBonesName");
         umbralinaName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_UmbralinaName");
         countName = Resources.Load<Sprite>("Sprites/GUI/GUI_ChooseOpponent/GUI_ChooseOpponent_CountName");
-
-        padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
 
         enemyList = new Sprite[5];
         enemyNameList = new Sprite[5];
@@ -87,7 +81,6 @@ public class ChooseEnemy : MonoBehaviour
         SoundManager.Instance.ArrowButtonSound();
 
         index++;
-        //index = (index + enemyList.Length) % enemyList.Length;
         if (index >= enemyList.Length)
         {
             index = 0;
@@ -125,35 +118,35 @@ public class ChooseEnemy : MonoBehaviour
             if (index == 0)
             {
                 chooseEnemy.SetActive(false);
-                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.hell; //temp, sets the value to reflect that the chosen staff is the hellstaff
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.hell;
                 chooseStaff.SetActive(true);
             }
 
             if (index == (int)Chosen_Staff.pumpkin)
             {
                 chooseEnemy.SetActive(false);
-                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.pumpkin; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.pumpkin;
                 chooseStaff.SetActive(true);
             }
         
             if (index == (int)Chosen_Staff.skeleton)
             {
                 chooseEnemy.SetActive(false);
-                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.skeleton; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.skeleton;
                 chooseStaff.SetActive(true);
             }
         
             if (index == (int)Chosen_Staff.moon)
             {
                 chooseEnemy.SetActive(false);
-                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.moon; //temp, sets the value to reflect that the chosen staff is the pumpkinstaff
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.moon;
                 chooseStaff.SetActive(true);
             }
 
             if (index == (int)Chosen_Staff.night)
             {
                 chooseEnemy.SetActive(false);
-                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.night; //temp, sets the value to reflect that the chosen staff is the darknightstaff
+                DataAcrossScenes.EnemyChosenStaff = (int)Chosen_Staff.night;
                 chooseStaff.SetActive(true);
             }
         }
@@ -163,8 +156,7 @@ public class ChooseEnemy : MonoBehaviour
             selectWarning.SetActive(true);
         }
     }
-
-
+    
     public void CancelWarningButton()
     {
         selectWarning.SetActive(false);
@@ -213,6 +205,5 @@ public class ChooseEnemy : MonoBehaviour
             else
                 padlockImage.SetActive(true);
         }
-
     }
 }

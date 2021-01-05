@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAnimations : MonoBehaviour
 {
     public Animator animator;
-    void Start()
+    private void Start()
     {
         int index = DataAcrossScenes.EnemyChosenStaff;
         animator = gameObject.GetComponent<Animator>();

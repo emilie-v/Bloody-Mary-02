@@ -49,6 +49,7 @@ public class InfoButton : MonoBehaviour
             marysStaff.text = "Passive ability:vampiric, you gain half the health of the damage you do\nActive ability:Locks tiles down making them unusable";
         else if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
             marysStaff.text = "Passive ability:you gain health every time you attack\nActive ability:curses the enemy, if they attack during that turn, they take the same amount of damage";
+        
         // Enemy Descriptions
         if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.mirror)
             enemyStaff.text = "Passive ability: Adds 5 hp\nActive ability: mirrors the players move if able,flipped on the y-axis";
@@ -63,6 +64,4 @@ public class InfoButton : MonoBehaviour
         else if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
             enemyStaff.text = "Passive ability:The enemy gains health every time you attack\nActive ability:curses your tiles, if you attack during that turn, you take the same amount of damage";
     }
-
-
 }

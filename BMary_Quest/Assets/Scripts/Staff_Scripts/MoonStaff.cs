@@ -7,7 +7,6 @@ public class MoonStaff : MonoBehaviour
 {
     public GameControl gameControl;
     public Button abilityButton;
-    public LastMove lastMove;
     [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int staffCooldown = 1;
@@ -20,12 +19,6 @@ public class MoonStaff : MonoBehaviour
         abilityButton.onClick.AddListener(MoonStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
-    }
-
-    public void MoonStaffPassiveAbility()
-    {
-        
     }
     
     public void MoonStaffActiveAbility()

@@ -13,7 +13,6 @@ public class TutorialManager : MonoBehaviour
     public GameObject attackMovesTutorial;
     public GameObject staffsTutorial;
     public GameObject endTurnTutorial;
-    public GameObject backTutorial;
 
     private void Update()
     {

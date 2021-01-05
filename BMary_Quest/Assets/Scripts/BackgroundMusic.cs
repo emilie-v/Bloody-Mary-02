@@ -10,7 +10,7 @@ public class BackgroundMusic : MonoBehaviour
 
     public AudioSource audioSource;
 
-    private static BackgroundMusic instance = null;
+    private static BackgroundMusic instance;
 
     public static BackgroundMusic Instance
     {
@@ -24,7 +24,7 @@ public class BackgroundMusic : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
         else
@@ -32,7 +32,7 @@ public class BackgroundMusic : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
             SceneManager.sceneLoaded += OnSceneLoaded;
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
 

@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] GameObject tilePrefab1 = null;
-    [SerializeField] GameObject tilePrefab2 = null;
+    [SerializeField] private GameObject tilePrefab1;
+    [SerializeField] private GameObject tilePrefab2;
 
-    [SerializeField] int rows = 5;
-    [SerializeField] int cols = 5;
+    [SerializeField] private int rows = 5;
+    [SerializeField] private int cols = 5;
     private float tileSize = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         GenerateGrid();
@@ -20,7 +19,6 @@ public class GridManager : MonoBehaviour
 
     private void GenerateGrid()
     {
-
         GameObject tile = tilePrefab1;
 
         for (int row = 0; row < rows; row++)
@@ -31,21 +29,16 @@ public class GridManager : MonoBehaviour
                 {
                     if (col % 2 == 0)
                         tile = Instantiate(tilePrefab1, transform);
-
                     else
                         tile = Instantiate(tilePrefab2, transform);
                 }
-
                 else
                 {
                     if (col % 2 == 0)
                         tile = Instantiate(tilePrefab2, transform);
-
                     else
                         tile = Instantiate(tilePrefab1, transform);
                 }
-
-                /*  GameObject tile = Instantiate(tilePrefab1, transform);  this line can be commented if we don't want checkerboard. Then comment away 30 - 46 */
 
                 float posX = col * tileSize - cols / 2;
                 float posY = row * -tileSize + rows / 2;
@@ -53,12 +46,5 @@ public class GridManager : MonoBehaviour
                 tile.transform.position = new Vector2(posX + transform.position.x, posY + transform.position.y);
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -7,7 +7,6 @@ public class SkeletonStaff : MonoBehaviour
 {
     public GameControl gameControl;
     public Button abilityButton;
-    public LastMove lastMove;
     [SerializeField] private DialogueTrigger dialogueTrigger;
 
     public int piecesToMark = 1;
@@ -17,18 +16,10 @@ public class SkeletonStaff : MonoBehaviour
     
     void Start()
     {
-        //Find player button. 
         abilityButton = GameObject.Find("Buttons/PlayerButtons/StaffButton").GetComponent<Button>();
-        //Connect button with function.
         abilityButton.onClick.AddListener(SkeletonStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-        lastMove = GameObject.Find("PController").GetComponent<LastMove>();
-    }
-
-    public void SkeletonStaffPassiveAbility()
-    {
-        //No passive ability for this one
     }
 
     public void SkeletonStaffActiveAbility()

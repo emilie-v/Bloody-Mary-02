@@ -13,7 +13,7 @@ public class LevelLoaderTransition : MonoBehaviour
         StartCoroutine(TransitionAnimation());
     }
 
-    IEnumerator TransitionAnimation()
+    private IEnumerator TransitionAnimation()
     {
         transition.SetTrigger("SliderStart");
 

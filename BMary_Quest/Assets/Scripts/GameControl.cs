@@ -14,7 +14,6 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour
 {
     private Owner owner;
-    public DialogueManager dialogueManager;
     public DialogueTrigger dialogueTrigger;
     private HellStaff hellStaff;
     private DarkNightStaff darknightStaff;
@@ -24,13 +23,12 @@ public class GameControl : MonoBehaviour
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
-    public PoseAnimation poseAnimation;
     public CharacterAnimations characterAnimations;
     public EnemyAnimations enemyAnimations;
     [SerializeField] private GUIManager guiManager;
-    private LastMove lastMove;
     [SerializeField] private AIBehaviour aiBehaviour;
     [SerializeField] private TurnStartText turnStartText;
+    private LastMove lastMove;
 
     public GameObject spelplan;
     public GameObject gameOver;
@@ -72,10 +70,6 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GameObject playerBloodPointsText;
     [SerializeField] private GameObject enemyBloodPointsText;
     
-    //UI Fill Bars
-    [SerializeField] private Image playerBloodPointsFilling;
-    [SerializeField] private Image enemyBloodPointsFilling;
-    
     //Mark Buttons
     [SerializeField] private GameObject playerMarkButton;
     [SerializeField] private GameObject enemyMarkButton;
@@ -94,7 +88,6 @@ public class GameControl : MonoBehaviour
 
     public Sprite hellStaffMark;
     
-
     private void Awake()
     {
         playerMovesPerTurn = 2;
@@ -105,7 +98,6 @@ public class GameControl : MonoBehaviour
         playerMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_BloodyMary");
         enemyMarks = Resources.Load<Sprite>("Sprites/Marks/Mark_Lucifer");
     }
-
 
     public void Start()
     {
@@ -165,10 +157,9 @@ public class GameControl : MonoBehaviour
             playerTurn = (int)Player_Turn.enemy;
             lastMove.enemyCashedOutThisTurn = false;
             lastMove.enemyHellStaffActivePower = false;
-            lastMove.enemyDarkNightStaffActivePower = false;
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
             {
-                hellStaff.hellStaffPassiveAbility();
+                hellStaff.HellStaffPassiveAbility();
             }
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
             {
@@ -194,10 +185,9 @@ public class GameControl : MonoBehaviour
             lastMove.staffUsed = false;
             lastMove.maryCashedOutThisTurn = false;
             lastMove.playerHellStaffActivePower = false;
-            lastMove.playerDarkNightStaffActivePower = false;
             if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
             {
-                hellStaff.hellStaffPassiveAbility();
+                hellStaff.HellStaffPassiveAbility();
             }
             if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
             {
@@ -279,12 +269,11 @@ public class GameControl : MonoBehaviour
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             characterAnimations.animator.SetTrigger("Smiling");
-                            marysTempPoints ++;
+                            marysTempPoints++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
                     }
                 }
-
 
                 enemyBloodPointsText.transform.DOShakePosition(0.4f + marysTempPoints * 0.5f, 3 + marysTempPoints, 25, 10);
 
@@ -316,12 +305,12 @@ public class GameControl : MonoBehaviour
             {
                 SoundManager.Instance.CashOutButtonSound();
                 
-                //Reset placed pieces and set temp blood points
-                for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++) //Null-pointer exeption?
+                for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
                 {
                     for (int j = 0; j < spelplan.GetComponent<Spelplan>().gridArray.GetLength(1); j++)
                     {
-                        if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
+                        if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 
+                            && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
                             enemyAnimations.animator.SetTrigger("Angry");
                             enemyTempPoints++;
@@ -337,12 +326,12 @@ public class GameControl : MonoBehaviour
                     characterAnimations.animator.SetTrigger("Damaged");
                 }
 
-
                 if (lastMove.playerHellStaffActivePower == true)
                 {
                     enemyHealth -= enemyTempPoints + 1;
                     enemyBloodPointsText.transform.DOShakePosition(0.4f + enemyTempPoints * 0.5f, 3 + enemyTempPoints, 25, 10);
                 }
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
                 {
                     darknightStaff.DarkNightStaffPassiveAbility();
@@ -356,14 +345,12 @@ public class GameControl : MonoBehaviour
 
                 GameOver();
             }
-            else
-            {
-                Debug.Log("Cashout error! This should not happen!");
-            }
+            
             foreach (Transform child in GameObject.Find("Spelplan").transform)
             {
                 child.GetComponent<Owner>().skeletonMark = false;
             }
+            
             UpdateBloodPoints();
             canCashOut = false;
             CheckCanCashOut();
@@ -379,7 +366,7 @@ public class GameControl : MonoBehaviour
             {
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Everyone Lose!";
-                rewardScreen.newReward(6);
+                rewardScreen.NewReward(6);
                 dialogueTrigger.EnemyStalemate();
                 dialogueTrigger.MaryStalemate();
             }
@@ -391,7 +378,7 @@ public class GameControl : MonoBehaviour
                 characterAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
-                rewardScreen.newReward(6);
+                rewardScreen.NewReward(6);
             } 
             else if (enemyHealth <= 0)
             {
@@ -401,78 +388,81 @@ public class GameControl : MonoBehaviour
                 enemyAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
-                //wait x seconds, win-screen? Story goes on?
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.pumpkin)
                 {
                     if(DataAcrossScenes.pumpkinStaffUnlocked == false)
                     {
-                        rewardScreen.newReward(0);
+                        rewardScreen.NewReward(0);
                         DataAcrossScenes.pumpkinStaffUnlocked = true;
                         DataAcrossScenes.seniorBonesUnlocked = true;
                         DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.pumpkinStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(5);
+                        rewardScreen.NewReward(5);
                     }
                 }
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.skeleton)
                 {
                     if(DataAcrossScenes.skeletonStaffUnlocked == false)
                     {
-                        rewardScreen.newReward(1);
+                        rewardScreen.NewReward(1);
                         DataAcrossScenes.skeletonStaffUnlocked = true;
                         DataAcrossScenes.umbralinaUnlocked = true;
                         DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.skeletonStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(5);
+                        rewardScreen.NewReward(5);
                     }
                 }
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
                 {
                     if(DataAcrossScenes.moonStaffUnlocked == false)
                     {
-                        rewardScreen.newReward(2);
+                        rewardScreen.NewReward(2);
                         DataAcrossScenes.moonStaffUnlocked = true;
                         DataAcrossScenes.countUnlocked = true;
                         DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.moonStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(5);
+                        rewardScreen.NewReward(5);
                     }
                 }
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
                 {
                     if (DataAcrossScenes.darkNightStaffUnlocked == false)
                     {
                         DataAcrossScenes.ChosenEnemy = 0;
-                        rewardScreen.newReward(3);
+                        rewardScreen.NewReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
                         DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(5);
+                        rewardScreen.NewReward(5);
                     }
                 }
+                
                 if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
                 {
                     if (DataAcrossScenes.hellStaffUnlocked == false)
                     {
                         DataAcrossScenes.ChosenEnemy = 1;
-                        rewardScreen.newReward(7);
+                        rewardScreen.NewReward(7);
                         DataAcrossScenes.hellStaffUnlocked = true;                    
                     }
                     else if(DataAcrossScenes.hellStaffUnlocked == true)
                     {
-                        rewardScreen.newReward(5);
+                        rewardScreen.NewReward(5);
                     }
                 }
-
             }
             pauseMode = true;
         }
@@ -507,18 +497,14 @@ public class GameControl : MonoBehaviour
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
-            //Set enemy to smaller size
             enemy.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
-            //Set mary back to right size
             player.transform.parent.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         }
         else if (playerTurn == (int)Player_Turn.enemy)
         {
-            //Set mary to smaller size
             player.transform.parent.transform.DOScale(new Vector3(0.8f, 0.8f, 1), 0.3f);
             
-            //Set enemy back to right size
             enemy.transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         }
     }
@@ -527,20 +513,16 @@ public class GameControl : MonoBehaviour
     {
         if (playerTurn == (int)Player_Turn.mary)
         {
-            //Set enemy to smaller size
             enemy.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
-            //Set mary back to right size
             player.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
             player.transform.parent.GetChild(0).GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         } 
         else if (playerTurn == (int)Player_Turn.enemy)
         {
-            //Set enemy to smaller size
             player.GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             player.transform.parent.GetChild(0).GetComponent<Image>().DOColor(new Color(0.5f, 0.5f, 0.5f), 0.3f);
             
-            //Set enemy back to right size
             enemy.GetComponent<Image>().DOColor(new Color(1, 1, 1), 0.3f);
         }
     }
@@ -570,7 +552,6 @@ public class GameControl : MonoBehaviour
     {
         if (staffUsed && playerTurn == (int)Player_Turn.mary || playerStaffCooldown > 0)
         {
-            enemyAnimations.animator.SetTrigger("Scared");
             GameObject.Find("PlayerButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (!staffUsed && playerTurn == (int)Player_Turn.mary)
@@ -580,7 +561,6 @@ public class GameControl : MonoBehaviour
 
         if (staffUsed && playerTurn == (int)Player_Turn.enemy || enemyStaffCooldown > 0)
         {
-            characterAnimations.animator.SetTrigger("Scared");
             GameObject.Find("EnemyButtons/StaffButton").GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f);
         }
         else if (!staffUsed && playerTurn == (int)Player_Turn.enemy)
@@ -609,7 +589,6 @@ public class GameControl : MonoBehaviour
 
     public void StaffCooldown()
     {
-        //mirrorStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.mirror)
         {
             GameObject.Find("Buttons/PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -621,7 +600,6 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) mirrorStaff.staffCooldown, 0.5f);
         }
         
-        //pumpkinStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.pumpkin)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -633,7 +611,6 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) pumpkinStaff.staffCooldown, 0.5f);
         }
         
-        //skeletonStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.skeleton)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -645,7 +622,6 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) skeletonStaff.staffCooldown, 0.5f);
         }
         
-        //moonStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.moon)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -657,7 +633,6 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) moonStaff.staffCooldown, 0.5f);
         }
         
-        //darknightStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.night)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -669,7 +644,6 @@ public class GameControl : MonoBehaviour
                 DOFillAmount((float) enemyStaffCooldown / (float) darknightStaff.staffCooldown, 0.5f);
         }
         
-        //hellStaff
         if (DataAcrossScenes.PlayerChosenStaff == (int)Chosen_Staff.hell)
         {
             GameObject.Find("PlayerButtons/StaffButton").transform.GetChild(0).GetComponent<Image>().
@@ -706,6 +680,7 @@ public class GameControl : MonoBehaviour
     {
         GameObject yourMarks = playerMarkButton;
         GameObject enemyMarks = enemyMarkButton;
+        
         if (playerTurn == (int)Player_Turn.mary)
         {
             yourMarks = playerMarkButton;
@@ -731,7 +706,6 @@ public class GameControl : MonoBehaviour
 
     public void UpdateMarkedPiece()
     {
-        //Hell Staff
         if (lastMove.enemyHellStaffActivePower)
         {
             spelplan.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = hellStaffMark;
@@ -753,7 +727,6 @@ public class GameControl : MonoBehaviour
             spelplan.transform.GetChild(22).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
             GameObject.Find("EnemyButtons/OutCashButton/LuciferMark").SetActive(false);
         }
-
     }
 
     private void HotKeys()
@@ -812,6 +785,7 @@ public class GameControl : MonoBehaviour
             DOTween.Kill(child);
         }
     }
+    
     public void NextOpponentButton()
     {
         SceneManager.LoadScene("ChooseEnemy");
@@ -822,7 +796,6 @@ public class GameControl : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 }
-
 
 public enum Player_Turn : int
 {

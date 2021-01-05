@@ -21,8 +21,7 @@ public class DataAcrossScenes
 
     private static int playerChosenStaff;
 
-    private static int chosenEnemy=1;
-    //kanske ska göras till enum sen, test för att se om det blir smidigt detta! Hellstaff tänker jag mig är 1 för testsyfte.
+    private static int chosenEnemy = 1;
 
     public static int EnemyChosenStaff 
     {
@@ -35,6 +34,7 @@ public class DataAcrossScenes
             enemyChosenStaff = value;
         }
     }
+    
     public static int PlayerChosenStaff 
     {
         get 
@@ -46,6 +46,7 @@ public class DataAcrossScenes
             playerChosenStaff = value;
         }
     }
+    
     public static int ChosenEnemy
     {
         get

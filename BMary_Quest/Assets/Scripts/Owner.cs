@@ -11,42 +11,30 @@ public class Owner : MonoBehaviour
     public int yPos;
 
     public int owned;
-    //public bool OwnedByMary = false;
-    //public bool OwnedByEnemy = false;
     public bool canChange = false;
     public bool skeletonMark;
     public int locked;
     public int specialState;
-    /* 
-    potentiella states: 1: startbricka för Mary, kan alltid vara hennes, aldrig fiendens, 2: tvärtom mot 1, 3: ett state som t.ex. en stav kan lägga på, gör så att poäng dubblas 4: mer stavspecial. Kanske ska ha separata variabler för stavgrejer. 
-    */
 
-    SpriteRenderer tile;
-    public Sprite pc;
-    public Sprite enemys;
+    private SpriteRenderer tile;
     public Sprite neutral;
     public GameObject gc;
     public GameControl gameControl;
     public GameObject Spelplan;
     private Boardpiece boardpiece;
-    private DialogueManager dialogueManager;
     private MirrorStaffHighlight mirrorStaffHighlight;
 
     public LastMove lastMove;
-    
-    
+
     void Start()
     {
         tile = GetComponent<SpriteRenderer>();
         gc = GameObject.FindGameObjectWithTag("Player");
         gameControl = gc.GetComponent<GameControl>();
 
-        pc = Resources.Load<Sprite>("Sprites/Mark_BloodyMary");
-        enemys = Resources.Load<Sprite>("Sprites/Mark_Lucifer");
         neutral = Resources.Load<Sprite>("Sprites/Board_Tile");
         Spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
-        dialogueManager = GameObject.Find("IngameGUI_Canvas").GetComponent<DialogueManager>();
         mirrorStaffHighlight = GameObject.Find("PlayerButtons/StaffButton").GetComponent<MirrorStaffHighlight>();
     }
 
@@ -82,7 +70,6 @@ public class Owner : MonoBehaviour
                     if (owned == (int)Tile_State.empty && canChange)
                     {
                         owned = (int)Tile_State.player1;
-                        //gameControl.marysTempPoints++;
                         PiecePlaced();
                     }
                 }
@@ -123,16 +110,10 @@ public class Owner : MonoBehaviour
                     lastMove.lastMovesY[i] = yPos;
                     break;
                 }
-                else
-                {
-                    continue;
-                }
-            }    
-
+            }
         }
     }
 
-    //Currently we only want to check the closest neighbours in the X and Y-axis, 4 tiles. A nested for loop would be the thing if we're going to get all eight. 
     public void CheckNeighbours()
     {
         if (locked > 0)
@@ -141,10 +122,8 @@ public class Owner : MonoBehaviour
             return;
         }
         
-        //if playerturn =marys then temp var =ownedbyMary, if player turn =enemy then temp var = OwnedByEnemy
         if (xPos >= 0 && xPos < Spelplan.GetComponent<Spelplan>().gridArray.GetLength(0) - 1)
         {
-            //Temp variabel Vi skulle kunna göra det som är OwnedbyMary till en variabel som går efter state!
             if (Spelplan.GetComponent<Spelplan>().gridArray[xPos + 1, yPos].GetComponent<Owner>().owned == gameControl.playerTurn + 1 && owned == (int)Tile_State.empty)
             {
                 canChange = true;
@@ -182,7 +161,6 @@ public class Owner : MonoBehaviour
         canChange = false;
     }
 
-    //reset methods
     public void resetBoard()
     {
         owned = (int)Tile_State.empty;
@@ -198,19 +176,21 @@ public class Owner : MonoBehaviour
         {
             owned = (int)Tile_State.empty;
         }
+        
         if (specialState == 1)
         {
             owned = (int)Tile_State.player1;
             canChange = false;
         }
     }
+    
     public void resetEnemy()
     {
-
         if (owned == (int)Tile_State.player2)
         {
             owned = (int)Tile_State.empty;
         }
+        
         if (specialState == 2)
         {
             owned = (int)Tile_State.player2;
@@ -288,7 +268,7 @@ public class Owner : MonoBehaviour
 
 public enum Tile_State : int
 {
-    empty, // = 0
-    player1, // = 1
-    player2 // = 2
+    empty,
+    player1,
+    player2
 }

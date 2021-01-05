@@ -7,14 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    public BackgroundMusic backgroundMusic;
     public AudioClip[] audioClips;
     public AudioSource effectSource;
 
-    public float lowPitchRange = 0.95f;
-    public float highPitchRange = 1.05f;
-
-    public static SoundManager Instance = null;
+    public static SoundManager Instance;
 
     private void Awake()
     {
@@ -67,14 +63,6 @@ public class SoundManager : MonoBehaviour
         audioClips[12] = Resources.Load<AudioClip>("Audios/Audios_Menu_Music");
     }
 
-    
-    
-    public void PlaySounds(AudioClip clip)
-    {
-        effectSource.clip = clip;
-        effectSource.Play();
-    }
-
     public void SelectButtonSound()
     {
         effectSource.clip = audioClips[(int)SoundEnum.SelectButton];
@@ -90,12 +78,6 @@ public class SoundManager : MonoBehaviour
     public void LockedWarningPopUpSound()
     {
         effectSource.clip = audioClips[(int)SoundEnum.LockedWarning];
-        effectSource.Play();
-    }
-
-    public void BackExitButtonSound()
-    {
-        effectSource.clip = audioClips[(int)SoundEnum.BackExitButton];
         effectSource.Play();
     }
 
@@ -143,12 +125,6 @@ public class SoundManager : MonoBehaviour
     public void LoseStateSound()
     {
         effectSource.clip = audioClips[(int)SoundEnum.LoseState];
-        effectSource.Play();
-    }
-
-    public void NextOpponentSound()
-    {
-        effectSource.clip = audioClips[(int)SoundEnum.NextOpponent];
         effectSource.Play();
     }
 
