@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
+    public LevelLoaderTransition levelLoaderTransition;
     public CharacterAnimations characterAnimations;
     public EnemyAnimations enemyAnimations;
     [SerializeField] private GUIManager guiManager;
@@ -113,6 +114,8 @@ public class GameControl : MonoBehaviour
         pumpkinStaff = GameObject.Find("PController").GetComponent<PumpkinStaff>();
         mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
         playerTurn = 0;
+
+        levelLoaderTransition.transition.SetBool("Close", false);
         
         marysHealth = marysMaxHealth;
         enemyHealth = enemyMaxHealth;

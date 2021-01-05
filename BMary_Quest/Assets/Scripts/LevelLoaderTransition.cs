@@ -7,6 +7,11 @@ public class LevelLoaderTransition : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1.0f;
+
+    public void Start()
+    {
+        transition.SetBool("Close", true);
+    }
     
     public void LoadGameScene()
     {
@@ -15,8 +20,7 @@ public class LevelLoaderTransition : MonoBehaviour
 
     private IEnumerator TransitionAnimation()
     {
-        transition.SetTrigger("SliderStart");
-
+        transition.SetBool("Close", false);
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene("GameBoard");
