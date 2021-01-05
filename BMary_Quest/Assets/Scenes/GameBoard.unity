@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 3568027160121143528}
   rewardScreen: {fileID: 1324767616}
+  levelLoaderTransition: {fileID: 0}
   characterAnimations: {fileID: 0}
   enemyAnimations: {fileID: 0}
   guiManager: {fileID: 452916885}
@@ -595,6 +596,7 @@ MonoBehaviour:
   rewardScreen: {fileID: 187312945}
   lossScreen: {fileID: 643446113}
   finalWin: {fileID: 3568027160121143535}
+  rewardUnlockedText: {fileID: 3568027160121143521}
 --- !u!114 &1324767617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +869,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187312945, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 206854666, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 206854667, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 171.59998
+      objectReference: {fileID: 0}
+    - target: {fileID: 206854667, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 97.80395
+      objectReference: {fileID: 0}
+    - target: {fileID: 366508069, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 450509917, guid: 6f81ae5c0af948e4a8a54ec5c98de85f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1235,6 +1257,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3568027160121143521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 206854668, guid: 6f81ae5c0af948e4a8a54ec5c98de85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568027160121143518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3568027160121143528 stripped
