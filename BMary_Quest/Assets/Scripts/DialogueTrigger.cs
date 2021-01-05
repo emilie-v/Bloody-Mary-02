@@ -180,6 +180,7 @@ public class DialogueTrigger : MonoBehaviour
     
     public void MaryLoss()
     {
+        characterAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryLoses[i].GetUpperBound(0));
         StartCoroutine(TypeWriterEffect(MaryLoses[i][j]));
