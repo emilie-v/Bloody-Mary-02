@@ -32,6 +32,7 @@ public class ChooseEnemy : MonoBehaviour
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
     public GameObject padlockImage;
+    private string _scene;
 
     void Start()
     {
@@ -74,6 +75,21 @@ public class ChooseEnemy : MonoBehaviour
         currentEnemyStaffName.text = enemyStaffNameList[index];
         currentEnemy.sprite = enemyList[index];
         currentEnemyName.sprite = enemyNameList[index];
+    }
+    
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _scene = scene.name;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void RightArrowButton()
@@ -204,6 +220,26 @@ public class ChooseEnemy : MonoBehaviour
                 padlockImage.SetActive(false);
             else
                 padlockImage.SetActive(true);
+        }
+
+        HotKeys();
+    }
+
+    private void HotKeys()
+    {
+        if (_scene == "ChooseEnemy")
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (selectWarning.activeSelf)
+                {
+                    selectWarning.SetActive(false);
+                }
+                else if (chooseEnemy.activeSelf)
+                {
+                    BackToMainMenuButton();
+                }
+            }
         }
     }
 }

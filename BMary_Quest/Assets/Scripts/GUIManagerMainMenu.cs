@@ -43,6 +43,8 @@ public class GUIManagerMainMenu : MonoBehaviour
     {
         mainMenuMusic.volume = mainMenuMusicVolume;
         sfxSource.volume = sfxVolume;
+
+        HotKeys();
     }
 
     void GetComponents()
@@ -198,6 +200,17 @@ public class GUIManagerMainMenu : MonoBehaviour
         else if (!Screen.fullScreen)
         {
             fullscreenButton.GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    private void HotKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (optionsPanel.activeSelf)
+            {
+                optionsPanel.SetActive(!optionsPanel.activeSelf);
+            }
         }
     }
 }

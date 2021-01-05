@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,7 @@ public class ChooseStaff : MonoBehaviour
 
     private int index = 0;
     private Image currentStaff;
+    private string _scene;
 
     void Start()
     {
@@ -68,6 +70,26 @@ public class ChooseStaff : MonoBehaviour
         currentStaffInformation.text = staffInformationList[index];
 
         UpdateCurrentStaff();
+    }
+
+    private void Update()
+    {
+        HotKeys();
+    }
+    
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _scene = scene.name;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void RightStaffButton()
@@ -198,5 +220,20 @@ public class ChooseStaff : MonoBehaviour
         SoundManager.Instance.LockedWarningPopUpSound();
         chooseStaff.SetActive(false);
         chooseEnemy.SetActive(true);
+    }
+    
+    private void HotKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (selectWarning.activeSelf)
+            {
+                CancelStaffWarningButton();
+            }
+            else if (chooseStaff.activeSelf)
+            {
+                BackToEnemyButton();
+            }
+        }
     }
 }

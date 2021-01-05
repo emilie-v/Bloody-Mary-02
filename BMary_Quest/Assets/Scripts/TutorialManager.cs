@@ -13,14 +13,34 @@ public class TutorialManager : MonoBehaviour
     public GameObject attackMovesTutorial;
     public GameObject staffsTutorial;
     public GameObject endTurnTutorial;
+    private string _scene;
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && _scene == "GameBoard")
         {
             SetAllToFalse();
             tutorial.SetActive(false);
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && _scene == "Tutorial")
+        {
+            BackToMainMenuButton();
+        }
+    }
+    
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _scene = scene.name;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void BackToMainMenuButton()

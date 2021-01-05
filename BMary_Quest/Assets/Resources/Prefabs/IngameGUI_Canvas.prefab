@@ -143,7 +143,7 @@ RectTransform:
   - {fileID: 1438666248}
   - {fileID: 366508070}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -453,7 +453,6 @@ GameObject:
   - component: {fileID: 290837677}
   - component: {fileID: 290837680}
   - component: {fileID: 290837679}
-  - component: {fileID: 290837678}
   m_Layer: 5
   m_Name: Enemy_BloodPoint_Text
   m_TagString: Untagged
@@ -524,20 +523,6 @@ MonoBehaviour:
   m_Text: '20
 
 '
---- !u!114 &290837678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290837676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129c8d96adc81e2468be5f6036ef5f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxBlood: 20
-  currentBlood: 20
 --- !u!1 &366508069
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +954,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1279,7 +1264,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1516,7 +1501,7 @@ RectTransform:
   - {fileID: 1287173442}
   - {fileID: 565576882}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1942,7 +1927,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &1693145242
 MonoBehaviour:
@@ -2019,7 +2003,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &7378318309266686497
 MonoBehaviour:
@@ -2197,7 +2180,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &930870083
 MonoBehaviour:
@@ -2466,7 +2448,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &1029516199
 MonoBehaviour:
@@ -2545,7 +2526,6 @@ GameObject:
   - component: {fileID: 869130309}
   - component: {fileID: 869130312}
   - component: {fileID: 869130311}
-  - component: {fileID: 869130310}
   m_Layer: 5
   m_Name: Player_BloodPoint_Text
   m_TagString: Untagged
@@ -2616,20 +2596,6 @@ MonoBehaviour:
   m_Text: '20
 
 '
---- !u!114 &869130310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869130308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129c8d96adc81e2468be5f6036ef5f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxBlood: 20
-  currentBlood: 20
 --- !u!1 &926957490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,7 +3044,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!61 &1877827189
 BoxCollider2D:
@@ -3121,7 +3086,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &1877827190
 MonoBehaviour:
@@ -3526,7 +3490,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &1017989011
 MonoBehaviour:
@@ -3603,7 +3566,6 @@ MonoBehaviour:
   baseCursor: {fileID: 2800000, guid: 27f78d75bd3aa2142aca9e41188f87f0, type: 3}
   hoverCursor: {fileID: 2800000, guid: 2ca05550e636da64dbc737491b49e5a6, type: 3}
   markerCursor: {fileID: 2800000, guid: 550edf502301631468ccd24270418356, type: 3}
-  staffCursor: {fileID: 2800000, guid: a834cc5a1f5ecbf4190755a6b553a479, type: 3}
   gameControl: {fileID: 0}
 --- !u!114 &3769770371014656060
 MonoBehaviour:
@@ -3817,7 +3779,7 @@ RectTransform:
   - {fileID: 1952496122}
   - {fileID: 990588783}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4648,7 +4610,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &1005325087
 MonoBehaviour:
@@ -5022,7 +4983,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &1736642162
 MonoBehaviour:
@@ -5335,7 +5295,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &442702867
 MonoBehaviour:
@@ -6742,7 +6701,7 @@ RectTransform:
   m_Children:
   - {fileID: 8819014991819155730}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6857,7 +6816,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &1961690046
 MonoBehaviour:
@@ -6886,7 +6844,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!114 &7288631742178212777
 MonoBehaviour:
@@ -7062,7 +7019,6 @@ GameObject:
   - component: {fileID: 419697109587488444}
   - component: {fileID: 419697109587488579}
   - component: {fileID: 419697109587488578}
-  - component: {fileID: 419697109587488577}
   m_Layer: 5
   m_Name: Enemy_BloodPointsBar
   m_TagString: Untagged
@@ -7182,20 +7138,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &419697109587488577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419697109587488583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c00f1613d46218498a1f4230c6c1223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloodSlider: {fileID: 419697109587488578}
-  player: {fileID: 290837678}
 --- !u!1 &419697109997504708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,7 +7225,6 @@ GameObject:
   - component: {fileID: 419697110169147841}
   - component: {fileID: 419697110169147840}
   - component: {fileID: 419697110169147847}
-  - component: {fileID: 419697110169147846}
   m_Layer: 5
   m_Name: Player_BloodPointsBar
   m_TagString: Untagged
@@ -7403,20 +7344,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &419697110169147846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419697110169147844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c00f1613d46218498a1f4230c6c1223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloodSlider: {fileID: 419697110169147847}
-  player: {fileID: 869130310}
 --- !u!1 &419697110313574613
 GameObject:
   m_ObjectHideFlags: 0
@@ -7432,7 +7359,6 @@ GameObject:
   - component: {fileID: 953807058}
   - component: {fileID: 3618412771699007936}
   - component: {fileID: 3568027160121143521}
-  - component: {fileID: 3568027160121143525}
   - component: {fileID: 4564158263437281081}
   - component: {fileID: 1251833530}
   - component: {fileID: 3568027160121143534}
@@ -7459,19 +7385,19 @@ RectTransform:
   - {fileID: 9076609145421318716}
   - {fileID: 419697108947330951}
   - {fileID: 2016060200383208992}
-  - {fileID: 7823021461814998265}
   - {fileID: 6282612412164103610}
   - {fileID: 5422324068086959537}
   - {fileID: 499930994}
   - {fileID: 620187310}
   - {fileID: 1190732441}
   - {fileID: 187312946}
-  - {fileID: 4042425802384228398}
-  - {fileID: 4585777303459791595}
   - {fileID: 643446114}
   - {fileID: 4093066835852754352}
   - {fileID: 2618819037664980049}
   - {fileID: 7951620699340952561}
+  - {fileID: 7823021461814998265}
+  - {fileID: 4042425802384228398}
+  - {fileID: 4585777303459791595}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7553,9 +7479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuTab: {fileID: 4969255730029987469}
-  closeMenuTab: {fileID: 1424095244}
-  restartTab: {fileID: 1338291931}
-  exitGame: {fileID: 740267481}
   lossScreen: {fileID: 643446113}
   aiBehaviour: {fileID: 0}
   gameControl: {fileID: 0}
@@ -7579,7 +7502,6 @@ MonoBehaviour:
   musicMuteButton: {fileID: 8256440424253835880}
   sfxMuteButton: {fileID: 6398298074130472828}
   fullscreenButton: {fileID: 0}
-  audioListener: {fileID: 0}
   mainMenuMusic: {fileID: 0}
   sfxSource: {fileID: 0}
 --- !u!114 &3568027160121143521
@@ -7595,18 +7517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSelectedStaff: {fileID: 6551219512387014978}
---- !u!114 &3568027160121143525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419697110313574613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e7b378e7ec7a4428669ed87fa78e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4564158263437281081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7626,7 +7536,6 @@ MonoBehaviour:
   attackMovesTutorial: {fileID: 772984827643538698}
   staffsTutorial: {fileID: 5682307221822802577}
   endTurnTutorial: {fileID: 4540613411162686195}
-  backTutorial: {fileID: 3201664600907878992}
 --- !u!114 &1251833530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7658,8 +7567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 0
   MaryText: {fileID: 499930995}
   EnemyText: {fileID: 620187311}
+  characterAnimations: {fileID: 0}
+  enemyAnimations: {fileID: 0}
 --- !u!114 &8241430186529781817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7672,8 +7584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb0018cb799944cbb25ed62b12fad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 0
   MaryText: {fileID: 499930995}
   EnemyText: {fileID: 620187311}
+  characterAnimations: {fileID: 0}
+  enemyAnimations: {fileID: 0}
 --- !u!1 &419697110457227585
 GameObject:
   m_ObjectHideFlags: 0
@@ -8511,7 +8426,7 @@ RectTransform:
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 1}
   m_Children: []
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8842,7 +8757,7 @@ RectTransform:
   - {fileID: 4493200874529817539}
   - {fileID: 2053124119209890026}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 16
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9281,7 +9196,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &2008032457634755014
 GameObject:
@@ -9709,7 +9623,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &2278142292149786284
 GameObject:
@@ -10088,7 +10001,7 @@ RectTransform:
   - {fileID: 3985742124759694994}
   - {fileID: 4679132244473569104}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10499,7 +10412,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &3217821853308982954
 GameObject:
@@ -10885,7 +10797,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &3419316461829188819
 GameObject:
@@ -11550,7 +11461,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &4026827358855251774
 GameObject:
@@ -11978,7 +11888,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &4324655300378117089
 GameObject:
@@ -12180,7 +12089,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &4540613411162686195
 GameObject:
@@ -12457,7 +12365,7 @@ RectTransform:
   - {fileID: 1542875675}
   - {fileID: 740267482}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 4
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13943,7 +13851,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &6452633586241959974
 GameObject:
@@ -14106,7 +14013,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &6620506685015763861
 GameObject:
@@ -14348,7 +14254,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &6656271873863549541
 GameObject:
@@ -14990,7 +14895,7 @@ RectTransform:
   - {fileID: 2413609572067393950}
   - {fileID: 766264779509013764}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15257,7 +15162,7 @@ RectTransform:
   m_Children:
   - {fileID: 5985494905354498259}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 12
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -15543,7 +15448,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &7481561463347933000
 GameObject:
@@ -15781,7 +15685,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &7526497701047915457
 GameObject:
@@ -16657,7 +16560,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &8367310213558070407
 GameObject:
@@ -17243,7 +17145,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &8708288014302378156
 GameObject:
@@ -17592,7 +17493,6 @@ MonoBehaviour:
   baseCursor: {fileID: 0}
   hoverCursor: {fileID: 0}
   markerCursor: {fileID: 0}
-  staffCursor: {fileID: 0}
   gameControl: {fileID: 0}
 --- !u!1 &8888331274681173238
 GameObject:
@@ -17700,7 +17600,7 @@ RectTransform:
   m_Children:
   - {fileID: 5177108622659376169}
   m_Father: {fileID: 419697110313574609}
-  m_RootOrder: 11
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

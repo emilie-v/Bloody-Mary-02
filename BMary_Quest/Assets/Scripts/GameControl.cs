@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
+    public LevelLoaderTransition levelLoaderTransition;
     public CharacterAnimations characterAnimations;
     public EnemyAnimations enemyAnimations;
     [SerializeField] private GUIManager guiManager;
