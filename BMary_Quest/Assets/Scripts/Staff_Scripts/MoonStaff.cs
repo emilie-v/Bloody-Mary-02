@@ -19,6 +19,12 @@ public class MoonStaff : MonoBehaviour
         abilityButton.onClick.AddListener(MoonStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
+
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.moon)
+        {
+            gameControl.enemyMaxHealth = 25;
+            gameControl.enemyHealth = 25;
+        }
     }
     
     public void MoonStaffActiveAbility()

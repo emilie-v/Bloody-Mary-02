@@ -21,6 +21,12 @@ public class DarkNightStaff : MonoBehaviour
         abilityButton.onClick.AddListener(DarkNightStaffActiveAbility);
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
+
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.night)
+        {
+            gameControl.enemyMaxHealth = 25;
+            gameControl.enemyHealth = 25;
+        }
     }
 
    public void DarkNightStaffPassiveAbility()

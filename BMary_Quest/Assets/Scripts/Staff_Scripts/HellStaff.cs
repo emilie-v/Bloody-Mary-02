@@ -19,6 +19,12 @@ public class HellStaff : MonoBehaviour
 
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
         lastMove = GameObject.Find("PController").GetComponent<LastMove>();
+
+        if (DataAcrossScenes.EnemyChosenStaff == (int)Chosen_Staff.hell)
+        {
+            gameControl.enemyMaxHealth = 30;
+            gameControl.enemyHealth = 30;
+        }
     }
 
     public void HellStaffPassiveAbility()
