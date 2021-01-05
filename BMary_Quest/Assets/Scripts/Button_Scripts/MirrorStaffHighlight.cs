@@ -20,7 +20,6 @@ public class MirrorStaffHighlight : MonoBehaviour,
         spelplan = GameObject.FindGameObjectWithTag("Spelplan");
         lastmove = GameObject.Find("PController").GetComponent<LastMove>();
         gameControl = GameObject.Find("PController").GetComponent<GameControl>();
-        //mirrorStaff = GameObject.Find("PController").GetComponent<MirrorStaff>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -33,6 +32,7 @@ public class MirrorStaffHighlight : MonoBehaviour,
             {
                 child.GetComponent<SpriteRenderer>().color = new Color(1f, 0.8f, 0.8f, 1f);
             }
+            
             for(int i = 0; i < mirrorStaff.mirroredX.Length; i++)
             {
                 if (mirrorStaff.mirroredX[i] < 5)
@@ -55,6 +55,7 @@ public class MirrorStaffHighlight : MonoBehaviour,
         if (gameControl.playerTurn == (int)Player_Turn.mary)
         {
             mirrorPreview = false;
+            
             foreach (Transform child in GameObject.Find("Spelplan").transform)
             {
                 child.GetComponent<SpriteRenderer>().color = Color.white;

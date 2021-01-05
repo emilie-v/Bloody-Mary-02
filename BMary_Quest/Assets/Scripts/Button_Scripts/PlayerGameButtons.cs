@@ -22,15 +22,15 @@ public class PlayerGameButtons : MonoBehaviour
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (this.gameObject == markButton)
+        if (gameObject == markButton)
         {
             markButtonInfo.SetActive(true);
         }
-        else if (this.gameObject == staffButton)
+        else if (gameObject == staffButton)
         {
             staffButtonInfo.SetActive(true);
         }
-        else if (this.gameObject == cashoutButton)
+        else if (gameObject == cashoutButton)
         {
             int marysTP = 0;
             for (int i = 0; i < spelplan.GetComponent<Spelplan>().gridArray.GetLength(0); i++)
@@ -43,12 +43,12 @@ public class PlayerGameButtons : MonoBehaviour
                     }
                 }
             }
-            marysTP++; // för startbrickan
-            marysTP = marysTP * gameControl.maryDamageMultiplier; //om det finns ett skeleton märke
-            GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey + "\nCurrent Damage: " +marysTP;
+            marysTP++; //Startmarker
+            marysTP = marysTP * gameControl.maryDamageMultiplier; //Skeletonmark
+            GameObject.Find("Button_Info").transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = "Hotkey: " + gameControl.playerCashOutHotkey + "\nCurrent Damage: " + marysTP;
             cashoutButtonInfo.SetActive(true);
         }
-        else if (this.gameObject == endTurnButton)
+        else if (gameObject == endTurnButton)
         {
             endTurnButtonInfo.SetActive(true);
         }
@@ -56,19 +56,19 @@ public class PlayerGameButtons : MonoBehaviour
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (this.gameObject == markButton)
+        if (gameObject == markButton)
         {
             markButtonInfo.SetActive(false);
         }
-        else if (this.gameObject == staffButton)
+        else if (gameObject == staffButton)
         {
             staffButtonInfo.SetActive(false);
         }
-        else if (this.gameObject == cashoutButton)
+        else if (gameObject == cashoutButton)
         {
             cashoutButtonInfo.SetActive(false);
         }
-        else if (this.gameObject == endTurnButton)
+        else if (gameObject == endTurnButton)
         {
             endTurnButtonInfo.SetActive(false);
         }

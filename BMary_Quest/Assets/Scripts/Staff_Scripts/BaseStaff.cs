@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class BaseStaff : MonoBehaviour
 {
-    Button abilityButton;
+    private Button abilityButton;
     public GameControl gameControl;
 
-    public void UseStaffAbility()
+    private void UseStaffAbility()
     {
         Debug.Log("Use Staff");
     }

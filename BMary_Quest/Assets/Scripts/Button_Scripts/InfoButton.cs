@@ -19,7 +19,6 @@ public class InfoButton : MonoBehaviour
         hover.AddListener(OnMouseEnter);
         hover.AddListener(OnMouseExit);
         SetText();
-        
     }
 
     public void OnMouseEnter()
