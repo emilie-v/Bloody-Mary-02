@@ -13,6 +13,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public CharacterAnimations characterAnimations;
     public EnemyAnimations enemyAnimations;
+    private bool firstStringAvailable =true;
+    private bool firstEnemyStringAvailable = true;
 
     public void Awake()
     {
@@ -246,21 +248,48 @@ public class DialogueTrigger : MonoBehaviour
 
     private IEnumerator TypeWriterEffect(string MarysCurrentText)
     {
-        for (int i = 0; i < MarysCurrentText.Length+1; i++)
+        if (firstStringAvailable == true)
         {
-            MaryText.text = MarysCurrentText.Substring(0, i);
-
-            yield return new WaitForSeconds(Delay);
+            firstStringAvailable = false;
+            for (int i = 0; i < MarysCurrentText.Length + 1; i++)
+            {
+                MaryText.text = MarysCurrentText.Substring(0, i);
+                yield return new WaitForSeconds(Delay);
+            }
+            firstStringAvailable = true;
+        }
+        else if (firstEnemyStringAvailable == false)
+        {
+            yield return new WaitUntil(() => firstStringAvailable == true);
+            for (int i = 0; i < MarysCurrentText.Length + 1; i++)
+            {
+                MaryText.text = MarysCurrentText.Substring(0, i);
+                yield return new WaitForSeconds(Delay);
+            }
         }
     }
     
     private IEnumerator TypeWriterEffectEnemy(string EnemysCurrentText)
     {
-        for (int i = 0; i < EnemysCurrentText.Length + 1; i++)
+        if (firstEnemyStringAvailable == true)
         {
-            EnemyText.text = EnemysCurrentText.Substring(0, i);
-
-            yield return new WaitForSeconds(Delay);
+            firstEnemyStringAvailable = false;
+            for (int i = 0; i < EnemysCurrentText.Length + 1; i++)
+            {
+                EnemyText.text = EnemysCurrentText.Substring(0, i);
+                yield return new WaitForSeconds(Delay);
+             
+            }
+            firstEnemyStringAvailable = true;
+        }
+        else if (firstEnemyStringAvailable == false)
+        {
+         yield return new WaitUntil(() => firstStringAvailable == true);
+            for (int i = 0; i < EnemysCurrentText.Length + 1; i++)
+            {
+                EnemyText.text = EnemysCurrentText.Substring(0, i);
+                yield return new WaitForSeconds(Delay);
+            }
         }
     }
 }
