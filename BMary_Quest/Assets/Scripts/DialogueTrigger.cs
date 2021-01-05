@@ -26,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         new string[] {"This line is as empty as my soul."},
         new string[] {"Hey, give me back my staff!","Long time no see, Ghastella","Oh boy… you…","No, you can’t borrow any money","Oh no… Ghastella. This will be awkward",""},
-        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senor Bones,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
+        new string[] {"Sorry, I don’t speak foreign.","Move along, flower boy!","I’m not that into skinny guys…","Senior Bones,I presume","You need a hamburger or something, dude.","Yo, bone head.","Gone a bit far with the vegan thing there?",""},
         new string[] {"Naww, it’s a puppy!","What’s that? Little Billy stuck in the well? Show me!","Nice doggy…!","Hey, when I throw you a staff, you’re supposed to retrieve it, not use it against me!","If you let me win I’ll give you a treat!",""},
         new string[] {"Sorry about my breath. Just had some garlic!","Thought about becoming a vegan, Drac? Steak’s bad for your heart!","Are you supposed to be some kind of swinger or something?","Are those fangs real or are they just dentures, old man?","Mirrors and vampires don’t mix, sweetie.",""},
         new string[] {"There you are! Where have you been hiding, Luci?","Hey, I’ve been looking for you!","Don’t be scared, Luci. This will be over with quickly!","Jesus, would it kill you to put a shirt on?","Hit the bricks, Luci. There’s a new Princess of darkness in town!",""}
@@ -85,7 +85,7 @@ public class DialogueTrigger : MonoBehaviour
     private string[][] EnemyGreetings =
     {
         new string[] {"This line is empty and should never be seen"},
-        new string[] {"Oh, Hi there Mary","Don’t go too hard…","Can we talk this out like adults?","Here we go again…","Want to take a drink after this, Mary?",""},
+        new string[] {"Oh, Hi there Mary","Don’t go too hard…","Can we talk this out like adults?","Here we go again…","Want to get a drink after this, Mary?",""},
         new string[] {"Hola, Amiga!","Saludos, Mirror lady!","I’ll show you flower power, chica!","Feel spooked yet?","Want a flower, girl?",""},
         new string[] {"*Pant pant*","*Head tilt*","*Bark bark!*",""},
         new string[] {"Well well well… Bloody Mary.","We meet at last, Necromancer.","This won’t take long, my dear.","You got a very pretty nec...name.","A toast to you, my lady!","" },
@@ -191,13 +191,13 @@ public class DialogueTrigger : MonoBehaviour
     public void MaryStalemate()
     {
         //MaryText.text = "Using a mirror power on me...how qaint";
-        StartCoroutine(TypeWriterEffect("Using a mirror power on me...how qaint"));
+        StartCoroutine(TypeWriterEffect("Using a mirror power on me...how quaint."));
     }
 
     public void EnemyStalemate()
     {
         //EnemyText.text = "I'm wasting your time, it's part of my job you know";
-        StartCoroutine(TypeWriterEffectEnemy("I'm wasting your time, it's part of my job you know"));
+        StartCoroutine(TypeWriterEffectEnemy("I'm wasting your time, it's part of my job you know."));
     }
 
     public void EnemyGreeting()
@@ -293,3 +293,5 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 }
+
+
