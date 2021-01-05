@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour
     private MirrorStaff mirrorStaff;
     private Boardpiece boardpiece;
     public RewardScreen rewardScreen;
+    public LevelLoaderTransition levelLoaderTransition;
     public CharacterAnimations characterAnimations;
     public EnemyAnimations enemyAnimations;
     [SerializeField] private GUIManager guiManager;
@@ -268,7 +269,6 @@ public class GameControl : MonoBehaviour
                     {
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player1 && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
-                            characterAnimations.animator.SetTrigger("Smiling");
                             marysTempPoints++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetMary();
                         }
@@ -312,7 +312,6 @@ public class GameControl : MonoBehaviour
                         if (spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().owned == (int)Tile_State.player2 
                             && spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().specialState == 0)
                         {
-                            enemyAnimations.animator.SetTrigger("Angry");
                             enemyTempPoints++;
                             spelplan.GetComponent<Spelplan>().gridArray[i, j].GetComponent<Owner>().resetEnemy();
                         }
@@ -375,7 +374,6 @@ public class GameControl : MonoBehaviour
                 dialogueTrigger.EnemyWins();
                 dialogueTrigger.MaryLoss();
                 enemyAnimations.animator.SetBool("WinState", true);
-                characterAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.LoseStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Lost!";
                 rewardScreen.NewReward(6);
@@ -385,7 +383,6 @@ public class GameControl : MonoBehaviour
                 dialogueTrigger.EnemyLoses();
                 dialogueTrigger.MaryWin();
                 characterAnimations.animator.SetBool("WinState", true);
-                enemyAnimations.animator.SetTrigger("Angry");
                 SoundManager.Instance.WinStateSound();
                 GameObject.Find("IngameGUI_Canvas/GameOver/Text").GetComponent<Text>().text = "Mary Wins!";
                 
@@ -442,7 +439,6 @@ public class GameControl : MonoBehaviour
                         rewardScreen.NewReward(3);
                         DataAcrossScenes.darkNightStaffUnlocked = true;
                         DataAcrossScenes.luciferUnlocked = true;
-                        DataAcrossScenes.ChosenEnemy += 1;
                     }
                     else if (DataAcrossScenes.darkNightStaffUnlocked == true)
                     {

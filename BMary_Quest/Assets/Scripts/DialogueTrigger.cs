@@ -180,6 +180,7 @@ public class DialogueTrigger : MonoBehaviour
     
     public void MaryLoss()
     {
+        characterAnimations.animator.SetTrigger("Angry");
         int i = DataAcrossScenes.EnemyChosenStaff;
         int j = Random.Range(0, MaryLoses[i].GetUpperBound(0));
         StartCoroutine(TypeWriterEffect(MaryLoses[i][j]));
@@ -187,12 +188,14 @@ public class DialogueTrigger : MonoBehaviour
     
     public void MaryStalemate()
     {
-        MaryText.text = "Using a mirror power on me...how qaint";
+        //MaryText.text = "Using a mirror power on me...how qaint";
+        StartCoroutine(TypeWriterEffect("Using a mirror power on me...how qaint"));
     }
 
     public void EnemyStalemate()
     {
-        EnemyText.text = "I'm wasting your time, it's part of my job you know";
+        //EnemyText.text = "I'm wasting your time, it's part of my job you know";
+        StartCoroutine(TypeWriterEffectEnemy("I'm wasting your time, it's part of my job you know"));
     }
 
     public void EnemyGreeting()
