@@ -6,24 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class ChooseStaff : MonoBehaviour
 {
-    Sprite[] staffList;
-    Sprite mirror;
-    Sprite pumpkin;
-    Sprite skeleton;
-    Sprite moon;
-    Sprite count;
-    Sprite hell;
-    Sprite padlock;
+    private Sprite[] staffList;
+    private Sprite mirror;
+    private Sprite pumpkin;
+    private Sprite skeleton;
+    private Sprite moon;
+    private Sprite count;
+    private Sprite hell;
 
     public GameObject chooseEnemy;
     public GameObject chooseStaff;
 
     public GameObject selectWarning;
-    public GameObject cancelWarning;
 
-    bool isUnlocked = false;
-    BackgroundMusic backgroundMusic;
-    public SoundManager soundManager;
+    private bool isUnlocked;
     public LevelLoaderTransition levelLoaderTransition;
     public ChooseEnemy chooseEnemyClass;
 
@@ -34,22 +30,20 @@ public class ChooseStaff : MonoBehaviour
     public Text currentStaffInformation;
     public Text currentStaffName;
 
-    int index = 0;
-    Image currentStaff;
+    private int index = 0;
+    private Image currentStaff;
 
     void Start()
     {
         currentStaff = GetComponent<Image>();
-
-        backgroundMusic = GameObject.Find("AudioSource").GetComponent<BackgroundMusic>();
+        
         mirror = Resources.Load<Sprite>("Sprites/Staffs/Staff_Mirror_Portrait");
         pumpkin = Resources.Load<Sprite>("Sprites/Staffs/Staff_Pumpkin_Portrait");
         skeleton = Resources.Load<Sprite>("Sprites/Staffs/Staff_Skeleton_Portrait");
         moon = Resources.Load<Sprite>("Sprites/Staffs/Staff_Moon_Portrait");
         count = Resources.Load<Sprite>("Sprites/Staffs/Staff_Darkest_Night_Portrait");
         hell = Resources.Load<Sprite>("Sprites/Staffs/Staff_Hell_Portrait");
-        padlock = Resources.Load<Sprite>("Sprites/GUI/GUI_padlock");
-        
+
         staffList = new Sprite[6];
         staffList[0] = mirror;
         staffList[1] = pumpkin;
@@ -66,74 +60,16 @@ public class ChooseStaff : MonoBehaviour
             "At the end of the users turn, the user regenerates 2 blood points if the user dealt damage this turn. Using its active ability marks the opponent for that turn with the brimstone mark. Attacking while under the brimstone mark deals damage to yourself as well as your opponent" };
         
         staffNameList = new string[] { "Mirror Staff", "Pumpkin Staff", "Skeleton Staff", "Moon Staff", "Dark Night Staff", "Hell Staff" };
+        
         //Unlock the first staff
         PlayerPrefs.SetInt("Staff" + index, 1);
 
         currentStaffName.text = staffNameList[index];
         currentStaffInformation.text = staffInformationList[index];
 
-        // //Example, look staff 1 (hellstaff)
-        // PlayerPrefs.SetInt("Staff" + 1, 0);
-
-        // //Example, unlook staff 1 (hellstaff)
-        // PlayerPrefs.SetInt("Staff" + 1, 1);
-
         UpdateCurrentStaff();
     }
-
-#if UNITY_EDITOR
-    void Update()
-    {
-        /*Debug code for testing staff unlock
-
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log("Reset all save data! Please restart!");
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.SetInt("Staff" + 0, 1);
-            UpdateCurrentStaff();
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("Debug Unlocked staff 1");
-            PlayerPrefs.SetInt("Staff" + 1, 1);
-            UpdateCurrentStaff();
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("Debug Unlocked staff 2");
-            PlayerPrefs.SetInt("Staff" + 2, 1);
-            UpdateCurrentStaff();
-        }
-        */
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            DataAcrossScenes.pumpkinStaffUnlocked = true;
-            DataAcrossScenes.skeletonStaffUnlocked = true;
-            DataAcrossScenes.moonStaffUnlocked = true;
-            DataAcrossScenes.darkNightStaffUnlocked = true;
-            DataAcrossScenes.hellStaffUnlocked = true;
-
-            UpdateCurrentStaff();
-            
-            Debug.Log("All staffs unlocked");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            DataAcrossScenes.pumpkinStaffUnlocked = false;
-            DataAcrossScenes.skeletonStaffUnlocked = false;
-            DataAcrossScenes.moonStaffUnlocked = false;
-            DataAcrossScenes.darkNightStaffUnlocked = false;
-            DataAcrossScenes.hellStaffUnlocked = false;
-            
-            UpdateCurrentStaff();
-            
-            Debug.Log("All staffs locked");
-        }
-    }
-#endif
-
+    
     public void RightStaffButton()
     {
         SoundManager.Instance.ArrowButtonSound();
@@ -145,6 +81,7 @@ public class ChooseStaff : MonoBehaviour
         }
         currentStaffName.text = staffNameList[index];
         currentStaffInformation.text = staffInformationList[index];
+        
         UpdateCurrentStaff();
     }
 
@@ -159,13 +96,12 @@ public class ChooseStaff : MonoBehaviour
         }
         currentStaffName.text = staffNameList[index];
         currentStaffInformation.text = staffInformationList[index];
+        
         UpdateCurrentStaff();
     }
 
     void UpdateCurrentStaff()
     {
-        //int unlocked = PlayerPrefs.GetInt("Staff" + index);
-
         if (index == 0 && DataAcrossScenes.mirrorStaffUnlocked)
         {
             padlockImage.SetActive(false);
@@ -177,7 +113,6 @@ public class ChooseStaff : MonoBehaviour
             isUnlocked = false;
         }
 
-        //pumpkin staff == 1
         if (index == 1 && DataAcrossScenes.pumpkinStaffUnlocked)
         {
             padlockImage.SetActive(false);
@@ -211,7 +146,6 @@ public class ChooseStaff : MonoBehaviour
             isUnlocked = false;
         }
         
-        //count ==2
         if (index == 4 && DataAcrossScenes.darkNightStaffUnlocked)
         {
             padlockImage.SetActive(false);
@@ -223,7 +157,6 @@ public class ChooseStaff : MonoBehaviour
             isUnlocked = false;
         }
 
-        //lucifer ==3
         if (index == 5 && DataAcrossScenes.hellStaffUnlocked)
         {
             padlockImage.SetActive(false);
@@ -234,8 +167,6 @@ public class ChooseStaff : MonoBehaviour
             padlockImage.SetActive(true);
             isUnlocked = false;
         }
-
-
 
         currentStaff.sprite = staffList[index];
     }

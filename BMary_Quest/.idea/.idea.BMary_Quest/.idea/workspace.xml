@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c96db8-7666-4a6e-a851-d8472c931d00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BMary_Quest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/InfoButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/InfoButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/661E3775-59A9-4698-8BFE-2B8CA98F93BC/87/3c7d65f4/IPointerUpHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/c9/0180ebe2/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E2BCE5D3-3E70-4A76-A5C9-576F4D43769B/58/f2f9453c/Sprite.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99D9AB48-AE7D-46A6-AD56-DF1D8D1589ED/1f/bc5beb86/AudioListener.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -61,14 +63,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ChooseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LastMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HellStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/HellStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DataAcrossScenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/SkeletonStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/StaffManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/MoonStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/PumpkinStaff.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChooseEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Owner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AIBehaviour.cs" />
@@ -86,6 +86,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/MirrorStaffHighlight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Button_Scripts/PlayerGameButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/BaseStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/ChooseStaff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Staff_Scripts/DarkNightStaff.cs" />
       </list>
     </option>
   </component>
@@ -146,7 +148,7 @@
       <workItem from="1608544902645" duration="11782000" />
       <workItem from="1608626125638" duration="128000" />
       <workItem from="1609747981719" duration="3398000" />
-      <workItem from="1609834677064" duration="1458000" />
+      <workItem from="1609834677064" duration="2945000" />
     </task>
     <servers />
   </component>

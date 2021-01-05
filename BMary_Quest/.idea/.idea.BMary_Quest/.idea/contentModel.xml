@@ -55,7 +55,6 @@
           <e p="SoundManager.cs" t="Include" />
           <e p="Spelplan.cs" t="Include" />
           <e p="Staff_Scripts" t="Include">
-            <e p="BaseStaff.cs" t="Include" />
             <e p="ChooseStaff.cs" t="Include" />
             <e p="DarkNightStaff.cs" t="Include" />
             <e p="HellStaff.cs" t="Include" />
